@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sección con Tarjetas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- Empieza la seccion o hueco con el fondo que contiene tarjetas-->
+        <section class="contenedor">
+        <h2>Elige tu plan</h2>
+        <h6>Elige un plan adecuado para tu equipo. <strong>Sencillos. Sin cargos ocultos.</strong> </h6>
+
+        <div class="boton-centro">
+               <!-- Botón que cambia de colores -->
+                <button id="boton-invertir" class="boton-invertir">
+                    <span class="izquierda">Blanco</span>
+                    <span class="derecha">Negro</span>
+                </button>
+        </div>
+        
+
+        <!-- Contenedor de las tarjetas -->
+        <div class="tarjetas">
+            <div class="tarjeta" id="tarjeta1">
+                <h6 class="subtitulo">Plan Basico</h6>
+                <h2 class="titulo">29€</h2>
+                <h6 class="subtitulo-extra">Prueba tu demostración gratuita ahora</h6>
+                <button class="btn">Solicita tu acceso</button>
+            </div>
+
+            <div class="tarjeta" id="tarjeta2">
+                <h6 class="subtitulo">Plan Completo</h6>
+                <h2 class="titulo">55€</h2>
+                <h6 class="subtitulo-extra">El plan más completo</h6>
+                <button class="btn">Elige este plan</button>
+            </div>
+        </div>
+
+    </section>
+
+
+
+    <!-- Llamada a funcionalidad tarjetas con JS -->
+    <script src="script.js"></script>
+
+</body>
+</html>
