@@ -1,0 +1,251 @@
+/* Sección general */
+.formulario-seccion {
+    width: 100%;
+    padding: 50px 20px;
+    background-color: #f8f8f8;
+    text-align: center;
+}
+
+/* Contenedor principal */
+.formulario-contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px;
+}
+
+/* Sección izquierda: Texto e imagen */
+.info-izquierda {
+    flex: 1;
+    max-width: 50%;
+    text-align: left;
+}
+
+.info-izquierda h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.info-izquierda p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.info-izquierda img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Sección derecha: Contenedor gris */
+.formulario-derecha {
+    flex: 1;
+    max-width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d3d3d3; /* Fondo gris */
+    padding: 30px;
+    border-radius: 10px;
+}
+
+/* Contenedor interno del formulario (fondo naranja) */
+.formulario-contenedor-interno {
+    background-color: #fb7a02; /* Fondo naranja */
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Estilos del formulario */
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.formulario label {
+    font-weight: bold;
+    color: white;
+    text-align: left;
+}
+
+.formulario input,
+.formulario textarea {
+    width: 95%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.formulario button {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.formulario button:hover {
+    background-color: #333;
+}
+
+/* Estilos del footer */
+.footer {
+    background-color: #222;
+    color: white;
+    padding: 20px;
+    width: 100vw;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+/* Sección principal del footer */
+.footer-main {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.footer-main h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.footer-main p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.footer-main .btn {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Secciones de las tres columnas */
+.footer-columns {
+    display: flex;
+    justify-content: center; /* Centra las columnas sin desbordar */
+    flex-wrap: wrap; /* Permite que las columnas se acomoden si no hay espacio */
+    gap: 20px; /* Espacio entre columnas */
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 200px; /* Asegura que las columnas no sean demasiado pequeñas */
+    max-width: 300px; /* Evita que crezcan demasiado */
+    text-align: center;
+}
+
+.footer-column h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-column p {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.footer-column .btn {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.footer-column ul {
+    list-style-type: none;  /* Elimina los puntos */
+    padding: 0;  /* Elimina el espacio de la izquierda */
+    margin: 0;  /* Elimina el margen por defecto */
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;  /* Ajusta el espacio entre los elementos de la lista */
+}
+
+.footer-column ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-column ul li a:hover {
+    text-decoration: underline;
+}
+
+
+/* Estilos para los enlaces */
+.footer-links {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.footer-section {
+    text-align: center;
+}
+
+.footer-section h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 5px 0;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Sección final con derechos reservados y enlaces legales */
+.footer-bottom {
+    text-align: center;
+    font-size: 14px;
+}
+
+.footer-bottom p {
+    margin-bottom: 10px;
+}
+
+.footer-bottom ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-bottom ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.footer-bottom ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-bottom ul li a:hover {
+    text-decoration: underline;
+}
