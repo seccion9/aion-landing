@@ -9,6 +9,8 @@ body {
     margin: 0;
     padding: 0;
     background-color: #ffffff;
+    width: 100%;
+    height: 100%;
 }
 
 /* Estilos del header */
@@ -560,7 +562,7 @@ video {
 }
 .footer-main {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 .footer-main h2 {
     font-size: 24px;
@@ -756,7 +758,7 @@ video {
 
 /* Contenedor interno del formulario (fondo naranja) */
 .formulario-contenedor-interno {
-    background-color: #fb7a02; /* Fondo naranja */
+    background-color: #fb7a02; 
     padding: 20px;
     border-radius: 10px;
     width: 100%;
@@ -843,4 +845,69 @@ video {
     text-align: left;
     margin-left: 5px;
     margin-bottom: -8px;
+}
+
+
+
+
+
+
+.tituloDudas {
+    display: flex; 
+    align-items: center;
+    gap: 10px; 
+    justify-content: center; 
+    text-align: center; 
+    width: 100%; 
+    margin-top: 90px;
+}
+.tituloDudas img {
+    width: 150px; 
+    height: auto; 
+}
+
+.mainDudas {
+    font-size: 36px; 
+    margin: 0; 
+    
+}
+
+.modulosDudas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 40px;
+    justify-items: center;
+    gap: 20px 60px; 
+    max-width: 800px; 
+    margin: 0 auto; 
+    margin-top: -20px;
+}
+.duda {
+    background-color: #e6e6e6;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 0;
+    
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    align-items: center;
+    height: 110px;
+    width: 100%;
+    max-width: 400px;
+}
+.duda:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+.duda img {
+    width: 40px;
+    height: auto;
+    margin-left: 10%;
+}
+
+.duda p {
+    width: 90%;
+    font-size: 24px;
+    color: #666;
 }
