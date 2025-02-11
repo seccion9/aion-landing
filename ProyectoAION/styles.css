@@ -4,13 +4,14 @@
 }
 
 /* Estilos de todo el cuerpo de la pagina */
-body {
+body, html {
     font-family: "monserrat";
     margin: 0;
     padding: 0;
     background-color: #ffffff;
     width: 100%;
     height: 100%;
+    overflow-x: hidden;
 }
 
 /* Estilos del header */
@@ -506,7 +507,6 @@ h6.subtitulo {
     background-color: #f4f4f4;
     padding: 20px;
     gap: 10px;
-    /* max-width: 100%; */
     overflow: hidden;
 }
 .video-contenedor {
@@ -562,6 +562,7 @@ video {
 }
 .footer-main {
     text-align: center;
+    justify-content: center; 
     margin-bottom: 20px;
 }
 .footer-main h2 {
@@ -596,6 +597,7 @@ video {
     min-width: 200px; 
     max-width: 300px; 
     text-align: center;
+    justify-content: center; 
     margin-bottom: 25px;
 }
 .footer-column h3 {
@@ -693,49 +695,20 @@ video {
     vertical-align: middle;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Sección general */
-.formulario-seccion {
-    width: 100%;
-    padding: 50px 20px;
-    /* background-color: #ffffff; */
-    text-align: center;
-}
-
-/* Contenedor principal */
+/* Estilos para el apartado del formulario y el texto e imagen de su lado */
 .formulario-contenedor {
     display: flex;
     justify-content: space-between;
     align-items: center;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 100px auto;
     gap: 40px;
 }
-
-/* Sección izquierda: Texto e imagen */
 .info-izquierda {
     flex: 1;
     max-width: 50%;
     text-align: center;
 }
-
 .info-izquierda h2 {
     font-size: 45px;
     margin-bottom: 10px;
@@ -743,20 +716,16 @@ video {
     margin-left: -5%;
     width: 110%;
 }
-
 .info-izquierda p {
     font-size: 16px;
     margin-bottom: 20px;
 }
-
 .info-izquierda img {
     width: 98%;
     height: auto;
     border-radius: 10px;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
 }
-
-/* Contenedor interno del formulario (fondo naranja) */
 .formulario-contenedor-interno {
     background-color: #fb7a02; 
     padding: 20px;
@@ -767,16 +736,11 @@ video {
     margin-right: 6%;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
 }
-
-/* Estilos del formulario */
 .formulario {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
-
-
-
 .formulario input, .formulario textarea, .formulario select {
     width: 95%;
     padding: 10px;
@@ -785,18 +749,15 @@ video {
     font-size: 16px;
     resize: none;
 }
-
 .formulario select {
     width: 100%;
     margin-top: 2px;
 }
-
 .formulario h3 {
     text-align: left;
     margin-left: 5px;
     margin-bottom: -5px;
 }
-
 .formulario button {
     background-color: rgb(54, 54, 54);
     color: white;
@@ -808,29 +769,26 @@ video {
     margin-left: 45%;
     margin-bottom: -10px;
 }
-
 .formulario button:hover {
     background-color: #606060;
 }
-
-
+.formulario button:active {
+    transform: scale(0.93);
+}
 .telefonoCiudad {
     display: flex;
     gap: 10px;
     justify-content: space-between;
 }
-
 .telefonoCiudad div {
     display: flex;
     flex-direction: column;
     width: 48%;
 }
-
 .telefonoCiudad label {
     font-weight: bold;
     color: white;
 }
-
 .telefonoCiudad input {
     width: 90%;
     padding: 10px;
@@ -847,36 +805,24 @@ video {
     margin-bottom: -8px;
 }
 
-
-
-
-
-
-.tituloDudas {
-    display: flex; 
-    align-items: center;
-    gap: 10px; 
-    justify-content: center; 
-    text-align: center; 
-    width: 100%; 
-    margin-top: 90px;
-}
+/* Estilos para el apartado de preguntas y dudas */
 .tituloDudas img {
     width: 150px; 
     height: auto; 
 }
-
 .mainDudas {
     font-size: 36px; 
-    margin: 0; 
-    
+    margin-top: 90px;
+    width: 30%;
+    margin-left: 36%;
+    text-align: center;
+    margin-bottom: -20px;
 }
-
 .modulosDudas {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     padding: 40px;
-    justify-items: center;
+    justify-content: center;
     gap: 20px 60px; 
     max-width: 800px; 
     margin: 0 auto; 
@@ -887,7 +833,6 @@ video {
     border-radius: 10px;
     padding: 20px;
     margin: 0;
-    
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
@@ -899,15 +844,57 @@ video {
 .duda:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+}
+.duda:active {
+    transform: scale(0.93);
 }
 .duda img {
     width: 40px;
     height: auto;
     margin-left: 10%;
 }
-
 .duda p {
     width: 90%;
     font-size: 24px;
     color: #666;
+}
+
+/* Estilos para el apartado de información adicional sobre la empresa */
+.contenedorExtraInfo {
+    background-color: #ff8000;
+    width: 100%;
+    min-height: 120px;
+    text-align: center;
+    margin-left: 0;
+    padding: 20px;
+}
+.tituloExtraInfo h2 {
+    font-size: 50px;
+}
+.tituloExtraInfo p {
+    margin-top: -30px;
+}
+.botonesExtraInfo {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+.botonesExtraInfo button {
+    background-color:rgb(54, 54, 54);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 200px;
+    height: 60px;
+    font-size: 16px;
+}
+.botonesExtraInfo button:hover {
+    background-color: #606060;
+}
+.botonesExtraInfo button:active {
+    transform: scale(0.93);
 }
