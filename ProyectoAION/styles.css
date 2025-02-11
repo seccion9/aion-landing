@@ -22,6 +22,12 @@ header {
     justify-content: center;
     align-items: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+    /* position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; */
 }
 
 /* Estilos base del contenido de la pagina */
@@ -31,6 +37,8 @@ main {
     align-items: center;
     padding: 50px 20px;
     gap: 50px;
+
+    /* margin-top: 70px; */
 }
 
 /* Estilos del navegador */
@@ -898,3 +906,22 @@ video {
 .botonesExtraInfo button:active {
     transform: scale(0.93);
 }
+
+/* Diseño del boton para subir al inicio de la pagina */
+.boton-subir {
+    position: fixed;
+    bottom: 20px;
+    right: 40px;
+    background-color: #ff6600;
+    border: none;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, background-color 0.3s;
+}
+.boton-subir:hover {
+    background-color: #e05500;
+    transform: scale(1.1);
+}
+

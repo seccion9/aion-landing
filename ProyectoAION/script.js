@@ -63,3 +63,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+
+document.getElementById("botonSubir").addEventListener("click", function () {
+  const logo = document.getElementById("logo");
+  logo.scrollIntoView({ behavior: "smooth" });
+});
+
