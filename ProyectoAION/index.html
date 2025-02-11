@@ -12,15 +12,17 @@
         <nav>
             <div class="logo" id="logo">AION</div>
             <ul>
-                <li><a href="#carrusel">Integraciones</a></li>
-                <li><a href="#funcionalidades">Funcionalidades</a></li>
-                <li><a href="#precios">Precios</a></li>
+                <li><a id="integraciones" href="#carrusel">Integraciones</a></li>
+                <li><a id="funcional" href="#funcionalidades">Funcionalidades</a></li>
+                <li><a id="planes" href="#precios">Precios</a></li>
                 <li><a href="#">¿Quieres invertir?</a></li>
-                <li><a href="#" class="contacto">Contacto</a></li>
+                <li><a id="inicio" style="display: none">Inicio</a></li>
+                <li><a href="formulario.html" class="contacto" id="contacto">Contacto</a></li>
             </ul>
         </nav>
     </header>
     <main>
+        <section id="main">
         <section class="contenedor-de-contenido" id="contenedor-de-contenido">
             <div class="contenido">
                 <h1><em>Gestiona tus reservas</em></h1>
@@ -83,7 +85,7 @@
             </section>
         </section>
         <section class="extra-info" id="funcionalidades">
-            <h2 class="main-title">¿Llevamos tu negocio al SIGUIENTE NIVEL?</h2>
+            <h2 class="main-title">¿Llevamos tu negocio al <br>SIGUIENTE NIVEL?</h2>
             <div class="sections">
                 <div class="section-container zonaDerecha">
                     <img src="./img/diseñoWeb.jpg">
@@ -118,7 +120,7 @@
         </section>
         <section class="optimizar-negocio">
             <div class="optimizar-title">
-                <h2 class="main-title">¿Quieres OPTIMIZAR TU NEGOCIO?</h2>
+                <h2 class="main-title">¿Quieres <br>OPTIMIZAR TU NEGOCIO?</h2>
                 <p>Haz crecer tu negocio con una herramienta que trabaja por ti</p>
             </div>
             <section class="modulos-destacados">
@@ -193,9 +195,10 @@
                 <h3>AION</h3>
             </div>
         </section>
-        </main>
+        </section>
+    </main>
 
-        <section class="formulario-seccion" style="display: none">
+        <!-- <section class="formulario-seccion" id="formulario-seccion" style="display: none">
             <div class="formulario-contenedor">
 
                 <div class="info-izquierda">
@@ -277,26 +280,26 @@
                     <button id="botonLogoImagen">Logo e imágenes</button>
                 </div>
             </section>
-        </section>
+        </section> -->
 
 
     <footer class="footer">
         <div class="footer-main">
-            <p>Si esto te ha sorprendido, imagina lo que lograremos juntos.</p>
-            <p><strong>Súmate como inversor.</strong></p>
-            <button class="btn">Contactanos</button>
+            <p>Si esto te ha sorprendido, imagina lo que lograremos juntos</p>
+            <p><strong>Súmate como inversor</strong></p>
+            <button class="btn">Comenzar</button>
         </div>
 
         <div class="footer-columns">
             <div class="footer-column">
                 <h3>AION</h3>
                 <p>Tu empresa donde confiar tus proyectos</p>
-                <button class="btn">Comenzar</button>
+                <a href="formulario.html" class="btn">Contactanos</a>
             </div>
             <div class="footer-column">
                 <h4>Inicio</h4>
                 <ul>
-                    <li><a href="#aion">AION</a></li>
+                    <li><a href="index.html">AION</a></li>
                     <li><a href="#funcionalidades">Funcionalidades</a></li>
                     <li><a href="#precios">Precios</a></li>
                     <li><a href="#¿quieres invertir?">¿Quieres inverir?</a></li>
@@ -339,8 +342,8 @@
         </svg>
     </button>
 
-
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="botonSubir.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
