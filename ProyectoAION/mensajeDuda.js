@@ -23,12 +23,12 @@ document.addEventListener("DOMContentLoaded", function () {
   
     function obtenerMensaje(id) {
         const mensajes = {
-            "duda1": "Para contratar nuestros servicios, dirígete a la sección de contacto y completa el formulario.",
-            "duda2": "En el apartado precios de la página principal encontrarás las diferentes opciones de tarifas.",
-            "duda3": "Sí, contamos con promociones especiales. Consulta nuestra página de ofertas.",
-            "duda4": "Sí, <strong>AION</strong> cuenta con automatización de facturas para facilitar tu gestión.",
-            "duda5": "Sí, las reservas son compatibles con múltiples tipos de negocios.",
-            "duda6": "Sí, <strong>AION</strong> funciona en dispositivos móviles sin problemas."
+            "duda1": "En <strong style='color: #ff8000;'>AION</strong> puede contratar nuestros servicios yendo al apartado de 'Precios' y seleccionando el que más se adapte a sus necesidades, tambien podrá ponerse en contacto con nosotros rellenando el formulario de 'Contacto' para así ofrecerle un trato más cercano.",
+            "duda2": "En el apartado de 'Precios' encontrará toda la información que necesita, ofrecemos tarifas de 'Plan Básico' y 'Plan Completo' en sus respectivas modalidades mensuales o anuales, en la que encontrará ciertas ofertas.",
+            "duda3": "Sí, nuestra política de descuentos es muy amplia ya que podrá encontrar ofertas especiales a lo largo del año",
+            "duda4": "Sí, <strong style='color: #ff8000;'>AION</strong> cuenta con automatización de facturas para facilitar tu gestión siendo esta muy fiable y uno de nuestros puntos fuertes ya que con esta gran funcionalidad ya no tendrá que volver a preocuparse de las facturas.",
+            "duda5": "Sí, no apuntamos a uno o dos modelos de negocios del mercado solamente, tratamos de abarcar todo tipo de negocio que necesite de nuestras ventajas como gestora.",
+            "duda6": "Sí, <strong style='color: #ff8000;'>AION</strong> funciona perfectamente tanto en dispositivos móviles como en tablets sin ningún tipo de problema."
         };
         return mensajes[id] || null;
     }

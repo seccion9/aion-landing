@@ -35,7 +35,6 @@
                     <li>✨ Simplifica tus tareas y organiza tu negocio como nunca antes</li>
                 </ul>
                 <p class="fraseExito"><strong><em>¡Empieza ahora y transforma tu gestión en éxito!!</em></strong></p>
-                <!-- <button class="boton">Comenzar</button> -->
             </div>
             <div class="imagen">
                 <img src="img/imgMovil.jpg" alt="Gestiona tus reservas">
@@ -163,7 +162,7 @@
                     <h2 class="titulo">29€</h2>
                     <p class="oferta">.</p>
                     <h6 class="subtitulo-extra">Prueba tu demostración gratuita ahora</h6>
-                    <button class="btn">Solicita tu acceso</button>
+                    <button class="btn" onclick="abrirFormulario('Plan Básico', '29€')">Solicita tu acceso</button>
                 </div>
                 <div class="tarjetaPlan" id="tarjeta2">
                     <h6 class="subtitulo">Plan Completo</h6>
@@ -171,7 +170,7 @@
                     <h2 class="titulo">55€</h2>
                     <p class="oferta">.</p>
                     <h6 class="subtitulo-extra">El plan más completo</h6>
-                    <button class="btn">Elige este plan</button>
+                    <button class="btn" onclick="abrirFormulario('Plan Completo', '55€')">Elige este plan</button>
                 </div>
             </div>
         </section>
@@ -196,6 +195,32 @@
             </div>
         </section>
         </section>
+
+        <div id="modal" class="modal" style="display: none">
+            <div class="modal-contenido">
+                <span class="cerrar">&times;</span>
+                <h2>Completa tus datos</h2>
+                <form id="formulario">
+                    <label for="nombre" class="lab">Nombre:</label>
+                    <input type="text" id="nombre" required>
+
+                    <label for="telefono" class="lab">Teléfono:</label>
+                    <input type="tel" id="telefono" required>
+
+                    <label for="correo" class="lab">Correo Electrónico:</label>
+                    <input type="email" id="correo" required>
+
+                    <label for="precio" class="lab">Precio del plan:</label>
+                    <input type="text" id="precio" readonly>
+
+                    <label>
+                        <input type="checkbox" id="aceptar" required> Acepto los <strong class="p-terminos"><a href="terminosCondiciones.html">términos y condiciones</a></strong> y la <strong class="p-terminos"><a href="politicaPrivacidad.html">política de privacidad</a></strong>.
+                    </label>
+
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </div>
     </main>
 
     <footer class="footer">
@@ -260,5 +285,6 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="botonSubir.js"></script>
     <script src="script.js"></script>
+    <script src="formularioPrecios.js"></script>
 </body>
 </html>
