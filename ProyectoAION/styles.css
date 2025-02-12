@@ -45,6 +45,7 @@ nav {
     font-size: 44px;
     font-weight: bold;
     color: #ff8000;
+    text-decoration: none;
 }
 nav ul {
     list-style: none;
@@ -94,7 +95,7 @@ nav ul li a:hover {
     font-size: 65px;
     font-weight: bold;
     color: #333;
-    margin-top: -20px;
+    margin-top: 20px;
     margin-bottom: 5px;
 }
 .contenido ul {
@@ -106,24 +107,12 @@ nav ul li a:hover {
     margin: 10px 0;
 }
 .fraseExito {
-    font-size: 25px;
+    font-size: 34px;
+    width: 95%;
     font-weight: bold;
     color: #ff8000;
-}
-.boton {
-    background: #ff8000;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 18px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-.boton:hover {
-    background-color: #fdb447;
-}
-.boton:active {
-    transform: scale(0.95);
+    margin-top: 70px;
+    text-align: center;
 }
 
 /* Estilos para la imagen principal */
@@ -327,14 +316,11 @@ nav ul li a:hover {
 .modulos-destacados {
     display: flex;
     flex-wrap: wrap;
-    /* display: grid;
-    grid-template-columns: repeat(2, 1fr); */
     gap: 20px;
     padding: 40px;
     justify-content: center;
     align-items: center;
     margin-bottom: 50px;
-    /* width: 100%; */
 }
 .tarjeta {
     background-color: #f9f9f9;
@@ -591,6 +577,9 @@ video {
     font-size: 16px;
     margin-bottom: 20px;
 }
+.footer-main a {
+    text-decoration: none;
+}
 .footer-main .btn {
     background-color:#ff8000;
     color: white;
@@ -621,8 +610,7 @@ video {
 .footer-column h3 {
     font-size: 18px;
     margin-bottom: 10px;
-    color: #ff8000;
-    
+    color: #ff8000; 
 }
 .footer-column h4 {
     color: #ff8000;
@@ -944,9 +932,7 @@ video {
     transform: scale(1.1);
 }
 
-
-
-
+/* Diseño para los mensajes que aparecen para resolver las dudas */
 .mensajeDuda {
     margin-top: 20px;
     padding: 15px;
@@ -960,5 +946,130 @@ video {
     margin-left: 30%;
 }
 
+/* Estilos para la pagina con el formulario para invertir */
+.containerInvertir {
+    margin: 90px;
+    display: flex;
+    background: white;
+    width: 1000px;
+    height: auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+.infoBox {
+    width: 50%;
+    padding: 30px;
+    background-color: white;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+.tituloBox {
+    font-size: 60px;
+    color: #ff8000;
+    font-weight: bold;
+}
+.infoBox img {
+    width: 70%;
+    margin-left: 15%;
+}
+.formBox {
+    width: 50%;
+    background-color: #ff8000;
+    padding: 30px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+.formBox h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+.form input {
+    width: 95%;
+    padding: 15px;
+    margin: 15px 0;
+    border: none;
+    border-radius: 5px;
+}
+.form input:focus {
+    outline: none;
+}
+.checkbox {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 10px;
+    font-size: 12px;
+    margin-right: 50px;
+}
+#terms {
+    margin-right: -50px;
+}
+.checkbox input {
+    margin-right: 10px;
+}
+.botonInvertir {
+    margin-top: auto;
+    width: 50%;
+    margin-left: 25%;
+    padding: 10px;
+    margin-top: 80px;
+    border: none;
+    border-radius: 5px;
+    background:  rgb(73, 73, 73);
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.botonInvertir:hover {
+    background: #858484;
+}
+.botonInvertir:active {
+    transform: scale(0.95);
+}
+.p-terminos {
+    color:#222;
+}
 
+/* Estilos para las paginas de avisos legales, cookies, privacidad y uso */
+.textContainer {
+    max-width: 800px;
+    background: white;
+    padding: 20px;
+    margin: 40px auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.textContainer h1 {
+    text-align: center;
+    color: #444;
+}
+.textContainer h2 {
+    color: #666;
+}
+.textContainer p {
+    line-height: 1.6;
+}
+.textContainer ul {
+    list-style-type: none;
+    padding: 0;
+}
+.textContainer ul li {
+    margin-bottom: 8px;
+}
+.textContainer a {
+    color: #007BFF;
+    text-decoration: none;
+}
+.textContainer a:hover {
+    text-decoration: underline;
+}
 
