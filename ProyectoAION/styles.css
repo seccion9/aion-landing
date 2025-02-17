@@ -180,11 +180,6 @@ nav ul li a:hover {
     margin-top: 70px;
     text-align: center;
 }
-<<<<<<< HEAD
-
-/* Estilos para la imagen principal */
-=======
->>>>>>> 18debd553df1b3a9cf20cadae85a93122e43e5f1
 .imagen img {
     width: 500px;
     height: auto;
@@ -1745,9 +1740,6 @@ video {
     transform: scale(1.1);
 }
 
-<<<<<<< HEAD
-/* Diseño para los mensajes que aparecen para resolver las dudas */
-=======
 /* Media query para pantallas pequeñas (móviles) */
 @media (max-width: 768px) {
     .boton-subir {
@@ -1773,7 +1765,6 @@ video {
 }
 
 /* ------------------------------Diseño para los mensajes que aparecen para resolver las dudas------------------------------ */
-
 .mensajeDuda {
     margin-top: -40px;
     padding: 15px;
@@ -1787,14 +1778,6 @@ video {
     margin-left: 30%;
 }
 
-<<<<<<< HEAD
-/* Estilos para la pagina con el formulario para invertir */
-.containerInvertir {
-    margin: 90px;
-    display: flex;
-    background: white;
-    width: 1000px;
-=======
 /* ------------------------------Estilos para la página con el formulario para invertir------------------------------ */
 .containerInvertir {
     margin: 90px auto;
@@ -1802,48 +1785,30 @@ video {
     background: white;
     width: 100%;
     max-width: 1000px;
->>>>>>> 18debd553df1b3a9cf20cadae85a93122e43e5f1
     height: auto;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-<<<<<<< HEAD
-=======
     flex-wrap: wrap;
->>>>>>> 18debd553df1b3a9cf20cadae85a93122e43e5f1
 }
 .infoBox {
     width: 50%;
     padding: 30px;
     background-color: white;
-<<<<<<< HEAD
-}
-.form {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-=======
     box-sizing: border-box;
->>>>>>> 18debd553df1b3a9cf20cadae85a93122e43e5f1
 }
 .tituloBox {
     font-size: 60px;
     color: #ff8000;
     font-weight: bold;
-<<<<<<< HEAD
-=======
     text-align: center;
     margin-bottom: 20px;
->>>>>>> 18debd553df1b3a9cf20cadae85a93122e43e5f1
 }
 .infoBox img {
     width: 70%;
     margin-left: 15%;
-<<<<<<< HEAD
-=======
     display: block;
     margin-top: 20px;
->>>>>>> 18debd553df1b3a9cf20cadae85a93122e43e5f1
 }
 .formBox {
     width: 50%;
@@ -1854,10 +1819,7 @@ video {
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
-<<<<<<< HEAD
-=======
     box-sizing: border-box;
->>>>>>> 18debd553df1b3a9cf20cadae85a93122e43e5f1
 }
 .formBox h2 {
     text-align: center;
@@ -1865,33 +1827,17 @@ video {
     margin-bottom: 15px;
     margin-top: 10px;
 }
-<<<<<<< HEAD
-.form input {
-=======
 .form {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
 }
 .form input, .form textarea {
->>>>>>> 18debd553df1b3a9cf20cadae85a93122e43e5f1
     width: 95%;
     padding: 15px;
     margin: 15px 0;
     border: none;
     border-radius: 5px;
-<<<<<<< HEAD
-}
-.form input:focus {
-    outline: none;
-}
-.checkbox {
-    display: flex;
-    align-items: flex-start;
-    margin-top: 10px;
-    font-size: 12px;
-    margin-right: 50px;
-=======
     font-size: 16px;
 }
 .form input:focus, .form textarea:focus {
@@ -1913,44 +1859,27 @@ video {
     font-size: 16px;
     line-height: 1.4;
     cursor: pointer;
->>>>>>> 18debd553df1b3a9cf20cadae85a93122e43e5f1
 }
 #terms {
     margin-right: -50px;
 }
-<<<<<<< HEAD
-.checkbox input {
-    margin-right: 10px;
-=======
 .p-terminos {
     color: #222;
     font-size: 14px;
->>>>>>> 18debd553df1b3a9cf20cadae85a93122e43e5f1
 }
 .botonInvertir {
     margin-top: auto;
     width: 50%;
     margin-left: 25%;
-<<<<<<< HEAD
-    padding: 10px;
-    margin-top: 80px;
-    border: none;
-    border-radius: 5px;
-    background:  rgb(73, 73, 73);
-=======
     padding: 15px;
     border: none;
     border-radius: 5px;
     background: rgb(73, 73, 73);
->>>>>>> 18debd553df1b3a9cf20cadae85a93122e43e5f1
     color: rgb(255, 255, 255);
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
-<<<<<<< HEAD
-=======
     transition: background-color 0.3s, transform 0.3s ease;
->>>>>>> 18debd553df1b3a9cf20cadae85a93122e43e5f1
 }
 .botonInvertir:hover {
     background: #858484;
@@ -1958,13 +1887,6 @@ video {
 .botonInvertir:active {
     transform: scale(0.95);
 }
-<<<<<<< HEAD
-.p-terminos {
-    color:#222;
-}
-
-/* Estilos para las paginas de avisos legales, cookies, privacidad y uso */
-=======
 .checkbox input:checked + label {
     color: #ff8000;
 }
@@ -1996,7 +1918,6 @@ video {
 }
 
 /* ------------------------------Estilos para las paginas de avisos legales, cookies, privacidad y uso------------------------------ */
->>>>>>> 18debd553df1b3a9cf20cadae85a93122e43e5f1
 .textContainer {
     max-width: 800px;
     background: white;
@@ -2030,9 +1951,6 @@ video {
     text-decoration: underline;
 }
 
-<<<<<<< HEAD
-/* Estilos para el formulario modal emergente */
-=======
 /* Media query para pantallas pequeñas (móviles) */
 @media (max-width: 768px) {
     .textContainer {
@@ -2072,7 +1990,6 @@ video {
 }
 
 /* ------------------------------Estilos para el formulario modal emergente------------------------------ */
->>>>>>> 18debd553df1b3a9cf20cadae85a93122e43e5f1
 .modal {
     display: none;
     position: fixed;
@@ -2081,18 +1998,11 @@ video {
     top: 0;
     width: 100%;
     height: 100%;
-<<<<<<< HEAD
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-=======
     background-color: rgba(0, 0, 0, 0.7); 
     display: flex;
     justify-content: center;
     align-items: center;
     transition: opacity 0.3s ease;
->>>>>>> 18debd553df1b3a9cf20cadae85a93122e43e5f1
 }
 .modal-contenido {
     background: #fff;
@@ -2100,14 +2010,6 @@ video {
     width: 400px;
     max-width: 90%;
     border-radius: 10px;
-<<<<<<< HEAD
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    position: relative;
-}
-.modal-contenido h2 {
-    font-size: 36px;
-=======
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); 
     text-align: center;
     position: relative;
@@ -2116,7 +2018,6 @@ video {
 .modal-contenido h2 {
     font-size: 36px;
     color: #333;
->>>>>>> 18debd553df1b3a9cf20cadae85a93122e43e5f1
 }
 .cerrar {
     position: absolute;
@@ -2124,59 +2025,40 @@ video {
     right: 15px;
     font-size: 24px;
     cursor: pointer;
-<<<<<<< HEAD
-=======
     color: #333;
 }
 .cerrar:hover {
     color: #ff8000;
->>>>>>> 18debd553df1b3a9cf20cadae85a93122e43e5f1
 }
 .modal-contenido form {
     display: flex;
     flex-direction: column;
-<<<<<<< HEAD
-    gap: 10px;
-=======
     gap: 15px;
     margin-top: 20px;
->>>>>>> 18debd553df1b3a9cf20cadae85a93122e43e5f1
 }
 .lab {
     text-align: left;
     font-weight: bold;
     font-size: 14px;
     margin-bottom: -10px;
-<<<<<<< HEAD
-}
-.modal-contenido input {
-    padding: 8px;
-=======
     color: #333;
 }
 .modal-contenido input {
     padding: 10px;
->>>>>>> 18debd553df1b3a9cf20cadae85a93122e43e5f1
     font-size: 14px;
     border: 1px solid #ccc;
     border-radius: 5px;
     width: 95%;
-<<<<<<< HEAD
-=======
     box-sizing: border-box;
->>>>>>> 18debd553df1b3a9cf20cadae85a93122e43e5f1
 }
 .modal-contenido input[type="checkbox"] {
     width: auto;
     margin-right: 5px;
 }
-<<<<<<< HEAD
-=======
 .modal-contenido input:focus {
     border: 2px solid #ff8000;
     outline: none;
 }
->>>>>>> 18debd553df1b3a9cf20cadae85a93122e43e5f1
 .modal-contenido button {
     background-color: #ff8000;
     color: white;
@@ -2185,24 +2067,13 @@ video {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-<<<<<<< HEAD
-    margin-top: 50px;
-=======
     margin-top: 20px;
     transition: background-color 0.3s ease;
->>>>>>> 18debd553df1b3a9cf20cadae85a93122e43e5f1
 }
 .modal-contenido button:hover {
     background-color: #fdb447;
 }
 .modal-contenido button:active {
-<<<<<<< HEAD
-    transform: scale(0.93);
-}
-.modal-contenido input:focus {
-    border: 2px solid orange;
-    outline: none;
-=======
     transform: scale(0.95);
 }
 
@@ -2223,6 +2094,4 @@ video {
     .modal-contenido {
         width: 90%;
     }
->>>>>>> 18debd553df1b3a9cf20cadae85a93122e43e5f1
 }
-
