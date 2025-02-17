@@ -5,13 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestión de Reservas - AION</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/> <!-- Librería carrusel -->
 </head>
 <body>
     <header>
-        <nav>
+        <nav id="navegador">
             <a href="index.html" class="logo" id="logo">AION</a>
-            <ul>
+            <div class="menu-toggle" id="menu-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul id="nav-list">
                 <li><a href="index.html">Inicio</a></li>
                 <li><a id="integraciones" href="#carrusel">Integraciones</a></li>
                 <li><a id="funcional" href="#funcionalidades">Funcionalidades</a></li>
@@ -202,16 +207,16 @@
                 <h2>Completa tus datos</h2>
                 <form id="formulario">
                     <label for="nombre" class="lab">Nombre:</label>
-                    <input type="text" id="nombre" required>
+                    <input type="text" id="nombre" name="nombre" required>
 
                     <label for="telefono" class="lab">Teléfono:</label>
-                    <input type="tel" id="telefono" required>
+                    <input type="tel" id="telefono" name="tel" required>
 
                     <label for="correo" class="lab">Correo Electrónico:</label>
-                    <input type="email" id="correo" required>
+                    <input type="email" id="correo" name="correo" required>
 
                     <label for="precio" class="lab">Precio del plan:</label>
-                    <input type="text" id="precio" readonly>
+                    <input type="text" id="precio" name="precio" readonly>
 
                     <label>
                         <input type="checkbox" id="aceptar" required> Acepto los <strong class="p-terminos"><a href="terminosCondiciones.html">términos y condiciones</a></strong> y la <strong class="p-terminos"><a href="politicaPrivacidad.html">política de privacidad</a></strong>.
@@ -282,8 +287,10 @@
         </svg>
     </button>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!-- Librería SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> <!-- Librería carrusel -->
     <script src="botonSubir.js"></script>
+    <script src="scriptNav.js"></script>
     <script src="script.js"></script>
     <script src="formularioPrecios.js"></script>
 </body>

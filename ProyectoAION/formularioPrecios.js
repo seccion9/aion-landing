@@ -31,3 +31,42 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+
+// SCRIPT PARA BOTON FORMULARIO INVERTIR
+
+
+document.getElementById("formulario").addEventListener("submit", function (event) {
+    event.preventDefault();
+  
+     console.log("dentro");
+     console.log("📩 Se ha presionado el botón de enviar");
+  
+    // Verificar si el checkbox está marcado
+    let termsChecked = document.getElementById("aceptar").checked;
+    if (!termsChecked) {
+        Swal.fire("Error", "Debes aceptar los términos y condiciones.", "error");
+        return;
+    }
+  
+    let formData = new FormData(this);
+  
+    fetch("enviarPrecios.php", {
+        method: "POST",
+        body: formData
+    })
+    .then(response => response.json())  // Cambiado a .json()
+    .then(data => {
+        if (data.status === "success") {
+            Swal.fire("¡Mensaje Enviado!", data.message, "success");
+            document.getElementById("formulario").reset(); // Limpiar formulario
+        } else {
+            Swal.fire("Error", data.message, "error");
+        }
+    })
+    .catch(error => {
+        console.error("Error:", error);
+        Swal.fire("Error", "Hubo un problema al enviar el mensaje.", "error");
+    });
+    
+  });
