@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario AION</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav id="navegador">
+            <a href="index.html" class="logo" id="logo">AION</a>
+            <div class="menu-toggle" id="menu-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul id="nav-list">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a id="integraciones" href="#carrusel">Integraciones</a></li>
+                <li><a id="funcional" href="#funcionalidades">Funcionalidades</a></li>
+                <li><a id="planes" href="#precios">Precios</a></li>
+                <li><a href="invertir.html">¿Quieres invertir?</a></li>
+                <li><a href="formulario.html" class="contacto" id="contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="formulario-seccion" id="formulario-seccion">
+            <div class="formulario-contenedor">
+
+                <div class="info-izquierda">
+                    <h2 class="formulario-titulo">Estas a un solo paso de mejorar tus gestiones de reservas</h2>
+                    <img src="img/ejemploManos.JPG" alt="Imagen de contacto">
+                </div>
+                
+                <div class="formulario-contenedor-interno">
+                    <form id="formContacto" class="formulario">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Nombre Completo*" required>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Email*" required>
+                        <div class="telefonoCiudad">
+                            <div>
+                                <label for="telefono">Teléfono</label>
+                                <input type="tel" id="tel" name="tel" placeholder="Telefono*" required>
+                            </div>
+                            <div>
+                                <label for="ciudad">Ciudad</label>
+                                <input type="text" id="ciudad" name="ciudad" placeholder="Ciudad*" required>
+                            </div>
+                        </div>
+                        <label for="info">¿Como nos has conocido?</label>
+                        <select id="info" name="info" required>
+                            <option value="" selected hidden>Elige una opción*</option>
+                            <option value="Google">Google</option>
+                            <option value="Redes Sociales">Redes Sociales</option>
+                            <option value="Recomendación">Recomendación</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    
+                        <h3><strong>¿EN QUE PODEMOS AYUDARTE?</strong></h3>
+                        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+        
+                        <button type="submit">Enviar</button>
+                    </form>
+                </div>
+            </div>
+
+            <section class="tableroDudas">
+                <div class="tituloDudas">
+                    <h2 class="mainDudas">Si tienes dudas te la resolvemos</h2>
+                </div>
+                <section class="modulosDudas">
+                    <div class="duda" id="duda1">
+                        <p>¿Como puedo contratar los servicios de <strong class="p-marca">AION</strong>?</p>
+                        <img src="img/flechaNaranja2.png">
+                    </div>
+                    <div class="duda" id="duda2">
+                        <p>¿Que tipo de tarifas tenemos?</p>
+                        <img src="img/flechaNaranja2.png">
+                    </div>
+                    <div class="duda" id="duda3">
+                        <p>¿Contamos con promociones, descuentos o cupones especiales?</p>
+                        <img src="img/flechaNaranja2.png">
+                    </div>
+                    <div class="duda" id="duda4">
+                        <p>¿<strong class="p-marca">AION</strong> cuenta con automatización de facturas?</p>
+                        <img src="img/flechaNaranja2.png">
+                    </div>
+                    <div class="duda" id="duda5">
+                        <p>¿Las reservas son para cualquier tipo de negocio?</p>
+                        <img src="img/flechaNaranja2.png">
+                    </div>
+                    <div class="duda" id="duda6">
+                        <p>¿<strong class="p-marca">AION</strong> funciona en dispositivos moviles?</p>
+                        <img src="img/flechaNaranja2.png">
+                    </div>
+                </section>
+                <div class="mensajeDuda" id="mensajeDuda"></div>
+            </section>
+        </section>
+    </main>
+
+    <section class="contenedorExtraInfo">
+        <div class="tituloExtraInfo">
+            <h2>¿Tu curiosidad no conoce límites?</h2>
+            <p>Aqui tienes una pequeña parte de nosotros</p>
+        </div>
+        <div class="botonesExtraInfo">
+            <button id="botonNuestroEquipo">Nuestro equipo</button>
+            <button id="botonLogoImagen">Logo e imágenes</button>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-main">
+            <p>Si esto te ha sorprendido, imagina lo que lograremos juntos</p>
+            <p><strong>Súmate como inversor</strong></p>
+            <a href="invertir.html" class="btn">Comenzar</a>
+        </div>
+
+        <div class="footer-columns">
+            <div class="footer-column">
+                <h3>AION</h3>
+                <p>Tu empresa donde confiar tus proyectos</p>
+                <a href="formulario.html" class="btn">Contactanos</a>
+            </div>
+            <div class="footer-column">
+                <h4>Inicio</h4>
+                <ul>
+                    <li><a href="index.html">AION</a></li>
+                    <li><a href="index.html#funcionalidades">Funcionalidades</a></li>
+                    <li><a href="index.html#precios">Precios</a></li>
+                    <li><a href="invertir.html">¿Quieres inverir?</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>¡Síguenos!</h4>
+                <ul>
+                    <li>
+                        <a href="https://www.facebook.com" target="_blank">Facebook</a>
+                        <img src="./img/facebook.png" alt="Facebook" class="social-icon">
+                    </li>
+                    <li>
+                        <a href="https://www.twitter.com" target="_blank">Twitter</a>
+                        <img src="./img/X.png" alt="Twitter" class="social-icon">
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com" target="_blank">Instagram</a>
+                        <img src="./img/instagram.png" alt="Instagram" class="social-icon">
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <ul>
+                <li><a href="terminosCondiciones.html">Términos y Condiciones</a></li>
+                <li><a href="politicaPrivacidad.html">Política de Privacidad</a></li>
+                <li><a href="politicaCookies.html">Política de Coockies</a></li>
+                <li><a href="avisosLegales.html">Avisos Legales</a></li>
+            </ul>
+            <p>&copy; 2025 - Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <button id="botonSubir" class="boton-subir">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 19V5"></path>
+            <polyline points="5 12 12 5 19 12"></polyline>
+        </svg>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!-- Librería SweetAlert2 -->
+    <script src="scriptFormContact.js"></script>
+    <script src="scriptNav.js"></script>
+    <script src="script.js"></script>
+    <script src="mensajeDuda.js"></script>
+    <script src="botonSubir.js"></script>
+</body>
+</html>
