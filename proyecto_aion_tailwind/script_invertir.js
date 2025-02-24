@@ -1,6 +1,4 @@
 // SCRIPT PARA BOTON FORMULARIO INVERTIR
-
-
 document.getElementById("formInvertir").addEventListener("submit", function (event) {
   event.preventDefault();
 
@@ -20,11 +18,11 @@ document.getElementById("formInvertir").addEventListener("submit", function (eve
       method: "POST",
       body: formData
   })
-  .then(response => response.json())  // Cambiado a .json()
+  .then(response => response.json()) 
   .then(data => {
       if (data.status === "success") {
           Swal.fire("¡Mensaje Enviado!", data.message, "success");
-          document.getElementById("formInvertir").reset(); // Limpiar formulario
+          document.getElementById("formInvertir").reset(); 
       } else {
           Swal.fire("Error", data.message, "error");
       }

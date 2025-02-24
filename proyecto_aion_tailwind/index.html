@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestión de Reservas - AION</title>
-    <!-- <link rel="stylesheet" href="styles.css"> -->
 
     <!-- INSTALACION DE TAILWIND CON DAISYUI-->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
@@ -43,11 +42,12 @@
             padding-left: 15px;
             padding-right: 15px;
         }
+
     </style>
 </head>
 <body>
 
-    <header class="bg-gray-200 shadow-md">
+    <header class="bg-gray-200 shadow-md fixed top-0 left-0 w-full z-50">
         <nav class="container mx-auto flex justify-between items-center p-4">
             <a href="index.html" class="text-3xl font-bold text-orange-600">AION</a>
             <div class="lg:hidden">
@@ -67,421 +67,351 @@
             </ul>
         </nav>
     </header>
-    
+
     <main>
         <section id="main">
-            <section class="bg-neutral-100 relative flex flex-col md:flex-row items-center justify-center gap-8 px-6 py-8 md:py-12 min-h-screen section-padding">
-                <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:w-3/4">
-                    <div class="flex flex-col items-center md:items-start text-center md:text-left space-y-4 max-w-xl" data-aos="fade-right" data-aos-duration="1000">
-                        <h1 class="text-5xl font-bold text-gray-800">
+            <section class="bg-neutral-100 relative flex items-center justify-center px-0 py-8" style="height: 100vh;">
+                <!-- Contenedor de la imagen -->
+                <div class="relative w-full h-full mt-16">
+                    <img src="img/inicio.jpg" alt="Gestiona tus reservas" class="w-full h-full object-cover rounded-xl shadow-lg">
+                    
+                    <div class="absolute bottom-0 left-0 w-full h-12 bg-gradient-to-t from-neutral-100/40 to-transparent"></div>
+                    
+                    <div class="absolute left-20 top-1/2 transform -translate-y-1/2 text-left space-y-4 max-w-xl text-white" data-aos="fade-right" data-aos-duration="1000">
+                        <h1 class="text-5xl font-bold">
                             El software de gestión de reservas con el que hacer brillar tu negocio
                         </h1>
-                        <p class="text-sm text-gray-700 max-w-md">
+                        <p class="text-sm max-w-md">
                             Gestiona tus reservas de manera sencilla y eficiente con un sistema adaptable a cualquier tipo de negocio.
                         </p>
-                        <p class="text-sm text-gray-700 max-w-md">
+                        <p class="text-sm max-w-md">
                             Simplifica tus tareas diarias, optimiza la organización de tu negocio y ahorra tiempo con herramientas diseñadas para potenciar tu productividad.
                         </p>
-                        <p class="text-2xl font-semibold text-accent text-orange-500 max-w-2xl" data-aos="zoom-in" data-aos-duration="1000">
+                        <p class="text-2xl font-semibold text-accent text-orange-500 max-w-2xl" data-aos="fade-right" data-aos-duration="1000">
                             ¡Empieza ahora y transforma tu gestión en éxito!
                         </p>
                     </div>
-                    <div class="flex justify-center md:justify-start max-w-full" data-aos="fade-left" data-aos-duration="1000">
-                        <!-- Se ajusta el tamaño de la imagen aquí -->
-                        <img src="img/imgMovil.jpg" alt="Gestiona tus reservas" class="rounded-xl shadow-lg w-[80%] max-w-[700px] h-auto">
+                </div>
+            </section>
+        </section>
+
+        <section class="logos-empresas bg-neutral-100 relative flex flex-col items-center justify-center py-10 gap-4">
+            <div class="texto-logos mt-8">
+                <p class="cantidad-empresas text-gray-700 bg-neutral-100 font-bold text-3xl">
+                    <strong>Múltiples empresas</strong> ya trabajan con nosotros
+                </p>
+            </div>
+                
+            <section class="relative bg-neutral-100 overflow-hidden w-3/5 h-20 bg-gray-800 mt-8 mx-auto">
+                <div class="absolute flex space-x-10 animate-marquee max-w-full">
+                    <div class="flex items-center space-x-10">
+                        <img src="./img/logoMontañas.jpg" class="h-20">
+                        <img src="./img/logoBebida.jpg" class="h-20">
+                        <img src="./img/logoJuego.jpg" class="h-20">
+                        <img src="./img/logoParque.jpg" class="h-20">
+                        <img src="./img/logoZoo.jpg" class="h-20">
+                        <img src="./img/logoSurf.jpg" class="h-20">
+                        <img src="./img/logoParqueAcuatico.jpg" class="h-20">
+                        <img src="./img/logoCoche.jpg" class="h-20">
+                        <img src="./img/logoParacaidismo.jpg" class="h-20">
+                        <img src="./img/logoRafting.jpg" class="h-20">
+                        <img src="./img/logoMontañas.jpg" class="h-20">
+                        <img src="./img/logoBebida.jpg" class="h-20">
+                        <img src="./img/logoJuego.jpg" class="h-20">
+                        <img src="./img/logoParque.jpg" class="h-20">
+                        <img src="./img/logoZoo.jpg" class="h-20">
+                        <img src="./img/logoSurf.jpg" class="h-20">
+                        <img src="./img/logoParqueAcuatico.jpg" class="h-20">
+                        <img src="./img/logoCoche.jpg" class="h-20">
+                        <img src="./img/logoParacaidismo.jpg" class="h-20">
+                        <img src="./img/logoRafting.jpg" class="h-20">
                     </div>
                 </div>
             </section>
         </section>
+          
+        <section class=" bg-neutral-100 relative flex flex-col items-center justify-center py-10" id="carrusel">
+            <h2 class="text-4xl font-bold text-gray-700 text-center mb-6 max-w-lg">AION cuenta con una gran adaptabilidad de negocio</h2>
+            <div class="w-full bg-orange-500 py-10 flex justify-center flex-col items-center mt-6">
+                <div class="relative w-full flex items-center justify-center">
+                    <button class="absolute left-1/4 -translate-x-full z-50 bg-black bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-75 transition" onclick="prevSlide()">❮</button>
+                    
+                    <div class="overflow-hidden w-full max-w-3xl rounded-lg">
+                        <div class="flex transition-transform duration-500 ease-in-out" id="carousel">
+                            <div class="carousel-item w-full flex-shrink-0 rounded-lg overflow-hidden h-[28rem]">
+                                <img src="img/centrosDeportivos.JPG" class="w-full h-full object-contain" />
+                            </div>
+                            <div class="carousel-item w-full flex-shrink-0 rounded-lg overflow-hidden h-[28rem]">
+                                <img src="img/experienciaInmersiva.JPG" class="w-full h-full object-contain" />
+                            </div>
+                            <div class="carousel-item w-full flex-shrink-0 rounded-lg overflow-hidden h-[28rem]">
+                                <img src="img/aireLibre.JPG" class="w-full h-full object-contain" />
+                            </div>
+                            <div class="carousel-item w-full flex-shrink-0 rounded-lg overflow-hidden h-[28rem]">
+                                <img src="img/negocio.JPG" class="w-full h-full object-contain" />
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="absolute right-1/4 translate-x-full z-50 bg-black bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-75 transition" onclick="nextSlide()">❯</button>
+                </div>
+                    
+                <div class="flex justify-center gap-2 mt-4">
+                    <div id="dot-0" class="w-4 h-4 rounded-full bg-white opacity-50 cursor-pointer hover:opacity-100 transition" onclick="goToSlide(0)"></div>
+                    <div id="dot-1" class="w-4 h-4 rounded-full bg-white opacity-50 cursor-pointer hover:opacity-100 transition" onclick="goToSlide(1)"></div>
+                    <div id="dot-2" class="w-4 h-4 rounded-full bg-white opacity-50 cursor-pointer hover:opacity-100 transition" onclick="goToSlide(2)"></div>
+                    <div id="dot-3" class="w-4 h-4 rounded-full bg-white opacity-50 cursor-pointer hover:opacity-100 transition" onclick="goToSlide(3)"></div>
+                </div>
+            </div>
+        </section>
+            
+        <section class="extra-info bg-neutral-50 py-16 min-h-screen flex flex-col items-center" id="funcionalidades">
+            <h2 class="main-title text-center text-orange-500 text-4xl font-bold mb-12 w-full">¿Llevamos tu negocio al <br>SIGUIENTE NIVEL?</h2>
+                
+            <div class="sections flex gap-16 px-4 w-full max-w-7xl relative">
+                <div class="flex flex-col gap-10 w-2/5 ml-8" id="tarjetas">
+                     
+                    <div class="section-container relative group bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-xl w-full cursor-pointer flex items-center justify-between min-h-[120px]" data-aos="fade-up" onclick="mostrarTexto(1)">
+                        <div class="icon-container flex items-center justify-center absolute left-4">
+                            <i class="fas fa-mobile-alt text-4xl text-gray-800"></i>
+                        </div>
+                        <div class="section-content flex items-center text-left absolute left-16 ml-8">
+                            <h3 class="text-xl font-semibold mb-4">Diseño adaptable a móviles y tabletas</h3>
+                        </div>
+                        <div class="icon-container flex items-center justify-center absolute right-4">
+                            <i class="fas fa-arrow-right text-2xl text-orange-500"></i>
+                        </div>
+                    </div>
+               
+                    <div class="section-container relative group bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-xl w-full cursor-pointer flex items-center justify-between min-h-[120px]" data-aos="fade-up" onclick="mostrarTexto(2)">
+                        <div class="icon-container flex items-center justify-center absolute left-4">
+                            <i class="fas fa-cogs text-4xl text-gray-800"></i>
+                        </div>
+                        <div class="section-content flex items-center text-left absolute left-16 ml-8">
+                            <h3 class="text-xl font-semibold mb-4">Ampliamente personalizable y de fácil integración</h3>
+                        </div>
+                        <div class="icon-container flex items-center justify-center absolute right-4">
+                            <i class="fas fa-arrow-right text-2xl text-orange-500"></i>
+                        </div>
+                    </div>
+                  
+                    <div class="section-container relative group bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-xl w-full cursor-pointer flex items-center justify-between min-h-[120px]" data-aos="fade-up" onclick="mostrarTexto(3)">
+                        <div class="icon-container flex items-center justify-center absolute left-4">
+                            <i class="fas fa-headset text-4xl text-gray-800"></i>
+                        </div>
+                        <div class="section-content flex items-center text-left absolute left-16 ml-8">
+                            <h3 class="text-xl font-semibold mb-4">Soporte técnico personal</h3>
+                        </div>
+                        <div class="icon-container flex items-center justify-center absolute right-4">
+                            <i class="fas fa-arrow-right text-2xl text-orange-500"></i>
+                        </div>
+                    </div>
+     
+                    <div class="section-container relative group bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-xl w-full cursor-pointer flex items-center justify-between min-h-[120px]" data-aos="fade-up" onclick="mostrarTexto(4)">
+                        <div class="icon-container flex items-center justify-center absolute left-4">
+                            <i class="fas fa-desktop text-4xl text-gray-800"></i>
+                        </div>
+                        <div class="section-content flex items-center text-left absolute left-16 ml-8">
+                            <h3 class="text-xl font-semibold mb-4">Interfaz empresarial sencilla</h3>
+                        </div>
+                        <div class="icon-container flex items-center justify-center absolute right-4">
+                            <i class="fas fa-arrow-right text-2xl text-orange-500"></i>
+                        </div>
+                    </div>
+                </div>
+                       
+                <div class="w-1/2 p-6 bg-white rounded-lg shadow-lg opacity-0 transform translate-x-full transition-all duration-500 ease-in-out absolute top-0 right-0 z-10" id="texto-seleccionado">
+                    <h3 class="text-2xl font-semibold text-center text-gray-600" id="titulo-texto"></h3>
+                    <p id="descripcion-texto" class="text-base mt-4">Texto más grande</p>
+                    <img alt="Descripción de la imagen" class="mt-4 w-full h-auto">
+                </div>
+            </div>
+        </section>
+                
+        <section class="optimizar-negocio text-center py-12 bg-neutral-100">
+            <div class="optimizar-title">
+                <h2 class="main-title text-orange-500 text-4xl font-bold">¿Qué te ofrece AION?</h2>
+                <p class="text-xl text-gray-600 mt-2">Haz crecer tu negocio con una herramienta que trabaja por ti</p>
+            </div>
+                
+            <section class="modulos-destacados flex flex-wrap justify-center gap-8 max-w-[90%] lg:max-w-6xl mx-auto mt-16">
+
+                <div class="tarjeta relative group flex flex-col items-center justify-between w-64 h-[380px] transition-all transform hover:scale-105 overflow-hidden" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="w-full h-40">
+                        <img src="img/Reservas.jpeg" class="w-full h-full object-cover object-center rounded-lg transition-all group-hover:opacity-90">
+                    </div>
+                    <div class="p-4 text-center flex-grow flex flex-col justify-start"> 
+                        <h3 class="text-xl text-black font-bold">Sistema de reservas</h3>
+                        <p class="text-gray-600 mt-2 text-base">Capacidad de gestionar tus reservas de forma simple y eficiente.</p>
+                    </div>
+                </div>
+                
+                <div class="tarjeta relative group flex flex-col items-center justify-between w-64 h-[380px] transition-all transform hover:scale-105 overflow-hidden" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="w-full h-40">
+                        <img src="img/descuentos.jpg" class="w-full h-full object-cover object-center rounded-lg transition-all group-hover:opacity-90">
+                    </div>
+                    <div class="p-4 text-center flex-grow flex flex-col justify-start"> 
+                        <h3 class="text-xl text-black font-bold">Cupones y descuentos</h3>
+                        <p class="text-gray-600 mt-2 text-base">Posibilidad de atraer clientes con promociones personalizadas a tu gusto.</p>
+                    </div>
+                </div>
+
+                <div class="tarjeta relative group flex flex-col items-center justify-between w-64 h-[380px] transition-all transform hover:scale-105 overflow-hidden" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="w-full h-40">
+                        <img src="img/facturacion.jpg" class="w-full h-full object-cover object-center rounded-lg transition-all group-hover:opacity-90">
+                    </div>
+                    <div class="p-4 text-center flex-grow flex flex-col justify-start"> 
+                        <h3 class="text-xl text-black font-bold">Facturación</h3>
+                        <p class="text-gray-600 mt-2 text-base">Un sistema de automatización de facturas para una mayor agilidad del proceso.</p>
+                    </div>
+                </div>
+
+                <div class="tarjeta relative group flex flex-col items-center justify-between w-64 h-[380px] transition-all transform hover:scale-105 overflow-hidden" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="w-full h-40">
+                        <img src="img/RGPD.jpg" class="w-full h-full object-cover object-center rounded-lg transition-all group-hover:opacity-90">
+                    </div>
+                    <div class="p-4 text-center flex-grow flex flex-col justify-start"> 
+                        <h3 class="text-xl text-black font-bold">Módulo RGPD</h3>
+                        <p class="text-gray-600 mt-2 text-base">Un sistema que protege fielmente los datos y cumple con la normativa vigente.</p>
+                    </div>
+                </div>
+            </section>
+        </section>
+         
+        <section class="contenedor text-center py-16 bg-white" id="precios">
+            <h2 class="text-5xl text-orange-500 mb-4 font-bold">Elige tu plan</h2>
+            <h6 id="tituloPlan" class="text-sm text-black mb-8">
+                Elige un plan adecuado para tu equipo.<br>
+                <strong>Precios claros. Sin cargos ocultos.</strong>
+            </h6>
+    
+            <div class="flex justify-center mb-8">
+                <label class="flex items-center cursor-pointer gap-4">
+                    <span class="label-text text-gray-900 text-xl font-bold">Mensual</span>
+                    <input type="checkbox" class="toggle toggle-primary appearance-none w-16 h-8 rounded-full bg-gray-300 checked:bg-gray-400 focus:outline-none" id="togglePrecio">
+                    <div class="absolute w-6 h-6 bg-white rounded-full left-1 top-1"></div>
+                    <span class="label-text text-gray-900 text-xl font-bold">Anual</span>
+                </label>
+            </div>
+    
+            <!-- Tarjetas de Planes -->
+            <div class="tarjetas flex justify-center gap-8">
         
-            
-            <section class=" bg-neutral-100 relative flex flex-col items-center justify-center py-10" id="carrusel">
-                <h2 class="text-4xl font-bold text-gray-700 text-center mb-6 max-w-lg">AION cuenta con una gran adaptabilidad de negocio</h2>
-                <div class="w-full bg-orange-500 py-10 flex justify-center flex-col items-center mt-6">
-                    <div class="relative w-full flex items-center justify-center">
-                        <button class="absolute left-1/4 -translate-x-full z-50 bg-black bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-75 transition" onclick="prevSlide()">❮</button>
-                    
-                        <div class="overflow-hidden w-full max-w-3xl rounded-lg">
-                            <div class="flex transition-transform duration-500 ease-in-out" id="carousel">
-                                <div class="carousel-item w-full flex-shrink-0 rounded-lg overflow-hidden h-[28rem]">
-                                    <img src="img/centrosDeportivos.JPG" class="w-full h-full object-contain" />
-                                </div>
-                                <div class="carousel-item w-full flex-shrink-0 rounded-lg overflow-hidden h-[28rem]">
-                                    <img src="img/experienciaInmersiva.JPG" class="w-full h-full object-contain" />
-                                </div>
-                                <div class="carousel-item w-full flex-shrink-0 rounded-lg overflow-hidden h-[28rem]">
-                                    <img src="img/aireLibre.JPG" class="w-full h-full object-contain" />
-                                </div>
-                                <div class="carousel-item w-full flex-shrink-0 rounded-lg overflow-hidden h-[28rem]">
-                                    <img src="img/negocio.JPG" class="w-full h-full object-contain" />
-                                </div>
-                            </div>
-                        </div>
-                    
-                        <button class="absolute right-1/4 translate-x-full z-50 bg-black bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-75 transition" onclick="nextSlide()">❯</button>
-                    </div>
-                    
-                    <div class="flex justify-center gap-2 mt-4">
-                        <div id="dot-0" class="w-4 h-4 rounded-full bg-white opacity-50 cursor-pointer hover:opacity-100 transition" onclick="goToSlide(0)"></div>
-                        <div id="dot-1" class="w-4 h-4 rounded-full bg-white opacity-50 cursor-pointer hover:opacity-100 transition" onclick="goToSlide(1)"></div>
-                        <div id="dot-2" class="w-4 h-4 rounded-full bg-white opacity-50 cursor-pointer hover:opacity-100 transition" onclick="goToSlide(2)"></div>
-                        <div id="dot-3" class="w-4 h-4 rounded-full bg-white opacity-50 cursor-pointer hover:opacity-100 transition" onclick="goToSlide(3)"></div>
+                <div class="tarjetaPlan card w-80 h-auto bg-gray-100 shadow-xl rounded-xl p-6" id="tarjeta1" data-aos="fade-right">
+                    <h6 class="subtitulo text-lg text-black font-semibold">Plan Básico</h6>
+                    <h7 class="tipoPlan text-sm text-gray-600">Tarifa <span id="tipoPlan1">Mensual</span></h7>
+                    <h2 class="titulo text-3xl text-black font-bold mt-4">
+                        <span id="precio1Mensual">29€</span>
+                        <span id="precio1Anual" class="hidden">290€</span>
+                    </h2>
+                    <h6 class="subtitulo-extra text-sm text-gray-600 mt-2">Prueba tu demostración gratuita ahora</h6>
+                    <button class="w-full mt-4 bg-white border-2 border-orange-500 text-black font-semibold py-2 rounded-lg hover:bg-orange-100">Solicita tu acceso</button>
+                </div>
+
+                <div class="tarjetaPlan card w-80 h-auto bg-gray-100 shadow-xl rounded-xl p-6" id="tarjeta2" data-aos="fade-left">
+                    <h6 class="subtitulo text-lg text-black font-semibold">Plan Completo</h6>
+                    <h7 class="tipoPlan text-sm text-gray-600">Tarifa <span id="tipoPlan2">Mensual</span></h7>
+                    <h2 class="titulo text-3xl text-black font-bold mt-4">
+                        <span id="precio2Mensual">55€</span>
+                        <span id="precio2Anual" class="hidden">550€</span>
+                    </h2>
+                    <h6 class="subtitulo-extra text-sm text-gray-600 mt-2">El plan más completo</h6>
+                    <button class="w-full mt-4 bg-orange-500 text-black font-semibold py-2 rounded-lg hover:bg-orange-400">Elige este plan</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="contenedor text-center py-16 bg-gray-100" id="video">
+            <!-- Contenedor del Video y Texto -->
+            <div class="flex items-center justify-between max-w-6xl gap-24 mx-auto space-x-12">
+                <div class="video-container w-4/5"> 
+                    <div class="video-wrapper transition-transform duration-500 ease-in-out transform">
+                        <video id="videoPromo" class="w-full h-auto rounded-xl" controls>
+                            <source src="video/promo.mp4" type="video/mp4">
+                            Tu navegador no soporta el formato de video.
+                        </video>
                     </div>
                 </div>
-            </section>
-                
-            <section class="logos-empresas bg-neutral-100 relative flex flex-col items-center justify-center py-10 gap-4">
-                <div class="texto-logos mt-8">
-                    <p class="cantidad-empresas text-gray-700 bg-neutral-100 font-bold text-3xl">
-                        <strong>Múltiples empresas</strong> ya trabajan con nosotros
+            
+                <div class="texto-contenedor w-3/5 text-left"> 
+                    <h2 class="text-5xl font-semibold text-gray-800 mb-8 text-center">¿Todavía dudas?</h2>
+                    <p class="text-lg text-gray-800 mb-8 text-center"><strong>Simplifica, organiza y haz crecer tu negocio.</strong><br><br>
+                        Nuestra aplicación de gestión de reservas te ayuda a <strong>automatizar procesos, optimizar tu tiempo y mejorar la experiencia de tus clientes</strong> con una interfaz intuitiva y eficiente.<br><br>
+                        <strong>Ahorra tiempo, evita errores y maximiza tus ingresos</strong> con una solución diseñada para adaptarse a cualquier tipo de empresa.
                     </p>
+                    <h3 class="text-4xl font-semibold text-orange-500 text-right">AION</h3>
                 </div>
-                
-                <section class="relative bg-neutral-100 overflow-hidden w-3/5 h-20 bg-gray-800 mt-8 mx-auto">
-                    <div class="absolute flex space-x-10 animate-marquee max-w-full">
-                        <div class="flex items-center space-x-10">
-                            <img src="./img/logoMontañas.jpg" class="h-20">
-                            <img src="./img/logoBebida.jpg" class="h-20">
-                            <img src="./img/logoJuego.jpg" class="h-20">
-                            <img src="./img/logoParque.jpg" class="h-20">
-                            <img src="./img/logoZoo.jpg" class="h-20">
-                            <img src="./img/logoSurf.jpg" class="h-20">
-                            <img src="./img/logoParqueAcuatico.jpg" class="h-20">
-                            <img src="./img/logoCoche.jpg" class="h-20">
-                            <img src="./img/logoParacaidismo.jpg" class="h-20">
-                            <img src="./img/logoRafting.jpg" class="h-20">
-                            <img src="./img/logoMontañas.jpg" class="h-20">
-                            <img src="./img/logoBebida.jpg" class="h-20">
-                            <img src="./img/logoJuego.jpg" class="h-20">
-                            <img src="./img/logoParque.jpg" class="h-20">
-                            <img src="./img/logoZoo.jpg" class="h-20">
-                            <img src="./img/logoSurf.jpg" class="h-20">
-                            <img src="./img/logoParqueAcuatico.jpg" class="h-20">
-                            <img src="./img/logoCoche.jpg" class="h-20">
-                            <img src="./img/logoParacaidismo.jpg" class="h-20">
-                            <img src="./img/logoRafting.jpg" class="h-20">
-                        </div>
-                    </div>
-                </section>
-            </section>
-            
+            </div>
+        </section>
+        
+        <!-- Modal -->
+        <div id="modal" class="fixed inset-0 bg-gray-800 bg-opacity-50 hidden justify-center items-center z-50">
+            <div class="modal-contenido bg-white rounded-xl p-8 w-96 relative shadow-lg">
+                <span id="cerrar" class="cursor-pointer text-2xl text-gray-500 absolute top-2 right-3">&times;</span>
+                <h2 class="text-2xl font-semibold text-center mb-4 text-gray-800">Completa tus datos</h2>
+        
+                <form id="formulario">
+                    <label for="nombre" class="block text-lg font-medium mb-2 text-gray-800">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" class="w-full mb-4 bg-white text-gray-800 border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500" placeholder="Ingresa tu nombre" required>
+        
+                    <label for="telefono" class="block text-lg font-medium mb-2 text-gray-800">Teléfono:</label>
+                    <input type="tel" id="telefono" name="tel" class="w-full mb-4 bg-white text-gray-800 border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500" placeholder="Ingresa tu teléfono" required>
+        
+                    <label for="correo" class="block text-lg font-medium mb-2 text-gray-800">Correo Electrónico:</label>
+                    <input type="email" id="correo" name="correo" class="w-full mb-4 bg-white text-gray-800 border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500" placeholder="Ingresa tu correo" required>
+        
+                    <label for="precio" class="block text-lg font-medium mb-2 text-gray-800">Precio del plan:</label>
+                    <input type="text" id="precio" name="precio" class="w-full mb-4 bg-white text-gray-800 border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500" readonly>
+        
+                    <label class="flex items-start mb-4 text-gray-800">
+                        <input type="checkbox" id="aceptar" class="mt-1 mr-2 accent-orange-500" required>
+                        <span>Acepto los <strong class="p-terminos"><a href="terminosCondiciones.html" class="text-blue-500 hover:underline">términos y condiciones</a></strong> y la <strong class="p-terminos"><a href="politicaPrivacidad.html" class="text-blue-500 hover:underline">política de privacidad</a></strong>.</span>
+                    </label>
 
-                <section class="extra-info bg-neutral-50 py-16 min-h-screen flex flex-col items-center" id="funcionalidades">
-                    <h2 class="main-title text-center text-orange-500 text-4xl font-bold mb-12 w-full">¿Llevamos tu negocio al <br>SIGUIENTE NIVEL?</h2>
-                
-                    <div class="sections flex gap-16 px-4 w-full max-w-7xl relative">
-                
-                        <div class="flex flex-col gap-10 w-2/5 ml-8" id="tarjetas">
-                
-                            
-                            <div class="section-container relative group bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-xl w-full cursor-pointer flex items-center justify-between min-h-[120px]" data-aos="fade-up" onclick="mostrarTexto(1)">
-                                <div class="icon-container flex items-center justify-center absolute left-4">
-                                    <i class="fas fa-mobile-alt text-4xl text-gray-800"></i>
-                                </div>
-                                <div class="section-content flex items-center text-left absolute left-16 ml-8">
-                                    <h3 class="text-xl font-semibold mb-4">Diseño adaptable a móviles y tabletas</h3>
-                                </div>
-                                <div class="icon-container flex items-center justify-center absolute right-4">
-                                    <i class="fas fa-arrow-right text-2xl text-orange-500"></i>
-                                </div>
-                            </div>
-                
-                            
-                            <div class="section-container relative group bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-xl w-full cursor-pointer flex items-center justify-between min-h-[120px]" data-aos="fade-up" onclick="mostrarTexto(2)">
-                                <div class="icon-container flex items-center justify-center absolute left-4">
-                                    <i class="fas fa-cogs text-4xl text-gray-800"></i>
-                                </div>
-                                <div class="section-content flex items-center text-left absolute left-16 ml-8">
-                                    <h3 class="text-xl font-semibold mb-4">Ampliamente personalizable y de fácil integración</h3>
-                                </div>
-                                <div class="icon-container flex items-center justify-center absolute right-4">
-                                    <i class="fas fa-arrow-right text-2xl text-orange-500"></i>
-                                </div>
-                            </div>
-                
-                            
-                            <div class="section-container relative group bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-xl w-full cursor-pointer flex items-center justify-between min-h-[120px]" data-aos="fade-up" onclick="mostrarTexto(3)">
-                                <div class="icon-container flex items-center justify-center absolute left-4">
-                                    <i class="fas fa-headset text-4xl text-gray-800"></i>
-                                </div>
-                                <div class="section-content flex items-center text-left absolute left-16 ml-8">
-                                    <h3 class="text-xl font-semibold mb-4">Soporte técnico personal</h3>
-                                </div>
-                                <div class="icon-container flex items-center justify-center absolute right-4">
-                                    <i class="fas fa-arrow-right text-2xl text-orange-500"></i>
-                                </div>
-                            </div>
-                
-                           
-                            <div class="section-container relative group bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-xl w-full cursor-pointer flex items-center justify-between min-h-[120px]" data-aos="fade-up" onclick="mostrarTexto(4)">
-                                <div class="icon-container flex items-center justify-center absolute left-4">
-                                    <i class="fas fa-desktop text-4xl text-gray-800"></i>
-                                </div>
-                                <div class="section-content flex items-center text-left absolute left-16 ml-8">
-                                    <h3 class="text-xl font-semibold mb-4">Interfaz empresarial sencilla</h3>
-                                </div>
-                                <div class="icon-container flex items-center justify-center absolute right-4">
-                                    <i class="fas fa-arrow-right text-2xl text-orange-500"></i>
-                                </div>
-                            </div>
-                
-                        </div>
-                
-                        
-                        <div class="w-1/2 p-6 bg-white rounded-lg shadow-lg opacity-0 transform translate-x-full transition-all duration-500 ease-in-out absolute top-0 right-0 z-10" id="texto-seleccionado">
-                            <h3 class="text-2xl font-semibold text-center text-gray-600" id="titulo-texto"></h3>
-                            <p id="descripcion-texto" class="text-base mt-4">Texto más grande</p>
-                            <img src="ruta-de-tu-imagen.jpg" alt="Descripción de la imagen" class="mt-4 w-full h-auto">
-                        </div>
-                    </div>
-                </section>
-                
-
-                <section class="optimizar-negocio text-center py-20 bg-neutral-100">
-                    <div class="optimizar-title">
-                        <h2 class="main-title text-black text-4xl font-semibold">¿Quieres <br>OPTIMIZAR TU NEGOCIO?</h2>
-                        <p class="text-xl mt-8">Haz crecer tu negocio con una herramienta que trabaja por ti</p>
-                    </div>
-                
-                    <section class="modulos-destacados grid grid-cols-1 md:grid-cols-2 gap-10 max-w-[85%] lg:max-w-4xl mx-auto place-items-center mt-16">
-                        <!-- Tarjeta 1 -->
-                        <div class="tarjeta relative cursor-pointer group flex flex-col items-center justify-center w-85 transition-all transform hover:scale-105 overflow-hidden" data-aos="fade-down-right">
-                            <img src="img/sistemaReservas.png" class="w-56 h-56 object-contain rounded-lg transition-all group-hover:opacity-90 pt-6"> 
-                            <div class="p-6"> 
-                                <h3 class="text-2xl text-black mt-10">Sistema de reservas adaptable</h3>
-                                <p class="text-gray-600 mt-4 text-center">Gestiona reservas para cualquier modelo de negocio de forma simple y eficiente.</p>
-                            </div>
-                            <button class="absolute inset-0 w-full h-full opacity-0 group-hover:opacity-100 bg-black bg-opacity-10 rounded-lg transition-opacity"></button> 
-                        </div>
-                
-                        <!-- Tarjeta 2 -->
-                        <div class="tarjeta relative cursor-pointer group flex flex-col items-center justify-center w-85 transition-all transform hover:scale-105 overflow-hidden" data-aos="fade-down-left">
-                            <img src="img/descuentos.png" class="w-56 h-56 object-contain rounded-lg transition-all group-hover:opacity-90 pt-6"> 
-                            <div class="p-6"> 
-                                <h3 class="text-2xl text-black mt-10">Módulo de cupones y descuentos</h3>
-                                <p class="text-gray-600 mt-4 text-center">Atrae clientes con promociones y gestiona cupones fácilmente.</p>
-                            </div>
-                            <button class="absolute inset-0 w-full h-full opacity-0 group-hover:opacity-100 bg-black bg-opacity-10 rounded-lg transition-opacity"></button> 
-                        </div>
-                
-                        <!-- Tarjeta 3 -->
-                        <div class="tarjeta relative cursor-pointer group flex flex-col items-center justify-center w-85 transition-all transform hover:scale-105 overflow-hidden" data-aos="fade-up-right">
-                            <img src="img/facturacion.png" class="w-56 h-56 object-contain rounded-lg transition-all group-hover:opacity-90 pt-6"> 
-                            <div class="p-6"> 
-                                <h3 class="text-2xl text-black mt-10">Módulo de facturación</h3>
-                                <p class="text-gray-600 mt-4 text-center">Automatiza tus facturas y organiza tus finanzas sin complicaciones.</p>
-                            </div>
-                            <button class="absolute inset-0 w-full h-full opacity-0 group-hover:opacity-100 bg-black bg-opacity-10 rounded-lg transition-opacity"></button> 
-                        </div>
-                
-                        <!-- Tarjeta 4 -->
-                        <div class="tarjeta relative cursor-pointer group flex flex-col items-center justify-center w-85 transition-all transform hover:scale-105 overflow-hidden" data-aos="fade-up-left">
-                            <img src="img/RGPD.png" class="w-56 h-56 object-contain rounded-lg transition-all group-hover:opacity-90 pt-6"> 
-                            <div class="p-6"> 
-                                <h3 class="text-2xl text-black mt-10">Módulo RGPD</h3>
-                                <p class="text-gray-600 mt-4 text-center">Protege los datos de tus clientes y cumple con la normativa vigente.</p>
-                            </div>
-                            <button class="absolute inset-0 w-full h-full opacity-0 group-hover:opacity-100 bg-black bg-opacity-10 rounded-lg transition-opacity"></button> 
-                        </div>
-                    </section>
-                </section>
-                
-                
-
-<!-- Modales -->
-<!-- Modal 1 -->
-<div class="modal" id="modal1" aria-hidden="true">
-    <div class="modal-box">
-        <h2 class="text-2xl text-black font-semibold">Sistema de Reservas</h2>
-        <img src="img/sistemaReservas.png" class="w-full h-64 object-cover my-4">
-        <p>Este sistema te permite gestionar las reservas de tu negocio de forma eficiente y personalizada, adaptado a cualquier tipo de negocio.</p>
-        <div class="modal-action">
-            <label for="modal1" class="btn">Cerrar</label>
-        </div>
-    </div>
-</div>
-
-<!-- Modal 2 -->
-<div class="modal" id="modal2" aria-hidden="true">
-    <div class="modal-box">
-        <h2 class="text-2xl font-semibold">Módulo de Cupones</h2>
-        <img src="img/descuentos.png" class="w-full h-64 object-cover my-4">
-        <p>Con este módulo podrás gestionar cupones y promociones que atraerán a más clientes a tu negocio de manera sencilla.</p>
-        <div class="modal-action">
-            <label for="modal2" class="btn">Cerrar</label>
-        </div>
-    </div>
-</div>
-
-<!-- Modal 3 -->
-<div class="modal" id="modal3" aria-hidden="true">
-    <div class="modal-box">
-        <h2 class="text-2xl font-semibold">Módulo de Facturación</h2>
-        <img src="img/facturacion.png" class="w-full h-64 object-cover my-4">
-        <p>Este módulo automatiza el proceso de facturación, lo que facilita la gestión de tus finanzas y ahorra tiempo.</p>
-        <div class="modal-action">
-            <label for="modal3" class="btn">Cerrar</label>
-        </div>
-    </div>
-</div>
-
-<!-- Modal 4 -->
-<div class="modal" id="modal4" aria-hidden="true">
-    <div class="modal-box">
-        <h2 class="text-2xl font-semibold">Módulo RGPD</h2>
-        <img src="img/RGPD.png" class="w-full h-64 object-cover my-4">
-        <p>Este módulo asegura el cumplimiento de la normativa RGPD, protegiendo los datos de tus clientes de manera eficiente.</p>
-        <div class="modal-action">
-            <label for="modal4" class="btn">Cerrar</label>
-        </div>
-    </div>
-</div>
-
-
-<section class="contenedor text-center py-16" id="precios">
-    <h2 class="text-4xl text-black mb-4">Elige tu plan</h2>
-    <h6 id="tituloPlan" class="text-lg text-black mb-8">
-        Elige un plan adecuado para tu equipo.<br>
-        <strong>Precios claros. Sin cargos ocultos.</strong>
-    </h6>
-
-    <!-- Botón Toggle para Mensual/Anual -->
-    <div class="flex justify-center mb-8">
-        <label class="flex items-center cursor-pointer gap-4">
-            <span class="label-text text-black text-xl">Mensual</span>
-            <input type="checkbox" class="toggle toggle-primary" id="togglePrecio">
-            <span class="label-text text-black text-xl">Anual</span>
-        </label>
-    </div>
-
-    <!-- Tarjetas de Planes -->
-    <div class="tarjetas flex justify-center gap-8">
-        <!-- Tarjeta 1 -->
-        <div class="tarjetaPlan card w-80 h-auto bg-white shadow-xl rounded-xl p-6 transition-transform duration-1000 transform hover:animate-pulse" id="tarjeta1">
-            <h6 class="subtitulo text-lg text-black font-semibold">Plan Básico</h6>
-            <h7 class="tipoPlan text-sm text-gray-600">Tarifa <span id="tipoPlan1">Mensual</span></h7>
-            <h2 class="titulo text-3xl text-black font-bold mt-4">
-                <span id="precio1Mensual">29€</span>
-                <span id="precio1Anual" class="hidden">290€</span>
-            </h2>
-            <p class="oferta text-sm text-gray-500">.</p>
-            <h6 class="subtitulo-extra text-sm text-gray-600 mt-2">Prueba tu demostración gratuita ahora</h6>
-            <button class="btn bg-orange-600 border-0 text-white hover:bg-orange-700 w-full mt-4" onclick="abrirFormulario('Plan Básico', '29€')">Solicita tu acceso</button>
-        </div>
-
-        <!-- Tarjeta 2 -->
-        <div class="tarjetaPlan card w-80 h-auto bg-white shadow-xl rounded-xl p-6 transition-transform duration-1000 transform hover:animate-pulse" id="tarjeta2">
-            <h6 class="subtitulo text-lg text-black font-semibold">Plan Completo</h6>
-            <h7 class="tipoPlan text-sm text-gray-600">Tarifa <span id="tipoPlan2">Mensual</span></h7>
-            <h2 class="titulo text-3xl text-black font-bold mt-4">
-                <span id="precio2Mensual">55€</span>
-                <span id="precio2Anual" class="hidden">550€</span>
-            </h2>
-            <p class="oferta text-sm text-gray-500">.</p>
-            <h6 class="subtitulo-extra text-sm text-gray-600 mt-2">El plan más completo</h6>
-            <button class="btn bg-orange-600 border-0 text-white hover:bg-orange-700 w-full mt-4" onclick="abrirFormulario('Plan Completo', '55€')">Elige este plan</button>
-        </div>
-    </div>
-</section>
-    
-    
-
-
-<section class="contenedor text-center py-16" id="video">
-    <h2 class="text-4xl font-semibold mb-4">Video Promocional</h2>
-    <p class="text-lg mb-8">Mira cómo nuestro producto puede ayudarte a crecer tu negocio.</p>
-    
-<!-- Contenedor del Video -->
-<div class="video-container relative overflow-hidden w-full max-w-3xl mx-auto">
-    <!-- Video con zoom en hover -->
-    <div class="video-wrapper transition-transform duration-500 ease-in-out transform ">
-        <video id="videoPromo" class="w-full h-auto rounded-xl" controls>
-            <source src="video/promo.mp4" type="video/mp4">
-            Tu navegador no soporta el formato de video.
-        </video>
-
-       
+                    <button type="submit" class="w-full bg-orange-500 text-white hover:bg-orange-400 rounded-lg py-2">Enviar</button>
+                </form>
             </div>
         </div>
-    </div>
-</div>
-
-        
-        </section>
-
-<!-- Modal -->
-<div id="modal" class="modal fixed inset-0 bg-gray-800 bg-opacity-50 hidden justify-center items-center">
-    <div class="modal-contenido bg-white rounded-xl p-8 w-96">
-        <span id="cerrar" class="cursor-pointer text-2xl absolute top-4 right-4 text-gray-500">&times;</span>
-        <h2 class="text-2xl font-semibold text-center mb-4">Completa tus datos</h2>
-        <form id="formulario">
-            <label for="nombre" class="block text-lg font-medium mb-2">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required class="input input-bordered w-full mb-4" placeholder="Ingresa tu nombre">
-
-            <label for="telefono" class="block text-lg font-medium mb-2">Teléfono:</label>
-            <input type="tel" id="telefono" name="tel" required class="input input-bordered w-full mb-4" placeholder="Ingresa tu teléfono">
-
-            <label for="correo" class="block text-lg font-medium mb-2">Correo Electrónico:</label>
-            <input type="email" id="correo" name="correo" required class="input input-bordered w-full mb-4" placeholder="Ingresa tu correo">
-
-            <label for="precio" class="block text-lg font-medium mb-2">Precio del plan:</label>
-            <input type="text" id="precio" name="precio" readonly class="input input-bordered w-full mb-4" placeholder="Precio del plan">
-
-            <label class="flex items-center mb-4">
-                <input type="checkbox" id="aceptar" required class="checkbox checkbox-primary mr-2">
-                <span>Acepto los <a href="terminosCondiciones.html" class="text-blue-500 hover:underline">términos y condiciones</a> y la <a href="politicaPrivacidad.html" class="text-blue-500 hover:underline">política de privacidad</a>.</span>
-            </label>
-
-            <button type="submit" class="btn btn-primary w-full">Enviar</button>
-        </form>
-    </div>
-</div>
-
-
-
     </main>
 
     <footer class="bg-gray-900 text-white py-10">
         <div class="text-center mb-8">
             <p class="text-lg">Si esto te ha sorprendido, imagina lo que lograremos juntos</p>
             <p class="font-semibold text-xl mt-2">Súmate como inversor</p>
-            <a href="invertir.html" class="btn btn bg-orange-600 border-0 text-white hover:bg-orange-700 mt-4">Comenzar</a>
+            <a href="invertir.html" class="btn bg-orange-600 border-0 text-white hover:bg-orange-700 mt-4">Comenzar</a>
         </div>
     
-        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left px-6">
-            <!-- Columna 1 -->
-            <div>
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-6 justify-center text-center md:text-center">
+            <div class="flex flex-col items-center">
                 <h3 class="text-3xl font-bold text-orange-600">AION</h3>
                 <p class="mt-2 text-gray-400">Tu empresa donde confiar tus proyectos</p>
-                <a href="formulario.html" class="btn btn bg-orange-600 border-0 text-white hover:bg-orange-700 mt-4">Contáctanos</a>
+                <a href="formulario.html" class="btn bg-orange-600 border-0 text-white hover:bg-orange-700 mt-4">Contáctanos</a>
             </div>
     
-            <!-- Columna 2 -->
-            <div>
-                <h4 class="text-xl  font-semibold">Inicio</h4>
-                <ul class="mt-3 space-y-2">
-                    <li><a href="index.html" class="hover:hover:text-orange-600">AION</a></li>
-                    <li><a href="#funcionalidades" class="hover:hover:text-orange-600">Funcionalidades</a></li>
-                    <li><a href="#precios" class="hover:hover:text-orange-600">Precios</a></li>
-                    <li><a href="invertir.html" class="hover:hover:text-orange-600">¿Quieres invertir?</a></li>
+            <div class="flex flex-col items-center">
+                <h4 class="text-xl font-semibold">Inicio</h4>
+                <ul class="mt-3 space-y-2 text-center"> 
+                    <li><a href="index.html" class="hover:text-orange-600">AION</a></li>
+                    <li><a href="#funcionalidades" class="hover:text-orange-600">Funcionalidades</a></li>
+                    <li><a href="#precios" class="hover:text-orange-600">Precios</a></li>
+                    <li><a href="invertir.html" class="hover:text-orange-600">¿Quieres invertir?</a></li>
                 </ul>
             </div>
     
-            <!-- Columna 3 -->
-            <div>
+            <div class="flex flex-col items-center">
                 <h4 class="text-xl font-semibold">¡Síguenos!</h4>
                 <ul class="mt-3 space-y-2">
-                    <li class="flex items-center justify-center md:justify-start gap-2">
+                    <li class="flex items-center gap-2">
                         <img src="./img/facebook.png" alt="Facebook" class="w-5 h-5">
-                        <a href="https://www.facebook.com" target="_blank" class="hover:hover:text-orange-600">Facebook</a>
+                        <a href="https://www.facebook.com" target="_blank" class="hover:text-orange-600">Facebook</a>
                     </li>
-                    <li class="flex items-center justify-center md:justify-start gap-2">
+                    <li class="flex items-center gap-2">
                         <img src="./img/X.png" alt="Twitter" class="w-5 h-5">
-                        <a href="https://www.twitter.com" target="_blank" class="hover:hover:text-orange-600">Twitter</a>
+                        <a href="https://www.twitter.com" target="_blank" class="hover:text-orange-600">Twitter</a>
                     </li>
-                    <li class="flex items-center justify-center md:justify-start gap-2">
+                    <li class="flex items-center gap-2">
                         <img src="./img/instagram.png" alt="Instagram" class="w-5 h-5">
-                        <a href="https://www.instagram.com" target="_blank" class="hover:hover:text-orange-600">Instagram</a>
+                        <a href="https://www.instagram.com" target="_blank" class="hover:text-orange-600">Instagram</a>
                     </li>
                 </ul>
             </div>
@@ -497,41 +427,21 @@
             <p class="text-gray-500 mt-4">&copy; 2025 - Todos los derechos reservados</p>
         </div>
     </footer>
-    
-
-
-<!-- Botón de Subir -->
-<button id="botonSubir" class="fixed bottom-6 right-6 bg-primary text-white p-3 rounded-full shadow-lg transition-opacity duration-300 opacity-0 hover:bg-primary-focus">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M12 19V5"></path>
-        <polyline points="5 12 12 5 19 12"></polyline>
-    </svg>
-</button>
 
     <!-- INSTALACION DE AOS (ANIMACIONES AL HACER SCROLL)-->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
-    <!-- inicializa AOS-->
-    <script>
-        AOS.init();
-    </script>
+    <script>AOS.init();</script>
     
-
-
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!-- Librería SweetAlert2 -->
-    <!--<script src="botonSubir.js"></script>-->
-    <!--<script src="scriptNav.js"></script>-->
-    <!--<script src="script.js"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <script src="script_info_tarjetas.js"></script>
     <script src="script_carrusel.js"></script>
-    <script src="script_animacion.js"></script>
+    <script src="script_animacion_logos.js"></script>
     <script src="script_tarjetas.js"></script>
     <script src="script_video.js"></script>
-    <script src="script_modal.js"></script>
-    <script src="script_botonSubir"></script>
-
-    <script src="formularioPrecios.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="formularioPrecios.js"></script>
 </body>
 </html>

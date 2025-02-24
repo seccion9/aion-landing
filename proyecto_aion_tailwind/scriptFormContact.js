@@ -1,8 +1,6 @@
-// Capturar el evento submit del formulario
 document.getElementById("formContacto").addEventListener("submit", function (event) {
     event.preventDefault();
   
-    // Obtener datos del formulario
     let formData = new FormData(this);
   
     // Enviar datos a PHP con Fetch API
@@ -13,7 +11,7 @@ document.getElementById("formContacto").addEventListener("submit", function (eve
     .then(response => response.text())
     .then(text => {
         try {
-            return JSON.parse(text); // Parsearlo a JSON
+            return JSON.parse(text);
         } catch (error) {
             console.error("Error al analizar JSON:", text);
             throw new Error("Respuesta no válida del servidor.");

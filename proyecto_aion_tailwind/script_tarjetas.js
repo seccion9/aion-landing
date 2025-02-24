@@ -1,4 +1,3 @@
-// script.js
 const togglePrecio = document.getElementById('togglePrecio');
 const tarjeta1 = document.getElementById('tarjeta1');
 const tarjeta2 = document.getElementById('tarjeta2');
@@ -12,24 +11,21 @@ const tipoPlan2 = document.getElementById('tipoPlan2');
 
 // Función para activar la animación de flip
 function realizarFlip(tarjeta) {
-    tarjeta.classList.add('rotate-y-180'); // Añadir rotación en Y (flip)
-    tarjeta.classList.add('transition-transform', 'duration-1000'); // Añadir animación de transición
+    tarjeta.classList.add('rotate-y-180'); 
+    tarjeta.classList.add('transition-transform', 'duration-1000');
 
-    // Después de 1 segundo (el tiempo que dura la animación), revertimos la rotación
     setTimeout(() => {
         tarjeta.classList.remove('rotate-y-180');
-    }, 1000); // Duración de la animación en ms
+    }, 1000);
 }
 
 // Evento que escucha cuando el toggle cambia
 togglePrecio.addEventListener('change', () => {
-    // Realizar el flip de las dos tarjetas
     realizarFlip(tarjeta1);
     realizarFlip(tarjeta2);
 
-    // Esperamos el tiempo de la animación (1 segundo) para cambiar los precios
     setTimeout(() => {
-        // Cambiar el contenido de los precios (Mensual/Anual)
+        // Cambiar el contenido de los precios
         if (precio1Mensual.classList.contains('hidden')) {
             precio1Mensual.classList.remove('hidden');
             precio1Anual.classList.add('hidden');
@@ -49,5 +45,5 @@ togglePrecio.addEventListener('change', () => {
             precio2Mensual.classList.add('hidden');
             tipoPlan2.textContent = "Anual";
         }
-    }, 1000); // Tiempo para esperar que termine la animación
+    }, 0);
 });
