@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario AION</title>
-    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <link rel="stylesheet" href="styles.css">
 
         <!-- INSTALACION DE TAILWIND CON DAISYUI-->
         <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
@@ -19,14 +19,14 @@
     
 </head>
 <body>
-    <header class="bg-gray-200 shadow-md">
-        <nav class="container mx-auto flex justify-between items-center p-4">
+    <header class="bg-gray-200 shadow-md fixed top-0 left-0 w-full z-50">
+        <nav class="container mx-auto flex justify-between items-center p-4 relative">
             <!-- Logo -->
             <a href="index.html" class="text-3xl font-bold text-[#ff8000]">AION</a>
     
             <!-- Botón de menú para móviles -->
             <div class="lg:hidden">
-                <button id="menu-toggle" class="btn btn-ghost">
+                <button id="menu-toggle" class="btn btn-ghost" aria-label="Abrir menú">
                     <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
                     </svg>
@@ -34,14 +34,14 @@
             </div>
     
             <!-- Menú de navegación -->
-            <ul id="nav-list" class="hidden lg:flex space-x-6">
-                <li><a href="index.html" class="btn bg-transparent border-0 text-black hover:text-[#ff8000] hover:bg-transparent">Inicio</a></li>
-                <li><a id="integraciones" href="#carrusel" class="btn bg-transparent border-0 text-black hover:text-[#ff8000] hover:bg-transparent">Integraciones</a></li>
-                <li><a id="funcional" href="#funcionalidades" class="btn bg-transparent border-0 text-black hover:text-[#ff8000] hover:bg-transparent">Funcionalidades</a></li>
-                <li><a id="planes" href="#precios" class="btn bg-transparent border-0 text-black hover:text-[#ff8000] hover:bg-transparent">Precios</a></li>
-                <li><a href="invertir.html" class="btn bg-transparent border-0 text-black hover:text-[#ff8000] hover:bg-transparent">¿Quieres invertir?</a></li>
-                <li><a href="formulario.html" id="contacto" class="btn bg-[#ff8000] border-0 text-white hover:bg-orange-700">Contacto</a></li>
-            </ul>
+            <ul id="nav-list" class="hidden lg:flex gap-x-6">
+                <li><a href="index.html" class="btn bg-transparent border-0 text-black hover:text-orange-600 hover:bg-transparent">Inicio</a></li>
+                <li><a id="integraciones" href="index.html#carrusel" class="btn bg-transparent border-0 text-black hover:text-orange-600 hover:bg-transparent">Integraciones</a></li>
+                <li><a id="funcional" href="index.html#funcionalidades" class="btn bg-transparent border-0 text-black hover:text-orange-600 hover:bg-transparent">Funcionalidades</a></li>
+                <li><a id="planes" href="index.html#precios" class="btn bg-transparent border-0 text-black hover:text-orange-600 hover:bg-transparent">Precios</a></li>
+                <li><a href="invertir.html" class="btn bg-transparent border-0 text-black hover:text-orange-600 hover:bg-transparent">¿Quieres invertir?</a></li>
+                <li><a href="formulario.html" id="contacto" class="btn bg-orange-600 border-0 text-white hover:bg-orange-700">Contacto</a></li>
+            </ul>            
         </nav>
     </header>
 
@@ -278,6 +278,7 @@
     <script src="script.js"></script>
     <script src="mensajeDuda.js"></script>
     <script src="botonSubir.js"></script>
+    <script src="menu_hamburguesa.js"></script>
 
 
     <script src="https://cdn.tailwindcss.com"></script>

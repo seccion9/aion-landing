@@ -18,53 +18,32 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-    <style>
-        
-        body {
-            overflow-x: hidden;
-        }
-
-        
-        img {
-            max-width: 100%;
-            height: auto;
-            object-fit: contain;
-        }
-
-       
-        .container {
-            padding-left: 0;
-            padding-right: 0;
-        }
-
-       
-        .section-padding {
-            padding-left: 15px;
-            padding-right: 15px;
-        }
-
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
     <header class="bg-gray-200 shadow-md fixed top-0 left-0 w-full z-50">
-        <nav class="container mx-auto flex justify-between items-center p-4">
+        <nav class="container mx-auto flex justify-between items-center p-4 relative">
             <a href="index.html" class="text-3xl font-bold text-orange-600">AION</a>
+
+            <!-- Boton de menú -->
             <div class="lg:hidden">
-                <button id="menu-toggle" class="btn btn-ghost">
+                <button id="menu-toggle" class="btn btn-ghost" aria-label="Abrir menú">
                     <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
                     </svg>
                 </button>
             </div>
-            <ul id="nav-list" class="hidden lg:flex space-x-6">
+
+            <!-- Menú de navegación -->
+            <ul id="nav-list" class="hidden lg:flex gap-x-6">
                 <li><a href="index.html" class="btn bg-transparent border-0 text-black hover:text-orange-600 hover:bg-transparent">Inicio</a></li>
-                <li><a id="integraciones" href="#carrusel" class="btn bg-transparent border-0 text-black hover:text-orange-600 hover:bg-transparent">Integraciones</a></li>
-                <li><a id="funcional" href="#funcionalidades" class="btn bg-transparent border-0 text-black hover:text-orange-600 hover:bg-transparent">Funcionalidades</a></li>
-                <li><a id="planes" href="#precios" class="btn bg-transparent border-0 text-black hover:text-orange-600 hover:bg-transparent">Precios</a></li>
+                <li><a id="integraciones" href="index.html#carrusel" class="btn bg-transparent border-0 text-black hover:text-orange-600 hover:bg-transparent">Integraciones</a></li>
+                <li><a id="funcional" href="index.html#funcionalidades" class="btn bg-transparent border-0 text-black hover:text-orange-600 hover:bg-transparent">Funcionalidades</a></li>
+                <li><a id="planes" href="index.html#precios" class="btn bg-transparent border-0 text-black hover:text-orange-600 hover:bg-transparent">Precios</a></li>
                 <li><a href="invertir.html" class="btn bg-transparent border-0 text-black hover:text-orange-600 hover:bg-transparent">¿Quieres invertir?</a></li>
                 <li><a href="formulario.html" id="contacto" class="btn bg-orange-600 border-0 text-white hover:bg-orange-700">Contacto</a></li>
-            </ul>
+            </ul>            
         </nav>
     </header>
 
@@ -437,5 +416,6 @@
     <script src="script_video.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="formularioPrecios.js"></script>
+    <script src="menu_hamburguesa.js"></script>
 </body>
 </html>
