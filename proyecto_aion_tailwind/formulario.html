@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario AION</title>
-    <link rel="stylesheet" href="styles.css">
+    <!-- <link rel="stylesheet" href="styles.css"> -->
 
         <!-- INSTALACION DE TAILWIND CON DAISYUI-->
         <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
@@ -19,14 +19,14 @@
     
 </head>
 <body>
-    <header class="bg-gray-200 shadow-md fixed top-0 left-0 w-full z-50">
-        <nav class="container mx-auto flex justify-between items-center p-4 relative">
+    <header class="bg-gray-200 shadow-md">
+        <nav class="container mx-auto flex justify-between items-center p-4">
             <!-- Logo -->
             <a href="index.html" class="text-3xl font-bold text-[#ff8000]">AION</a>
     
             <!-- Botón de menú para móviles -->
             <div class="lg:hidden">
-                <button id="menu-toggle" class="btn btn-ghost" aria-label="Abrir menú">
+                <button id="menu-toggle" class="btn btn-ghost">
                     <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
                     </svg>
@@ -34,14 +34,14 @@
             </div>
     
             <!-- Menú de navegación -->
-            <ul id="nav-list" class="hidden lg:flex gap-x-6">
-                <li><a href="index.html" class="btn bg-transparent border-0 text-black hover:text-orange-600 hover:bg-transparent">Inicio</a></li>
-                <li><a id="integraciones" href="index.html#carrusel" class="btn bg-transparent border-0 text-black hover:text-orange-600 hover:bg-transparent">Integraciones</a></li>
-                <li><a id="funcional" href="index.html#funcionalidades" class="btn bg-transparent border-0 text-black hover:text-orange-600 hover:bg-transparent">Funcionalidades</a></li>
-                <li><a id="planes" href="index.html#precios" class="btn bg-transparent border-0 text-black hover:text-orange-600 hover:bg-transparent">Precios</a></li>
-                <li><a href="invertir.html" class="btn bg-transparent border-0 text-black hover:text-orange-600 hover:bg-transparent">¿Quieres invertir?</a></li>
-                <li><a href="formulario.html" id="contacto" class="btn bg-orange-600 border-0 text-white hover:bg-orange-700">Contacto</a></li>
-            </ul>            
+            <ul id="nav-list" class="hidden lg:flex space-x-6">
+                <li><a href="index.html" class="btn bg-transparent border-0 text-black hover:text-[#ff8000] hover:bg-transparent">Inicio</a></li>
+                <li><a id="integraciones" href="#carrusel" class="btn bg-transparent border-0 text-black hover:text-[#ff8000] hover:bg-transparent">Integraciones</a></li>
+                <li><a id="funcional" href="#funcionalidades" class="btn bg-transparent border-0 text-black hover:text-[#ff8000] hover:bg-transparent">Funcionalidades</a></li>
+                <li><a id="planes" href="#precios" class="btn bg-transparent border-0 text-black hover:text-[#ff8000] hover:bg-transparent">Precios</a></li>
+                <li><a href="invertir.html" class="btn bg-transparent border-0 text-black hover:text-[#ff8000] hover:bg-transparent">¿Quieres invertir?</a></li>
+                <li><a href="formulario.html" id="contacto" class="btn bg-[#ff8000] border-0 text-white hover:bg-orange-700">Contacto</a></li>
+            </ul>
         </nav>
     </header>
 
@@ -60,35 +60,35 @@
                     </div>
         
                     <!-- Sección Derecha (Formulario) -->
-                    <div class="formulario-contenedor-interno bg-[#ff8000] p-6 w-full lg:w-1/2">
+                    <div class="formulario-contenedor-interno bg-gray-900 p-6 w-full lg:w-1/2">
                         <form id="formContacto" class="formulario space-y-3">
                             
                             <!-- Nombre -->
-                            <label class="block text-base font-medium text-black">Nombre</label>
+                            <label class="block text-white font-medium text-black">Nombre</label>
                             <input type="text" id="nombre" name="nombre" placeholder="Nombre Completo*" required 
                                    class="input input-bordered bg-white w-full h-9">
                             
                             <!-- Email -->
-                            <label class="block text-base font-medium text-black">Email</label>
+                            <label class="block text-white font-medium text-black">Email</label>
                             <input type="email" id="email" name="email" placeholder="Email*" required 
                                    class="input input-bordered bg-white w-full h-9">
                             
                             <!-- Teléfono y Ciudad -->
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
                                 <div>
-                                    <label class="block text-base font-medium text-black">Teléfono</label>
+                                    <label class="block text-white font-medium text-black">Teléfono</label>
                                     <input type="tel" id="tel" name="tel" placeholder="Teléfono*" required 
                                            class="input input-bordered bg-white w-full h-9">
                                 </div>
                                 <div>
-                                    <label class="block text-base font-medium text-black">Ciudad</label>
+                                    <label class="block text-white font-medium text-black">Ciudad</label>
                                     <input type="text" id="ciudad" name="ciudad" placeholder="Ciudad*" required 
                                            class="input input-bordered bg-white w-full h-9">
                                 </div>
                             </div>
         
                             <!-- Selección de información -->
-                            <label class="block text-base font-medium text-black">¿Cómo nos has conocido?</label>
+                            <label class="block text-white font-medium text-black">¿Cómo nos has conocido?</label>
                             <select id="info" name="info" required 
                                     class="select select-bordered bg-white w-full h-9">
                                 <option value="" selected hidden>Elige una opción*</option>
@@ -99,14 +99,14 @@
                             </select>
                             
                             <!-- Mensaje -->
-                            <h3 class="text-base font-medium text-black">¿EN QUÉ PODEMOS AYUDARTE?</h3>
+                            <h3 class="text-white font-medium text-black">¿EN QUÉ PODEMOS AYUDARTE?</h3>
                             <textarea id="mensaje" name="mensaje" rows="3" required 
                                       class="textarea textarea-bordered bg-white w-full h-24" 
                                       placeholder="Escribe tu mensaje aquí..."></textarea>
         
                             <!-- Botón de enviar -->
                             <div class="flex justify-center">
-                                <button type="submit" class="btn btn-primary bg-gray-700 border-gray-700 text-white w-1/2 h-10">
+                                <button type="submit" class="btn w-1/2 bg-[#ff8000] border-[#ff8000] text-white hover:bg-orange-700 h-10">
                                     Enviar
                                 </button>
                             </div>
@@ -278,7 +278,6 @@
     <script src="script.js"></script>
     <script src="mensajeDuda.js"></script>
     <script src="botonSubir.js"></script>
-    <script src="menu_hamburguesa.js"></script>
 
 
     <script src="https://cdn.tailwindcss.com"></script>
