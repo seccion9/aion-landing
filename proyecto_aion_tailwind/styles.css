@@ -1,6 +1,6 @@
 body {
     overflow-x: hidden;
-    margin-top: 60px;
+    margin: 0; 
 }
 
 img {
@@ -8,11 +8,9 @@ img {
     height: auto;
     object-fit: contain;
 }
+
 section {
     scroll-margin-top: 60px;
-}
-main {
-    margin-top: 60px;
 }
 
 .container {
@@ -23,6 +21,10 @@ main {
 .section-padding {
     padding-left: 15px;
     padding-right: 15px;
+}
+
+header {
+    height: 60px;
 }
 
 @media (max-width: 1023px) {
@@ -44,8 +46,13 @@ main {
         align-items: center;
         justify-content: center;
         padding: 0.5rem 1rem;
-      }
-      
-  
-  }
-  
+    }
+}
+
+.selected {
+    border: 2px solid orange; 
+    border-radius: 8px; 
+    position: relative;
+    z-index: 10; 
+}
+

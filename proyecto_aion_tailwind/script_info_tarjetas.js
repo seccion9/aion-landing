@@ -1,26 +1,29 @@
-let tarjetaSeleccionada = null; // Variable para rastrear la tarjeta seleccionada
+let tarjetaSeleccionada = null;
 
 function mostrarTexto(cardNumber) {
+    const tarjetas = document.querySelectorAll('.section-container');
     const textoSeleccionado = document.getElementById('texto-seleccionado');
     const tituloTexto = document.getElementById('titulo-texto');
     const descripcionTexto = document.getElementById('descripcion-texto');
     const imagenTexto = document.querySelector('#texto-seleccionado img');
 
-    // Si el usuario hace clic en la misma tarjeta, no hacer nada
     if (tarjetaSeleccionada === cardNumber) {
         return;
     }
 
-    // Actualizar la tarjeta seleccionada
+    if (tarjetaSeleccionada !== null) {
+        tarjetas[tarjetaSeleccionada - 1].classList.remove('selected');
+    }
+
     tarjetaSeleccionada = cardNumber;
 
-    // Primero, agregar la animación de salida
+    tarjetas[cardNumber - 1].classList.add('selected');
+
     textoSeleccionado.classList.remove('translate-x-0', 'opacity-100'); 
     textoSeleccionado.classList.add('translate-x-full', 'opacity-0'); 
 
-    // Esperar un tiempo para que la animación de salida termine antes de actualizar el contenido
     setTimeout(function() {
-        // Actualizar el título, el texto y la imagen según la tarjeta seleccionada
+        // Actualizamos el contenido basado en la tarjeta seleccionada
         if (cardNumber === 1) {
             tituloTexto.textContent = 'Diseño adaptable a móviles y tabletas';
             descripcionTexto.textContent = 'AION está diseñado para ofrecer una experiencia fluida y optimizada en cualquier dispositivo, desde móviles hasta tabletas. Con un diseño adaptable, tus clientes podrán realizar reservas de manera sencilla y rápida desde cualquier lugar, lo que asegura una experiencia sin interrupciones y accesible en todo momento.';
@@ -45,8 +48,10 @@ function mostrarTexto(cardNumber) {
 }
 
 window.onload = function () {
-    mostrarTexto(1);
+    mostrarTexto(1); 
 };
+
+
 
 
 
