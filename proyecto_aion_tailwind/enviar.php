@@ -1,14 +1,10 @@
 <?php
 
-
 // Habilitar CORS si la petición viene de otro dominio
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: POST");
 header("Access-Control-Allow-Headers: Content-Type");
-header("Content-Type: application/json");
 header("Content-Type: application/json; charset=UTF-8");
-
-
 
 /* Importar las clases de PHPMailer */
 use PHPMailer\PHPMailer\PHPMailer;
@@ -29,55 +25,76 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $ciudad = $_POST['ciudad'];
     $info = $_POST['info'];
 
-     // Validación básica
-     if (empty($nombre) || empty($email) || empty($mensaje)) {
+    // Validación básica
+    if (empty($nombre) || empty($email) || empty($mensaje)) {
         echo json_encode(["status" => "error", "message" => "Todos los campos son obligatorios."]);
         exit;
     }
 
-
-    // Crear una instancia de PHPMailer
-    $mail = new PHPMailer(true);
-
     try {
-        // Configuración del servidor SMTP
-        //$mail->SMTPDebug = SMTP::DEBUG_SERVER;  //Se pasa a producion por eso se comenta
-        $mail->isSMTP();
-        $mail->CharSet = 'UTF-8';
-        $mail->Host       = 'sandbox.smtp.mailtrap.io';
-        $mail->SMTPAuth   = true;
-        $mail->Username   = 'e25473dc785a61';
-        $mail->Password   = '85483ae9558c51';
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-        $mail->Port       = 587;
+        // Función para configurar PHPMailer
+        function configurarCorreo($mail) {
+            $mail->isSMTP();
+            $mail->CharSet = 'UTF-8';
+            $mail->Host       = 'smtp.ionos.es';
+            $mail->SMTPAuth   = true;
+            $mail->Username   = 'contacto@gestoraion.com';
+            $mail->Password   = '0w2vzKS839!5';
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+            $mail->Port       = 587;
+        }
 
-        // Establecer destinatarios
-        $mail->setFrom($email, $nombre);
-        $mail->addAddress('reciboprueba@reciboprueba.com', 'Gestoria AION');
+        // PRIMER CORREO: Confirmación para el usuario
+        $mail1 = new PHPMailer(true);
+        configurarCorreo($mail1);
 
-        // Contenido del mensaje
-        $mail->isHTML(true);
-        $mail->Subject = 'Nuevo mensaje de contacto';
-        $mail->Body    = '<h3>Nuevo mensaje de contacto</h3>
-                          <p><b>Nombre:</b> ' . $nombre . '</p>
-                          <p><b>Email:</b> ' . $email . '</p>
-                          <p><b>Telefono de contacto:</b> ' . $tel . '</p>
-                          <p><b>Ciudad:</b> ' . $ciudad . '</p>
-                          <p><b>Nos ha conocido a traves de:</b> ' . $info . '</p>
-                          <p><b>Mensaje:</b><br> ' . $mensaje . '</p>';
+        $mail1->setFrom('contacto@gestoraion.com', 'Gestoria AION');
+        $mail1->addAddress($email, $nombre); // Para el usuario
 
-        // Enviar el correo
-        // $mail->send();
+        $mail1->isHTML(true);
+        $mail1->Subject = 'Confirmación de contacto - Gestoría AION';
+        $mail1->Body = '<h3>¡Gracias por contactarnos, ' . $nombre . '!</h3>
+                        <p>Hemos recibido tu solicitud y te atenderemos lo antes posible.</p>
+                        <p><b>Resumen de tu mensaje:</b></p>
+                        <ul>
+                            <li><b>Teléfono:</b> ' . $tel . '</li>
+                            <li><b>Ciudad:</b> ' . $ciudad . '</li>
+                            <li><b>Nos conociste a través de:</b> ' . $info . '</li>
+                        </ul>
+                        <p><b>Tu mensaje:</b><br>' . nl2br($mensaje) . '</p>
+                        <br>
+                        <p>Atentamente,<br><b>Gestoría <span style="color:#ff8000;">AION</span></b></p>';
 
-        // Enviar correo
-        if ($mail->send()) {
-            echo json_encode(["status" => "success", "message" => "Tu mensaje ha sido enviado correctamente."]);
+        $enviadoUsuario = $mail1->send();
+
+        // SEGUNDO CORREO: Notificación para la empresa
+        $mail2 = new PHPMailer(true);
+        configurarCorreo($mail2);
+
+        $mail2->setFrom('contacto@gestoraion.com', 'Gestoria AION');
+        $mail2->addAddress('contacto@gestoraion.com', 'Gestoria AION'); // Para la empresa
+
+        $mail2->isHTML(true);
+        $mail2->Subject = 'Nuevo mensaje de contacto - ' . $nombre;
+        $mail2->Body = '<h3>Nuevo mensaje de contacto</h3>
+                        <p><b>Nombre:</b> ' . $nombre . '</p>
+                        <p><b>Email:</b> ' . $email . '</p>
+                        <p><b>Teléfono:</b> ' . $tel . '</p>
+                        <p><b>Ciudad:</b> ' . $ciudad . '</p>
+                        <p><b>Nos ha conocido a través de:</b> ' . $info . '</p>
+                        <p><b>Mensaje:</b><br>' . nl2br($mensaje) . '</p>';
+
+        $enviadoEmpresa = $mail2->send();
+
+        // Verificar si ambos correos se enviaron correctamente
+        if ($enviadoUsuario && $enviadoEmpresa) {
+            echo json_encode(["status" => "success", "message" => "Los correos han sido enviados correctamente."]);
         } else {
-            echo json_encode(["status" => "error", "message" => "No se pudo enviar el mensaje."]);
+            echo json_encode(["status" => "error", "message" => "No se pudo enviar el mensaje a todos los destinatarios."]);
         }
 
     } catch (Exception $e) {
-        echo json_encode(["status" => "error", "message" => "Error: {$mail->ErrorInfo}"]);
+        echo json_encode(["status" => "error", "message" => "Error: {$mail1->ErrorInfo}"]);
     }
 
 } else {

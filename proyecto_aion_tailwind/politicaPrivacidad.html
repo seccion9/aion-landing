@@ -4,161 +4,192 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Política de Privacidad - Aion</title>
-    <link rel="stylesheet" href="styles.css">
+
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+
+        <!-- INSTALACION DE TAILWIND CON DAISYUI-->
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/daisyui@latest/dist/full.css" rel="stylesheet">
+        
+        <!-- INSTALACION DE AOS (ANIMACIONES AL HACER SCROLL)-->
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    
+        <!-- INSTALACION DE SweetAlert2 (ANIMACIONES de alerta)-->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
 </head>
 <body>
-    <header>
-        <nav id="navegador">
-            <a href="index.html" class="logo" id="logo">AION</a>
-            <div class="menu-toggle" id="menu-toggle">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+    <header class="bg-gray-200 shadow-md">
+        <nav class="container mx-auto flex justify-between items-center p-4">
+            <!-- Logo -->
+            <a href="index.html" class="text-3xl font-bold text-[#ff8000]">AION</a>
+    
+            <!-- Botón de menú para móviles -->
+            <div class="lg:hidden">
+                <button id="menu-toggle" class="btn btn-ghost">
+                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+                    </svg>
+                </button>
             </div>
-            <ul id="nav-list">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a id="integraciones" href="#carrusel">Integraciones</a></li>
-                <li><a id="funcional" href="#funcionalidades">Funcionalidades</a></li>
-                <li><a id="planes" href="#precios">Precios</a></li>
-                <li><a href="invertir.html">¿Quieres invertir?</a></li>
-                <li><a href="formulario.html" class="contacto" id="contacto">Contacto</a></li>
+    
+            <!-- Menú de navegación -->
+            <ul id="nav-list" class="hidden lg:flex space-x-6">
+                <li><a href="index.html" class="btn bg-transparent border-0 text-black hover:text-[#ff8000] hover:bg-transparent">Inicio</a></li>
+                <li><a id="integraciones" href="#carrusel" class="btn bg-transparent border-0 text-black hover:text-[#ff8000] hover:bg-transparent">Integraciones</a></li>
+                <li><a id="funcional" href="#funcionalidades" class="btn bg-transparent border-0 text-black hover:text-[#ff8000] hover:bg-transparent">Funcionalidades</a></li>
+                <li><a id="planes" href="#precios" class="btn bg-transparent border-0 text-black hover:text-[#ff8000] hover:bg-transparent">Precios</a></li>
+                <li><a href="invertir.html" class="btn bg-transparent border-0 text-black hover:text-[#ff8000] hover:bg-transparent">¿Quieres invertir?</a></li>
+                <li><a href="formulario.html" id="contacto" class="btn bg-[#ff8000] border-0 text-white hover:bg-orange-700">Contacto</a></li>
             </ul>
         </nav>
     </header>
-    <div class="textContainer">
-        <h1>Política de Privacidad</h1>
 
-        <section>
-            <h2>Introducción</h2>
-            <p>El Titular le informa sobre su Política de Privacidad respecto al tratamiento y protección de los datos de carácter personal de los usuarios que puedan ser recabados durante la navegación a través del Sitio Web: <a href="http://gestoraion.com/" target="_blank">gestoraion.com</a>.</p>
-            <p>El Titular garantiza el cumplimiento de la normativa vigente en materia de protección de datos personales, reflejada en la Ley Orgánica 3/2018 (LOPD GDD) y el Reglamento (UE) 2016/679 (RGPD).</p>
-            <p>El uso de este Sitio Web implica la aceptación de esta Política de Privacidad, así como de las condiciones incluidas en el <a href="avisosLegales.html">Aviso Legal</a>.</p>
+
+    <div class="max-w-4xl mx-auto py-12 px-6 lg:px-12 bg-white shadow-lg rounded-lg">
+        <h1 class="text-4xl font-bold text-gray-800 text-center mb-8">Política de Privacidad</h1>
+    
+        <section class="mb-8">
+            <h2 class="text-2xl font-semibold text-gray-700 mb-2">Introducción</h2>
+            <p class="text-gray-600">
+                El Titular informa sobre su Política de Privacidad respecto al tratamiento y protección de los datos personales de los usuarios recopilados a través del Sitio Web: 
+                <a href="http://gestoraion.com/" target="_blank" class="text-blue-500 hover:underline">gestoraion.com</a>.
+            </p>
+            <p class="text-gray-600">
+                Cumplimos con la Ley Orgánica 3/2018 (LOPD GDD) y el Reglamento (UE) 2016/679 (RGPD). 
+                Al usar este Sitio Web, acepta esta Política de Privacidad y las condiciones del <a href="avisosLegales.html" class="text-blue-500 hover:underline">Aviso Legal</a>.
+            </p>
         </section>
-
-        <section>
-            <h2>Principios aplicados en el tratamiento de datos</h2>
-            <ul>
-                <li><strong>Licitud, lealtad y transparencia:</strong> Siempre requeriremos su consentimiento para tratar sus datos, informando claramente de los fines.</li>
-                <li><strong>Minimización de datos:</strong> Recopilaremos solo los datos estrictamente necesarios.</li>
-                <li><strong>Limitación del plazo de conservación:</strong> Los datos serán conservados solo el tiempo necesario para cumplir con las finalidades para las que se solicitan.</li>
-                <li><strong>Integridad y confidencialidad:</strong> Implementamos medidas de seguridad para garantizar la protección de sus datos.</li>
+    
+        <section class="mb-8">
+            <h2 class="text-2xl font-semibold text-gray-700 mb-2">Principios del tratamiento de datos</h2>
+            <ul class="list-disc list-inside text-gray-600">
+                <li><strong>Licitud, lealtad y transparencia:</strong> Solicitamos su consentimiento de manera clara.</li>
+                <li><strong>Minimización de datos:</strong> Solo recopilamos los datos estrictamente necesarios.</li>
+                <li><strong>Limitación del almacenamiento:</strong> Conservamos los datos solo el tiempo necesario.</li>
+                <li><strong>Integridad y confidencialidad:</strong> Aplicamos medidas de seguridad adecuadas.</li>
             </ul>
         </section>
-
-        <section>
-            <h2>Obtención de datos personales</h2>
-            <p>No es necesario que facilite datos personales para navegar por este Sitio Web. Sin embargo, podrá proporcionar sus datos en las siguientes situaciones:</p>
-            <ul>
+    
+        <section class="mb-8">
+            <h2 class="text-2xl font-semibold text-gray-700 mb-2">Obtención de datos personales</h2>
+            <p class="text-gray-600">Recopilamos datos personales en los siguientes casos:</p>
+            <ul class="list-disc list-inside text-gray-600">
                 <li>Al contactarnos mediante formularios o correo electrónico.</li>
-                <li>Al registrarse para gestionar reservas u otros servicios proporcionados por el sitio.</li>
-                <li>Al suscribirse a boletines informativos o similares.</li>
+                <li>Al registrarse para gestionar reservas u otros servicios.</li>
+                <li>Al suscribirse a boletines informativos.</li>
             </ul>
         </section>
-
-        <section>
-            <h2>Derechos del Usuario</h2>
-            <p>El Usuario tiene derecho a:</p>
-            <ul>
-                <li>Acceder a sus datos personales.</li>
-                <li>Solicitar la rectificación o supresión de sus datos.</li>
-                <li>Solicitar la limitación del tratamiento de sus datos.</li>
-                <li>Oponerse al tratamiento de sus datos.</li>
-                <li>Solicitar la portabilidad de sus datos (en ciertos casos).</li>
+    
+        <section class="mb-8">
+            <h2 class="text-2xl font-semibold text-gray-700 mb-2">Derechos del Usuario</h2>
+            <p class="text-gray-600">El Usuario puede solicitar:</p>
+            <ul class="list-disc list-inside text-gray-600">
+                <li>Acceso, rectificación o supresión de sus datos.</li>
+                <li>Limitación u oposición al tratamiento de sus datos.</li>
+                <li>Portabilidad de los datos en ciertos casos.</li>
             </ul>
-            <p>Para ejercer estos derechos, debe enviar una solicitud al correo electrónico [ ], acompañada de una copia de un documento oficial de identificación.</p>
-            <p>Además, puede presentar una reclamación ante la <a href="https://www.aepd.es/" target="_blank">Agencia Española de Protección de Datos (AEPD)</a> si considera que el tratamiento de sus datos infringe la normativa.</p>
+            <p class="text-gray-600">Para ejercer estos derechos, envíe una solicitud a [<a href="mailto:contacto@gestoraion.com" class="text-blue-500 hover:underline">contacto@gestoraion.com</a>], adjuntando un documento de identificación.</p>
+            <p class="text-gray-600">Puede presentar reclamaciones ante la <a href="https://www.aepd.es/" target="_blank" class="text-blue-500 hover:underline">AEPD</a>.</p>
         </section>
-
-        <section>
-            <h2>Finalidad del tratamiento de datos personales</h2>
-            <p>El Titular trata los datos personales para:</p>
-            <ul>
-                <li><strong>Gestión de servicios:</strong> Facilitar reservas y otros servicios relacionados.</li>
-                <li><strong>Comunicación:</strong> Responder consultas y enviar boletines informativos, siempre con su consentimiento.</li>
-                <li><strong>Cumplimiento legal:</strong> Garantizar el cumplimiento de normativas aplicables.</li>
-                <li><strong>Mejora de la experiencia del usuario:</strong> Analizar el comportamiento en el sitio web para optimizar la navegación.</li>
+    
+        <section class="mb-8">
+            <h2 class="text-2xl font-semibold text-gray-700 mb-2">Finalidad del tratamiento de datos</h2>
+            <ul class="list-disc list-inside text-gray-600">
+                <li><strong>Gestión de servicios:</strong> Reservas y atención al usuario.</li>
+                <li><strong>Comunicación:</strong> Respuesta a consultas y envío de boletines.</li>
+                <li><strong>Cumplimiento legal:</strong> Garantizar normativas aplicables.</li>
+                <li><strong>Experiencia de usuario:</strong> Analizar navegación para mejoras.</li>
             </ul>
         </section>
-
-        <section>
-            <h2>Seguridad de los datos personales</h2>
-            <p>El Titular toma todas las medidas necesarias para proteger los datos personales contra accesos no autorizados, alteración, divulgación o destrucción. Esto incluye el uso de tecnología segura y procedimientos adecuados.</p>
-            <p>Los datos recopilados solo serán tratados por el Titular o sus encargados de tratamiento autorizados.</p>
+    
+        <section class="mb-8">
+            <h2 class="text-2xl font-semibold text-gray-700 mb-2">Seguridad de los datos</h2>
+            <p class="text-gray-600">Implementamos medidas de seguridad para evitar accesos no autorizados.</p>
         </section>
-
-        <section>
-            <h2>Conservación de datos personales</h2>
-            <p>Los datos personales proporcionados se conservarán mientras sean necesarios para las finalidades descritas en esta política. Cuando ya no sean necesarios, serán eliminados conforme a las normativas vigentes.</p>
+    
+        <section class="mb-8">
+            <h2 class="text-2xl font-semibold text-gray-700 mb-2">Conservación de datos</h2>
+            <p class="text-gray-600">Los datos se conservan mientras sean necesarios para los fines descritos y luego se eliminan según la normativa.</p>
         </section>
-
-        <section>
-            <h2>Destinatarios de los datos</h2>
-            <p>Los datos personales no serán cedidos a terceros, salvo en los siguientes casos:</p>
-            <ul>
-                <li>Cuando sea necesario para cumplir con obligaciones legales.</li>
-                <li>Cuando el servicio solicitado requiera la colaboración de terceros (por ejemplo, proveedores de pago), garantizando el cumplimiento del RGPD.</li>
+    
+        <section class="mb-8">
+            <h2 class="text-2xl font-semibold text-gray-700 mb-2">Destinatarios de los datos</h2>
+            <p class="text-gray-600">No cedemos datos a terceros, salvo en estos casos:</p>
+            <ul class="list-disc list-inside text-gray-600">
+                <li>Cumplimiento de obligaciones legales.</li>
+                <li>Colaboración con proveedores de pago u otros servicios.</li>
             </ul>
         </section>
-
-        <section>
-            <h2>Política de Cookies</h2>
-            <p>Este sitio web utiliza cookies para mejorar la experiencia del usuario. Puede consultar más información en nuestra <a href="politicaCookies.html">Política de Cookies</a>.</p>
+    
+        <section class="mb-8">
+            <h2 class="text-2xl font-semibold text-gray-700 mb-2">Política de Cookies</h2>
+            <p class="text-gray-600">Usamos cookies para mejorar la experiencia del usuario. Consulte nuestra <a href="politicaCookies.html" class="text-blue-500 hover:underline">Política de Cookies</a>.</p>
         </section>
-
+    
         <section>
-            <h2>Cambios en esta Política de Privacidad</h2>
-            <p>Nos reservamos el derecho de modificar esta Política de Privacidad en cualquier momento. Los cambios serán publicados en esta página.</p>
+            <h2 class="text-2xl font-semibold text-gray-700 mb-2">Modificaciones de la Política de Privacidad</h2>
+            <p class="text-gray-600">Nos reservamos el derecho de modificar esta política y los cambios serán publicados en esta página.</p>
         </section>
     </div>
-    <footer class="footer">
-        <div class="footer-main">
-            <p>Si esto te ha sorprendido, imagina lo que lograremos juntos</p>
-            <p><strong>Súmate como inversor</strong></p>
-            <a href="invertir.html" class="btn">Comenzar</a>
-        </div>
 
-        <div class="footer-columns">
-            <div class="footer-column">
-                <h3>AION</h3>
-                <p>Tu empresa donde confiar tus proyectos</p>
-                <a href="formulario.html" class="btn">Contactanos</a>
+    
+    <footer class="bg-gray-900 text-white py-10">
+        <div class="text-center mb-8">
+            <p class="text-lg">Si esto te ha sorprendido, imagina lo que lograremos juntos</p>
+            <p class="font-semibold text-xl mt-2">Súmate como inversor</p>
+            <a href="invertir.html" class="btn btn bg-[#ff8000] border-0 text-white hover:bg-orange-700 mt-4">Comenzar</a>
+        </div>
+    
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left px-6">
+            <!-- Columna 1 -->
+            <div>
+                <h3 class="text-3xl font-bold text-[#ff8000]">AION</h3>
+                <p class="mt-2 text-gray-400">Tu empresa donde confiar tus proyectos</p>
+                <a href="formulario.html" class="btn btn bg-[#ff8000] border-0 text-white hover:bg-orange-700 mt-4">Contáctanos</a>
             </div>
-            <div class="footer-column">
-                <h4>Inicio</h4>
-                <ul>
-                    <li><a href="index.html">AION</a></li>
-                    <li><a href="index.html#funcionalidades">Funcionalidades</a></li>
-                    <li><a href="index.html#precios">Precios</a></li>
-                    <li><a href="invertir.html">¿Quieres inverir?</a></li>
+    
+            <!-- Columna 2 -->
+            <div>
+                <h4 class="text-xl  font-semibold">Inicio</h4>
+                <ul class="mt-3 space-y-2">
+                    <li><a href="index.html" class="hover:hover:text-[#ff8000]">AION</a></li>
+                    <li><a href="#funcionalidades" class="hover:hover:text-[#ff8000]">Funcionalidades</a></li>
+                    <li><a href="#precios" class="hover:hover:text-[#ff8000]">Precios</a></li>
+                    <li><a href="invertir.html" class="hover:hover:text-[#ff8000]">¿Quieres invertir?</a></li>
                 </ul>
             </div>
-            <div class="footer-column">
-                <h4>¡Síguenos!</h4>
-                <ul>
-                    <li>
-                        <a href="https://www.facebook.com" target="_blank">Facebook</a>
-                        <img src="./img/facebook.png" alt="Facebook" class="social-icon">
+    
+            <!-- Columna 3 -->
+            <div>
+                <h4 class="text-xl font-semibold">¡Síguenos!</h4>
+                <ul class="mt-3 space-y-2">
+                    <li class="flex items-center justify-center md:justify-start gap-2">
+                        <img src="./img/facebook.png" alt="Facebook" class="w-5 h-5">
+                        <a href="https://www.facebook.com" target="_blank" class="hover:hover:text-[#ff8000]">Facebook</a>
                     </li>
-                    <li>
-                        <a href="https://www.twitter.com" target="_blank">Twitter</a>
-                        <img src="./img/X.png" alt="Twitter" class="social-icon">
+                    <li class="flex items-center justify-center md:justify-start gap-2">
+                        <img src="./img/X.png" alt="Twitter" class="w-5 h-5">
+                        <a href="https://www.twitter.com" target="_blank" class="hover:hover:text-[#ff8000]">Twitter</a>
                     </li>
-                    <li>
-                        <a href="https://www.instagram.com" target="_blank">Instagram</a>
-                        <img src="./img/instagram.png" alt="Instagram" class="social-icon">
+                    <li class="flex items-center justify-center md:justify-start gap-2">
+                        <img src="./img/instagram.png" alt="Instagram" class="w-5 h-5">
+                        <a href="https://www.instagram.com" target="_blank" class="hover:hover:text-[#ff8000]">Instagram</a>
                     </li>
                 </ul>
             </div>
         </div>
-
-        <div class="footer-bottom">
-            <ul>
-                <li><a href="terminosCondiciones.html">Términos y Condiciones</a></li>
-                <li><a href="politicaPrivacidad.html">Política de Privacidad</a></li>
-                <li><a href="politicaCookies.html">Política de Coockies</a></li>
-                <li><a href="avisosLegales.html">Avisos Legales</a></li>
+    
+        <div class="mt-10 border-t border-gray-700 pt-6 text-center">
+            <ul class="flex flex-wrap justify-center gap-4 text-gray-400">
+                <li><a href="terminosCondiciones.html" class="hover:text-primary">Términos y Condiciones</a></li>
+                <li><a href="politicaPrivacidad.html" class="hover:text-primary">Política de Privacidad</a></li>
+                <li><a href="politicaCookies.html" class="hover:text-primary">Política de Cookies</a></li>
+                <li><a href="avisosLegales.html" class="hover:text-primary">Avisos Legales</a></li>
             </ul>
-            <p>&copy; 2025 - Todos los derechos reservados</p>
+            <p class="text-gray-500 mt-4">&copy; 2025 - Todos los derechos reservados</p>
         </div>
     </footer>
 
@@ -169,7 +200,22 @@
         </svg>
     </button>
 
-    <script src="botonSubir.js"></script>
+
+        <!-- INSTALACION DE AOS (ANIMACIONES AL HACER SCROLL)-->
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+        <!-- inicializa AOS-->
+        <script>
+            AOS.init();
+        </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!-- Librería SweetAlert2 -->
     <script src="scriptNav.js"></script>
+    <script src="botonSubir.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+
 </body>
 </html>

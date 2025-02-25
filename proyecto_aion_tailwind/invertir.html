@@ -4,103 +4,161 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de Contacto</title>
-    <link rel="stylesheet" href="styles.css">
+    
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+
+        <!-- INSTALACION DE TAILWIND CON DAISYUI-->
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/daisyui@latest/dist/full.css" rel="stylesheet">
+        
+        <!-- INSTALACION DE AOS (ANIMACIONES AL HACER SCROLL)-->
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    
+        <!-- INSTALACION DE SweetAlert2 (ANIMACIONES de alerta)-->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
 
 </head>
 <body>
-    <header>
-        <nav id="navegador">
-            <a href="index.html" class="logo" id="logo">AION</a>
-            <div class="menu-toggle" id="menu-toggle">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+    <header class="bg-gray-200 shadow-md">
+        <nav class="container mx-auto flex justify-between items-center p-4">
+            <!-- Logo -->
+            <a href="index.html" class="text-3xl font-bold text-[#ff8000]">AION</a>
+    
+            <!-- Botón de menú para móviles -->
+            <div class="lg:hidden">
+                <button id="menu-toggle" class="btn btn-ghost">
+                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+                    </svg>
+                </button>
             </div>
-            <ul id="nav-list">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a id="integraciones" href="#carrusel">Integraciones</a></li>
-                <li><a id="funcional" href="#funcionalidades">Funcionalidades</a></li>
-                <li><a id="planes" href="#precios">Precios</a></li>
-                <li><a href="invertir.html">¿Quieres invertir?</a></li>
-                <li><a href="formulario.html" class="contacto" id="contacto">Contacto</a></li>
+    
+            <!-- Menú de navegación -->
+            <ul id="nav-list" class="hidden lg:flex space-x-6">
+                <li><a href="index.html" class="btn bg-transparent border-0 text-black hover:text-[#ff8000] hover:bg-transparent">Inicio</a></li>
+                <li><a id="integraciones" href="#carrusel" class="btn bg-transparent border-0 text-black hover:text-[#ff8000] hover:bg-transparent">Integraciones</a></li>
+                <li><a id="funcional" href="#funcionalidades" class="btn bg-transparent border-0 text-black hover:text-[#ff8000] hover:bg-transparent">Funcionalidades</a></li>
+                <li><a id="planes" href="#precios" class="btn bg-transparent border-0 text-black hover:text-[#ff8000] hover:bg-transparent">Precios</a></li>
+                <li><a href="invertir.html" class="btn bg-transparent border-0 text-black hover:text-[#ff8000] hover:bg-transparent">¿Quieres invertir?</a></li>
+                <li><a href="formulario.html" id="contacto" class="btn bg-[#ff8000] border-0 text-white hover:bg-orange-700">Contacto</a></li>
             </ul>
         </nav>
     </header>
-    <main>
-        <div class="containerInvertir">
-            <div class="infoBox">
-                <h2><span class="tituloBox">A I O N</span></h2>
-                <p>Únete al futuro de la gestión de reservas</p>
-                <p>Si estás interesado en ser parte de un proyecto innovador y con alto potencial de crecimiento, este es el lugar perfecto para comenzar. 
-                Completa el formulario y nos pondremos en contacto contigo para explorar juntos las posibilidades.</p>
-                <p>Queremos conocerte y entender cómo podemos crear una colaboración que se adapta a tus expectativas y objetivos. 
-                Nuestro equipo está preparado para resolver tus dudas y acompañarte en cada paso del proceso.</p>
-                <img src="img/toTheMoon.avif">
-            </div>
-            <div class="formBox">
-                <h2>¡Da el primer paso hacia una oportunidad única!</h2>
-                <form class="form" id="formInvertir">
-                    <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
-                    <input type="tel" id="tel" name="tel" placeholder="Teléfono" required>
-                    <input type="email" id="email" name="email" placeholder="Correo" required>
-                    <div class="checkbox">
-                        <input type="checkbox" id="terms">
-                        <label for="terms">Acepto los <strong class="p-terminos">términos y condiciones</strong>, la <strong class="p-terminos">política de privacidad</strong> y consiento el tratamiento de mis datos personales con el fin de ser contactado en relación con mi consulta.</label>
-                    </div>
-                    <button type="submit" class="botonInvertir">Enviar</button>
-                </form>
-            </div>
-        </div>
-    </main>
-    <footer class="footer">
-        <div class="footer-main">
-            <p>Si esto te ha sorprendido, imagina lo que lograremos juntos</p>
-            <p><strong>Súmate como inversor</strong></p>
-            <a href="invertir.html" class="btn">Comenzar</a>
+
+<main class="py-16 bg-neutral-100">
+    <div class="container mx-auto px-6 lg:px-16 flex flex-col lg:flex-row items-center gap-10">
+        
+        <!-- Sección de Información -->
+        <div class="lg:w-1/2 text-center lg:text-left">
+            <h2 class="text-4xl font-bold text-gray-800 mb-4">
+                <span class="text-[#ff8000]">AION</span>
+            </h2>
+            <p class="text-lg text-gray-600 mb-4">Únete al futuro de la gestión de reservas</p>
+            <p class="text-gray-700 mb-4">
+                Si estás interesado en ser parte de un proyecto innovador y con alto potencial de crecimiento, este es el lugar perfecto para comenzar.
+                Completa el formulario y nos pondremos en contacto contigo para explorar juntos las posibilidades.
+            </p>
+            <p class="text-gray-700 mb-6">
+                Queremos conocerte y entender cómo podemos crear una colaboración que se adapta a tus expectativas y objetivos.
+                Nuestro equipo está preparado para resolver tus dudas y acompañarte en cada paso del proceso.
+            </p>
+            <img src="img/toTheMoon.avif" alt="To the Moon" class="rounded-lg shadow-md max-w-xs mx-auto lg:mx-0">
         </div>
 
-        <div class="footer-columns">
-            <div class="footer-column">
-                <h3>AION</h3>
-                <p>Tu empresa donde confiar tus proyectos</p>
-                <a href="formulario.html" class="btn">Contactanos</a>
+        <!-- Sección de Formulario -->
+        <div class="lg:w-1/2 bg-white shadow-lg rounded-lg p-8">
+            <h2 class="text-2xl font-bold text-gray-800 text-center mb-6">¡Da el primer paso hacia una oportunidad única!</h2>
+            <form id="formInvertir" class="space-y-4">
+                
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre" required 
+                    class="input input-bordered w-full">
+                
+                <input type="tel" id="tel" name="tel" placeholder="Teléfono" required 
+                    class="input input-bordered w-full">
+                
+                <input type="email" id="email" name="email" placeholder="Correo" required 
+                    class="input input-bordered w-full">
+                
+                <div class="flex items-start space-x-2">
+                    <input type="checkbox" id="terms" required class="checkbox checkbox-primary">
+                    <label for="terms" class="text-gray-700 text-sm leading-tight">
+                        Acepto los 
+                        <a href="terminosCondiciones.html" class="text-blue-500 hover:underline font-medium">términos y condiciones</a>, la 
+                        <a href="politicaPrivacidad.html" class="text-blue-500 hover:underline font-medium">política de privacidad</a> y consiento el tratamiento de mis datos personales con el fin de ser contactado en relación con mi consulta.
+                    </label>
+                </div>
+
+                <div class="flex justify-center">
+                    <button type="submit" class="btn btn-primary w-1/2 bg-[#ff8000] border-[#ff8000] text-white">
+                        Enviar
+                    </button>
+                </div>
+                
+
+            </form>
+        </div>
+
+    </div>
+</main>
+
+
+    <footer class="bg-gray-900 text-white py-10">
+        <div class="text-center mb-8">
+            <p class="text-lg">Si esto te ha sorprendido, imagina lo que lograremos juntos</p>
+            <p class="font-semibold text-xl mt-2">Súmate como inversor</p>
+            <a href="invertir.html" class="btn btn bg-[#ff8000] border-0 text-white hover:bg-orange-700 mt-4">Comenzar</a>
+        </div>
+    
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left px-6">
+            <!-- Columna 1 -->
+            <div>
+                <h3 class="text-3xl font-bold text-[#ff8000]">AION</h3>
+                <p class="mt-2 text-gray-400">Tu empresa donde confiar tus proyectos</p>
+                <a href="formulario.html" class="btn btn bg-[#ff8000] border-0 text-white hover:bg-orange-700 mt-4">Contáctanos</a>
             </div>
-            <div class="footer-column">
-                <h4>Inicio</h4>
-                <ul>
-                    <li><a href="index.html">AION</a></li>
-                    <li><a href="index.html#funcionalidades">Funcionalidades</a></li>
-                    <li><a href="index.html#precios">Precios</a></li>
-                    <li><a href="invertir.html">¿Quieres inverir?</a></li>
+    
+            <!-- Columna 2 -->
+            <div>
+                <h4 class="text-xl  font-semibold">Inicio</h4>
+                <ul class="mt-3 space-y-2">
+                    <li><a href="index.html" class="hover:hover:text-[#ff8000]">AION</a></li>
+                    <li><a href="#funcionalidades" class="hover:hover:text-[#ff8000]">Funcionalidades</a></li>
+                    <li><a href="#precios" class="hover:hover:text-[#ff8000]">Precios</a></li>
+                    <li><a href="invertir.html" class="hover:hover:text-[#ff8000]">¿Quieres invertir?</a></li>
                 </ul>
             </div>
-            <div class="footer-column">
-                <h4>¡Síguenos!</h4>
-                <ul>
-                    <li>
-                        <a href="https://www.facebook.com" target="_blank">Facebook</a>
-                        <img src="./img/facebook.png" alt="Facebook" class="social-icon">
+    
+            <!-- Columna 3 -->
+            <div>
+                <h4 class="text-xl font-semibold">¡Síguenos!</h4>
+                <ul class="mt-3 space-y-2">
+                    <li class="flex items-center justify-center md:justify-start gap-2">
+                        <img src="./img/facebook.png" alt="Facebook" class="w-5 h-5">
+                        <a href="https://www.facebook.com" target="_blank" class="hover:hover:text-[#ff8000]">Facebook</a>
                     </li>
-                    <li>
-                        <a href="https://www.twitter.com" target="_blank">Twitter</a>
-                        <img src="./img/X.png" alt="Twitter" class="social-icon">
+                    <li class="flex items-center justify-center md:justify-start gap-2">
+                        <img src="./img/X.png" alt="Twitter" class="w-5 h-5">
+                        <a href="https://www.twitter.com" target="_blank" class="hover:hover:text-[#ff8000]">Twitter</a>
                     </li>
-                    <li>
-                        <a href="https://www.instagram.com" target="_blank">Instagram</a>
-                        <img src="./img/instagram.png" alt="Instagram" class="social-icon">
+                    <li class="flex items-center justify-center md:justify-start gap-2">
+                        <img src="./img/instagram.png" alt="Instagram" class="w-5 h-5">
+                        <a href="https://www.instagram.com" target="_blank" class="hover:hover:text-[#ff8000]">Instagram</a>
                     </li>
                 </ul>
             </div>
         </div>
-
-        <div class="footer-bottom">
-            <ul>
-                <li><a href="terminosCondiciones.html">Términos y Condiciones</a></li>
-                <li><a href="politicaPrivacidad.html">Política de Privacidad</a></li>
-                <li><a href="politicaCookies.html">Política de Coockies</a></li>
-                <li><a href="avisosLegales.html">Avisos Legales</a></li>
+    
+        <div class="mt-10 border-t border-gray-700 pt-6 text-center">
+            <ul class="flex flex-wrap justify-center gap-4 text-gray-400">
+                <li><a href="terminosCondiciones.html" class="hover:text-primary">Términos y Condiciones</a></li>
+                <li><a href="politicaPrivacidad.html" class="hover:text-primary">Política de Privacidad</a></li>
+                <li><a href="politicaCookies.html" class="hover:text-primary">Política de Cookies</a></li>
+                <li><a href="avisosLegales.html" class="hover:text-primary">Avisos Legales</a></li>
             </ul>
-            <p>&copy; 2025 - Todos los derechos reservados</p>
+            <p class="text-gray-500 mt-4">&copy; 2025 - Todos los derechos reservados</p>
         </div>
     </footer>
 
@@ -111,9 +169,24 @@
         </svg>
     </button>
 
+
+        <!-- INSTALACION DE AOS (ANIMACIONES AL HACER SCROLL)-->
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+        <!-- inicializa AOS-->
+        <script>
+            AOS.init();
+        </script>
+    
+
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!-- Librería SweetAlert2 -->
-    <script src="botonSubir.js"></script>
-    <script src="script_invertir.js"></script>
     <script src="scriptNav.js"></script>
+    <script src="script_invertir.js"></script>
+    <script src="mensajeDuda.js"></script>
+    <script src="botonSubir.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+
 </body>
 </html>

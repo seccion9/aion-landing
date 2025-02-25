@@ -4,164 +4,250 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario AION</title>
-    <link rel="stylesheet" href="styles.css">
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+
+        <!-- INSTALACION DE TAILWIND CON DAISYUI-->
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/daisyui@latest/dist/full.css" rel="stylesheet">
+        
+        <!-- INSTALACION DE AOS (ANIMACIONES AL HACER SCROLL)-->
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    
+        <!-- INSTALACION DE SweetAlert2 (ANIMACIONES de alerta)-->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
 </head>
 <body>
-    <header>
-        <nav id="navegador">
-            <a href="index.html" class="logo" id="logo">AION</a>
-            <div class="menu-toggle" id="menu-toggle">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+    <header class="bg-gray-200 shadow-md">
+        <nav class="container mx-auto flex justify-between items-center p-4">
+            <!-- Logo -->
+            <a href="index.html" class="text-3xl font-bold text-[#ff8000]">AION</a>
+    
+            <!-- Botón de menú para móviles -->
+            <div class="lg:hidden">
+                <button id="menu-toggle" class="btn btn-ghost">
+                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+                    </svg>
+                </button>
             </div>
-            <ul id="nav-list">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a id="integraciones" href="#carrusel">Integraciones</a></li>
-                <li><a id="funcional" href="#funcionalidades">Funcionalidades</a></li>
-                <li><a id="planes" href="#precios">Precios</a></li>
-                <li><a href="invertir.html">¿Quieres invertir?</a></li>
-                <li><a href="formulario.html" class="contacto" id="contacto">Contacto</a></li>
+    
+            <!-- Menú de navegación -->
+            <ul id="nav-list" class="hidden lg:flex space-x-6">
+                <li><a href="index.html" class="btn bg-transparent border-0 text-black hover:text-[#ff8000] hover:bg-transparent">Inicio</a></li>
+                <li><a id="integraciones" href="#carrusel" class="btn bg-transparent border-0 text-black hover:text-[#ff8000] hover:bg-transparent">Integraciones</a></li>
+                <li><a id="funcional" href="#funcionalidades" class="btn bg-transparent border-0 text-black hover:text-[#ff8000] hover:bg-transparent">Funcionalidades</a></li>
+                <li><a id="planes" href="#precios" class="btn bg-transparent border-0 text-black hover:text-[#ff8000] hover:bg-transparent">Precios</a></li>
+                <li><a href="invertir.html" class="btn bg-transparent border-0 text-black hover:text-[#ff8000] hover:bg-transparent">¿Quieres invertir?</a></li>
+                <li><a href="formulario.html" id="contacto" class="btn bg-[#ff8000] border-0 text-white hover:bg-orange-700">Contacto</a></li>
             </ul>
         </nav>
     </header>
+
     <main>
-        <section class="formulario-seccion" id="formulario-seccion">
-            <div class="formulario-contenedor">
-
-                <div class="info-izquierda">
-                    <h2 class="formulario-titulo">Estas a un solo paso de mejorar tus gestiones de reservas</h2>
-                    <img src="img/ejemploManos.JPG" alt="Imagen de contacto">
-                </div>
-                
-                <div class="formulario-contenedor-interno">
-                    <form id="formContacto" class="formulario">
-                        <label for="nombre">Nombre</label>
-                        <input type="text" id="nombre" name="nombre" placeholder="Nombre Completo*" required>
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="Email*" required>
-                        <div class="telefonoCiudad">
-                            <div>
-                                <label for="telefono">Teléfono</label>
-                                <input type="tel" id="tel" name="tel" placeholder="Telefono*" required>
-                            </div>
-                            <div>
-                                <label for="ciudad">Ciudad</label>
-                                <input type="text" id="ciudad" name="ciudad" placeholder="Ciudad*" required>
-                            </div>
-                        </div>
-                        <label for="info">¿Como nos has conocido?</label>
-                        <select id="info" name="info" required>
-                            <option value="" selected hidden>Elige una opción*</option>
-                            <option value="Google">Google</option>
-                            <option value="Redes Sociales">Redes Sociales</option>
-                            <option value="Recomendación">Recomendación</option>
-                            <option value="Otro">Otro</option>
-                        </select>
-                    
-                        <h3><strong>¿EN QUE PODEMOS AYUDARTE?</strong></h3>
-                        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+        <section class="formulario-seccion py-10 bg-neutral-100" id="formulario-seccion">
+            <div class="container mx-auto px-4 lg:px-12">
+                <div class="formulario-contenedor flex flex-col lg:flex-row bg-white shadow-md rounded-lg overflow-hidden">
         
-                        <button type="submit">Enviar</button>
-                    </form>
+                    <!-- Sección Izquierda (Info + Imagen) -->
+                    <div class="info-izquierda bg-transparent text-black p-6 flex flex-col justify-center items-center w-full lg:w-1/2">
+                        <h2 class="formulario-titulo text-xl font-bold text-center mb-3">
+                            Estás a un solo paso de mejorar tus gestiones de reservas
+                        </h2>
+                        <img src="img/ejemploManos.JPG" alt="Imagen de contacto"
+                             class="w-full max-w-xs rounded-lg shadow">
+                    </div>
+        
+                    <!-- Sección Derecha (Formulario) -->
+                    <div class="formulario-contenedor-interno bg-[#ff8000] p-6 w-full lg:w-1/2">
+                        <form id="formContacto" class="formulario space-y-3">
+                            
+                            <!-- Nombre -->
+                            <label class="block text-base font-medium text-black">Nombre</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Nombre Completo*" required 
+                                   class="input input-bordered bg-white w-full h-9">
+                            
+                            <!-- Email -->
+                            <label class="block text-base font-medium text-black">Email</label>
+                            <input type="email" id="email" name="email" placeholder="Email*" required 
+                                   class="input input-bordered bg-white w-full h-9">
+                            
+                            <!-- Teléfono y Ciudad -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                <div>
+                                    <label class="block text-base font-medium text-black">Teléfono</label>
+                                    <input type="tel" id="tel" name="tel" placeholder="Teléfono*" required 
+                                           class="input input-bordered bg-white w-full h-9">
+                                </div>
+                                <div>
+                                    <label class="block text-base font-medium text-black">Ciudad</label>
+                                    <input type="text" id="ciudad" name="ciudad" placeholder="Ciudad*" required 
+                                           class="input input-bordered bg-white w-full h-9">
+                                </div>
+                            </div>
+        
+                            <!-- Selección de información -->
+                            <label class="block text-base font-medium text-black">¿Cómo nos has conocido?</label>
+                            <select id="info" name="info" required 
+                                    class="select select-bordered bg-white w-full h-9">
+                                <option value="" selected hidden>Elige una opción*</option>
+                                <option value="Google">Google</option>
+                                <option value="Redes Sociales">Redes Sociales</option>
+                                <option value="Recomendación">Recomendación</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+                            
+                            <!-- Mensaje -->
+                            <h3 class="text-base font-medium text-black">¿EN QUÉ PODEMOS AYUDARTE?</h3>
+                            <textarea id="mensaje" name="mensaje" rows="3" required 
+                                      class="textarea textarea-bordered bg-white w-full h-24" 
+                                      placeholder="Escribe tu mensaje aquí..."></textarea>
+        
+                            <!-- Botón de enviar -->
+                            <div class="flex justify-center">
+                                <button type="submit" class="btn btn-primary bg-gray-700 border-gray-700 text-white w-1/2 h-10">
+                                    Enviar
+                                </button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
-
-            <section class="tableroDudas">
-                <div class="tituloDudas">
-                    <h2 class="mainDudas">Si tienes dudas te la resolvemos</h2>
-                </div>
-                <section class="modulosDudas">
-                    <div class="duda" id="duda1">
-                        <p>¿Como puedo contratar los servicios de <strong class="p-marca">AION</strong>?</p>
-                        <img src="img/flechaNaranja2.png">
-                    </div>
-                    <div class="duda" id="duda2">
-                        <p>¿Que tipo de tarifas tenemos?</p>
-                        <img src="img/flechaNaranja2.png">
-                    </div>
-                    <div class="duda" id="duda3">
-                        <p>¿Contamos con promociones, descuentos o cupones especiales?</p>
-                        <img src="img/flechaNaranja2.png">
-                    </div>
-                    <div class="duda" id="duda4">
-                        <p>¿<strong class="p-marca">AION</strong> cuenta con automatización de facturas?</p>
-                        <img src="img/flechaNaranja2.png">
-                    </div>
-                    <div class="duda" id="duda5">
-                        <p>¿Las reservas son para cualquier tipo de negocio?</p>
-                        <img src="img/flechaNaranja2.png">
-                    </div>
-                    <div class="duda" id="duda6">
-                        <p>¿<strong class="p-marca">AION</strong> funciona en dispositivos moviles?</p>
-                        <img src="img/flechaNaranja2.png">
-                    </div>
-                </section>
-                <div class="mensajeDuda" id="mensajeDuda"></div>
-            </section>
         </section>
-    </main>
-
-    <section class="contenedorExtraInfo">
-        <div class="tituloExtraInfo">
-            <h2>¿Tu curiosidad no conoce límites?</h2>
-            <p>Aqui tienes una pequeña parte de nosotros</p>
-        </div>
-        <div class="botonesExtraInfo">
-            <button id="botonNuestroEquipo">Nuestro equipo</button>
-            <button id="botonLogoImagen">Logo e imágenes</button>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="footer-main">
-            <p>Si esto te ha sorprendido, imagina lo que lograremos juntos</p>
-            <p><strong>Súmate como inversor</strong></p>
-            <a href="invertir.html" class="btn">Comenzar</a>
-        </div>
-
-        <div class="footer-columns">
-            <div class="footer-column">
-                <h3>AION</h3>
-                <p>Tu empresa donde confiar tus proyectos</p>
-                <a href="formulario.html" class="btn">Contactanos</a>
+                
+        <section class="py-16 bg-gray-100">
+            <div class="container mx-auto px-4 lg:px-16">
+                
+                <!-- Título -->
+                <div class="text-center mb-8">
+                    <h2 class="text-2xl md:text-3xl font-bold text-gray-800">Si tienes dudas, te la resolvemos</h2>
+                </div>
+        
+                <!-- Preguntas Frecuentes -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <!-- Pregunta -->
+                    <div class="card bg-white shadow-md p-4 cursor-pointer hover:bg-gray-200 transition duration-300 duda" id="duda1">
+                        <div class="flex justify-between items-center">
+                            <p class="text-lg font-medium">¿Cómo puedo contratar los servicios de <strong class="text-primary text-[#ff8000]">AION</strong>?</p>
+                            <img src="img/flechaNaranja2.png" class="w-6 h-6 transition-transform duration-300 hover:rotate-90">
+                        </div>
+                    </div>
+        
+                    <div class="card bg-white shadow-md p-4 cursor-pointer hover:bg-gray-200 transition duration-300 duda" id="duda2">
+                        <div class="flex justify-between items-center">
+                            <p class="text-lg font-medium">¿Qué tipo de tarifas tenemos?</p>
+                            <img src="img/flechaNaranja2.png" class="w-6 h-6 transition-transform duration-300 hover:rotate-90">
+                        </div>
+                    </div>
+        
+                    <div class="card bg-white shadow-md p-4 cursor-pointer hover:bg-gray-200 transition duration-300 duda" id="duda3">
+                        <div class="flex justify-between items-center">
+                            <p class="text-lg font-medium">¿Contamos con promociones, descuentos o cupones especiales?</p>
+                            <img src="img/flechaNaranja2.png" class="w-6 h-6 transition-transform duration-300 hover:rotate-90">
+                        </div>
+                    </div>
+        
+                    <div class="card bg-white shadow-md p-4 cursor-pointer hover:bg-gray-200 transition duration-300 duda" id="duda4">
+                        <div class="flex justify-between items-center">
+                            <p class="text-lg font-medium">¿<strong class="text-primary text-[#ff8000]">AION</strong> cuenta con automatización de facturas?</p>
+                            <img src="img/flechaNaranja2.png" class="w-6 h-6 transition-transform duration-300 hover:rotate-90">
+                        </div>
+                    </div>
+        
+                    <div class="card bg-white shadow-md p-4 cursor-pointer hover:bg-gray-200 transition duration-300 duda" id="duda5">
+                        <div class="flex justify-between items-center">
+                            <p class="text-lg font-medium">¿Las reservas son para cualquier tipo de negocio?</p>
+                            <img src="img/flechaNaranja2.png" class="w-6 h-6 transition-transform duration-300 hover:rotate-90">
+                        </div>
+                    </div>
+        
+                    <div class="card bg-white shadow-md p-4 cursor-pointer hover:bg-gray-200 transition duration-300 duda" id="duda6">
+                        <div class="flex justify-between items-center">
+                            <p class="text-lg font-medium">¿<strong class="text-primary text-[#ff8000]">AION</strong> funciona en dispositivos móviles?</p>
+                            <img src="img/flechaNaranja2.png" class="w-6 h-6 transition-transform duration-300 hover:rotate-90">
+                        </div>
+                    </div>
+        
+                </div>
+        
+                <!-- Contenedor para mostrar la respuesta -->
+                <div id="mensajeDuda" class="mt-6 text-center text-lg text-gray-700 font-medium"></div>
+        
             </div>
-            <div class="footer-column">
-                <h4>Inicio</h4>
-                <ul>
-                    <li><a href="index.html">AION</a></li>
-                    <li><a href="index.html#funcionalidades">Funcionalidades</a></li>
-                    <li><a href="index.html#precios">Precios</a></li>
-                    <li><a href="invertir.html">¿Quieres inverir?</a></li>
+        </section>
+            </main>
+
+        <section class="contenedorExtraInfo text-center py-12 bg-[#ff8000]">
+            <div class="tituloExtraInfo mb-6">
+                <h2 class="text-2xl lg:text-3xl font-bold text-gray-800">¿Tu curiosidad no conoce límites?</h2>
+                <p class="text-lg text-gray-600 mt-2">Aquí tienes una pequeña parte de nosotros</p>
+            </div>
+            <div class="botonesExtraInfo flex flex-col md:flex-row justify-center gap-4">
+                <button id="botonNuestroEquipo" class="btn btn-primary bg-gray-700 border-gray-700 text-white px-6 py-3 text-lg">
+                    Nuestro equipo
+                </button>
+                <button id="botonLogoImagen" class="btn btn-outline border-gray-700 text-gray-700 px-6 py-3 text-lg">
+                    Logo e imágenes
+                </button>
+            </div>
+        </section>
+            
+    <footer class="bg-gray-900 text-white py-10">
+        <div class="text-center mb-8">
+            <p class="text-lg">Si esto te ha sorprendido, imagina lo que lograremos juntos</p>
+            <p class="font-semibold text-xl mt-2">Súmate como inversor</p>
+            <a href="invertir.html" class="btn btn bg-[#ff8000] border-0 text-white hover:bg-orange-700 mt-4">Comenzar</a>
+        </div>
+    
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left px-6">
+            <!-- Columna 1 -->
+            <div>
+                <h3 class="text-3xl font-bold text-[#ff8000]">AION</h3>
+                <p class="mt-2 text-gray-400">Tu empresa donde confiar tus proyectos</p>
+                <a href="formulario.html" class="btn btn bg-[#ff8000] border-0 text-white hover:bg-orange-700 mt-4">Contáctanos</a>
+            </div>
+    
+            <!-- Columna 2 -->
+            <div>
+                <h4 class="text-xl  font-semibold">Inicio</h4>
+                <ul class="mt-3 space-y-2">
+                    <li><a href="index.html" class="hover:hover:text-[#ff8000]">AION</a></li>
+                    <li><a href="#funcionalidades" class="hover:hover:text-[#ff8000]">Funcionalidades</a></li>
+                    <li><a href="#precios" class="hover:hover:text-[#ff8000]">Precios</a></li>
+                    <li><a href="invertir.html" class="hover:hover:text-[#ff8000]">¿Quieres invertir?</a></li>
                 </ul>
             </div>
-            <div class="footer-column">
-                <h4>¡Síguenos!</h4>
-                <ul>
-                    <li>
-                        <a href="https://www.facebook.com" target="_blank">Facebook</a>
-                        <img src="./img/facebook.png" alt="Facebook" class="social-icon">
+    
+            <!-- Columna 3 -->
+            <div>
+                <h4 class="text-xl font-semibold">¡Síguenos!</h4>
+                <ul class="mt-3 space-y-2">
+                    <li class="flex items-center justify-center md:justify-start gap-2">
+                        <img src="./img/facebook.png" alt="Facebook" class="w-5 h-5">
+                        <a href="https://www.facebook.com" target="_blank" class="hover:hover:text-[#ff8000]">Facebook</a>
                     </li>
-                    <li>
-                        <a href="https://www.twitter.com" target="_blank">Twitter</a>
-                        <img src="./img/X.png" alt="Twitter" class="social-icon">
+                    <li class="flex items-center justify-center md:justify-start gap-2">
+                        <img src="./img/X.png" alt="Twitter" class="w-5 h-5">
+                        <a href="https://www.twitter.com" target="_blank" class="hover:hover:text-[#ff8000]">Twitter</a>
                     </li>
-                    <li>
-                        <a href="https://www.instagram.com" target="_blank">Instagram</a>
-                        <img src="./img/instagram.png" alt="Instagram" class="social-icon">
+                    <li class="flex items-center justify-center md:justify-start gap-2">
+                        <img src="./img/instagram.png" alt="Instagram" class="w-5 h-5">
+                        <a href="https://www.instagram.com" target="_blank" class="hover:hover:text-[#ff8000]">Instagram</a>
                     </li>
                 </ul>
             </div>
         </div>
-
-        <div class="footer-bottom">
-            <ul>
-                <li><a href="terminosCondiciones.html">Términos y Condiciones</a></li>
-                <li><a href="politicaPrivacidad.html">Política de Privacidad</a></li>
-                <li><a href="politicaCookies.html">Política de Coockies</a></li>
-                <li><a href="avisosLegales.html">Avisos Legales</a></li>
+    
+        <div class="mt-10 border-t border-gray-700 pt-6 text-center">
+            <ul class="flex flex-wrap justify-center gap-4 text-gray-400">
+                <li><a href="terminosCondiciones.html" class="hover:text-primary">Términos y Condiciones</a></li>
+                <li><a href="politicaPrivacidad.html" class="hover:text-primary">Política de Privacidad</a></li>
+                <li><a href="politicaCookies.html" class="hover:text-primary">Política de Cookies</a></li>
+                <li><a href="avisosLegales.html" class="hover:text-primary">Avisos Legales</a></li>
             </ul>
-            <p>&copy; 2025 - Todos los derechos reservados</p>
+            <p class="text-gray-500 mt-4">&copy; 2025 - Todos los derechos reservados</p>
         </div>
     </footer>
 
@@ -172,11 +258,29 @@
         </svg>
     </button>
 
+
+    <!-- INSTALACION DE AOS (ANIMACIONES AL HACER SCROLL)-->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <!-- inicializa AOS-->
+    <script>
+        AOS.init();
+    </script>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!-- Librería SweetAlert2 -->
     <script src="scriptFormContact.js"></script>
     <script src="scriptNav.js"></script>
     <script src="script.js"></script>
     <script src="mensajeDuda.js"></script>
     <script src="botonSubir.js"></script>
+
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
 </body>
 </html>
