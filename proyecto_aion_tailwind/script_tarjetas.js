@@ -31,22 +31,22 @@ togglePrecio.addEventListener('change', () => {
         if (precio1Mensual.classList.contains('hidden')) {
             precio1Mensual.classList.remove('hidden');
             precio1Anual.classList.add('hidden');
-            tipoPlan1.textContent = "";
+            tipoPlan1.innerHTML = '<span class="visible"></span>';
         } else {
             precio1Anual.classList.remove('hidden');
             precio1Mensual.classList.add('hidden');
-            tipoPlan1.textContent = "Ahorro de 10€/mes";
+            tipoPlan1.innerHTML = '<span class="visible">Ahorro de 10€/mes</span>';
         }
 
         if (precio2Mensual.classList.contains('hidden')) {
             precio2Mensual.classList.remove('hidden');
             precio2Anual.classList.add('hidden');
-            tipoPlan2.textContent = "";
+            tipoPlan2.innerHTML = '<span class="visible"></span>';
             // ofertaAnual.classList.add('hidden');
         } else {
             precio2Anual.classList.remove('hidden');
             precio2Mensual.classList.add('hidden');
-            tipoPlan2.textContent = "Ahorro de 15€/mes";
+            tipoPlan2.innerHTML = '<span class="visible">Ahorro de 15€/mes</span>';
             // ofertaAnual.classList.remove('hidden');
         }
     }, 0);
