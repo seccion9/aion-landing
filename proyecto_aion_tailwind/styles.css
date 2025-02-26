@@ -49,6 +49,7 @@ section {
 
 .pagina-con-margen {
     margin-top: 60px;
+    margin-bottom: 0;
 }
 
 @media (max-width: 1023px) {
