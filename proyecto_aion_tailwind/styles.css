@@ -81,3 +81,12 @@ section {
     z-index: 10; 
 }
 
+.selected .flecha1 {
+    transform: rotate(90deg);
+    transition: transform 0.3s ease;
+}
+
+.selected .flecha2 {
+    transform: rotate(-90deg);
+    transition: transform 0.3s ease;
+}
