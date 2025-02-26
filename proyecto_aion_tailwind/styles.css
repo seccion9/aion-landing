@@ -1,12 +1,17 @@
 body {
     overflow-x: hidden;
-    margin: 0; 
+    margin: 0;
 }
 
 img {
     max-width: 100%;
     height: auto;
     object-fit: contain;
+}
+
+main {
+    margin-top: 110px;
+    margin-bottom: 40px;
 }
 
 section {
@@ -38,8 +43,8 @@ section {
     visibility: visible;
 }
 
-header {
-    height: 60px;
+.custom-shadow {
+    box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.5);
 }
 
 @media (max-width: 1023px) {
