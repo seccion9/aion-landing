@@ -8,6 +8,7 @@ img {
     height: auto;
     object-fit: contain;
 }
+
 section {
     scroll-margin-top: 60px;
 }
@@ -23,6 +24,21 @@ main {
 .section-padding {
     padding-left: 15px;
     padding-right: 15px;
+}
+
+.tipoPlan {
+    min-height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tipoPlan span {
+    visibility: hidden;
+}
+
+.tipoPlan .visible {
+    visibility: visible;
 }
 
 @media (max-width: 1023px) {
