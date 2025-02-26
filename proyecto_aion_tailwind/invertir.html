@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de Contacto</title>
     
-    <link rel="stylesheet" href="styles.css">
+    <!-- <link rel="stylesheet" href="styles.css"> -->
 
         <!-- INSTALACION DE TAILWIND CON DAISYUI-->
         <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
@@ -17,18 +17,16 @@
     
         <!-- INSTALACION DE SweetAlert2 (ANIMACIONES de alerta)-->
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-        
 
-
+        <link rel="stylesheet" href="styles.css">
 
 </head>
 <body>
-    <header class="bg-gray-200 shadow-md fixed top-0 left-0 w-full z-50">
+    <header class="bg-gray-200 shadow-md fixed top-0 left-0 w-full z-50 flex items-center h-16 z-[9999]">
         <nav class="container mx-auto flex justify-between items-center p-4 relative">
-            <!-- Logo -->
-            <a href="index.html" class="text-3xl font-bold text-[#ff8000]">AION</a>
+            <a href="index.html" class="text-3xl font-bold text-orange-600">AION</a>
     
-            <!-- Botón de menú para móviles -->
+            <!-- Botón de menú -->
             <div class="lg:hidden">
                 <button id="menu-toggle" class="btn btn-ghost" aria-label="Abrir menú">
                     <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -49,117 +47,142 @@
         </nav>
     </header>
 
-<main class="py-16 bg-neutral-100">
-    <div class="container mx-auto px-6 lg:px-16 flex flex-col lg:flex-row items-center gap-10">
+    <main class="pt-32 py-16 bg-neutral-100">
+
+
+        <div class="container mx-auto px-6 lg:px-16 flex flex-col lg:flex-row items-center gap-10">
+            
+            <!-- Sección de Información -->
+            <div class="lg:w-1/2 text-center lg:text-left">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">
+                    <span class="text-[#ff8000]">AION</span>
+                </h2>
+                <p class="text-lg text-gray-600 mb-4">Únete al futuro de la gestión de reservas</p>
+                <p class="text-gray-700 mb-4">
+                    Si estás interesado en ser parte de un proyecto innovador y con alto potencial de crecimiento, este es el lugar perfecto para comenzar.
+                    Completa el formulario y nos pondremos en contacto contigo para explorar juntos las posibilidades.
+                </p>
+                <p class="text-gray-700 mb-6">
+                    Queremos conocerte y entender cómo podemos crear una colaboración que se adapta a tus expectativas y objetivos.
+                    Nuestro equipo está preparado para resolver tus dudas y acompañarte en cada paso del proceso.
+                </p>
+                <!-- <img src="img/toTheMoon.avif" alt="To the Moon" class="rounded-lg shadow-md max-w-xs mx-auto lg:mx-0"> -->
+            </div>
+
+            <!-- Sección de Formulario -->
+            <div class="lg:w-1/2 bg-gray-900 shadow-lg rounded-lg p-8">
+                <h2 class="text-2xl font-bold text-white text-center mb-6">¡Da el primer paso hacia una oportunidad única!</h2>
+                <form id="formInvertir" class="space-y-4">
+                    
+                    <input type="text" id="nombre" name="nombre" placeholder="Nombre" required 
+                        class="input bg-white text-black w-full">
+                    
+                    <input type="tel" id="tel" name="tel" placeholder="Teléfono" required 
+                        class="input bg-white text-black w-full">
+                    
+                    <input type="email" id="email" name="email" placeholder="Correo" required 
+                        class="input bg-white text-black w-full">
+                    
+                    <div class="flex items-start space-x-2">
+                        <input type="checkbox" id="terms" required class="checkbox border-black bg-white checked:bg-white checked:text-black checked:border-black "">
+                        <label for="terms" class="text-white text-sm leading-tight">
+                            Acepto los 
+                            <a href="terminosCondiciones.html" class="text-blue-500 hover:underline font-medium">términos y condiciones</a>, la 
+                            <a href="politicaPrivacidad.html" class="text-blue-500 hover:underline font-medium">política de privacidad</a> y consiento el tratamiento de mis datos personales con el fin de ser contactado en relación con mi consulta.
+                        </label>
+                    </div>
+
+                    <div class="flex justify-center">
+                        <button type="submit" class="btn w-1/2 bg-[#ff8000] border-[#ff8000] text-white hover:bg-orange-700">
+                            Enviar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+
+    <footer class="w-full">        
+        <div class="bg-gray-900 text-white py-10 px-6 flex flex-col md:flex-row items-center md:items-start justify-between">
+            <div class="max-w-md">
+                <h2 class="text-2xl text-[#ff8000] font-bold">Súmate como inversor</h2>
+                <p class="mt-2 text-gray-300">Forma parte de un proyecto con alto potencial de crecimiento. Únete a nosotros y haz que tu inversión cuente.</p>
+            </div>
+            <div class="w-full flex justify-center md:justify-end">
+                    <a href="invertir.html" id="inversiones" class="btn bg-[#ff8000] border-0 text-white hover:bg-orange-700  px-6 py-4 mt-8 self-end md:self-end">INVERTIR</a> 
+            </div>
+        </div>
         
-        <!-- Sección de Información -->
-        <div class="lg:w-1/2 text-center lg:text-left">
-            <h2 class="text-4xl font-bold text-gray-800 mb-4">
-                <span class="text-[#ff8000]">AION</span>
-            </h2>
-            <p class="text-lg text-gray-600 mb-4">Únete al futuro de la gestión de reservas</p>
-            <p class="text-gray-700 mb-4">
-                Si estás interesado en ser parte de un proyecto innovador y con alto potencial de crecimiento, este es el lugar perfecto para comenzar.
-                Completa el formulario y nos pondremos en contacto contigo para explorar juntos las posibilidades.
-            </p>
-            <p class="text-gray-700 mb-6">
-                Queremos conocerte y entender cómo podemos crear una colaboración que se adapta a tus expectativas y objetivos.
-                Nuestro equipo está preparado para resolver tus dudas y acompañarte en cada paso del proceso.
-            </p>
-            <img src="img/toTheMoon.avif" alt="To the Moon" class="rounded-lg shadow-md max-w-xs mx-auto lg:mx-0">
-        </div>
-
-        <!-- Sección de Formulario -->
-        <div class="lg:w-1/2 bg-white shadow-lg rounded-lg p-8">
-            <h2 class="text-2xl font-bold text-gray-800 text-center mb-6">¡Da el primer paso hacia una oportunidad única!</h2>
-            <form id="formInvertir" class="space-y-4">
-                
-                <input type="text" id="nombre" name="nombre" placeholder="Nombre" required 
-                    class="input input-bordered w-full">
-                
-                <input type="tel" id="tel" name="tel" placeholder="Teléfono" required 
-                    class="input input-bordered w-full">
-                
-                <input type="email" id="email" name="email" placeholder="Correo" required 
-                    class="input input-bordered w-full">
-                
-                <div class="flex items-start space-x-2">
-                    <input type="checkbox" id="terms" required class="checkbox checkbox-primary">
-                    <label for="terms" class="text-gray-700 text-sm leading-tight">
-                        Acepto los 
-                        <a href="terminosCondiciones.html" class="text-blue-500 hover:underline font-medium">términos y condiciones</a>, la 
-                        <a href="politicaPrivacidad.html" class="text-blue-500 hover:underline font-medium">política de privacidad</a> y consiento el tratamiento de mis datos personales con el fin de ser contactado en relación con mi consulta.
-                    </label>
+            
+        <!-- Sección Blanca -->
+        <div class="bg-white py-10 px-6 flex flex-col md:flex-row justify-between items-center md:items-start">
+            <!-- Logo + Información -->
+            <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 text-center md:text-left px-6">
+                <!-- Columna 1 -->
+                <div>
+                    <div class="text-center md:text-left">
+                        <div class="size-24 bg-black text-[#ff8000] flex items-center justify-center text-lg font-bold rounded">
+                            <p class="text-3xl font-bold text-[#ff8000]">AION</p>
+                        </div>
+                        <p class="mt-2 text-gray-600">Tu empresa de confianza para inversiones inteligentes.</p>
+                    </div>
+            
+                <div>           
+                    <ul class="mt-3 space-y-2">
+                        <li class="flex items-center justify-center md:justify-start gap-2">
+                            <img src="./img/facebook.png" alt="Facebook" class="w-5 h-5">
+                            <a href="https://www.facebook.com" target="_blank" class="hover:hover:text-[#ff8000]">Facebook</a>
+                        </li>
+                        <li class="flex items-center justify-center md:justify-start gap-2">
+                            <img src="./img/X.png" alt="Twitter" class="w-5 h-5">
+                            <a href="https://www.twitter.com" target="_blank" class="hover:hover:text-[#ff8000]">Twitter</a>
+                        </li>
+                        <li class="flex items-center justify-center md:justify-start gap-2">
+                            <img src="./img/instagram.png" alt="Instagram" class="w-5 h-5">
+                            <a href="https://www.instagram.com" target="_blank" class="hover:hover:text-[#ff8000]">Instagram</a>
+                        </li>
+                    </ul>
+                </div>  
+                        </div>
+        
+                <!-- Columna 2 -->
+                <div>
+                    <div class="text-center mt-8 md:text-center">
+                        <h4 class="text-xl  font-semibold">Inicio</h4>
+                        <ul class="mt-8 space-y-2">
+                            <li><a href="index.html" class="hover:hover:text-[#ff8000]">AION</a></li>
+                            <li><a href="#carrusel" class="hover:hover:text-[#ff8000]">Integraciones</a></li>
+                            <li><a href="#funcionalidades" class="hover:hover:text-[#ff8000]">Funcionalidades</a></li>
+                            <li><a href="#precios" class="hover:hover:text-[#ff8000]">Precios</a></li>
+                            <li><a href="invertir.html" class="hover:hover:text-[#ff8000]">¿Quieres invertir?</a></li>
+                        </ul>
+                    </div>
                 </div>
+                        </div>
+        
+                <!-- Columna 3 -->
+                <div>
 
-                <div class="flex justify-center">
-                    <button type="submit" class="btn btn-primary w-1/2 bg-[#ff8000] border-[#ff8000] text-white">
-                        Enviar
-                    </button>
+                    <div class="text-center md:text-right">
+                        <a href="formulario.html" id="contacto" class="btn bg-[#ff8000] my-10 border-0 text-white hover:bg-orange-700">Contacto</a>
+                    </div>
                 </div>
-                
-
-            </form>
-        </div>
-
-    </div>
-</main>
-
-
-    <footer class="bg-gray-900 text-white py-10">
-        <div class="text-center mb-8">
-            <p class="text-lg">Si esto te ha sorprendido, imagina lo que lograremos juntos</p>
-            <p class="font-semibold text-xl mt-2">Súmate como inversor</p>
-            <a href="invertir.html" class="btn btn bg-[#ff8000] border-0 text-white hover:bg-orange-700 mt-4">Comenzar</a>
-        </div>
-    
-        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left px-6">
-            <!-- Columna 1 -->
-            <div>
-                <h3 class="text-3xl font-bold text-[#ff8000]">AION</h3>
-                <p class="mt-2 text-gray-400">Tu empresa donde confiar tus proyectos</p>
-                <a href="formulario.html" class="btn btn bg-[#ff8000] border-0 text-white hover:bg-orange-700 mt-4">Contáctanos</a>
+                        </div>
             </div>
+
+
+            
     
-            <!-- Columna 2 -->
-            <div>
-                <h4 class="text-xl  font-semibold">Inicio</h4>
-                <ul class="mt-3 space-y-2">
-                    <li><a href="index.html" class="hover:hover:text-[#ff8000]">AION</a></li>
-                    <li><a href="#funcionalidades" class="hover:hover:text-[#ff8000]">Funcionalidades</a></li>
-                    <li><a href="#precios" class="hover:hover:text-[#ff8000]">Precios</a></li>
-                    <li><a href="invertir.html" class="hover:hover:text-[#ff8000]">¿Quieres invertir?</a></li>
-                </ul>
-            </div>
-    
-            <!-- Columna 3 -->
-            <div>
-                <h4 class="text-xl font-semibold">¡Síguenos!</h4>
-                <ul class="mt-3 space-y-2">
-                    <li class="flex items-center justify-center md:justify-start gap-2">
-                        <img src="./img/facebook.png" alt="Facebook" class="w-5 h-5">
-                        <a href="https://www.facebook.com" target="_blank" class="hover:hover:text-[#ff8000]">Facebook</a>
-                    </li>
-                    <li class="flex items-center justify-center md:justify-start gap-2">
-                        <img src="./img/X.png" alt="Twitter" class="w-5 h-5">
-                        <a href="https://www.twitter.com" target="_blank" class="hover:hover:text-[#ff8000]">Twitter</a>
-                    </li>
-                    <li class="flex items-center justify-center md:justify-start gap-2">
-                        <img src="./img/instagram.png" alt="Instagram" class="w-5 h-5">
-                        <a href="https://www.instagram.com" target="_blank" class="hover:hover:text-[#ff8000]">Instagram</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    
-        <div class="mt-10 border-t border-gray-700 pt-6 text-center">
-            <ul class="flex flex-wrap justify-center gap-4 text-gray-400">
+        <!-- Sección Naranja -->
+        <div class="bg-[#ff8000] text-white text-sm py-4 px-6 flex flex-col md:flex-row justify-between items-center">
+            <p class="text-sm">&copy; 2025 - Todos los derechos reservados</p>
+            <div class="flex space-x-4 text-sm">
                 <li><a href="terminosCondiciones.html" class="hover:text-primary">Términos y Condiciones</a></li>
                 <li><a href="politicaPrivacidad.html" class="hover:text-primary">Política de Privacidad</a></li>
                 <li><a href="politicaCookies.html" class="hover:text-primary">Política de Cookies</a></li>
                 <li><a href="avisosLegales.html" class="hover:text-primary">Avisos Legales</a></li>
-            </ul>
-            <p class="text-gray-500 mt-4">&copy; 2025 - Todos los derechos reservados</p>
+            </div>
         </div>
     </footer>
 
@@ -186,7 +209,6 @@
     <script src="mensajeDuda.js"></script>
     <script src="botonSubir.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="menu_hamburguesa.js"></script>
 
 
 

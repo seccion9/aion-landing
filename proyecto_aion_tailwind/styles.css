@@ -1,6 +1,6 @@
 body {
     overflow-x: hidden;
-    margin-top: 60px;
+    margin: 0; 
 }
 
 img {
@@ -11,9 +11,6 @@ img {
 
 section {
     scroll-margin-top: 60px;
-}
-main {
-    margin-top: 60px;
 }
 
 .container {
@@ -41,6 +38,10 @@ main {
     visibility: visible;
 }
 
+header {
+    height: 60px;
+}
+
 @media (max-width: 1023px) {
     #nav-list {
         position: absolute;
@@ -60,8 +61,13 @@ main {
         align-items: center;
         justify-content: center;
         padding: 0.5rem 1rem;
-      }
-      
-  
-  }
-  
+    }
+}
+
+.selected {
+    border: 2px solid orange; 
+    border-radius: 8px; 
+    position: relative;
+    z-index: 10; 
+}
+

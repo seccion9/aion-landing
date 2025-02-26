@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Política de Privacidad - Aion</title>
 
-    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <link rel="stylesheet" href="styles.css">
 
         <!-- INSTALACION DE TAILWIND CON DAISYUI-->
         <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
@@ -21,8 +21,8 @@
 
 </head>
 <body>
-    <header class="bg-gray-200 shadow-md">
-        <nav class="container mx-auto flex justify-between items-center p-4">
+    <header class="bg-gray-200 shadow-md fixed top-0 left-0 w-full z-50">
+        <nav class="container mx-auto flex justify-between items-center p-4 relative">
             <!-- Logo -->
             <a href="index.html" class="text-3xl font-bold text-[#ff8000]">AION</a>
     
@@ -36,18 +36,18 @@
             </div>
     
             <!-- Menú de navegación -->
-            <ul id="nav-list" class="hidden lg:flex space-x-6">
-                <li><a href="index.html" class="btn bg-transparent border-0 text-black hover:text-[#ff8000] hover:bg-transparent">Inicio</a></li>
-                <li><a id="integraciones" href="#carrusel" class="btn bg-transparent border-0 text-black hover:text-[#ff8000] hover:bg-transparent">Integraciones</a></li>
-                <li><a id="funcional" href="#funcionalidades" class="btn bg-transparent border-0 text-black hover:text-[#ff8000] hover:bg-transparent">Funcionalidades</a></li>
-                <li><a id="planes" href="#precios" class="btn bg-transparent border-0 text-black hover:text-[#ff8000] hover:bg-transparent">Precios</a></li>
-                <li><a href="invertir.html" class="btn bg-transparent border-0 text-black hover:text-[#ff8000] hover:bg-transparent">¿Quieres invertir?</a></li>
-                <li><a href="formulario.html" id="contacto" class="btn bg-[#ff8000] border-0 text-white hover:bg-orange-700">Contacto</a></li>
-            </ul>
+            <ul id="nav-list" class="hidden lg:flex gap-x-6">
+                <li><a href="index.html" class="btn bg-transparent border-0 text-black hover:text-orange-600 hover:bg-transparent">Inicio</a></li>
+                <li><a id="integraciones" href="index.html#carrusel" class="btn bg-transparent border-0 text-black hover:text-orange-600 hover:bg-transparent">Integraciones</a></li>
+                <li><a id="funcional" href="index.html#funcionalidades" class="btn bg-transparent border-0 text-black hover:text-orange-600 hover:bg-transparent">Funcionalidades</a></li>
+                <li><a id="planes" href="index.html#precios" class="btn bg-transparent border-0 text-black hover:text-orange-600 hover:bg-transparent">Precios</a></li>
+                <li><a href="invertir.html" class="btn bg-transparent border-0 text-black hover:text-orange-600 hover:bg-transparent">¿Quieres invertir?</a></li>
+                <li><a href="formulario.html" id="contacto" class="btn bg-orange-600 border-0 text-white hover:bg-orange-700">Contacto</a></li>
+            </ul>  
         </nav>
     </header>
 
-
+    <main>
     <div class="max-w-4xl mx-auto py-12 px-6 lg:px-12 bg-white shadow-lg rounded-lg">
         <h1 class="text-4xl font-bold text-gray-800 text-center mb-8">Política de Privacidad</h1>
     
@@ -134,62 +134,88 @@
             <p class="text-gray-600">Nos reservamos el derecho de modificar esta política y los cambios serán publicados en esta página.</p>
         </section>
     </div>
+    </main>
+    
+    <footer class="w-full">        
+        <div class="bg-gray-900 text-white py-10 px-6 flex flex-col md:flex-row items-center md:items-start justify-between">
+            <div class="max-w-md">
+                <h2 class="text-2xl text-[#ff8000] font-bold">Súmate como inversor</h2>
+                <p class="mt-2 text-gray-300">Forma parte de un proyecto con alto potencial de crecimiento. Únete a nosotros y haz que tu inversión cuente.</p>
+            </div>
+            <div class="w-full flex justify-center md:justify-end">
+                    <a href="invertir.html" id="inversiones" class="btn bg-[#ff8000] border-0 text-white hover:bg-orange-700  px-6 py-4 mt-8 self-end md:self-end">INVERTIR</a> 
+            </div>
+        </div>
+        
+            
+        <!-- Sección Blanca -->
+        <div class="bg-white py-10 px-6 flex flex-col md:flex-row justify-between items-center md:items-start">
+            <!-- Logo + Información -->
+            <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 text-center md:text-left px-6">
+                <!-- Columna 1 -->
+                <div>
+                    <div class="text-center md:text-left">
+                        <div class="size-24 bg-black text-[#ff8000] flex items-center justify-center text-lg font-bold rounded">
+                            <p class="text-3xl font-bold text-[#ff8000]">AION</p>
+                        </div>
+                        <p class="mt-2 text-gray-600">Tu empresa de confianza para inversiones inteligentes.</p>
+                    </div>
+            
+                <div>           
+                    <ul class="mt-3 space-y-2">
+                        <li class="flex items-center justify-center md:justify-start gap-2">
+                            <img src="./img/facebook.png" alt="Facebook" class="w-5 h-5">
+                            <a href="https://www.facebook.com" target="_blank" class="hover:hover:text-[#ff8000]">Facebook</a>
+                        </li>
+                        <li class="flex items-center justify-center md:justify-start gap-2">
+                            <img src="./img/X.png" alt="Twitter" class="w-5 h-5">
+                            <a href="https://www.twitter.com" target="_blank" class="hover:hover:text-[#ff8000]">Twitter</a>
+                        </li>
+                        <li class="flex items-center justify-center md:justify-start gap-2">
+                            <img src="./img/instagram.png" alt="Instagram" class="w-5 h-5">
+                            <a href="https://www.instagram.com" target="_blank" class="hover:hover:text-[#ff8000]">Instagram</a>
+                        </li>
+                    </ul>
+                </div>  
+                        </div>
+        
+                <!-- Columna 2 -->
+                <div>
+                    <div class="text-center mt-8 md:text-center">
+                        <h4 class="text-xl  font-semibold">Inicio</h4>
+                        <ul class="mt-8 space-y-2">
+                            <li><a href="index.html" class="hover:hover:text-[#ff8000]">AION</a></li>
+                            <li><a href="#carrusel" class="hover:hover:text-[#ff8000]">Integraciones</a></li>
+                            <li><a href="#funcionalidades" class="hover:hover:text-[#ff8000]">Funcionalidades</a></li>
+                            <li><a href="#precios" class="hover:hover:text-[#ff8000]">Precios</a></li>
+                            <li><a href="invertir.html" class="hover:hover:text-[#ff8000]">¿Quieres invertir?</a></li>
+                        </ul>
+                    </div>
+                </div>
+                        </div>
+        
+                <!-- Columna 3 -->
+                <div>
 
-    
-    <footer class="bg-gray-900 text-white py-10">
-        <div class="text-center mb-8">
-            <p class="text-lg">Si esto te ha sorprendido, imagina lo que lograremos juntos</p>
-            <p class="font-semibold text-xl mt-2">Súmate como inversor</p>
-            <a href="invertir.html" class="btn btn bg-[#ff8000] border-0 text-white hover:bg-orange-700 mt-4">Comenzar</a>
-        </div>
-    
-        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left px-6">
-            <!-- Columna 1 -->
-            <div>
-                <h3 class="text-3xl font-bold text-[#ff8000]">AION</h3>
-                <p class="mt-2 text-gray-400">Tu empresa donde confiar tus proyectos</p>
-                <a href="formulario.html" class="btn btn bg-[#ff8000] border-0 text-white hover:bg-orange-700 mt-4">Contáctanos</a>
+                    <div class="text-center md:text-right">
+                        <a href="formulario.html" id="contacto" class="btn bg-[#ff8000] my-10 border-0 text-white hover:bg-orange-700">Contacto</a>
+                    </div>
+                </div>
+                        </div>
             </div>
+
+
+            
     
-            <!-- Columna 2 -->
-            <div>
-                <h4 class="text-xl  font-semibold">Inicio</h4>
-                <ul class="mt-3 space-y-2">
-                    <li><a href="index.html" class="hover:hover:text-[#ff8000]">AION</a></li>
-                    <li><a href="#funcionalidades" class="hover:hover:text-[#ff8000]">Funcionalidades</a></li>
-                    <li><a href="#precios" class="hover:hover:text-[#ff8000]">Precios</a></li>
-                    <li><a href="invertir.html" class="hover:hover:text-[#ff8000]">¿Quieres invertir?</a></li>
-                </ul>
-            </div>
-    
-            <!-- Columna 3 -->
-            <div>
-                <h4 class="text-xl font-semibold">¡Síguenos!</h4>
-                <ul class="mt-3 space-y-2">
-                    <li class="flex items-center justify-center md:justify-start gap-2">
-                        <img src="./img/facebook.png" alt="Facebook" class="w-5 h-5">
-                        <a href="https://www.facebook.com" target="_blank" class="hover:hover:text-[#ff8000]">Facebook</a>
-                    </li>
-                    <li class="flex items-center justify-center md:justify-start gap-2">
-                        <img src="./img/X.png" alt="Twitter" class="w-5 h-5">
-                        <a href="https://www.twitter.com" target="_blank" class="hover:hover:text-[#ff8000]">Twitter</a>
-                    </li>
-                    <li class="flex items-center justify-center md:justify-start gap-2">
-                        <img src="./img/instagram.png" alt="Instagram" class="w-5 h-5">
-                        <a href="https://www.instagram.com" target="_blank" class="hover:hover:text-[#ff8000]">Instagram</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    
-        <div class="mt-10 border-t border-gray-700 pt-6 text-center">
-            <ul class="flex flex-wrap justify-center gap-4 text-gray-400">
+        <!-- Sección Naranja -->
+        <div class="bg-[#ff8000] text-white text-sm py-4 px-6 flex flex-col md:flex-row justify-between items-center">
+            <p class="text-sm">&copy; 2025 - Todos los derechos reservados</p>
+            <div class="flex space-x-4 text-sm">
                 <li><a href="terminosCondiciones.html" class="hover:text-primary">Términos y Condiciones</a></li>
                 <li><a href="politicaPrivacidad.html" class="hover:text-primary">Política de Privacidad</a></li>
                 <li><a href="politicaCookies.html" class="hover:text-primary">Política de Cookies</a></li>
                 <li><a href="avisosLegales.html" class="hover:text-primary">Avisos Legales</a></li>
-            </ul>
-            <p class="text-gray-500 mt-4">&copy; 2025 - Todos los derechos reservados</p>
+            </div>
         </div>
     </footer>
 
@@ -214,6 +240,7 @@
     <script src="scriptNav.js"></script>
     <script src="botonSubir.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="menu_hamburguesa.js"></script>
 
 
 
