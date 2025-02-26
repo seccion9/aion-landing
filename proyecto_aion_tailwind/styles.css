@@ -9,6 +9,10 @@ img {
     object-fit: contain;
 }
 
+main {
+    margin-top: 40px;
+}
+
 section {
     scroll-margin-top: 60px;
 }
@@ -36,10 +40,6 @@ section {
 
 .tipoPlan .visible {
     visibility: visible;
-}
-
-header {
-    height: 60px;
 }
 
 @media (max-width: 1023px) {
