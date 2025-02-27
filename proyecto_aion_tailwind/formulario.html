@@ -49,53 +49,59 @@
     <main class="pagina-con-margen">
         <section class="bg-neutral-100 relative flex items-center justify-center px-0 py-0 h-screen">
             <div class="relative w-full h-full">
+                <!-- Imagen de fondo -->
                 <img src="img/imagen_contacto.png" alt="Gestiona tus reservas" class="w-full h-full object-cover shadow-lg">
-                
+
+                <!-- Degradado inferior de la imagen -->
                 <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-neutral-100/90 to-transparent"></div>
-    
-                <form id="formContacto" class="absolute left-[15%] top-[15%] w-full lg:w-1/4 p-8 bg-white shadow-lg rounded-lg space-y-3" data-aos="fade-right" data-aos-duration="1000">
-                    <label class="block text-gray-800 font-medium">Nombre</label>
-                    <input type="text" id="nombre" name="nombre" placeholder="Nombre Completo*" required 
+
+                <!-- Contenedor para el formulario -->
+                <div class="absolute top-1/2 left-1/2 w-full max-w-screen-xl px-8 -translate-x-1/2 -translate-y-1/2">
+                    <!-- Formulario -->
+                    <form id="formContacto" class="w-full max-w-[400px] p-8 bg-white shadow-lg rounded-lg space-y-3" data-aos="fade-right" data-aos-duration="1000">
+                        <label class="block text-gray-800 font-medium">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Nombre Completo*" required 
                            class="input input-bordered bg-white w-full h-9 border-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
     
-                    <label class="block text-gray-800 font-medium">Email</label>
-                    <input type="email" id="email" name="email" placeholder="Email*" required 
+                        <label class="block text-gray-800 font-medium">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Email*" required 
                            class="input input-bordered bg-white w-full h-9 border-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
                 
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-                        <div>
-                            <label class="block text-gray-800 font-medium mb-3">Teléfono</label>
-                            <input type="tel" id="tel" name="tel" placeholder="Teléfono*" required 
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                            <div>
+                                <label class="block text-gray-800 font-medium mb-3">Teléfono</label>
+                                <input type="tel" id="tel" name="tel" placeholder="Teléfono*" required 
                                    class="input input-bordered bg-white w-full h-9 border-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
-                        </div>
-                        <div>
-                            <label class="block text-gray-800 font-medium mb-3">Ciudad</label>
-                            <input type="text" id="ciudad" name="ciudad" placeholder="Ciudad*" required 
+                            </div>
+                            <div>
+                                <label class="block text-gray-800 font-medium mb-3">Ciudad</label>
+                                <input type="text" id="ciudad" name="ciudad" placeholder="Ciudad*" required 
                                    class="input input-bordered bg-white w-full h-9 border-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
+                            </div>
                         </div>
-                    </div>
                 
-                    <label class="block text-gray-800 font-medium">¿Cómo nos has conocido?</label>
-                    <select id="info" name="info" required 
+                        <label class="block text-gray-800 font-medium">¿Cómo nos has conocido?</label>
+                        <select id="info" name="info" required 
                             class="select select-bordered bg-white w-full h-9 border-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
-                        <option value="" selected hidden>Elige una opción*</option>
-                        <option value="Google">Google</option>
-                        <option value="Redes Sociales">Redes Sociales</option>
-                        <option value="Recomendación">Recomendación</option>
-                        <option value="Otro">Otro</option>
-                    </select>
+                            <   option value="" selected hidden>Elige una opción*</>
+                            <option value="Google">Google</option>
+                            <option value="Redes Sociales">Redes Sociales</option>
+                            <option value="Recomendación">Recomendación</option>
+                            <option value="Otro">Otro</option>
+                        </select>
                 
-                    <h3 class="text-gray-800 font-medium">¿EN QUÉ PODEMOS AYUDARTE?</h3>
-                    <textarea id="mensaje" name="mensaje" rows="3" required 
+                        <h3 class="text-gray-800 font-medium">¿EN QUÉ PODEMOS AYUDARTE?</h3>
+                        <textarea id="mensaje" name="mensaje" rows="3" required 
                               class="textarea textarea-bordered bg-white w-full h-24 border-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500" 
                               placeholder="Escribe tu mensaje aquí..."></textarea>
                 
-                    <div class="flex justify-center">
-                        <button type="submit" class="btn w-1/2 bg-[#ff8000] border-[#ff8000] text-white hover:bg-orange-700 h-10">
+                        <div class="flex justify-center">
+                            <button type="submit" class="btn w-1/2 bg-[#ff8000] border-[#ff8000] text-white hover:bg-orange-700 h-10">
                             Enviar
-                        </button>
-                    </div>
-                </form>
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </section>
     
