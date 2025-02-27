@@ -81,6 +81,11 @@ section {
     z-index: 10; 
 }
 
+.card.selected {
+    border-color: #ff8000; 
+}
+
+
 .selected .flecha1 {
     transform: rotate(90deg);
     transition: transform 0.3s ease;
@@ -90,3 +95,35 @@ section {
     transform: rotate(-90deg);
     transition: transform 0.3s ease;
 }
+
+#texto-seleccionado {
+    height: auto; 
+    min-height: 94%; 
+}
+
+#tarjetas {
+    display: flex;
+    flex-direction: column;
+}
+
+#tarjetas::after {
+    content: "";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+.message-appear {
+    opacity: 0;
+    transform: translateY(-30px); 
+    transition: opacity 0.6s ease, transform 0.6s ease; 
+}
+
+.message-visible {
+    opacity: 1;
+    transform: translateY(0); 
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+
+
