@@ -20,61 +20,70 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
 </head>
+
 <body>
-    <header class="bg-gray-200 fixed top-0 left-0 w-full flex items-center h-16 z-[9999]">
-        <nav class="container mx-auto flex justify-between items-center p-4 relative">
-            <a href="index.html" class="text-3xl font-bold text-orange-600">AION</a>
+    <header class="bg-gray-200 fixed top-0 left-0 w-full h-16 z-[9999]">
+        <div class="max-w-screen-xl mx-auto flex items-center h-full px-4">
+            <nav class="container mx-auto flex justify-between items-center p-4 relative">
+                <a href="index.html" class="text-3xl font-bold text-orange-600">AION</a>
     
-            <!-- Botón de menú -->
-            <div class="lg:hidden">
-                <button id="menu-toggle" class="btn btn-ghost" aria-label="Abrir menú">
-                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
-                    </svg>
-                </button>
-            </div>
+                <!-- Botón de menú solo en dispositivos móviles-->
+                <div class="lg:hidden">
+                    <button id="menu-toggle" class="btn btn-ghost" aria-label="Abrir menú">
+                        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+                        </svg>
+                    </button>
+                </div>
     
-            <!-- Menú de navegación -->
-            <ul id="nav-list" class="hidden lg:flex gap-x-6">
-                <li><a href="index.html" class="btn btn-ghost bg-transparent border-0 text-black hover:text-orange-600 hover:bg-transparent">Inicio</a></li>
-                <li><a id="integraciones" href="index.html#carrusel" class="btn btn-ghost bg-transparent border-0 text-black hover:text-orange-600 hover:bg-transparent">Integraciones</a></li>
-                <li><a id="funcional" href="index.html#funcionalidades" class="btn btn-ghost bg-transparent border-0 text-black hover:text-orange-600 hover:bg-transparent">Funcionalidades</a></li>
-                <li><a id="planes" href="index.html#precios" class="btn btn-ghost bg-transparent border-0 text-black hover:text-orange-600 hover:bg-transparent">Precios</a></li>
-                <li><a href="invertir.html" class="btn btn-ghost bg-transparent border-transparent text-black hover:text-orange-600 hover:bg-transparent">¿Quieres invertir?</a></li>
-                <li><a href="formulario.html" id="contacto" class="btn btn-ghost bg-orange-600 border-0 text-white hover:bg-orange-700">Contacto</a></li>
-            </ul>            
-        </nav>
+                <!-- Menú de navegación -->
+                <ul id="nav-list" class="hidden lg:flex gap-x-6">
+                    <li><a href="index.html" class="btn btn-ghost bg-transparent border-0 text-black hover:text-orange-600 hover:bg-transparent">Inicio</a></li>
+                    <li><a id="integraciones" href="index.html#carrusel" class="btn btn-ghost bg-transparent border-0 text-black hover:text-orange-600 hover:bg-transparent">Integraciones</a></li>
+                    <li><a id="funcional" href="index.html#funcionalidades" class="btn btn-ghost bg-transparent border-0 text-black hover:text-orange-600 hover:bg-transparent">Funcionalidades</a></li>
+                    <li><a id="planes" href="index.html#precios" class="btn btn-ghost bg-transparent border-0 text-black hover:text-orange-600 hover:bg-transparent">Precios</a></li>
+                    <li><a href="invertir.html" class="btn btn-ghost bg-transparent border-transparent text-black hover:text-orange-600 hover:bg-transparent">¿Quieres invertir?</a></li>
+                    <li><a href="formulario.html" id="contacto" class="btn btn-ghost bg-orange-600 border-0 text-white hover:bg-orange-700">Contacto</a></li>
+                </ul>            
+            </nav>
+        </div>
     </header>
     
     <main class="pagina-con-margen">
+        <!-- Sección Portada -->
         <section id="main">
             <section class="bg-neutral-100 relative flex items-center justify-center px-0 py-0 h-screen">
                 <!-- Contenedor de la imagen -->
                 <div class="relative w-full h-full">
-                    <img src="img/inicio.jpg" alt="Gestiona tus reservas" class="w-full h-full object-cover shadow-lg">
+                    <img src="img/inicio.jpg" alt="Gestiona tus reservas" class="w-full h-full object-cover">
                     
-                    <div class="absolute bottom-0 left-0 w-full h-12 bg-gradient-to-t from-neutral-100/40 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-white/100 to-transparent"></div>
                     
-                    <div class="absolute left-20 top-[40%] transform -translate-y-1/2 text-left space-y-4 max-w-xl text-white" data-aos="fade-right" data-aos-duration="1000">
-                        <h1 class="text-5xl font-bold mb-8">
+                    <!-- Contenedor de texto con ancho máximo -->
+                    <div class="w-full max-w-screen-xl px-8 mx-auto text-left">
+                        <!-- Texto blanco -->
+                        <div class="absolute top-[40%] transform -translate-y-1/2 space-y-4 text-white" data-aos="fade-right" data-aos-duration="1000">
+                            <h1 class="text-5xl font-bold mb-8 max-w-3xl">
                             El software de gestión de reservas con el que hacer brillar tu negocio
-                        </h1>
-                        <p class="text-base max-w-md">
+                            </h1>
+                            <p class="text-base max-w-md">
                             Gestiona tus reservas de manera sencilla y eficiente con un sistema adaptable a cualquier tipo de negocio.
-                        </p>
-                        <p class="text-base max-w-md">
+                            </p>
+                            <p class="text-base max-w-md">
                             Simplifica tus tareas diarias, optimiza la organización de tu negocio y ahorra tiempo con herramientas diseñadas para potenciar tu productividad.
+                            </p>
+                        </div>
+                        
+                        <!-- Texto naranja -->
+                        <p class="absolute bottom-40 transform -translate-x-1/2 text-2xl font-semibold text-accent text-orange-500" data-aos="fade-right" data-aos-duration="1000">
+                            ¡Empieza ahora y transforma tu gestión en éxito!
                         </p>
                     </div>
-        
-                    <p class="absolute left-20 bottom-40 text-2xl font-semibold text-accent text-orange-500 max-w-2xl" data-aos="fade-right" data-aos-duration="1000">
-                        ¡Empieza ahora y transforma tu gestión en éxito!
-                    </p>
                 </div>
             </section>
         </section>
         
-        <section class="logos-empresas py-16 bg-white">
+        <section class="logos-empresas py-8 bg-white">
             <div class="texto-logos text-center mb-4">
                 <p class="cantidad-empresas text-2xl font-semibold text-gray-700">Múltiples empresas <strong>ya trabajan con nosotros</strong></p>
             </div>
@@ -98,46 +107,51 @@
                 </div>
             </section>
         </section>
-           
-        <section class="bg-neutral-100 relative flex flex-col items-center justify-center py-6 pb-20" id="carrusel">
-            <h2 class="text-4xl font-bold text-orange-500 text-center mb-6 max-w-lg">AION se adapta a tu empresa</h2>
-            <div class="w-full py-6 flex justify-center flex-col items-center mt-0">
-                <div class="relative w-full flex items-center justify-center">
 
-                    <div class="overflow-hidden w-full max-w-4xl rounded-lg">
-                        <div class="flex transition-transform duration-500 ease-in-out" id="carousel">
-                            <div class="carousel-item w-full flex-shrink-0 rounded-lg overflow-hidden h-[41rem]">
-                                <img src="img/centrosDeportivos.JPG" class="w-full h-full object-cover" />
-                            </div>
-                            <div class="carousel-item w-full flex-shrink-0 rounded-lg overflow-hidden h-[41rem]">
-                                <img src="img/experienciaInmersiva.JPG" class="w-full h-full object-cover" />
-                            </div>
-                            <div class="carousel-item w-full flex-shrink-0 rounded-lg overflow-hidden h-[41rem]">
-                                <img src="img/aireLibre.JPG" class="w-full h-full object-cover" />
-                            </div>
-                            <div class="carousel-item w-full flex-shrink-0 rounded-lg overflow-hidden h-[41rem]">
-                                <img src="img/negocio.JPG" class="w-full h-full object-cover" />
+        <!-- Seccion carrusel de imagenes -->
+        <section class="bg-neutral-100 relative flex flex-col items-center justify-center py-8 pb-20" id="carrusel">
+            <h2 class="text-4xl font-bold text-orange-500 text-center mb-6 max-w-lg">AION se adapta a tu empresa</h2>
+            <!-- Contenedor centrado con un ancho máximo -->
+            <div class="w-full max-w-screen-xl px-8 mx-auto"> 
+                <div class="w-full py-6 flex justify-center flex-col items-center mt-0">
+
+                    <div class="relative w-full flex items-center justify-center">
+                        <div class="overflow-hidden w-full rounded-lg">
+                            <div class="flex transition-transform duration-500 ease-in-out" id="carousel">
+                                <div class="carousel-item w-full flex-shrink-0 rounded-lg overflow-hidden">
+                                    <img src="img/centrosDeportivos.JPG" class="w-full h-full object-cover" />
+                                </div>
+                                <div class="carousel-item w-full flex-shrink-0 rounded-lg overflow-hidden">
+                                    <img src="img/experienciaInmersiva.JPG" class="w-full h-full object-cover" />
+                                </div>
+                                <div class="carousel-item w-full flex-shrink-0 rounded-lg overflow-hidden">
+                                    <img src="img/aireLibre.JPG" class="w-full h-full object-cover" />
+                                </div>
+                                <div class="carousel-item w-full flex-shrink-0 rounded-lg overflow-hidden">
+                                    <img src="img/negocio.JPG" class="w-full h-full object-cover" />
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
+                <!-- botones carrusel -->
                 <div class="absolute bottom-4 left-0 right-0 flex justify-center items-center px-6">
-                    <button class="z-50 bg-gray-600 bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-75 transition mx-24" onclick="prevSlide()">❮</button>
+                    <button class="z-50 bg-gray-600 bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-75 transition mx-8" onclick="prevSlide()">❮</button>
 
-                    <div class="flex justify-center gap-2 mx-4">
+                    <div class="flex justify-center gap-8 mx-2">
                         <div id="dot-0" class="w-4 h-4 rounded-full bg-gray-600 opacity-50 cursor-pointer hover:opacity-100 transition" onclick="goToSlide(0)"></div>
                         <div id="dot-1" class="w-4 h-4 rounded-full bg-gray-600 opacity-50 cursor-pointer hover:opacity-100 transition" onclick="goToSlide(1)"></div>
                         <div id="dot-2" class="w-4 h-4 rounded-full bg-gray-600 opacity-50 cursor-pointer hover:opacity-100 transition" onclick="goToSlide(2)"></div>
                         <div id="dot-3" class="w-4 h-4 rounded-full bg-gray-600 opacity-50 cursor-pointer hover:opacity-100 transition" onclick="goToSlide(3)"></div>
                     </div>
 
-                    <button class="z-50 bg-gray-600 bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-75 transition mx-24" onclick="nextSlide()">❯</button>
+                    <button class="z-50 bg-gray-600 bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-75 transition mx-8" onclick="nextSlide()">❯</button>
                 </div>
+            </div>
             </div>
         </section>
                  
-        <section class="extra-info bg-neutral-50 py-16 min-h-screen flex flex-col items-center" id="funcionalidades">
+        <section class="extra-info bg-neutral-50 py-8 flex flex-col items-center" id="funcionalidades">
             <h2 class="main-title text-center text-orange-500 text-4xl font-bold mb-12 w-full">¿Estas listo para dar el salto al siguiente nivel?</h2>
                 
             <div class="sections flex gap-16 px-4 w-full max-w-7xl relative">
@@ -200,13 +214,13 @@
             </div>
         </section>
                 
-        <section class="optimizar-negocio text-center py-12 bg-neutral-100">
+        <section class="optimizar-negocio text-center py-8 bg-neutral-100">
             <div class="optimizar-title">
                 <h2 class="main-title text-orange-500 text-4xl font-bold">¿Qué te ofrece AION?</h2>
                 <p class="text-xl text-gray-600 mt-2">Haz crecer tu negocio con una herramienta que trabaja por ti</p>
             </div>
                 
-            <section class="modulos-destacados flex flex-wrap justify-center gap-8 max-w-[90%] lg:max-w-6xl mx-auto mt-16">
+            <section class="modulos-destacados flex flex-wrap justify-center gap-8 max-w-[90%] lg:max-w-6xl mx-auto mt-10">
 
                 <div class="tarjeta relative group flex flex-col items-center justify-between w-64 h-[380px] transition-all transform hover:scale-105 overflow-hidden" data-aos="fade-right" data-aos-duration="1000">
                     <div class="w-full h-40">
@@ -250,7 +264,7 @@
             </section>
         </section>
          
-        <section class="contenedor text-center py-16 bg-white" id="precios">
+        <section class="contenedor text-center py-8 bg-white" id="precios">
             <h2 class="text-5xl text-orange-500 mb-4 font-bold">Elige tu plan</h2>
             <h6 id="tituloPlan" class="text-sm text-black mb-8">
                 Elige un plan adecuado para tu equipo.<br>
@@ -311,7 +325,7 @@
             </div>
         </section>
 
-        <section class="contenedor text-center py-16 bg-gray-100" id="video">
+        <section class="contenedor text-center py-8 bg-gray-100" id="video">
             <!-- Contenedor del Video y Texto -->
             <div class="flex items-center justify-between max-w-6xl gap-24 mx-auto space-x-12">
                 <div class="video-container w-4/5"> 
@@ -366,7 +380,7 @@
 
     <footer class="w-full">        
         <div class="bg-gray-900 text-white py-10 px-6 md:px-32 flex flex-col md:flex-row items-center justify-between">
-            <div class="w-full md:w-4/5">
+            <div class=" md:w-4/5">
                 <h2 class="text-2xl text-[#ff8000] font-bold">Súmate como inversor</h2>
                 <p class="mt-2 text-gray-300">
                     Invierte en nuestra empresa y sé parte de la revolución en la gestión de reservas. 
@@ -375,7 +389,7 @@
                     y construyamos juntos el futuro de la automatización y la digitalización de reservas.
                 </p>
             </div>
-            <div class="md:ml-8 mt-6 md:mt-0">
+            <div class="w md:ml-8 mt-6 md:mt-0">
                 <a href="invertir.html" id="inversiones" class="btn bg-[#ff8000] border-0 text-white hover:bg-orange-700 px-6 py-4">INVERTIR</a>
             </div>
         </div>
