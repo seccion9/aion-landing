@@ -9,25 +9,28 @@ const precio2Mensual = document.getElementById('precio2Mensual');
 const precio2Anual = document.getElementById('precio2Anual');
 const tipoPlan2 = document.getElementById('tipoPlan2');
 
-const ofertaAnual = document.getElementById('ofertaAnual');
-
-// Función para activar la animación de flip
+// Función para activar una animación más suave
 function realizarFlip(tarjeta) {
-    tarjeta.classList.add('rotate-y-180'); 
-    tarjeta.classList.add('transition-transform', 'duration-1000');
+    tarjeta.classList.add('rotate-y-180', 'transition-transform', 'duration-700', 'ease-in-out');
 
     setTimeout(() => {
         tarjeta.classList.remove('rotate-y-180');
-    }, 1000);
+    }, 700);
 }
 
-// Evento que escucha cuando el toggle cambia
+// Evento al cambiar el toggle
 togglePrecio.addEventListener('change', () => {
     realizarFlip(tarjeta1);
     realizarFlip(tarjeta2);
 
+    // Animación de desvanecimiento y cambio de precio
+    [precio1Mensual, precio1Anual, precio2Mensual, precio2Anual, tipoPlan1, tipoPlan2].forEach((elemento) => {
+        elemento.classList.add('transition-opacity', 'duration-500', 'ease-in-out');
+        elemento.style.opacity = 0; // Desvanece el contenido actual
+    });
+
     setTimeout(() => {
-        // Cambiar el contenido de los precios
+        // Cambiar los precios
         if (precio1Mensual.classList.contains('hidden')) {
             precio1Mensual.classList.remove('hidden');
             precio1Anual.classList.add('hidden');
@@ -42,12 +45,18 @@ togglePrecio.addEventListener('change', () => {
             precio2Mensual.classList.remove('hidden');
             precio2Anual.classList.add('hidden');
             tipoPlan2.innerHTML = '<span class="visible"></span>';
-            // ofertaAnual.classList.add('hidden');
         } else {
             precio2Anual.classList.remove('hidden');
             precio2Mensual.classList.add('hidden');
             tipoPlan2.innerHTML = '<span class="visible">Ahorro de 15€/mes</span>';
-            // ofertaAnual.classList.remove('hidden');
         }
-    }, 0);
+
+        // Suavizar la transición de los precios y textos de ahorro
+        [precio1Mensual, precio1Anual, precio2Mensual, precio2Anual, tipoPlan1, tipoPlan2].forEach((elemento) => {
+            elemento.style.opacity = 1;
+        });
+
+    }, 300); // Pequeña espera antes de mostrar el nuevo precio y texto de ahorro
 });
+
+

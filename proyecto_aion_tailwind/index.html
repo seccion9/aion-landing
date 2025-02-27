@@ -62,28 +62,32 @@
                     <!-- Contenedor de texto con ancho máximo -->
                     <div class="w-full max-w-screen-xl px-8 mx-auto text-left">
                         <!-- Texto blanco -->
-                        <div class="absolute top-[40%] transform -translate-y-1/2 space-y-4 text-white" data-aos="fade-right" data-aos-duration="1000">
+                        <div class="absolute top-[30%] transform -translate-y-1/2 space-y-4 text-white" data-aos="fade-right" data-aos-duration="1000">
                             <h1 class="text-5xl font-bold mb-8 max-w-3xl">
-                            El software de gestión de reservas con el que hacer brillar tu negocio
+                                El software de gestión de reservas con el que hacer brillar tu negocio
                             </h1>
-                            <p class="text-base max-w-md">
-                            Gestiona tus reservas de manera sencilla y eficiente con un sistema adaptable a cualquier tipo de negocio.
+                            <p class="text-base max-w-3xl">
+                                Optimiza la administración de tus citas y reservas con un sistema intuitivo basado en un calendario dinámico y fácil de usar. Nuestro software permite gestionar tu disponibilidad en tiempo real, reducir cancelaciones y mejorar la experiencia de tus clientes con recordatorios automatizados y confirmaciones instantáneas.
                             </p>
-                            <p class="text-base max-w-md">
-                            Simplifica tus tareas diarias, optimiza la organización de tu negocio y ahorra tiempo con herramientas diseñadas para potenciar tu productividad.
+                            <p class="text-base max-w-3xl">
+                                Con nuestras herramientas avanzadas, podrás centralizar toda la información en un solo lugar, acceder a estadísticas detalladas sobre tu negocio y ofrecer múltiples opciones de pago y facturación. Ahorra tiempo, evita errores y lleva tu productividad al siguiente nivel con una plataforma diseñada para simplificar tu día a día.
                             </p>
                         </div>
-                        
-                        <!-- Texto naranja -->
-                        <p class="absolute bottom-40 transform -translate-x-1/2 text-2xl font-semibold text-accent text-orange-500" data-aos="fade-right" data-aos-duration="1000">
+                    
+                        <a href="#carrusel" 
+                            class="absolute top-[72%] transform -translate-x-1/2 text-2xl font-semibold text-white bg-[#ff8000] border-[#ff8000] hover:bg-orange-700 hover:border-orange-700 py-1 px-4 rounded-lg transition-all duration-300 ease-in-out" 
+                            data-aos="fade-right" 
+                            data-aos-duration="1000">
                             ¡Empieza ahora y transforma tu gestión en éxito!
-                        </p>
+                        </a>
+
                     </div>
+                    
                 </div>
             </section>
         </section>
         
-        <section class="logos-empresas py-8 bg-white">
+        <section class="logos-empresas py-8 bg-white" id="carrusel">
             <div class="texto-logos text-center mb-4">
                 <p class="cantidad-empresas text-2xl font-semibold text-gray-700">Múltiples empresas <strong>ya trabajan con nosotros</strong></p>
             </div>
@@ -109,7 +113,7 @@
         </section>
 
         <!-- Seccion carrusel de imagenes -->
-        <section class="bg-neutral-100 relative flex flex-col items-center justify-center py-8 pb-20" id="carrusel">
+        <section class="bg-neutral-100 relative flex flex-col items-center justify-center py-8 pb-20">
             <h2 class="text-4xl font-bold text-orange-500 text-center mb-6 max-w-lg">AION se adapta a tu empresa</h2>
             <!-- Contenedor centrado con un ancho máximo -->
             <div class="w-full max-w-screen-xl px-8 mx-auto"> 
@@ -277,7 +281,7 @@
             </h6>
     
             <div class="flex justify-center mb-8">
-                <label class="flex items-center cursor-pointer gap-4">
+                <label class="ml-[-20px] flex items-center cursor-pointer gap-4">
                     <span class="label-text text-gray-900 text-xl font-bold">Mensual</span>
                     <input type="checkbox" class="toggle toggle-primary appearance-none w-16 h-8 rounded-full bg-gray-300 checked:bg-gray-400 focus:outline-none" id="togglePrecio">
                     <div class="absolute w-6 h-6 bg-white rounded-full left-1 top-1"></div>
