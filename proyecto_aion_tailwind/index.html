@@ -150,12 +150,15 @@
             </div>
             </div>
         </section>
-                 
+        
+        <!-- Sección funcionalidades -->
         <section class="extra-info bg-neutral-50 py-8 flex flex-col items-center" id="funcionalidades">
             <h2 class="main-title text-center text-orange-500 text-4xl font-bold mb-12 w-full">¿Estas listo para dar el salto al siguiente nivel?</h2>
                 
-            <div class="sections flex gap-16 px-4 w-full max-w-7xl relative">
-                <div class="flex flex-col gap-10 w-2/5 ml-8" id="tarjetas">
+            <div class="sections flex w-full max-w-screen-xl mx-auto relative">
+
+                <!-- Sección de las tarjetas de la izquierda -->
+                <div class="flex flex-col gap-10 w-[45%] px-8" id="tarjetas">
                      
                     <div class="section-container relative group bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-xl w-full cursor-pointer flex items-center justify-between min-h-[120px]" data-aos="fade-up" onclick="mostrarTexto(1)">
                         <div class="icon-container flex items-center justify-center absolute left-4">
@@ -205,22 +208,24 @@
                         </div>
                     </div>
                 </div>
-                       
-                <div class="w-1/2 p-6 bg-white rounded-lg shadow-lg opacity-0 transform translate-x-full transition-all duration-500 ease-in-out absolute top-0 right-0 z-10" id="texto-seleccionado">
+
+                <!-- Sección de la tarjeta de la derecha -->
+                <div class="w-1/2 p-6 bg-white rounded-lg shadow-lg opacity-0 transform translate-x-full transition-all duration-500 ease-in-out absolute top-0 right-8 z-10" id="texto-seleccionado">
                     <h3 class="text-2xl font-semibold text-center text-gray-600" id="titulo-texto"></h3>
                     <p id="descripcion-texto" class="text-base mt-4">Texto más grande</p>
                     <img alt="Descripción de la imagen" class="mt-4 w-full h-auto">
                 </div>
             </div>
         </section>
-                
+        
+        <!-- Sección herramientas -->
         <section class="optimizar-negocio text-center py-8 bg-neutral-100">
             <div class="optimizar-title">
                 <h2 class="main-title text-orange-500 text-4xl font-bold">¿Qué te ofrece AION?</h2>
                 <p class="text-xl text-gray-600 mt-2">Haz crecer tu negocio con una herramienta que trabaja por ti</p>
             </div>
-                
-            <section class="modulos-destacados flex flex-wrap justify-center gap-8 max-w-[90%] lg:max-w-6xl mx-auto mt-10">
+            <!-- Sección modulos -->
+            <section class="modulos-destacados flex flex-wrap justify-around gap-8 w-full max-w-screen-xl mx-auto mt-10 px-4">
 
                 <div class="tarjeta relative group flex flex-col items-center justify-between w-64 h-[380px] transition-all transform hover:scale-105 overflow-hidden" data-aos="fade-right" data-aos-duration="1000">
                     <div class="w-full h-40">
@@ -324,11 +329,13 @@
                 </div>
             </div>
         </section>
-
+        
+        <!-- Sección dudas -->
         <section class="contenedor text-center py-8 bg-gray-100" id="video">
             <!-- Contenedor del Video y Texto -->
-            <div class="flex items-center justify-between max-w-6xl gap-24 mx-auto space-x-12">
-                <div class="video-container w-4/5"> 
+            <div class="flex items-center justify-between max-w-screen-xl mx-auto gap-12">
+                <!-- Contenedor del video -->
+                <div class="video-container w-full w-3/5 px-8"> 
                     <div class="video-wrapper transition-transform duration-500 ease-in-out transform">
                         <video id="videoPromo" class="w-full h-auto rounded-xl" controls>
                             <source src="video/promo.mp4" type="video/mp4">
@@ -337,7 +344,7 @@
                     </div>
                 </div>
             
-                <div class="texto-contenedor w-3/5 text-left"> 
+                <div class="texto-contenedor w-3/5 text-left pr-8"> 
                     <h2 class="text-5xl font-semibold text-gray-800 mb-8 text-center">¿Todavía dudas?</h2>
                     <p class="text-lg text-gray-800 mb-8 text-center"><strong>Simplifica, organiza y haz crecer tu negocio.</strong><br><br>
                         Nuestra aplicación de gestión de reservas te ayuda a <strong>automatizar procesos, optimizar tu tiempo y mejorar la experiencia de tus clientes</strong> con una interfaz intuitiva y eficiente.<br><br>
