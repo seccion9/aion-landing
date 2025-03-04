@@ -39,10 +39,10 @@ function crearFooter() {
 
                 <!-- Botones -->
                 <div class="flex flex-col md:flex-row md:space-x-4 w-full md:w-auto px-8">
-                    <a href="invertir.html" id="inversiones" class="btn bg-[#ff8000] border-0 text-white hover:bg-orange-700 px-7 py-4 text-center">
+                    <a href="invertir.html" id="inversiones" class="btn bg-[#ff8000] border-0 text-white hover:bg-orange-700 px-7 py-4 text-center rounded-md shadow-lg">
                     INVERTIR
                     </a>
-                    <a href="formulario.html" id="contacto" class="btn bg-[#ff8000] border-0 text-white hover:bg-orange-700 px-5 py-4 text-center mt-2 md:mt-0">
+                    <a href="formulario.html" id="contacto" class="btn bg-transparent border-2 border-[#ff8000] text-[#ff8000] hover:bg-[#ff8000] hover:text-white px-5 py-4 text-center mt-2 md:mt-0 rounded-md shadow">
                     CONTACTO
                     </a>
                 </div>
