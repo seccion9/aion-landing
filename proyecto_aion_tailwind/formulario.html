@@ -72,38 +72,38 @@
             <div class="relative w-full h-full">
                 <!-- Imagen de fondo -->
                 <img src="img/imagen_contacto.png" alt="Gestiona tus reservas" class="w-full h-full object-cover shadow-lg">
-
+    
                 <!-- Degradado inferior de la imagen -->
                 <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-neutral-100/90 to-transparent"></div>
-
-                <!-- Contenedor para el formulario -->
-                <div class="absolute top-1/2 left-1/2 w-full max-w-screen-xl px-8 -translate-x-1/2 -translate-y-1/2">
-                    <!-- Formulario -->
-                    <form id="formContacto" class="w-full max-w-[400px] p-8 bg-white shadow-lg rounded-lg space-y-3" data-aos="fade-right" data-aos-duration="1000">
-                        <label class="block text-gray-800 font-medium">Nombre</label>
-                        <input type="text" id="nombre" name="nombre" placeholder="Nombre Completo*" required 
-                           class="input input-bordered bg-white w-full h-9 border-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
     
-                        <label class="block text-gray-800 font-medium">Email</label>
+                <!-- Contenedor para el formulario -->
+                <div class="absolute top-1/2 left-1/2 w-full max-w-screen-xl px-4 sm:px-2 -translate-x-1/2 -translate-y-1/2">
+                    <!-- Formulario -->
+                    <form id="formContacto" class="w-full max-w-[400px] p-6  sm:p-4 bg-white shadow-lg rounded-lg space-y-2 sm:space-y-1" data-aos="fade-right" data-aos-duration="1000">
+                        <label class="block text-gray-800 font-medium text-base sm:text-sm">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Nombre Completo*" required 
+                            class="input input-bordered bg-white w-full h-9 sm:h-8 text-base sm:text-sm border-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
+    
+                        <label class="block text-gray-800 font-medium text-base sm:text-sm">Email</label>
                         <input type="email" id="email" name="email" placeholder="Email*" required 
-                           class="input input-bordered bg-white w-full h-9 border-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
+                            class="input input-bordered bg-white w-full h-9 sm:h-8 text-base sm:text-sm border-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
                 
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
                             <div>
-                                <label class="block text-gray-800 font-medium mb-3">Teléfono</label>
+                                <label class="block text-gray-800 font-medium text-base sm:text-sm mb-2 sm:mb-1">Teléfono</label>
                                 <input type="tel" id="tel" name="tel" placeholder="Teléfono*" required 
-                                   class="input input-bordered bg-white w-full h-9 border-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
+                                    class="input input-bordered bg-white w-full h-9 sm:h-8 text-base sm:text-sm border-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
                             </div>
                             <div>
-                                <label class="block text-gray-800 font-medium mb-3">Ciudad</label>
+                                <label class="block text-gray-800 font-medium text-base sm:text-sm mb-2 sm:mb-1">Ciudad</label>
                                 <input type="text" id="ciudad" name="ciudad" placeholder="Ciudad*" required 
-                                   class="input input-bordered bg-white w-full h-9 border-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
+                                    class="input input-bordered bg-white w-full h-9 sm:h-8 text-base sm:text-sm border-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
                             </div>
                         </div>
                 
-                        <label class="block text-gray-800 font-medium">¿Cómo nos has conocido?</label>
+                        <label class="block text-gray-800 font-medium text-base sm:text-sm">¿Cómo nos has conocido?</label>
                         <select id="info" name="info" required 
-                            class="select select-bordered bg-white w-full h-9 border-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
+                            class="select select-bordered bg-white w-full h-9 sm:h-6 md:h-5 text-base sm:text-sm border-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
                             <option value="" selected hidden> Elige una opción* </option>
                             <option value="Google">Google</option>
                             <option value="Redes Sociales">Redes Sociales</option>
@@ -111,14 +111,14 @@
                             <option value="Otro">Otro</option>
                         </select>
                 
-                        <h3 class="text-gray-800 font-medium">¿EN QUÉ PODEMOS AYUDARTE?</h3>
+                        <h3 class="text-gray-800 font-medium text-lg sm:text-base">¿EN QUÉ PODEMOS AYUDARTE?</h3>
                         <textarea id="mensaje" name="mensaje" rows="3" required 
-                              class="textarea textarea-bordered bg-white w-full h-24 border-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500" 
-                              placeholder="Escribe tu mensaje aquí..."></textarea>
+                            class="textarea textarea-bordered bg-white w-full h-24 sm:h-16 text-base sm:text-sm border-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500" 
+                            placeholder="Escribe tu mensaje aquí..."></textarea>
                 
                         <div class="flex justify-center">
-                            <button type="submit" class="btn w-1/2 bg-[#ff8000] border-[#ff8000] text-white hover:bg-orange-700 h-10">
-                            Enviar
+                            <button type="submit" class="btn w-1/2 bg-[#ff8000] border-[#ff8000] text-white hover:bg-orange-700 h-10 sm:h-9 text-base sm:text-sm">
+                                Enviar
                             </button>
                         </div>
                     </form>
@@ -126,48 +126,48 @@
             </div>
         </section>
     
-        <section class="py-24 pb-12 bg-white">
-            <div class="container mx-auto px-4 lg:px-16">
-                <div class="text-center mb-8">
-                    <h2 class="text-2xl md:text-3xl font-bold text-[#ff8000]">Si tienes dudas, te la resolvemos</h2>
+        <section class="py-20 sm:py-12 bg-white">
+            <div class="container mx-auto px-4 sm:px-2 lg:px-16">
+                <div class="text-center mb-6 sm:mb-4">
+                    <h2 class="text-2xl md:text-3xl sm:text-xl font-bold text-[#ff8000]">Si tienes dudas, te la resolvemos</h2>
                 </div>
         
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-2">
         
                     <!-- Primera tarjeta -->
-                    <div class="card bg-[#f7f7f7] shadow-md p-4 cursor-pointer transition duration-300 duda flex items-center border-2 border-transparent" id="duda1">
+                    <div class="card bg-[#f7f7f7] shadow-md p-4 sm:p-3 cursor-pointer transition duration-300 duda flex items-center border-2 border-transparent" id="duda1">
                         <div class="flex items-center justify-between w-full">
-                            <p class="text-lg font-medium flex-grow text-left">¿Cómo puedo contratar los servicios de <strong class="text-primary text-[#ff8000]">AION</strong>?</p>
-                            <img src="img/flechaNaranja2.png" class="flecha1 w-6 h-6">
+                            <p class="text-lg md:text-base sm:text-sm font-medium flex-grow text-left">¿Cómo puedo contratar los servicios de <strong class="text-primary text-[#ff8000]">AION</strong>?</p>
+                            <img src="img/flechaNaranja2.png" class="flecha1 w-6 sm:w-5 h-6 sm:h-5">
                         </div>
                     </div>
         
                     <!-- Segunda tarjeta -->
-                    <div class="card bg-[#f7f7f7] shadow-md p-4 cursor-pointer transition duration-300 duda flex items-center border-2 border-transparent" id="duda2">
+                    <div class="card bg-[#f7f7f7] shadow-md p-4 sm:p-3 cursor-pointer transition duration-300 duda flex items-center border-2 border-transparent" id="duda2">
                         <div class="flex items-center justify-between w-full">
-                            <p class="text-lg font-medium flex-grow text-left">¿Qué tipo de tarifas tenemos?</p>
-                            <img src="img/flechaNaranja2.png" class="flecha1 w-6 h-6">
+                            <p class="text-lg md:text-base sm:text-sm font-medium flex-grow text-left">¿Qué tipo de tarifas tenemos?</p>
+                            <img src="img/flechaNaranja2.png" class="flecha1 w-6 sm:w-5 h-6 sm:h-5">
                         </div>
                     </div>
         
                     <!-- Tercera tarjeta -->
-                    <div class="card bg-[#f7f7f7] shadow-md p-4 cursor-pointer transition duration-300 duda flex items-center border-2 border-transparent" id="duda3">
+                    <div class="card bg-[#f7f7f7] shadow-md p-4 sm:p-3 cursor-pointer transition duration-300 duda flex items-center border-2 border-transparent" id="duda3">
                         <div class="flex items-center justify-between w-full">
-                            <p class="text-lg font-medium flex-grow text-left">¿Contamos con promociones y descuentos?</p>
-                            <img src="img/flechaNaranja2.png" class="flecha1 w-6 h-6">
+                            <p class="text-lg md:text-base sm:text-sm font-medium flex-grow text-left">¿Contamos con promociones y descuentos?</p>
+                            <img src="img/flechaNaranja2.png" class="flecha1 w-6 sm:w-5 h-6 sm:h-5">
                         </div>
                     </div>
         
                     <!-- Mensajes de duda -->
-                    <div id="mensajeDuda1" class="mt-2 text-center text-lg text-gray-700 font-medium min-h-[140px]"></div>
-                    <div id="mensajeDuda2" class="mt-2 text-center text-lg text-gray-700 font-medium min-h-[140px]"></div>
-                    <div id="mensajeDuda3" class="mt-2 text-center text-lg text-gray-700 font-medium min-h-[140px]"></div>
+                    <div id="mensajeDuda1" class="mt-2 text-center text-lg md:text-base sm:text-sm text-gray-700 font-medium min-h-[100px] sm:min-h-[80px]"></div>
+                    <div id="mensajeDuda2" class="mt-2 text-center text-lg md:text-base sm:text-sm text-gray-700 font-medium min-h-[100px] sm:min-h-[80px]"></div>
+                    <div id="mensajeDuda3" class="mt-2 text-center text-lg md:text-base sm:text-sm text-gray-700 font-medium min-h-[100px] sm:min-h-[80px]"></div>
         
                 </div>
             </div>
         </section>
     </main>
-        <!-- <section class="contenedorExtraInfo text-center py-12 bg-[#ff8000]">
+            <!-- <section class="contenedorExtraInfo text-center py-12 bg-[#ff8000]">
             <div class="tituloExtraInfo mb-6">
                 <h2 class="text-2xl lg:text-3xl font-bold text-gray-800">¿Tu curiosidad no conoce límites?</h2>
                 <p class="text-lg text-gray-600 mt-2">Aquí tienes una pequeña parte de nosotros</p>
