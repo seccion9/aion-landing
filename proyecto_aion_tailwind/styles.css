@@ -1,129 +1,135 @@
+/* ===== Estilos generales ===== */
 body {
-    overflow-x: hidden;
-    margin: 0;
+    overflow-x: hidden; /* Evita el desplazamiento horizontal */
+    margin: 0; /* Elimina los márgenes predeterminados */
 }
 
 img {
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
+    max-width: 100%; /* Asegura que las imágenes no excedan su contenedor */
+    height: auto; /* Mantiene la proporción original */
+    object-fit: contain; /* Ajusta la imagen dentro de su contenedor sin recortarla */
 }
 
 main {
-    margin-top: 110px;
-    margin-bottom: 40px;
+    margin-top: 110px; /* Espaciado superior para separar el contenido del encabezado */
+    margin-bottom: 40px; /* Espaciado inferior */
 }
 
 section {
-    scroll-margin-top: 60px;
+    scroll-margin-top: 60px; /* Ajusta la posición de la sección al hacer scroll */
 }
 
 .container {
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 0; /* Elimina el padding izquierdo */
+    padding-right: 0; /* Elimina el padding derecho */
 }
 
 .section-padding {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 15px; /* Espaciado interno a la izquierda */
+    padding-right: 15px; /* Espaciado interno a la derecha */
 }
 
+/* ===== Estilos para los planes ===== */
 .tipoPlan {
-    min-height: 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    min-height: 1.5rem; /* Altura mínima */
+    display: flex; /* Usa flexbox para centrar el contenido */
+    align-items: center; /* Alinea verticalmente */
+    justify-content: center; /* Alinea horizontalmente */
 }
 
 .tipoPlan span {
-    visibility: hidden;
+    visibility: hidden; /* Oculta el texto por defecto */
 }
 
 .tipoPlan .visible {
-    visibility: visible;
+    visibility: visible; /* Hace visible el texto cuando tiene la clase 'visible' */
 }
 
+/* ===== Sombra personalizada ===== */
 .custom-shadow {
-    box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.5); /* Aplica una sombra oscura */
 }
 
+/* ===== Ajuste de márgenes en la página ===== */
 .pagina-con-margen {
-    margin-top: 60px;
-    margin-bottom: 0;
+    margin-top: 60px; /* Espaciado superior */
+    margin-bottom: 0; /* Sin margen inferior */
 }
 
+/* ===== Menú de navegación responsivo ===== */
 @media (max-width: 1023px) {
     #nav-list {
-        position: absolute;
-        top: 60px;
-        right: 10px;
-        background-color: white;
-        flex-direction: column;
-        gap: 12px;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        z-index: 50;
+        position: absolute; /* Posiciona el menú de forma flotante */
+        top: 60px; /* Se coloca debajo de la barra de navegación */
+        right: 10px; /* Lo alinea a la derecha */
+        background-color: white; /* Fondo blanco */
+        flex-direction: column; /* Acomoda los elementos en columna */
+        gap: 12px; /* Espaciado entre elementos */
+        padding: 20px; /* Espaciado interno */
+        border-radius: 8px; /* Bordes redondeados */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+        z-index: 50; /* Asegura que esté sobre otros elementos */
     }
 
     #nav-list li a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0.5rem 1rem;
+        display: flex; /* Usa flexbox para centrar */
+        align-items: center; /* Alinea verticalmente */
+        justify-content: center; /* Alinea horizontalmente */
+        padding: 0.5rem 1rem; /* Espaciado interno */
     }
 }
 
+/* ===== Estilos para selección de elementos ===== */
 .selected {
-    border: 2px solid orange; 
-    border-radius: 8px; 
+    border: 2px solid orange; /* Borde naranja al seleccionar */
+    border-radius: 8px; /* Bordes redondeados */
     position: relative;
-    z-index: 10; 
+    z-index: 10; /* Asegura que esté sobre otros elementos */
 }
 
 .card.selected {
-    border-color: #ff8000; 
+    border-color: #ff8000; /* Color del borde de las tarjetas seleccionadas */
 }
 
-
+/* Flechas animadas al seleccionar */
 .selected .flecha1 {
-    transform: rotate(90deg);
-    transition: transform 0.3s ease;
+    transform: rotate(90deg); /* Gira la flecha hacia la derecha */
+    transition: transform 0.3s ease; /* Suaviza la animación */
 }
 
 .selected .flecha2 {
-    transform: rotate(-90deg);
-    transition: transform 0.3s ease;
+    transform: rotate(-90deg); /* Gira la flecha hacia la izquierda */
+    transition: transform 0.3s ease; /* Suaviza la animación */
 }
 
+/* ===== Ajuste del texto seleccionado ===== */
 #texto-seleccionado {
-    height: auto; 
-    min-height: 94%; 
+    height: auto; /* Altura ajustable según el contenido */
+    min-height: 94%; /* Mínimo 94% de la altura disponible */
 }
 
+/* ===== Tarjetas ===== */
 #tarjetas {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Apila las tarjetas verticalmente */
 }
 
 #tarjetas::after {
     content: "";
     display: block;
     height: 0;
-    visibility: hidden;
+    visibility: hidden; /* Elemento invisible para ajustes de flexbox */
 }
 
+/* ===== Animaciones de mensajes ===== */
 .message-appear {
-    opacity: 0;
-    transform: translateY(-30px); 
-    transition: opacity 0.6s ease, transform 0.6s ease; 
+    opacity: 0; /* Invisible por defecto */
+    transform: translateY(-30px); /* Desplazado hacia arriba */
+    transition: opacity 0.6s ease, transform 0.6s ease; /* Animación suave */
 }
 
 .message-visible {
-    opacity: 1;
-    transform: translateY(0); 
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    opacity: 1; /* Aparece con opacidad total */
+    transform: translateY(0); /* Se posiciona en su lugar */
+    transition: opacity 0.6s ease, transform 0.6s ease; /* Animación suave */
 }
-
-
-
