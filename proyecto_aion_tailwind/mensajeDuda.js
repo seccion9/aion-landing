@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             duda.classList.add("selected");
 
-            // Ocultar todos los mensajes antes de mostrar el nuevo
+
             mensajesDuda.forEach(duda => {
                 duda.classList.remove("message-visible"); 
                 duda.classList.add("message-appear");
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Cerrar el mensaje y quitar el borde si se hace clic fuera de las tarjetas
+
     document.addEventListener("click", function (event) {
         if (!event.target.closest('.duda')) {
 
@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Función para obtener el mensaje dependiendo del id de la duda
+
     function obtenerMensaje(id) {
         const mensajes = {
             "duda1": "En <strong style='color: #ff8000;'>AION</strong> puede contratar nuestros servicios yendo al apartado de 'Precios' y seleccionando el que más se adapte a sus necesidades, también podrá ponerse en contacto con nosotros rellenando el formulario de 'Contacto' para así ofrecerle un trato más cercano.",
@@ -75,6 +75,68 @@ document.addEventListener("DOMContentLoaded", function () {
         return mensajes[id] || null;
     }
 });
+
+
+
+
+
+
+
+
+/* document.addEventListener("DOMContentLoaded", function () {
+    const dudas = document.querySelectorAll(".duda");
+
+    dudas.forEach(duda => {
+        duda.addEventListener("click", function (event) {
+            event.stopPropagation();
+
+          
+            dudas.forEach(tarjeta => {
+                if (tarjeta !== duda) {
+                    tarjeta.classList.remove("expanded", "py-6");
+                    tarjeta.classList.add("py-3");
+
+                    const mensaje = tarjeta.querySelector("div[id^='mensajeDuda']");
+                    if (mensaje) {
+                        mensaje.classList.add("hidden");
+                    }
+
+                    const flecha = tarjeta.querySelector(".flecha");
+                    if (flecha) {
+                        flecha.classList.remove("rotate-180"); 
+                    }
+                }
+            });
+
+           
+            duda.classList.toggle("expanded");
+            duda.classList.toggle("py-6");
+
+            const mensaje = duda.querySelector("div[id^='mensajeDuda']");
+            if (mensaje) {
+                mensaje.innerHTML = `<p>${obtenerMensaje(duda.id)}</p>`;
+                mensaje.classList.toggle("hidden");
+            }
+
+            const flecha = duda.querySelector(".flecha");
+            if (flecha) {
+                flecha.classList.toggle("rotate-180"); 
+            }
+        });
+    });
+
+
+    function obtenerMensaje(id) {
+        const mensajes = {
+            "duda1": "En <strong style='color: #ff8000;'>AION</strong> puede contratar nuestros servicios yendo al apartado de 'Precios'...",
+            "duda2": "En el apartado de 'Precios' encontrará toda la información...",
+            "duda3": "Sí, nuestra política de descuentos es muy amplia...",
+        };
+        return mensajes[id] || null;
+    }
+}); */
+
+
 
 
 
