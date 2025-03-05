@@ -42,10 +42,11 @@
 </head>
 
 <body>
+
     <!-- Nav mediante .js -->
     <div id="nav-container"></div>
     
-    <main class="pagina-con-margen">
+    <main class="pagina-con-margen overflow-x-hidden">
         <!-- Sección Portada -->
         <section id="main">
             <section class="bg-neutral-100 relative flex items-center justify-center px-0 py-0 h-screen">
@@ -59,13 +60,13 @@
                     <div class="w-full max-w-screen-xl px-8 mx-auto text-left">
                         <!-- Texto blanco -->
                         <div class="absolute top-[30%] transform -translate-y-1/2 space-y-4 text-white" data-aos="fade-right" data-aos-duration="1000">
-                            <h1 class="text-5xl font-bold mb-8 max-w-3xl">
+                            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 max-w-full">
                                 El software de gestión de reservas con el que hacer brillar tu negocio
                             </h1>
-                            <p class="text-base max-w-3xl">
+                            <p class="text-base sm:text-lg max-w-full">
                                 Optimiza la administración de tus citas y reservas con un sistema intuitivo basado en un calendario dinámico y fácil de usar. Nuestro software permite gestionar tu disponibilidad en tiempo real, reducir cancelaciones y mejorar la experiencia de tus clientes con recordatorios automatizados y confirmaciones instantáneas.
                             </p>
-                            <p class="text-base max-w-3xl">
+                            <p class="text-base sm:text-lg max-w-full">
                                 Con nuestras herramientas avanzadas, podrás centralizar toda la información en un solo lugar, acceder a estadísticas detalladas sobre tu negocio y ofrecer múltiples opciones de pago y facturación. Ahorra tiempo, evita errores y lleva tu productividad al siguiente nivel con una plataforma diseñada para simplificar tu día a día.
                             </p>
                         </div>
@@ -76,13 +77,12 @@
                             data-aos-duration="1000">
                             ¡Empieza ahora y transforma tu gestión en éxito!
                         </a>
-
-                    </div>
-                    
+                    </div>                    
                 </div>
             </section>
         </section>
         
+        <!-- Sección logos de empresas -->
         <section class="logos-empresas py-8 bg-white" id="carrusel">
             <div class="texto-logos text-center mb-4">
                 <p class="cantidad-empresas text-2xl font-semibold text-gray-700">Múltiples empresas <strong>ya trabajan con nosotros</strong></p>
@@ -90,7 +90,7 @@
             
             <!-- Contenedor de Logos -->
             <section class="logos mx-auto justify-center px-4">
-                <div class="flex justify-center space-x-8 max-w-screen-xl mx-auto mt-8" data-aos="fade-right" data-aos-duration="1000">
+                <div class="flex flex-wrap justify-center gap-8 max-w-screen-xl mx-auto mt-8" data-aos="fade-right" data-aos-duration="1000">
                     <img src="./img/logoMontañas.jpg" class="w-24 h-auto filter grayscale transition duration-300 ease-in-out transform hover:grayscale-0 hover:scale-105">
                     <img src="./img/logoBebida.jpg" class="w-24 h-auto filter grayscale transition duration-300 ease-in-out transform hover:grayscale-0 hover:scale-105">
                     <img src="./img/logoJuego.jpg" class="w-24 h-auto filter grayscale transition duration-300 ease-in-out transform hover:grayscale-0 hover:scale-105">
@@ -98,7 +98,7 @@
                     <img src="./img/logoZoo.jpg" class="w-24 h-auto filter grayscale transition duration-300 ease-in-out transform hover:grayscale-0 hover:scale-105">
                 </div>
                 
-                <div class="flex justify-center space-x-8 max-w-screen-xl mx-auto mt-8" data-aos="fade-left" data-aos-duration="1000">
+                <div class="flex flex-wrap justify-center gap-8 max-w-screen-xl mx-auto mt-8" data-aos="fade-left" data-aos-duration="1000">
                     <img src="./img/logoSurf.jpg" class="w-24 h-auto filter grayscale transition duration-300 ease-in-out transform hover:grayscale-0 hover:scale-105">
                     <img src="./img/logoParqueAcuatico.jpg" class="w-24 h-auto filter grayscale transition duration-300 ease-in-out transform hover:grayscale-0 hover:scale-105">
                     <img src="./img/logoCoche.jpg" class="w-24 h-auto filter grayscale transition duration-300 ease-in-out transform hover:grayscale-0 hover:scale-105">
@@ -110,7 +110,7 @@
 
         <!-- Seccion carrusel de imagenes -->
         <section class="bg-neutral-100 relative flex flex-col items-center justify-center py-8 pb-20">
-            <h2 class="text-4xl font-bold text-orange-500 text-center mb-6 max-w-lg">AION se adapta a tu empresa</h2>
+            <h2 class="text-4xl font-bold text-orange-500 text-center mb-6 max-w-lg sm:text-3xl sm:max-w-full">AION se adapta a tu empresa</h2>
             <!-- Contenedor centrado con un ancho máximo -->
             <div class="w-full max-w-screen-xl px-8 mx-auto"> 
                 <div class="w-full py-6 flex justify-center flex-col items-center mt-0">
@@ -152,71 +152,71 @@
         </section>
         
         <!-- Sección funcionalidades -->
-        <section class="extra-info bg-neutral-50 py-8 flex flex-col items-center" id="funcionalidades">
-            <h2 class="main-title text-center text-orange-500 text-4xl font-bold mb-12 w-full">¿Estas listo para dar el salto al siguiente nivel?</h2>
+<section class="extra-info bg-neutral-50 py-8 flex flex-col items-center" id="funcionalidades">
+    <h2 class="main-title text-center text-orange-500 text-4xl font-bold mb-12 w-full sm:text-3xl sm:mb-8">¿Estás listo para dar el salto al siguiente nivel?</h2>
                 
-            <div class="sections flex w-full max-w-screen-xl mx-auto relative">
+    <div class="sections flex flex-wrap w-full max-w-screen-xl mx-auto relative">
 
-                <!-- Sección de las tarjetas de la izquierda -->
-                <div class="flex flex-col gap-10 w-[45%] px-8" id="tarjetas">
-                     
-                    <div class="section-container relative group bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-xl w-full cursor-pointer flex items-center justify-between min-h-[120px]" data-aos="fade-up" onclick="mostrarTexto(1)">
-                        <div class="icon-container flex items-center justify-center absolute left-4">
-                            <i class="fas fa-mobile-alt text-4xl text-gray-800"></i>
-                        </div>
-                        <div class="section-content flex items-center text-left absolute left-16 ml-8">
-                            <h3 class="text-xl font-semibold mb-4">Diseño adaptable a móviles y tabletas</h3>
-                        </div>
-                        <div class="icon-container flex items-center justify-center absolute right-4">
-                            <i class="fas fa-arrow-right text-2xl text-gray-800"></i>
-                        </div>
-                    </div>
-               
-                    <div class="section-container relative group bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-xl w-full cursor-pointer flex items-center justify-between min-h-[120px]" data-aos="fade-up" onclick="mostrarTexto(2)">
-                        <div class="icon-container flex items-center justify-center absolute left-4">
-                            <i class="fas fa-cogs text-4xl text-gray-800"></i>
-                        </div>
-                        <div class="section-content flex items-center text-left absolute left-16 ml-8">
-                            <h3 class="text-xl font-semibold mb-4">Ampliamente personalizable y de fácil integración</h3>
-                        </div>
-                        <div class="icon-container flex items-center justify-center absolute right-4">
-                            <i class="fas fa-arrow-right text-2xl text-gray-800"></i>
-                        </div>
-                    </div>
-                  
-                    <div class="section-container relative group bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-xl w-full cursor-pointer flex items-center justify-between min-h-[120px]" data-aos="fade-up" onclick="mostrarTexto(3)">
-                        <div class="icon-container flex items-center justify-center absolute left-4">
-                            <i class="fas fa-headset text-4xl text-gray-800"></i>
-                        </div>
-                        <div class="section-content flex items-center text-left absolute left-16 ml-8">
-                            <h3 class="text-xl font-semibold mb-4">Soporte técnico personal</h3>
-                        </div>
-                        <div class="icon-container flex items-center justify-center absolute right-4">
-                            <i class="fas fa-arrow-right text-2xl text-gray-800"></i>
-                        </div>
-                    </div>
-     
-                    <div class="section-container relative group bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-xl w-full cursor-pointer flex items-center justify-between min-h-[120px]" data-aos="fade-up" onclick="mostrarTexto(4)">
-                        <div class="icon-container flex items-center justify-center absolute left-4">
-                            <i class="fas fa-desktop text-4xl text-gray-800"></i>
-                        </div>
-                        <div class="section-content flex items-center text-left absolute left-16 ml-8">
-                            <h3 class="text-xl font-semibold mb-4">Interfaz empresarial sencilla</h3>
-                        </div>
-                        <div class="icon-container flex items-center justify-center absolute right-4">
-                            <i class="fas fa-arrow-right text-2xl text-gray-800"></i>
-                        </div>
-                    </div>
+        <!-- Sección de las tarjetas de la izquierda -->
+        <div class="flex flex-col gap-10 w-[45%] px-8" id="tarjetas">
+            <div class="section-container relative group bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-xl w-full cursor-pointer flex items-center justify-between min-h-[120px]" data-aos="fade-up" onclick="mostrarTexto(1)">
+                <div class="icon-container flex items-center justify-center absolute left-4">
+                    <i class="fas fa-mobile-alt text-4xl text-gray-800"></i>
                 </div>
-
-                <!-- Sección de la tarjeta de la derecha -->
-                <div class="w-1/2 p-6 bg-white rounded-lg shadow-lg opacity-0 transform translate-x-full transition-all duration-500 ease-in-out absolute top-0 right-8 z-10" id="texto-seleccionado">
-                    <h3 class="text-2xl font-semibold text-center text-gray-600" id="titulo-texto"></h3>
-                    <p id="descripcion-texto" class="text-base mt-4">Texto más grande</p>
-                    <img alt="Descripción de la imagen" class="mt-4 w-full h-auto">
+                <div class="section-content flex items-center text-left absolute left-16 ml-8">
+                    <h3 class="text-xl font-semibold mb-4">Diseño adaptable a móviles y tabletas</h3>
+                </div>
+                <div class="icon-container flex items-center justify-center absolute right-4">
+                    <i class="fas fa-arrow-right text-2xl text-gray-800"></i>
                 </div>
             </div>
-        </section>
+       
+            <div class="section-container relative group bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-xl w-full cursor-pointer flex items-center justify-between min-h-[120px]" data-aos="fade-up" onclick="mostrarTexto(2)">
+                <div class="icon-container flex items-center justify-center absolute left-4">
+                    <i class="fas fa-cogs text-4xl text-gray-800"></i>
+                </div>
+                <div class="section-content flex items-center text-left absolute left-16 ml-8">
+                    <h3 class="text-xl font-semibold mb-4">Ampliamente personalizable y de fácil integración</h3>
+                </div>
+                <div class="icon-container flex items-center justify-center absolute right-4">
+                    <i class="fas fa-arrow-right text-2xl text-gray-800"></i>
+                </div>
+            </div>
+          
+            <div class="section-container relative group bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-xl w-full cursor-pointer flex items-center justify-between min-h-[120px]" data-aos="fade-up" onclick="mostrarTexto(3)">
+                <div class="icon-container flex items-center justify-center absolute left-4">
+                    <i class="fas fa-headset text-4xl text-gray-800"></i>
+                </div>
+                <div class="section-content flex items-center text-left absolute left-16 ml-8">
+                    <h3 class="text-xl font-semibold mb-4">Soporte técnico personal</h3>
+                </div>
+                <div class="icon-container flex items-center justify-center absolute right-4">
+                    <i class="fas fa-arrow-right text-2xl text-gray-800"></i>
+                </div>
+            </div>
+     
+            <div class="section-container relative group bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-xl w-full cursor-pointer flex items-center justify-between min-h-[120px]" data-aos="fade-up" onclick="mostrarTexto(4)">
+                <div class="icon-container flex items-center justify-center absolute left-4">
+                    <i class="fas fa-desktop text-4xl text-gray-800"></i>
+                </div>
+                <div class="section-content flex items-center text-left absolute left-16 ml-8">
+                    <h3 class="text-xl font-semibold mb-4">Interfaz empresarial sencilla</h3>
+                </div>
+                <div class="icon-container flex items-center justify-center absolute right-4">
+                    <i class="fas fa-arrow-right text-2xl text-gray-800"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección de la tarjeta de la derecha -->
+        <div class="w-1/2 p-6 bg-white rounded-lg shadow-lg opacity-0 transform translate-x-full transition-all duration-500 ease-in-out absolute top-0 right-8 z-10" id="texto-seleccionado">
+            <h3 class="text-2xl font-semibold text-center text-gray-600" id="titulo-texto"></h3>
+            <p id="descripcion-texto" class="text-base mt-4">Texto más grande</p>
+            <img alt="Descripción de la imagen" class="mt-4 w-full h-auto">
+        </div>
+    </div>
+</section>
+
         
         <!-- Sección herramientas -->
         <section class="optimizar-negocio text-center py-8 bg-neutral-100">
