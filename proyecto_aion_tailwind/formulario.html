@@ -40,32 +40,8 @@
     
 </head>
 <body>
-    <header class="bg-gray-200 fixed top-0 left-0 w-full h-16 z-[9999]">
-        <div class="max-w-screen-xl mx-auto flex items-center h-full px-4">
-            <nav class="container mx-auto flex justify-between items-center p-4 relative">
-                <a href="index.html" class="text-3xl font-bold text-[#ff8000]">AION</a>
-    
-                <!-- Botón de menú solo en dispositivos móviles-->
-                <div class="lg:hidden">
-                    <button id="menu-toggle" class="btn btn-ghost" aria-label="Abrir menú">
-                        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
-                        </svg>
-                    </button>
-                </div>
-    
-                <!-- Menú de navegación -->
-                <ul id="nav-list" class="hidden lg:flex gap-x-6">
-                    <li><a href="index.html" class="btn btn-ghost bg-transparent border-0 text-black hover:text-orange-600 hover:bg-transparent">Inicio</a></li>
-                    <li><a id="integraciones" href="index.html#carrusel" class="btn btn-ghost bg-transparent border-0 text-black hover:text-orange-600 hover:bg-transparent">Integraciones</a></li>
-                    <li><a id="funcional" href="index.html#funcionalidades" class="btn btn-ghost bg-transparent border-0 text-black hover:text-orange-600 hover:bg-transparent">Funcionalidades</a></li>
-                    <li><a id="planes" href="index.html#precios" class="btn btn-ghost bg-transparent border-0 text-black hover:text-orange-600 hover:bg-transparent">Precios</a></li>
-                    <li><a href="invertir.html" class="btn btn-ghost bg-transparent border-transparent text-black hover:text-orange-600 hover:bg-transparent">¿Quieres invertir?</a></li>
-                    <li><a href="formulario.html" id="contacto" class="btn btn-ghost bg-[#ff8000] border-0 text-white hover:bg-orange-700">Contacto</a></li>
-                </ul>            
-            </nav>
-        </div>
-    </header>
+    <!-- Nav mediante .js -->
+    <div id="nav-container"></div>
 
     <main class="pagina-con-margen">
         <section class="bg-neutral-100 relative flex items-center justify-center px-0 py-0 h-screen">
@@ -79,31 +55,31 @@
                 <!-- Contenedor para el formulario -->
                 <div class="absolute top-1/2 left-1/2 w-full max-w-screen-xl px-4 sm:px-2 -translate-x-1/2 -translate-y-1/2">
                     <!-- Formulario -->
-                    <form id="formContacto" class="w-full max-w-[400px] p-6  sm:p-4 bg-white shadow-lg rounded-lg space-y-2 sm:space-y-1" data-aos="fade-right" data-aos-duration="1000">
-                        <label class="block text-gray-800 font-medium text-base sm:text-sm">Nombre</label>
+                    <form id="formContacto" class="w-full max-w-[400px] xl:max-w-[600px]  p-8  sm:p-4 bg-white shadow-lg rounded-lg space-y-3 sm:space-y-1" data-aos="fade-right" data-aos-duration="1000">
+                        <label class="block text-gray-800 font-medium xl:text-xl text-xl sm:text-sm">Nombre</label>
                         <input type="text" id="nombre" name="nombre" placeholder="Nombre Completo*" required 
-                            class="input input-bordered bg-white w-full h-9 sm:h-8 text-base sm:text-sm border-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
+                            class="input input-bordered bg-white w-full xl:h-12 h-10 sm:h-8 text-base sm:text-sm border-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
     
-                        <label class="block text-gray-800 font-medium text-base sm:text-sm">Email</label>
+                        <label class="block text-gray-800 font-medium xl:text-xl text-base sm:text-sm">Email</label>
                         <input type="email" id="email" name="email" placeholder="Email*" required 
-                            class="input input-bordered bg-white w-full h-9 sm:h-8 text-base sm:text-sm border-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
+                            class="input input-bordered bg-white w-full xl:h-12 h-10 sm:h-8 text-base sm:text-sm border-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
                 
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
                             <div>
-                                <label class="block text-gray-800 font-medium text-base sm:text-sm mb-2 sm:mb-1">Teléfono</label>
+                                <label class="block text-gray-800 font-medium xl:text-xl text-base sm:text-sm mb-2 sm:mb-1">Teléfono</label>
                                 <input type="tel" id="tel" name="tel" placeholder="Teléfono*" required 
-                                    class="input input-bordered bg-white w-full h-9 sm:h-8 text-base sm:text-sm border-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
+                                    class="input input-bordered bg-white w-full xl:h-12 h-10 sm:h-8 text-base sm:text-sm border-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
                             </div>
                             <div>
-                                <label class="block text-gray-800 font-medium text-base sm:text-sm mb-2 sm:mb-1">Ciudad</label>
+                                <label class="block text-gray-800 font-medium xl:text-xl text-base sm:text-sm mb-2 sm:mb-1">Ciudad</label>
                                 <input type="text" id="ciudad" name="ciudad" placeholder="Ciudad*" required 
-                                    class="input input-bordered bg-white w-full h-9 sm:h-8 text-base sm:text-sm border-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
+                                    class="input input-bordered bg-white w-full xl:h-12 h-10 sm:h-8 text-base sm:text-sm border-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
                             </div>
                         </div>
                 
-                        <label class="block text-gray-800 font-medium text-base sm:text-sm">¿Cómo nos has conocido?</label>
+                        <label class="block text-gray-800 font-medium xl:text-xl text-base sm:text-sm">¿Cómo nos has conocido?</label>
                         <select id="info" name="info" required 
-                            class="select select-bordered bg-white w-full h-9 sm:h-6 md:h-5 text-base sm:text-sm border-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
+                            class="select select-bordered bg-white w-full xl:h-12  h-10 sm:h-6 md:h-5 xl:text-xl text-base sm:text-sm border-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
                             <option value="" selected hidden> Elige una opción* </option>
                             <option value="Google">Google</option>
                             <option value="Redes Sociales">Redes Sociales</option>
@@ -111,9 +87,9 @@
                             <option value="Otro">Otro</option>
                         </select>
                 
-                        <h3 class="text-gray-800 font-medium text-lg sm:text-base">¿EN QUÉ PODEMOS AYUDARTE?</h3>
+                        <h3 class="text-gray-800 font-medium xl:text-xl text-lg sm:text-base">¿EN QUÉ PODEMOS AYUDARTE?</h3>
                         <textarea id="mensaje" name="mensaje" rows="3" required 
-                            class="textarea textarea-bordered bg-white w-full h-24 sm:h-16 text-base sm:text-sm border-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500" 
+                            class="textarea textarea-bordered bg-white w-full xl:h-36 h-30 sm:h-16 text-base sm:text-sm border-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500" 
                             placeholder="Escribe tu mensaje aquí..."></textarea>
                 
                         <div class="flex justify-center">
@@ -213,6 +189,7 @@
     <script src="mensajeDuda.js"></script>
     <script src="botonSubir.js"></script>
     <script src="menu_hamburguesa.js"></script>
+    <script src="nav.js"></script>
     <script src="footer.js"></script>
 
 
