@@ -99,13 +99,12 @@ section {
 
 /* Flechas animadas al seleccionar */
 .selected .flecha1 {
-    transform: rotate(90deg); /* Gira la flecha hacia la derecha */
-    transition: transform 0.3s ease; /* Suaviza la animación */
+    transform: rotate(90deg);
+    transition: transform 0.3s ease; 
 }
-
 .selected .flecha2 {
-    transform: rotate(-90deg); /* Gira la flecha hacia la izquierda */
-    transition: transform 0.3s ease; /* Suaviza la animación */
+    transform: rotate(-90deg); 
+    transition: transform 0.3s ease; 
 }
 
 /* ===== Ajuste del texto seleccionado ===== */

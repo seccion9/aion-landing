@@ -206,47 +206,66 @@
             <!-- Sección modulos -->
             <section class="modulos-destacados flex flex-wrap justify-around gap-8 w-full max-w-screen-xl mx-auto mt-10 px-4">
 
-                <div class="tarjeta relative group flex flex-col items-center justify-between w-64 h-auto transition-all transform hover:scale-105 overflow-hidden" data-aos="fade-right" data-aos-duration="1000">
-                    <div class="w-full h-40">
-                        <img src="img/Reservas.jpeg" class="w-full h-full object-cover object-center rounded-lg transition-all group-hover:opacity-90">
+                <div class="tarjeta relative group flex flex-col items-center justify-between w-64 h-auto transition-all transform hover:scale-105 overflow-hidden">
+                    <div class="w-full h-40 cursor-pointer" onclick="openModal('img/reservasAION.png')">
+                        <img src="img/newCalendario.png" class="w-full h-full object-contain object-center rounded-lg transition-all group-hover:opacity-90">
+                        <div class="absolute top-2 right-2 text-white text-2xl bg-gray-500 bg-opacity-70 w-8 h-8 flex items-center justify-center rounded-full group-hover:opacity-100 opacity-0 transition-opacity">+</div>
                     </div>
                     <div class="p-4 text-center flex-grow flex flex-col justify-start h-auto"> 
-                        <h3 class="text-xl text-black font-bold">Sistema de reservas</h3>
-                        <p class="text-gray-600 mt-2 text-base">Capacidad de gestionar tus reservas de forma simple y eficiente.</p>
+                        <h3 class="text-xl text-black font-bold">Calendario de reservas</h3>
+                        <p class="text-gray-600 mt-2 text-base">Por supuesto que un sistema de reservas no puede funcionar sin un calendario. Y aunque vamos mucho mas alla, la base es un sistema cómodo y personalizable para la empresa, 
+                            donde podrán gestionar todas sus salas desde un único lugar y ofrecer de forma conjunta al usuario para que todas ellas puedan ser reservadas.</p>
                     </div>
                 </div>
                 
-                <div class="tarjeta relative group flex flex-col items-center justify-between w-64 h-auto transition-all transform hover:scale-105 overflow-hidden" data-aos="fade-right" data-aos-duration="1000">
-                    <div class="w-full h-40">
-                        <img src="img/descuentos.jpg" class="w-full h-full object-cover object-center rounded-lg transition-all group-hover:opacity-90">
+                <div class="tarjeta relative group flex flex-col items-center justify-between w-64 h-auto transition-all transform hover:scale-105 overflow-hidden">
+                    <div class="w-full h-40 cursor-pointer" onclick="openModal('img/cuponesAION.png')">
+                        <img src="img/newCupon.png" class="w-full h-full object-contain object-center rounded-lg transition-all group-hover:opacity-90">
+                        <div class="absolute top-2 right-2 text-white text-2xl bg-gray-500 bg-opacity-70 w-8 h-8 flex items-center justify-center rounded-full group-hover:opacity-100 opacity-0 transition-opacity">+</div>
                     </div>
                     <div class="p-4 text-center flex-grow flex flex-col justify-start h-auto"> 
-                        <h3 class="text-xl text-black font-bold">Cupones y descuentos</h3>
-                        <p class="text-gray-600 mt-2 text-base">Posibilidad de atraer clientes con promociones personalizadas a tu gusto.</p>
+                        <h3 class="text-xl text-black font-bold">Descuentos / Bonos / Cupones</h3>
+                        <p class="text-gray-600 mt-2 text-base">Ofrecemos un sistema muy potente para que puedas realizar promociones de salas concretas en los días/horas que tu quieras. Utilizar tus descuentos y bonos de forma automática y desatendida a través de la web.
+                        </p>
                     </div>
                 </div>
-
-                <div class="tarjeta relative group flex flex-col items-center justify-between w-64 h-auto transition-all transform hover:scale-105 overflow-hidden" data-aos="fade-left" data-aos-duration="1000">
-                    <div class="w-full h-40">
-                        <img src="img/facturacion.jpg" class="w-full h-full object-cover object-center rounded-lg transition-all group-hover:opacity-90">
+            
+                <div class="tarjeta relative group flex flex-col items-center justify-between w-64 h-auto transition-all transform hover:scale-105 overflow-hidden">
+                    <div class="w-full h-40 cursor-pointer" onclick="openModal('img/facturacionAION.png')">
+                        <img src="img/newCalidad.png" class="w-full h-full object-contain object-center rounded-lg transition-all group-hover:opacity-90">
+                        <div class="absolute top-2 right-2 text-white text-2xl bg-gray-500 bg-opacity-70 w-8 h-8 flex items-center justify-center rounded-full group-hover:opacity-100 opacity-0 transition-opacity">+</div>
                     </div>
                     <div class="p-4 text-center flex-grow flex flex-col justify-start h-auto"> 
-                        <h3 class="text-xl text-black font-bold">Facturación</h3>
-                        <p class="text-gray-600 mt-2 text-base">Un sistema de automatización de facturas para una mayor agilidad del proceso.</p>
+                        <h3 class="text-xl text-black font-bold">Garantía de funcionamiento</h3>
+                        <p class="text-gray-600 mt-2 text-base">Aion es una herramienta que lleva desarrollandose mucho tiempo, ¡ya vamos por la versión 7! Actualmente esta funcionando en multiples empresas con distintas tematicas,
+                            cuenta con un desarrollo y perfeccionamiento constante.
+                        </p>
                     </div>
                 </div>
-
-                <div class="tarjeta relative group flex flex-col items-center justify-between w-64 h-auto transition-all transform hover:scale-105 overflow-hidden" data-aos="fade-left" data-aos-duration="1000">
-                    <div class="w-full h-40">
-                        <img src="img/RGPD.jpg" class="w-full h-full object-cover object-center rounded-lg transition-all group-hover:opacity-90">
+            
+                <div class="tarjeta relative group flex flex-col items-center justify-between w-64 h-auto transition-all transform hover:scale-105 overflow-hidden">
+                    <div class="w-full h-40 cursor-pointer" onclick="openModal('img/correosAION.png')">
+                        <img src="img/newCorreo.png" class="w-full h-full object-contain object-center rounded-lg transition-all group-hover:opacity-90">
+                        <div class="absolute top-2 right-2 text-white text-2xl bg-gray-500 bg-opacity-70 w-8 h-8 flex items-center justify-center rounded-full group-hover:opacity-100 opacity-0 transition-opacity">+</div>
                     </div>
                     <div class="p-4 text-center flex-grow flex flex-col justify-start h-auto"> 
-                        <h3 class="text-xl text-black font-bold">Módulo RGPD</h3>
-                        <p class="text-gray-600 mt-2 text-base">Un sistema que protege fielmente los datos y cumple con la normativa vigente.</p>
+                        <h3 class="text-xl text-black font-bold">Envío de fotos automático / Gestión envío de correos</h3>
+                        <p class="text-gray-600 mt-2 text-base">En la empresa contra mas se pueda automatizar mejor, nosotros proporcionamos una herramienta que te va a ahorrar muchísimo tiempo en gestiones sin perder un apice de personalización para tus clientes.</p>
                     </div>
                 </div>
             </section>
-        </section>
+            
+            <!-- Modal -->
+            <!-- Modal -->
+<div id="imageModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 invisible opacity-0 transition-opacity duration-300 z-50" onclick="closeModal()">
+    <div id="modalContent" class="bg-white p-8 rounded-lg shadow-lg max-w-4xl relative transform scale-95 transition-transform duration-300" onclick="event.stopPropagation()">
+        <button class="absolute top-1 right-1 md:top-2 md:right-2 text-black text-4xl hover:text-gray-600 transition-colors" onclick="closeModal()">
+            &times;
+        </button>
+        <img id="modalImage" src="" class="w-full h-auto rounded-lg">
+    </div>
+</div>
+
          
         <section class="contenedor text-center py-8 bg-white" id="precios">
             <h2 class="text-5xl text-orange-500 mb-4 font-bold">Elige tu plan</h2>
@@ -380,6 +399,7 @@
     <script src="script_carrusel.js"></script>
     <script src="script_animacion_logos.js"></script>
     <script src="script_tarjetas.js"></script>
+    <script src="modal_herramientas.js"></script>
     <script src="script_video.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="formularioPrecios.js"></script>
