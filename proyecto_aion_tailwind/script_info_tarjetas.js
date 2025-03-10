@@ -3,17 +3,17 @@ const data = [
     {
         titulo: 'Diseño adaptable a móviles y tabletas',
         descripcion: 'AION está diseñado para ofrecer una experiencia fluida y optimizada en cualquier dispositivo, desde móviles hasta tabletas. Con un diseño adaptable, tus clientes podrán realizar reservas de manera sencilla y rápida desde cualquier lugar, lo que asegura una experiencia sin interrupciones y accesible en todo momento.',
-        img: 'img/diseñoAdaptable.jpg'
+        img: 'img/adaptable.png'
     },
     {
         titulo: 'Ampliamente personalizable y de fácil integración',
         descripcion: 'AION permite una personalización total según las necesidades de tu negocio. Ya sea que necesites cambiar colores, logos o funcionalidades, la integración con tu sitio web es sencilla y rápida, sin complicaciones técnicas. Esto te permite adaptar la herramienta de gestión a la perfección para que se ajuste a tu marca.',
-        img: 'img/personalizable.jpg'
+        img: 'img/personalizableAION.jpg'
     },
     {
         titulo: 'Soporte técnico personal',
         descripcion: 'Con AION, siempre contarás con soporte técnico personalizado. Nuestro equipo está disponible para ayudarte en la implementación, ajustes y cualquier duda que puedas tener. Nos aseguramos de que la transición a nuestra plataforma sea lo más fluida posible, y que siempre tengas el respaldo que tu negocio necesita.',
-        img: 'img/soporte.jpg'
+        img: 'img/soporte.png'
     },
     {
         titulo: 'Interfaz empresarial sencilla',
@@ -68,10 +68,11 @@ function mostrarTexto(index) {
         }
     });
 
-    textoSeleccionado.classList.add('opacity-0', '-translate-x-20');
-    textoSeleccionado.classList.remove('opacity-100', 'translate-x-0');
-
     // Transición de ocultar antes de cambiar la tarjeta
+    textoSeleccionado.classList.add('opacity-0', 'translate-x-100');  // Desliza hacia la derecha
+    textoSeleccionado.classList.remove('opacity-100', 'translate-x-0'); // Quita visibilidad y posición inicial
+
+    // Usar un setTimeout para asegurar que las transiciones de salida se terminen antes de mostrar el nuevo contenido
     setTimeout(() => {
         // Actualizar el texto en escritorio
         tituloTexto.textContent = data[index].titulo;
@@ -80,9 +81,9 @@ function mostrarTexto(index) {
         imagenTexto.classList.remove('hidden');
 
         // Mostrar el texto en la caja derecha en pantallas grandes
-        textoSeleccionado.classList.remove('translate-x-full', 'opacity-0');
-        textoSeleccionado.classList.add('translate-x-0', 'opacity-100');
-    }, 300);
+        textoSeleccionado.classList.remove('translate-x-100', 'opacity-0');  // Desaparece de la derecha
+        textoSeleccionado.classList.add('translate-x-0', 'opacity-100');  // Aparece desde la izquierda
+    }, 300); // Asegurarse que la animación de ocultado termine antes de mostrar el nuevo contenido
 
     // Mostrar el texto debajo de la tarjeta seleccionada en móvil
     const textoMovil = document.getElementById(`texto-movil-${index}`);
@@ -97,3 +98,5 @@ function mostrarTexto(index) {
 
     ajustarAlturaTarjetas();
 }
+
+

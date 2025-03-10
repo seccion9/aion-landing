@@ -110,16 +110,33 @@ section {
 /* ===== Ajuste del texto seleccionado ===== */
 #texto-seleccionado {
     height: auto; /* Altura ajustable según el contenido */
-    min-height: 94%; /* Mínimo 94% de la altura disponible */
     min-height: 300px; /* Mínimo 300px de altura */
     flex-grow: 1; /* Ocupa el espacio restante */
-    transition: height 0.3s ease; /* Animación suave al cambiar la altura */
+    transition: transform 0.8s ease, opacity 0.8s ease; /* Añadir transiciones en transform y opacity */
+    transform: translateX(100%); /* Inicialmente está desplazado fuera a la derecha */
 }
 
 /* ===== Tarjetas ===== */
 #tarjetas {
     display: flex;
     flex-direction: column; /* Apila las tarjetas verticalmente */
+}
+
+.section-container {
+    transition: transform 0.3s ease; /* Animación suave en las tarjetas al hacer hover */
+}
+
+.section-container.active-card {
+    transform: scale(1.05); /* Escala ligera para la tarjeta activa */
+}
+
+/* ===== Imagen y texto en móvil ===== */
+#texto-movil {
+    transition: opacity 0.3s ease; /* Asegura que la aparición del texto sea fluida en móviles */
+}
+
+#texto-seleccionado.translate-x-0 {
+    transform: translateX(0); /* Vuelve a la posición original */
 }
 
 #tarjetas::after {
