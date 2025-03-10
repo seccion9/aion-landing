@@ -331,27 +331,37 @@
         <!-- Sección dudas -->
         <section class="contenedor text-center py-8 bg-gray-100" id="video">
             <!-- Contenedor del Video y Texto -->
-            <div class="flex items-center justify-between max-w-screen-xl mx-auto gap-12">
+            <div class="flex flex-col-reverse lg:flex-row items-center justify-between max-w-screen-xl mx-auto gap-12">
                 <!-- Contenedor del video -->
-                <div class="video-container w-full w-3/5 px-8"> 
+                <div class="video-container w-full lg:w-3/5 px-8"> 
                     <div class="video-wrapper transition-transform duration-500 ease-in-out transform">
-                        <video id="videoPromo" class="w-full h-auto rounded-xl" controls>
-                            <source src="video/promo.mp4" type="video/mp4">
-                            Tu navegador no soporta el formato de video.
-                        </video>
+                        <!-- Video de YouTube con mayor altura -->
+                        <iframe class="w-full h-80 rounded-xl" 
+                                src="https://www.youtube.com/embed/0ILA7Yv67TQ" 
+                                title="YouTube video player" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                        </iframe>
                     </div>
                 </div>
-            
-                <div class="texto-contenedor w-3/5 text-left pr-8"> 
+                
+                <!-- Contenedor de texto -->
+                <div class="texto-contenedor w-full lg:w-3/5 text-left pr-8 mt-8 lg:mt-0 px-4 sm:px-8"> 
                     <h2 class="text-5xl font-semibold text-gray-800 mb-8 text-center">¿Todavía dudas?</h2>
                     <p class="text-lg text-gray-800 mb-8 text-center"><strong>Simplifica, organiza y haz crecer tu negocio.</strong><br><br>
                         Nuestra aplicación de gestión de reservas te ayuda a <strong>automatizar procesos, optimizar tu tiempo y mejorar la experiencia de tus clientes</strong> con una interfaz intuitiva y eficiente.<br><br>
-                        <strong>Ahorra tiempo, evita errores y maximiza tus ingresos</strong> con una solución diseñada para adaptarse a cualquier tipo de empresa.
+                        Aquí encontrarás un <strong>video tutorial</strong> con todo lo que necesitas saber sobre el manejo de AION.
                     </p>
                     <h3 class="text-4xl font-semibold text-orange-500 text-right">AION</h3>
                 </div>
             </div>
         </section>
+        
+        
+        
+        
+        
         
         <!-- Modal -->
         <div id="modal" class="fixed inset-0 bg-gray-800 bg-opacity-50 hidden justify-center items-center z-50">
