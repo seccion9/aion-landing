@@ -1,70 +1,55 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const mensajeDuda1 = document.getElementById("mensajeDuda1");
-    const mensajeDuda2 = document.getElementById("mensajeDuda2");
-    const mensajeDuda3 = document.getElementById("mensajeDuda3");
-
-    const mensajesDuda = [mensajeDuda1, mensajeDuda2, mensajeDuda3];
-
     const dudas = document.querySelectorAll(".duda");
 
     dudas.forEach(duda => {
         duda.addEventListener("click", function (event) {
-            event.stopPropagation(); 
+            event.stopPropagation();
 
+            // Contraer todas las tarjetas antes de expandir la seleccionada
             dudas.forEach(tarjeta => {
-                tarjeta.classList.remove("selected");
+                if (tarjeta !== duda) { 
+                    tarjeta.classList.remove("selected");
+                    const mensajeElemento = tarjeta.querySelector(".mensaje");
+                    mensajeElemento.style.maxHeight = "0px"; // Ocultar mensaje
+                    mensajeElemento.style.opacity = "0";
+                    setTimeout(() => { mensajeElemento.innerHTML = ""; }, 300); // Eliminar contenido tras la animación
+                }
             });
 
-            duda.classList.add("selected");
-
-
-            mensajesDuda.forEach(duda => {
-                duda.classList.remove("message-visible"); 
-                duda.classList.add("message-appear");
-            });
-
+            // Alternar la tarjeta seleccionada (abrir/cerrar)
+            const mensajeElemento = duda.querySelector(".mensaje");
             const mensaje = obtenerMensaje(duda.id);
 
-            if (duda.id === "duda1") {
-                mensajeDuda1.innerHTML = `<p>${mensaje}</p>`;
-
+            if (duda.classList.contains("selected")) {
+                duda.classList.remove("selected");
+                mensajeElemento.style.maxHeight = "0px";
+                mensajeElemento.style.opacity = "0";
+                setTimeout(() => { mensajeElemento.innerHTML = ""; }, 300);
+            } else {
+                duda.classList.add("selected");
+                mensajeElemento.innerHTML = `<p>${mensaje}</p>`;
+                
+                // Esperar un pequeño tiempo para calcular la altura y evitar bugs de animación
                 setTimeout(() => {
-                    mensajeDuda1.classList.remove("message-appear");
-                    mensajeDuda1.classList.add("message-visible"); 
-                }, 10); 
-            }
-            else if (duda.id === "duda2") {
-                mensajeDuda2.innerHTML = `<p>${mensaje}</p>`;
-                setTimeout(() => {
-                    mensajeDuda2.classList.remove("message-appear");
-                    mensajeDuda2.classList.add("message-visible");
-                }, 10);
-            }
-            else if (duda.id === "duda3") {
-                mensajeDuda3.innerHTML = `<p>${mensaje}</p>`;
-                setTimeout(() => {
-                    mensajeDuda3.classList.remove("message-appear");
-                    mensajeDuda3.classList.add("message-visible");
+                    mensajeElemento.style.maxHeight = mensajeElemento.scrollHeight + "px"; // Ajustar a la altura del contenido
+                    mensajeElemento.style.opacity = "1";
                 }, 10);
             }
         });
     });
 
-
+    // Cerrar todas las tarjetas si se hace clic fuera
     document.addEventListener("click", function (event) {
         if (!event.target.closest('.duda')) {
-
             dudas.forEach(tarjeta => {
-                tarjeta.classList.remove("selected"); 
-            });
-
-            mensajesDuda.forEach(duda => {
-                duda.classList.remove("message-visible"); 
-                duda.classList.add("message-appear"); 
+                tarjeta.classList.remove("selected");
+                const mensajeElemento = tarjeta.querySelector(".mensaje");
+                mensajeElemento.style.maxHeight = "0px";
+                mensajeElemento.style.opacity = "0";
+                setTimeout(() => { mensajeElemento.innerHTML = ""; }, 300);
             });
         }
     });
-
 
     function obtenerMensaje(id) {
         const mensajes = {
@@ -72,9 +57,17 @@ document.addEventListener("DOMContentLoaded", function () {
             "duda2": "En el apartado de 'Precios' encontrará toda la información que necesita, ofrecemos tarifas de 'Plan Básico' y 'Plan Completo' en sus respectivas modalidades mensuales o anuales, en la que encontrará ciertas ofertas.",
             "duda3": "Sí, nuestra política de descuentos es muy amplia ya que podrá encontrar ofertas especiales a lo largo del año.",
         };
-        return mensajes[id] || null;
+        return mensajes[id] || "";
     }
 });
+
+
+
+
+
+
+
+
 
 
 

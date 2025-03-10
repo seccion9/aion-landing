@@ -129,15 +129,33 @@ section {
     visibility: hidden; /* Elemento invisible para ajustes de flexbox */
 }
 
-/* ===== Animaciones de mensajes ===== */
+/* Establece una altura base */
+.card {
+    transition: border 0.3s ease-in-out;
+}
+
+/* Solo la tarjeta seleccionada se expandirá */
+.card.selected .mensaje {
+    opacity: 1;
+}
+
+/* Animación del mensaje */
 .message-appear {
-    opacity: 0; /* Invisible por defecto */
-    transform: translateY(-30px); /* Desplazado hacia arriba */
-    transition: opacity 0.6s ease, transform 0.6s ease; /* Animación suave */
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
 }
 
 .message-visible {
-    opacity: 1; /* Aparece con opacidad total */
-    transform: translateY(0); /* Se posiciona en su lugar */
-    transition: opacity 0.6s ease, transform 0.6s ease; /* Animación suave */
+    opacity: 1;
+    max-height: 300px; /* Ajusta según el contenido */
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+.card .mensaje {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
 }
