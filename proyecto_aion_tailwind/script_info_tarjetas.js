@@ -22,6 +22,33 @@ const data = [
     }
 ];
 
+function ajustarAlturaTarjetas(){
+    const tarjetas = document.querySelectorAll('.right-card');
+
+    if (window.innerWidth > 640) {
+        const alturaDeseada = 552;
+
+        tarjetas.forEach(tarjeta => {
+            tarjeta.style.height = `${alturaDeseada}px`;
+            tarjeta.style.overflow = 'auto';
+        });
+    } else {
+        tarjetas.forEach(tarjeta => {
+            tarjeta.style.height = 'auto';
+        });
+    }
+}
+
+window.onload = function () {
+    if (window.innerWidth > 640) { // Si es escritorio, muestra la primera tarjeta
+        mostrarTexto(0);
+    }
+    ajustarAlturaTarjetas();
+};
+
+window.onresize = function () {
+    ajustarAlturaTarjetas();
+};
 
 function mostrarTexto(index) {
     const textoSeleccionado = document.getElementById('texto-seleccionado');
@@ -32,15 +59,30 @@ function mostrarTexto(index) {
     // Limpiar los textos en móvil
     document.querySelectorAll('[id^="texto-movil"]').forEach(el => el.classList.add('hidden'));
 
-    // Actualizar el texto en escritorio
-    tituloTexto.textContent = data[index].titulo;
-    descripcionTexto.textContent = data[index].descripcion;
-    imagenTexto.src = data[index].img;
-    imagenTexto.classList.remove('hidden');
+    // Marcar solo la tarjeta seleccionada
+    document.querySelectorAll('.section-container').forEach((el, idx) => {
+        if (idx === index) {
+            el.classList.add('active-card', 'ring-4', 'ring-orange-500');
+        } else {
+            el.classList.remove('active-card', 'ring-4', 'ring-orange-500');
+        }
+    });
 
-    // Mostrar el texto en la caja derecha en pantallas grandes
-    textoSeleccionado.classList.remove('opacity-0', 'translate-x-full');
-    textoSeleccionado.classList.add('translate-x-0', 'opacity-100');
+    textoSeleccionado.classList.add('opacity-0', '-translate-x-20');
+    textoSeleccionado.classList.remove('opacity-100', 'translate-x-0');
+
+    // Transición de ocultar antes de cambiar la tarjeta
+    setTimeout(() => {
+        // Actualizar el texto en escritorio
+        tituloTexto.textContent = data[index].titulo;
+        descripcionTexto.textContent = data[index].descripcion;
+        imagenTexto.src = data[index].img;
+        imagenTexto.classList.remove('hidden');
+
+        // Mostrar el texto en la caja derecha en pantallas grandes
+        textoSeleccionado.classList.remove('translate-x-full', 'opacity-0');
+        textoSeleccionado.classList.add('translate-x-0', 'opacity-100');
+    }, 300);
 
     // Mostrar el texto debajo de la tarjeta seleccionada en móvil
     const textoMovil = document.getElementById(`texto-movil-${index}`);
@@ -52,9 +94,6 @@ function mostrarTexto(index) {
         </div>
     `;
     textoMovil.classList.remove('hidden');
+
+    ajustarAlturaTarjetas();
 }
-window.onload = function () {
-    if (window.innerWidth > 640) { // Si es escritorio, muestra la primera tarjeta
-        mostrarTexto(1);
-    }
-};

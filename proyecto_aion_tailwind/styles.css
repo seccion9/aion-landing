@@ -24,6 +24,12 @@ section {
     padding-right: 0; /* Elimina el padding derecho */
 }
 
+.sections {
+    display: flex; /* Usa flexbox para alinear las secciones */
+    gap: 1rem; /* Espaciado entre secciones */
+    height: 100%; /* Ocupa el 100% del alto disponible */
+}
+
 .section-padding {
     padding-left: 15px; /* Espaciado interno a la izquierda */
     padding-right: 15px; /* Espaciado interno a la derecha */
@@ -106,6 +112,9 @@ section {
 #texto-seleccionado {
     height: auto; /* Altura ajustable según el contenido */
     min-height: 94%; /* Mínimo 94% de la altura disponible */
+    min-height: 300px; /* Mínimo 300px de altura */
+    flex-grow: 1; /* Ocupa el espacio restante */
+    transition: height 0.3s ease; /* Animación suave al cambiar la altura */
 }
 
 /* ===== Tarjetas ===== */
