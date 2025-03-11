@@ -21,7 +21,12 @@ function loadNav() {
                     <li><a id="funcional" href="index.html#funcionalidades" class="btn btn-ghost bg-transparent border-0 text-black hover:text-orange-600 hover:bg-transparent">Funcionalidades</a></li>
                     <li><a id="planes" href="index.html#precios" class="btn btn-ghost bg-transparent border-0 text-black hover:text-orange-600 hover:bg-transparent">Precios</a></li>
                     <li><a href="invertir.html" class="btn btn-ghost bg-transparent border-transparent text-black hover:text-orange-600 hover:bg-transparent">¿Quieres invertir?</a></li>
-                    <li><a href="formulario.html" id="contacto" class="btn btn-ghost bg-[#ff8000] border-0 text-white hover:bg-orange-700">Contacto</a></li>
+                    <li>
+                        <a href="formulario.html" id="contacto" class="btn btn-ghost bg-[#ff8000] border-0 text-white hover:bg-orange-700 hover:text-white transition-colors duration-500 ease-in-out">
+                            Contacto
+                        </a>
+                    </li>
+
                 </ul>            
             </nav>
         </div>

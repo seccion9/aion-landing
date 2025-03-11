@@ -39,17 +39,16 @@ function crearFooter() {
 
                 <!-- Botones -->
                 <div class="flex flex-col md:flex-row md:space-x-4 w-full md:w-auto px-8 items-center">
-                    <a href="invertir.html" id="inversiones" class="btn bg-[#ff8000] border-0 text-white hover:bg-orange-700 px-7 py-4 text-center rounded-md shadow-lg">
-                    INVERTIR
+                    <a href="invertir.html" id="inversiones" class="btn bg-[#ff8000] border-0 text-white hover:bg-orange-700 px-7 py-4 text-center rounded-md shadow-lg transition-colors duration-500 ease-in-out">
+                        INVERTIR
                     </a>
-                    <a href="formulario.html" id="contacto" class="btn bg-transparent border-2 border-[#ff8000] text-[#ff8000] hover:bg-[#ff8000] hover:text-white px-5 py-4 text-center mt-2 md:mt-0 rounded-md shadow">
-                    CONTACTO
+
+                    <a href="formulario.html" id="contacto" class="btn bg-transparent border-2 border-[#ff8000] text-[#ff8000] hover:bg-[#ff8000] hover:text-white px-5 py-4 text-center mt-2 md:mt-0 rounded-md shadow transition-colors duration-500 ease-in-out">
+                        CONTACTO
                     </a>
                 </div>
             </div>
         </div>
-
-        
 
         <!-- Sección de politicas -->
         <div class="bg-[#ff8000] text-black text-sm py-3 px-6">
