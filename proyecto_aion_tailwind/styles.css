@@ -147,13 +147,29 @@ section {
 }
 
 .grid {
-    align-items: start !important;
+    align-items: stretch !important;
 }
 
 .card {
     transition: all 0.3s ease;
-    height: fit-content;
-    min-height: 60px;
+    height: 80px; /* Altura fija para todas las tarjetas cerradas */
+    display: flex;
+    flex-direction: column;
+}
+
+.card:not(.activa) {
+    justify-content: center; /* Centra el contenido verticalmente cuando está cerrada */
+}
+
+.card.activa {
+    height: auto;
+    border-color: #ff8000;
+    background-color: #fff;
+}
+
+.duda {
+    display: flex;
+    flex-direction: column;
 }
 
 .mensaje {
@@ -166,18 +182,20 @@ section {
 .mensaje:not(.hidden) {
     height: auto;
     opacity: 1;
-}
-
-.card.activa {
-    border-color: #ff8000;
-    background-color: #fff;
+    margin-top: 0.5rem;
 }
 
 .flecha1 {
     transition: transform 0.3s ease;
 }
 
-/* ===== Nuevas clases para las tarjetas de duda ===== */
+/* Asegura que el contenedor de la pregunta esté centrado verticalmente */
+.card .flex.items-center {
+    min-height: 60px;
+    padding: 0.5rem 0;
+}
+
+/* Nuevas clases para las tarjetas de duda ===== */
 .duda {
     cursor: pointer; /* Para indicar que es interactivo */
     padding: 10px 20px;
