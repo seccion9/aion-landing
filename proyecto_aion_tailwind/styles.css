@@ -11,7 +11,7 @@ html {
     --shadow-large: 0px 20px 60px rgba(0, 0, 0, 0.5);
     --transition-default: 0.3s ease;
     --header-height: 60px;
-
+}
 /* ===== Reset y estilos base ===== */
 
 body {
