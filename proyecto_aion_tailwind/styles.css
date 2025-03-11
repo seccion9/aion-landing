@@ -146,33 +146,100 @@ section {
     visibility: hidden; /* Elemento invisible para ajustes de flexbox */
 }
 
-/* Establece una altura base */
+.grid {
+    align-items: start !important;
+}
+
 .card {
-    transition: border 0.3s ease-in-out;
+    transition: all 0.3s ease;
+    height: fit-content;
+    min-height: 60px;
 }
 
-/* Solo la tarjeta seleccionada se expandirá */
-.card.selected .mensaje {
+.mensaje {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease-out, opacity 0.3s ease-out;
+    opacity: 0;
+}
+
+.mensaje:not(.hidden) {
+    height: auto;
     opacity: 1;
 }
 
-/* Animación del mensaje */
-.message-appear {
-    opacity: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease, opacity 0.3s ease;
+.card.activa {
+    border-color: #ff8000;
+    background-color: #fff;
 }
 
-.message-visible {
-    opacity: 1;
-    max-height: 300px; /* Ajusta según el contenido */
-    transition: max-height 0.3s ease, opacity 0.3s ease;
+.flecha1 {
+    transition: transform 0.3s ease;
 }
 
-.card .mensaje {
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease, opacity 0.3s ease;
+/* ===== Nuevas clases para las tarjetas de duda ===== */
+.duda {
+    cursor: pointer; /* Para indicar que es interactivo */
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    margin: 10px 0;
+    border-radius: 8px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    transition: all 0.3s ease;
+}
+
+.duda:hover {
+    background-color: #f4f4f4;
+}
+
+.duda.activa {
+    background-color: #fff6e5; /* Color de fondo cuando la tarjeta está activa */
+    border-color: #ff8000; /* Bordes de color naranja */
+}
+
+/* Flecha */
+.flecha1 {
+    transition: transform 0.3s ease; /* Para suavizar la rotación */
+}
+
+/* Mensaje oculto por defecto */
+.mensaje {
+    display: none;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-left: 5px solid #ff8000;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Mostrar el mensaje cuando se activa la tarjeta */
+.duda.activa .mensaje {
+    display: block;
+}
+
+/* Para la animación del contenido (mensaje) */
+.mensaje.hidden {
+    display: none;
+}
+
+/* Asegurar que el contenedor de los mensajes tenga un padding adecuado */
+.mensaje-duda p {
+    margin: 0;
+}
+
+/* Diseño responsive (si es necesario, ajusta el ancho para dispositivos móviles) */
+@media (max-width: 768px) {
+    .duda {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .flecha1 {
+        margin-top: 10px;
+    }
 }
