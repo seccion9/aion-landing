@@ -1,4 +1,8 @@
 /* ===== Estilos generales ===== */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     overflow-x: hidden; /* Evita el desplazamiento horizontal */
     margin: 0; /* Elimina los márgenes predeterminados */

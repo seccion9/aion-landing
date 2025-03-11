@@ -40,11 +40,21 @@ function ajustarAlturaTarjetas(){
 }
 
 window.onload = function () {
-    if (window.innerWidth > 640) { // Si es escritorio, muestra la primera tarjeta
+    if (window.innerWidth > 640) { // Solo preselecciona la tarjeta en escritorio
         mostrarTexto(0);
+    } else {
+        // En móviles no preseleccionar ninguna tarjeta
+        document.querySelectorAll('.section-container').forEach(el => {
+            el.classList.remove('active-card', 'ring-4', 'ring-orange-500');
+        });
+
+        // Asegurarse de que el área de texto no esté visible en móvil
+        const textoSeleccionado = document.getElementById('texto-seleccionado');
+        textoSeleccionado.classList.add('hidden');
     }
     ajustarAlturaTarjetas();
 };
+
 
 window.onresize = function () {
     ajustarAlturaTarjetas();
