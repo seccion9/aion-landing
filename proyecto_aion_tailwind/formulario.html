@@ -1,44 +1,48 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario AION</title>
     <link rel="stylesheet" href="styles.css">
 
-        <!-- INSTALACION DE TAILWIND CON DAISYUI-->
-        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-        <link href="https://cdn.jsdelivr.net/npm/daisyui@latest/dist/full.css" rel="stylesheet">
-        
-        <!-- INSTALACION DE AOS (ANIMACIONES AL HACER SCROLL)-->
-        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    
-        <!-- INSTALACION DE SweetAlert2 (ANIMACIONES de alerta)-->
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- INSTALACION DE TAILWIND CON DAISYUI-->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@latest/dist/full.css" rel="stylesheet">
 
-        <!--FAVICON-->
-        <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
-        <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
-        <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
-        <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
-        <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
-        <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
-        <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-        <link rel="manifest" href="favicon/manifest.json">
-        <meta name="msapplication-TileColor" content="#ffffff">
-        <meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
-        <meta name="theme-color" content="#ffffff">
-            
-        
-    
+    <!-- INSTALACION DE AOS (ANIMACIONES AL HACER SCROLL)-->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <!-- INSTALACION DE SweetAlert2 (ANIMACIONES de alerta)-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- INSTALACION TAILWIND CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!--FAVICON-->
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+
+
 </head>
+
 <body>
     <!-- Nav mediante .js -->
     <div id="nav-container"></div>
@@ -47,105 +51,130 @@
         <section class="bg-neutral-100 relative flex items-center justify-center px-0 py-0 h-screen">
             <div class="relative w-full h-full">
                 <!-- Imagen de fondo -->
-                <img src="img/imagen_contacto.png" alt="Gestiona tus reservas" class="w-full h-full object-cover shadow-lg">
-    
+                <img src="img/imagen_contacto.png" alt="Gestiona tus reservas"
+                    class="w-full h-full object-cover shadow-lg">
+
                 <!-- Degradado inferior de la imagen -->
-                <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-neutral-100/90 to-transparent"></div>
-    
+                <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-neutral-100/90 to-transparent">
+                </div>
+
                 <!-- Contenedor para el formulario -->
                 <div class="absolute top-1/2 -translate-y-1/2 w-full">
                     <div class="max-w-[1280px] mx-auto relative">
                         <!-- Formulario: centrado en móvil, izquierda en pantallas grandes -->
                         <div class="px-4 sm:px-6 md:px-8 lg:pl-12 flex justify-center md:justify-start">
-                            <form id="formContacto" class="w-full max-w-[400px] xl:max-w-[600px] p-8 sm:p-4 bg-white shadow-lg rounded-lg space-y-3 sm:space-y-1" data-aos="fade-right" data-aos-duration="1000">
-                            <label class="block text-gray-800 font-medium xl:text-xl text-xl sm:text-sm">Nombre</label>
-                            <input type="text" id="nombre" name="nombre" placeholder="Nombre Completo*" required 
-                                class="input input-bordered bg-white w-full xl:h-12 h-10 sm:h-8 text-base sm:text-sm border-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
-    
-                            <label class="block text-gray-800 font-medium xl:text-xl text-base sm:text-sm">Email</label>
-                            <input type="email" id="email" name="email" placeholder="Email*" required 
-                                class="input input-bordered bg-white w-full xl:h-12 h-10 sm:h-8 text-base sm:text-sm border-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
-                
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-                                <div>
-                                    <label class="block text-gray-800 font-medium xl:text-xl text-base sm:text-sm mb-2 sm:mb-1">Teléfono</label>
-                                    <input type="tel" id="tel" name="tel" placeholder="Teléfono*" required 
-                                        class="input input-bordered bg-white w-full xl:h-12 h-10 sm:h-8 text-base sm:text-sm border-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
-                                </div>
-                                <div>
-                                    <label class="block text-gray-800 font-medium xl:text-xl text-base sm:text-sm mb-2 sm:mb-1">Ciudad</label>
-                                    <input type="text" id="ciudad" name="ciudad" placeholder="Ciudad*" required 
-                                        class="input input-bordered bg-white w-full xl:h-12 h-10 sm:h-8 text-base sm:text-sm border-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
-                                </div>
-                            </div>
-                
-                            <label class="block text-gray-800 font-medium xl:text-xl text-base sm:text-sm">¿Cómo nos has conocido?</label>
-                            <select id="info" name="info" required 
-                                class="select select-bordered bg-white w-full xl:h-12  h-10 sm:h-6 md:h-5 xl:text-xl text-base sm:text-sm border-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
-                                <option value="" selected hidden> Elige una opción* </option>
-                                <option value="Google">Google</option>
-                                <option value="Redes Sociales">Redes Sociales</option>
-                                <option value="Recomendación">Recomendación</option>
-                                <option value="Otro">Otro</option>
-                            </select>
-                
-                            <h3 class="text-gray-800 font-medium xl:text-xl text-lg sm:text-base">¿EN QUÉ PODEMOS AYUDARTE?</h3>
-                            <textarea id="mensaje" name="mensaje" rows="3" required 
-                                class="textarea textarea-bordered bg-white w-full xl:h-36 h-30 sm:h-16 text-base sm:text-sm border-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500" 
-                                placeholder="Escribe tu mensaje aquí..."></textarea>
-                
-                            <div class="flex justify-center">
+                            <form id="formContacto"
+                                class="w-full max-w-[400px] xl:max-w-[600px] p-8 sm:p-4 bg-white shadow-lg rounded-lg space-y-3 sm:space-y-1"
+                                data-aos="fade-right" data-aos-duration="1000">
+                                <label
+                                    class="block text-gray-800 font-medium xl:text-xl text-xl sm:text-sm">Nombre</label>
+                                <input type="text" id="nombre" name="nombre" placeholder="Nombre Completo*" required
+                                    class="input input-bordered bg-white w-full xl:h-12 h-10 sm:h-8 text-base sm:text-sm border-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
 
-                                <button type="submit" class="btn w-1/2 bg-[#ff8000] border-[#ff8000] text-white hover:bg-orange-700 hover:border-orange-700 hover:text-white h-10 sm:h-9 text-base sm:text-sm transition-colors duration-500 ease-in-out">
-                                    Enviar
-                                </button>
-                            </div>                    
-                    </form>
-                </div>
-            </div>
+                                <label
+                                    class="block text-gray-800 font-medium xl:text-xl text-base sm:text-sm">Email</label>
+                                <input type="email" id="email" name="email" placeholder="Email*" required
+                                    class="input input-bordered bg-white w-full xl:h-12 h-10 sm:h-8 text-base sm:text-sm border-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
+
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                    <div>
+                                        <label
+                                            class="block text-gray-800 font-medium xl:text-xl text-base sm:text-sm mb-2 sm:mb-1">Teléfono</label>
+                                        <input type="tel" id="tel" name="tel" placeholder="Teléfono*" required
+                                            class="input input-bordered bg-white w-full xl:h-12 h-10 sm:h-8 text-base sm:text-sm border-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
+                                    </div>
+                                    <div>
+                                        <label
+                                            class="block text-gray-800 font-medium xl:text-xl text-base sm:text-sm mb-2 sm:mb-1">Ciudad</label>
+                                        <input type="text" id="ciudad" name="ciudad" placeholder="Ciudad*" required
+                                            class="input input-bordered bg-white w-full xl:h-12 h-10 sm:h-8 text-base sm:text-sm border-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
+                                    </div>
+                                </div>
+
+                                <label class="block text-gray-800 font-medium xl:text-xl text-base sm:text-sm">¿Cómo nos
+                                    has conocido?</label>
+                                <select id="info" name="info" required
+                                    class="select select-bordered bg-white w-full xl:h-12  h-10 sm:h-6 md:h-5 xl:text-xl text-base sm:text-sm border-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
+                                    <option value="" selected hidden> Elige una opción* </option>
+                                    <option value="Google">Google</option>
+                                    <option value="Redes Sociales">Redes Sociales</option>
+                                    <option value="Recomendación">Recomendación</option>
+                                    <option value="Otro">Otro</option>
+                                </select>
+
+                                <h3 class="text-gray-800 font-medium xl:text-xl text-lg sm:text-base">¿EN QUÉ PODEMOS
+                                    AYUDARTE?</h3>
+                                <textarea id="mensaje" name="mensaje" rows="3" required
+                                    class="textarea textarea-bordered bg-white w-full xl:h-36 h-30 sm:h-16 text-base sm:text-sm border-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                                    placeholder="Escribe tu mensaje aquí..."></textarea>
+
+                                <div class="flex justify-center">
+
+                                    <button type="submit"
+                                        class="btn w-1/2 bg-[#ff8000] border-[#ff8000] text-white hover:bg-orange-700 hover:border-orange-700 hover:text-white h-10 sm:h-9 text-base sm:text-sm transition-colors duration-500 ease-in-out">
+                                        Enviar
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
         </section>
-    
+
         <section class="py-10 sm:py-7 bg-white dudas-section">
             <div class="container mx-auto px-4 sm:px-2 lg:px-16">
                 <div class="text-center mb-5 sm:mb-4">
-                    <h2 class="text-2xl md:text-3xl sm:text-xl font-bold text-[#ff8000]">Si tienes dudas, te la resolvemos</h2>
+                    <h2 class="text-2xl md:text-3xl sm:text-xl font-bold text-[#ff8000]">Si tienes dudas, te la
+                        resolvemos</h2>
                 </div>
-                
+
                 <!-- Contenedor de las tarjetas con más espacio entre ellas -->
                 <div class="dudas-grid">
                     <!-- Primera tarjeta -->
-                    <div class="card bg-[#f7f7f7] shadow-md p-3 sm:p-2 cursor-pointer transition duration-300 duda flex flex-col items-center border-2 border-transparent max-w-sm" id="duda1">
+                    <div class="card bg-[#f7f7f7] shadow-md p-3 sm:p-2 cursor-pointer transition duration-300 duda flex flex-col items-center border-2 border-transparent max-w-sm"
+                        id="duda1">
                         <div class="flex items-center justify-between w-full">
-                            <p class="text-lg md:text-base sm:text-sm font-medium flex-grow text-left">¿Cómo puedo contratar los servicios de <strong class="text-primary text-[#ff8000]">AION</strong>?</p>
+                            <p class="text-lg md:text-base sm:text-sm font-medium flex-grow text-left">¿Cómo puedo
+                                contratar los servicios de <strong class="text-primary text-[#ff8000]">AION</strong>?
+                            </p>
                             <img src="img/flechaNaranja2.png" class="flecha1 w-6 sm:w-5 h-6 sm:h-5">
                         </div>
-                        <div id="mensajeduda1" class="mensaje mt-2 text-center text-lg md:text-base sm:text-sm text-gray-700 font-medium hidden"></div>
+                        <div id="mensajeduda1"
+                            class="mensaje mt-2 text-center text-lg md:text-base sm:text-sm text-gray-700 font-medium hidden">
+                        </div>
                     </div>
 
                     <!-- Segunda tarjeta -->
-                    <div class="card bg-[#f7f7f7] shadow-md p-3 sm:p-2 cursor-pointer transition duration-300 duda flex flex-col items-center border-2 border-transparent max-w-sm" id="duda2">
+                    <div class="card bg-[#f7f7f7] shadow-md p-3 sm:p-2 cursor-pointer transition duration-300 duda flex flex-col items-center border-2 border-transparent max-w-sm"
+                        id="duda2">
                         <div class="flex items-center justify-between w-full">
-                            <p class="text-lg md:text-base sm:text-sm font-medium flex-grow text-left">¿Qué tipo de tarifas tenemos?</p>
+                            <p class="text-lg md:text-base sm:text-sm font-medium flex-grow text-left">¿Qué tipo de
+                                tarifas tenemos?</p>
                             <img src="img/flechaNaranja2.png" class="flecha1 w-6 sm:w-5 h-6 sm:h-5">
                         </div>
-                        <div id="mensajeduda2" class="mensaje mt-2 text-center text-lg md:text-base sm:text-sm text-gray-700 font-medium hidden"></div>
+                        <div id="mensajeduda2"
+                            class="mensaje mt-2 text-center text-lg md:text-base sm:text-sm text-gray-700 font-medium hidden">
+                        </div>
                     </div>
 
                     <!-- Tercera tarjeta -->
-                    <div class="card bg-[#f7f7f7] shadow-md p-3 sm:p-2 cursor-pointer transition duration-300 duda flex flex-col items-center border-2 border-transparent max-w-sm" id="duda3">
+                    <div class="card bg-[#f7f7f7] shadow-md p-3 sm:p-2 cursor-pointer transition duration-300 duda flex flex-col items-center border-2 border-transparent max-w-sm"
+                        id="duda3">
                         <div class="flex items-center justify-between w-full">
-                            <p class="text-lg md:text-base sm:text-sm font-medium flex-grow text-left">¿Contamos con promociones y descuentos?</p>
+                            <p class="text-lg md:text-base sm:text-sm font-medium flex-grow text-left">¿Contamos con
+                                promociones y descuentos?</p>
                             <img src="img/flechaNaranja2.png" class="flecha1 w-6 sm:w-5 h-6 sm:h-5">
                         </div>
-                        <div id="mensajeduda3" class="mensaje mt-2 text-center text-lg md:text-base sm:text-sm text-gray-700 font-medium hidden"></div>
+                        <div id="mensajeduda3"
+                            class="mensaje mt-2 text-center text-lg md:text-base sm:text-sm text-gray-700 font-medium hidden">
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-        
-        
+
+
     </main>
-            <!-- <section class="contenedorExtraInfo text-center py-12 bg-[#ff8000]">
+    <!-- <section class="contenedorExtraInfo text-center py-12 bg-[#ff8000]">
             <div class="tituloExtraInfo mb-6">
                 <h2 class="text-2xl lg:text-3xl font-bold text-gray-800">¿Tu curiosidad no conoce límites?</h2>
                 <p class="text-lg text-gray-600 mt-2">Aquí tienes una pequeña parte de nosotros</p>
@@ -160,10 +189,10 @@
             </div>
             min-h-[100px] sm:min-h-[80px]
         </section> -->
-            
-        <footer class="w-full">        
-            <div id="footer-container"></div>
-        </footer>
+
+    <footer class="w-full">
+        <div id="footer-container"></div>
+    </footer>
 
     <!-- INSTALACION DE AOS (ANIMACIONES AL HACER SCROLL)-->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
@@ -172,22 +201,21 @@
         AOS.init();
     </script>
 
+
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
-    <script src="scriptFormContact.js"></script>
-    <script src="scriptNav.js"></script>
-    <script src="script.js"></script>
-    <script src="mensajeDuda.js"></script>
-    <script src="botonSubir.js"></script>
-    <script src="nav.js"></script>
-    <script src="menu_hamburguesa.js"></script>
-    <script src="footer.js"></script>
+    <script src="scriptFormContact.js" defer></script>
+    <script src="scriptNav.js"defer></script>
+    <script src="script.js" defer></script>
+    <script src="mensajeDuda.js" defer></script>
+    <script src="botonSubir.js" defer></script>
+    <script src="nav.js" defer></script>
+    <script src="menu_hamburguesa.js" defer></script>
+    <script src="footer.js" defer></script>
 
 
-    <script src="https://cdn.tailwindcss.com"></script>
+
 
 </body>
+
 </html>
