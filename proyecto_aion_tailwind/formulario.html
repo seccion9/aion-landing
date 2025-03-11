@@ -53,64 +53,66 @@
                 <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-neutral-100/90 to-transparent"></div>
     
                 <!-- Contenedor para el formulario -->
-                <div class="absolute top-1/2 left-1/2 w-full max-w-screen-xl px-4 sm:px-2 -translate-x-1/2 -translate-y-1/2">
-                    <!-- Formulario -->
-                    <form id="formContacto" class="w-full max-w-[400px] xl:max-w-[600px]  p-8  sm:p-4 bg-white shadow-lg rounded-lg space-y-3 sm:space-y-1" data-aos="fade-right" data-aos-duration="1000">
-                        <label class="block text-gray-800 font-medium xl:text-xl text-xl sm:text-sm">Nombre</label>
-                        <input type="text" id="nombre" name="nombre" placeholder="Nombre Completo*" required 
-                            class="input input-bordered bg-white w-full xl:h-12 h-10 sm:h-8 text-base sm:text-sm border-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
+                <div class="absolute top-1/2 -translate-y-1/2 w-full">
+                    <div class="max-w-[1280px] mx-auto relative">
+                        <!-- Formulario: centrado en móvil, izquierda en pantallas grandes -->
+                        <div class="px-4 sm:px-6 md:px-8 lg:pl-12 flex justify-center md:justify-start">
+                            <form id="formContacto" class="w-full max-w-[400px] xl:max-w-[600px] p-8 sm:p-4 bg-white shadow-lg rounded-lg space-y-3 sm:space-y-1" data-aos="fade-right" data-aos-duration="1000">
+                            <label class="block text-gray-800 font-medium xl:text-xl text-xl sm:text-sm">Nombre</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Nombre Completo*" required 
+                                class="input input-bordered bg-white w-full xl:h-12 h-10 sm:h-8 text-base sm:text-sm border-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
     
-                        <label class="block text-gray-800 font-medium xl:text-xl text-base sm:text-sm">Email</label>
-                        <input type="email" id="email" name="email" placeholder="Email*" required 
-                            class="input input-bordered bg-white w-full xl:h-12 h-10 sm:h-8 text-base sm:text-sm border-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
+                            <label class="block text-gray-800 font-medium xl:text-xl text-base sm:text-sm">Email</label>
+                            <input type="email" id="email" name="email" placeholder="Email*" required 
+                                class="input input-bordered bg-white w-full xl:h-12 h-10 sm:h-8 text-base sm:text-sm border-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
                 
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-                            <div>
-                                <label class="block text-gray-800 font-medium xl:text-xl text-base sm:text-sm mb-2 sm:mb-1">Teléfono</label>
-                                <input type="tel" id="tel" name="tel" placeholder="Teléfono*" required 
-                                    class="input input-bordered bg-white w-full xl:h-12 h-10 sm:h-8 text-base sm:text-sm border-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                <div>
+                                    <label class="block text-gray-800 font-medium xl:text-xl text-base sm:text-sm mb-2 sm:mb-1">Teléfono</label>
+                                    <input type="tel" id="tel" name="tel" placeholder="Teléfono*" required 
+                                        class="input input-bordered bg-white w-full xl:h-12 h-10 sm:h-8 text-base sm:text-sm border-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
+                                </div>
+                                <div>
+                                    <label class="block text-gray-800 font-medium xl:text-xl text-base sm:text-sm mb-2 sm:mb-1">Ciudad</label>
+                                    <input type="text" id="ciudad" name="ciudad" placeholder="Ciudad*" required 
+                                        class="input input-bordered bg-white w-full xl:h-12 h-10 sm:h-8 text-base sm:text-sm border-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
+                                </div>
                             </div>
-                            <div>
-                                <label class="block text-gray-800 font-medium xl:text-xl text-base sm:text-sm mb-2 sm:mb-1">Ciudad</label>
-                                <input type="text" id="ciudad" name="ciudad" placeholder="Ciudad*" required 
-                                    class="input input-bordered bg-white w-full xl:h-12 h-10 sm:h-8 text-base sm:text-sm border-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
-                            </div>
-                        </div>
                 
-                        <label class="block text-gray-800 font-medium xl:text-xl text-base sm:text-sm">¿Cómo nos has conocido?</label>
-                        <select id="info" name="info" required 
-                            class="select select-bordered bg-white w-full xl:h-12  h-10 sm:h-6 md:h-5 xl:text-xl text-base sm:text-sm border-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
-                            <option value="" selected hidden> Elige una opción* </option>
-                            <option value="Google">Google</option>
-                            <option value="Redes Sociales">Redes Sociales</option>
-                            <option value="Recomendación">Recomendación</option>
-                            <option value="Otro">Otro</option>
-                        </select>
+                            <label class="block text-gray-800 font-medium xl:text-xl text-base sm:text-sm">¿Cómo nos has conocido?</label>
+                            <select id="info" name="info" required 
+                                class="select select-bordered bg-white w-full xl:h-12  h-10 sm:h-6 md:h-5 xl:text-xl text-base sm:text-sm border-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
+                                <option value="" selected hidden> Elige una opción* </option>
+                                <option value="Google">Google</option>
+                                <option value="Redes Sociales">Redes Sociales</option>
+                                <option value="Recomendación">Recomendación</option>
+                                <option value="Otro">Otro</option>
+                            </select>
                 
-                        <h3 class="text-gray-800 font-medium xl:text-xl text-lg sm:text-base">¿EN QUÉ PODEMOS AYUDARTE?</h3>
-                        <textarea id="mensaje" name="mensaje" rows="3" required 
-                            class="textarea textarea-bordered bg-white w-full xl:h-36 h-30 sm:h-16 text-base sm:text-sm border-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500" 
-                            placeholder="Escribe tu mensaje aquí..."></textarea>
+                            <h3 class="text-gray-800 font-medium xl:text-xl text-lg sm:text-base">¿EN QUÉ PODEMOS AYUDARTE?</h3>
+                            <textarea id="mensaje" name="mensaje" rows="3" required 
+                                class="textarea textarea-bordered bg-white w-full xl:h-36 h-30 sm:h-16 text-base sm:text-sm border-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500" 
+                                placeholder="Escribe tu mensaje aquí..."></textarea>
                 
                             <div class="flex justify-center">
+
                                 <button type="submit" class="btn w-1/2 bg-[#ff8000] border-[#ff8000] text-white hover:bg-orange-700 hover:border-orange-700 hover:text-white h-10 sm:h-9 text-base sm:text-sm transition-colors duration-500 ease-in-out">
                                     Enviar
                                 </button>
-                            </div>
-                            
+                            </div>                    
                     </form>
                 </div>
             </div>
         </section>
     
-        <section class="py-10 sm:py-7 bg-white min-h-[275px]">
+        <section class="py-10 sm:py-7 bg-white dudas-section">
             <div class="container mx-auto px-4 sm:px-2 lg:px-16">
                 <div class="text-center mb-5 sm:mb-4">
                     <h2 class="text-2xl md:text-3xl sm:text-xl font-bold text-[#ff8000]">Si tienes dudas, te la resolvemos</h2>
                 </div>
                 
                 <!-- Contenedor de las tarjetas con más espacio entre ellas -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
+                <div class="dudas-grid">
                     <!-- Primera tarjeta -->
                     <div class="card bg-[#f7f7f7] shadow-md p-3 sm:p-2 cursor-pointer transition duration-300 duda flex flex-col items-center border-2 border-transparent max-w-sm" id="duda1">
                         <div class="flex items-center justify-between w-full">
