@@ -107,10 +107,19 @@ section {
 /* ===== Mensajes y Animaciones ===== */
 .mensaje {
     height: 0;
-    overflow: hidden;
     opacity: 0;
-    transition: height var(--transition-default), 
-                opacity var(--transition-default);
+    overflow: hidden;
+    margin-top: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    border-left: 5px solid #ff8000;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333;
+    transition: height 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.6s ease-in-out,
+                margin-top 0.6s ease-in-out,
+                padding 0.6s ease-in-out;
 }
 
 .mensaje:not(.hidden) {
@@ -219,23 +228,26 @@ section {
     border-color: #ff8000;
 }
 
-.mensaje {
-    display: none;
+.duda.activa .mensaje {
+    height: auto;
+    opacity: 1;
     margin-top: 10px;
     padding: 10px;
-    background-color: #f9f9f9;
-    border-left: 5px solid #ff8000;
-    border-radius: 5px;
-    font-size: 14px;
-    color: #333;
-}
-
-.duda.activa .mensaje {
-    display: block;
 }
 
 .mensaje.hidden {
-    display: none;
+    height: 0;
+    opacity: 0;
+    margin-top: 0;
+    padding: 0;
+}
+
+.flecha1 {
+    transition: transform 0.6s ease-in-out;
+}
+
+.duda.activa .flecha1 {
+    transform: rotate(90deg);
 }
 
 .mensaje-duda p {
