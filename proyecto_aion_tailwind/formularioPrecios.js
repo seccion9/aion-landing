@@ -1,47 +1,61 @@
 document.addEventListener("DOMContentLoaded", () => {
     const modal = document.getElementById("modal");
     const cerrar = document.getElementById("cerrar");
+    const inputPrecio = document.getElementById("precio");
+
+    // Función para obtener el precio correcto en tiempo real
+    function obtenerPrecioVisible(tarjeta) {
+        // Busca los dos precios dentro de la tarjeta
+        const precioMensual = tarjeta.querySelector("span#precio1Mensual, span#precio2Mensual");
+        const precioAnual = tarjeta.querySelector("span#precio1Anual, span#precio2Anual");
+
+        // Si el precio anual está visible, lo toma, si no, usa el mensual
+        if (precioAnual && !precioAnual.classList.contains("hidden")) {
+            return precioAnual.textContent.trim();
+        } else if (precioMensual) {
+            return precioMensual.textContent.trim();
+        }
+
+        return "No disponible"; // En caso de error
+    }
 
     // Función para abrir el formulario y actualizar el precio
     window.abrirFormulario = function (plan, precio) {
-        // Primero actualizamos el precio
-        document.getElementById("precio").value = precio;
+        inputPrecio.value = precio; // Asigna el precio visible al input
         document.querySelector(".modal-contenido h2").textContent = `Completa tus datos para el ${plan}`;
 
-        // Hacer visible el modal antes de animar la opacidad
         modal.classList.remove("hidden");
         modal.classList.add("flex");
 
-        // Usamos un pequeño retraso antes de cambiar la opacidad para aplicar la transición
         setTimeout(() => {
             modal.classList.remove("opacity-0");
             modal.classList.add("opacity-100");
-        }, 10); // Retardo muy corto para permitir la transición
+        }, 10);
     };
 
-    // Asignar evento click a los botones de los planes
-    const botonesPlanes = document.querySelectorAll(".tarjetaPlan button");
-    botonesPlanes.forEach((boton) => {
+    // Evento click en los botones de los planes
+    document.querySelectorAll(".tarjetaPlan button").forEach((boton) => {
         boton.addEventListener("click", () => {
-            const plan = boton.closest(".tarjetaPlan").querySelector(".subtitulo").textContent;
-            const precio = boton.closest(".tarjetaPlan").querySelector(".titulo span:not(.hidden)").textContent;
+            const tarjeta = boton.closest(".tarjetaPlan");
+            const plan = tarjeta.querySelector(".subtitulo").textContent;
+            const precio = obtenerPrecioVisible(tarjeta); // Obtiene el precio correcto en tiempo real
+
             abrirFormulario(plan, precio);
         });
     });
 
-    // Función para cerrar el modal con transición
+    // Cerrar el modal con animación
     cerrar.addEventListener("click", () => {
         modal.classList.remove("opacity-100");
         modal.classList.add("opacity-0");
 
-        // Esperar a que termine la transición antes de ocultar el modal
         setTimeout(() => {
             modal.classList.add("hidden");
             modal.classList.remove("flex");
-        }, 500); // El tiempo coincide con la duración de la transición
+        }, 500);
     });
 
-    // Cerrar el modal si se hace clic fuera del contenido
+    // Cerrar si se hace clic fuera del modal
     modal.addEventListener("click", (event) => {
         if (event.target === modal) {
             modal.classList.remove("opacity-100");
@@ -50,7 +64,8 @@ document.addEventListener("DOMContentLoaded", () => {
             setTimeout(() => {
                 modal.classList.add("hidden");
                 modal.classList.remove("flex");
-            }, 500); // El tiempo coincide con la duración de la transición
+            }, 500);
         }
     });
 });
+
