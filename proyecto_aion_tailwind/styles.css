@@ -184,7 +184,7 @@ section {
 }
 
 section.dudas-section {
-    min-height: calc(275px + 225px);
+    min-height: calc(275px + 125px);
     display: flex;
     flex-direction: column;
 }
