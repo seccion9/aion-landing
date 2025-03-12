@@ -262,4 +262,18 @@ section.dudas-section {
     .card {
         --card-height: 60px;
     }
+
+    /* Animación suave para las tarjetas en móvil */
+    [id^="texto-movil-"] {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+        opacity: 0;
+    }
+
+    [id^="texto-movil-"].block {
+        max-height: 1000px;
+        opacity: 1;
+        transition: max-height 0.5s ease-in, opacity 0.3s ease-in;
+    }
 }
