@@ -65,48 +65,77 @@ function mostrarTexto(index) {
     const tituloTexto = document.getElementById('titulo-texto');
     const descripcionTexto = document.getElementById('descripcion-texto');
     const imagenTexto = document.getElementById('imagen-texto');
-
-    // Limpiar los textos en móvil
-    document.querySelectorAll('[id^="texto-movil"]').forEach(el => el.classList.add('hidden'));
-
-    // Marcar solo la tarjeta seleccionada
-    document.querySelectorAll('.section-container').forEach((el, idx) => {
-        if (idx === index) {
-            el.classList.add('active-card', 'ring-4', 'ring-orange-500');
-        } else {
-            el.classList.remove('active-card', 'ring-4', 'ring-orange-500');
-        }
-    });
-
-    // Transición de ocultar antes de cambiar la tarjeta
-    textoSeleccionado.classList.add('opacity-0', 'translate-x-100');  // Desliza hacia la derecha
-    textoSeleccionado.classList.remove('opacity-100', 'translate-x-0'); // Quita visibilidad y posición inicial
-
-    // Usar un setTimeout para asegurar que las transiciones de salida se terminen antes de mostrar el nuevo contenido
-    setTimeout(() => {
-        // Actualizar el texto en escritorio
-        tituloTexto.textContent = data[index].titulo;
-        descripcionTexto.textContent = data[index].descripcion;
-        imagenTexto.src = data[index].img;
-        imagenTexto.classList.remove('hidden');
-
-        // Mostrar el texto en la caja derecha en pantallas grandes
-        textoSeleccionado.classList.remove('translate-x-100', 'opacity-0');  // Desaparece de la derecha
-        textoSeleccionado.classList.add('translate-x-0', 'opacity-100');  // Aparece desde la izquierda
-    }, 300); // Asegurarse que la animación de ocultado termine antes de mostrar el nuevo contenido
-
-    // Mostrar el texto debajo de la tarjeta seleccionada en móvil
     const textoMovil = document.getElementById(`texto-movil-${index}`);
-    textoMovil.innerHTML = `
-        <div class="bg-white rounded-lg shadow-lg p-4 mt-2">
-            <h3 class="text-xl font-semibold text-gray-600">${data[index].titulo}</h3>
-            <p class="text-base mt-2">${data[index].descripcion}</p>
-            <img src="${data[index].img}" class="mt-2 w-full h-auto">
-        </div>
-    `;
-    textoMovil.classList.remove('hidden');
+    const isMobile = window.innerWidth <= 640;
+
+    if (isMobile) {
+        // Si la tarjeta ya está abierta, la cerramos
+        if (!textoMovil.classList.contains('hidden')) {
+            textoMovil.classList.remove('block');
+            setTimeout(() => {
+                textoMovil.classList.add('hidden');
+            }, 300);
+            document.querySelector(`.section-container:nth-child(${index + 1})`).classList.remove('active-card', 'ring-4', 'ring-orange-500');
+            return;
+        }
+
+        // Cerrar cualquier otra tarjeta abierta
+        const otherCards = document.querySelectorAll('[id^="texto-movil"]');
+        otherCards.forEach(card => {
+            if (card.id !== `texto-movil-${index}` && !card.classList.contains('hidden')) {
+                card.classList.remove('block');
+                setTimeout(() => {
+                    card.classList.add('hidden');
+                }, 300);
+            }
+        });
+
+        // Actualizar estados de las tarjetas
+        document.querySelectorAll('.section-container').forEach((el, idx) => {
+            if (idx === index) {
+                el.classList.add('active-card', 'ring-4', 'ring-orange-500');
+            } else {
+                el.classList.remove('active-card', 'ring-4', 'ring-orange-500');
+            }
+        });
+
+        // Mostrar el contenido de la tarjeta seleccionada
+        textoMovil.innerHTML = `
+            <div class="bg-white rounded-lg shadow-lg p-4 mt-2">
+                <h3 class="text-xl font-semibold text-gray-600">${data[index].titulo}</h3>
+                <p class="text-base mt-2">${data[index].descripcion}</p>
+                <img src="${data[index].img}" class="mt-2 w-full h-auto">
+            </div>
+        `;
+        textoMovil.classList.remove('hidden');
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                textoMovil.classList.add('block');
+            });
+        });
+    } else {
+        // Comportamiento en escritorio
+        textoSeleccionado.classList.add('opacity-0', 'translate-x-100');
+        textoSeleccionado.classList.remove('opacity-100', 'translate-x-0');
+
+        setTimeout(() => {
+            tituloTexto.textContent = data[index].titulo;
+            descripcionTexto.textContent = data[index].descripcion;
+            imagenTexto.src = data[index].img;
+            imagenTexto.classList.remove('hidden');
+
+            textoSeleccionado.classList.remove('translate-x-100', 'opacity-0');
+            textoSeleccionado.classList.add('translate-x-0', 'opacity-100');
+        }, 300);
+
+        document.querySelectorAll('.section-container').forEach((el, idx) => {
+            if (idx === index) {
+                el.classList.add('active-card', 'ring-4', 'ring-orange-500');
+            } else {
+                el.classList.remove('active-card', 'ring-4', 'ring-orange-500');
+            }
+        });
+    }
 
     ajustarAlturaTarjetas();
 }
-
-
