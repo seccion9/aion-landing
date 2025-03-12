@@ -82,22 +82,22 @@
         
         <!-- Sección logos de empresas -->
         <section class="logos-empresas py-8 bg-white" id="carrusel">
-            <div class="texto-logos text-center mb-4">
+            <div class="texto-logos text-center bg-gradient-to-t mb-4">
                 <p class="cantidad-empresas text-2xl font-semibold text-gray-700">Múltiples empresas <strong>ya trabajan con nosotros</strong></p>
             </div>
             
             <!-- Contenedor de Logos -->
             <section class="logos mx-auto justify-center px-4">
                 <div class="flex flex-wrap justify-center gap-8 max-w-screen-xl mx-auto mt-8" data-aos="fade-right" data-aos-duration="1000">
-                    <img src="./img/logo_elhachazo.png" class="w-24 h-24 filter grayscale transition duration-300 ease-in-out transform hover:grayscale-0 hover:scale-105">
-                    <img src="./img/logo_enigma-legacy.png" class="w-24 h-24 filter grayscale transition duration-300 ease-in-out transform hover:grayscale-0 hover:scale-105">
-                    <img src="./img/logo_mission.png"class="w-24 h-24 filter grayscale transition duration-300 ease-in-out transform hover:grayscale-0 hover:scale-105">
+                    <img src="./img/logo_elhachazo.png" class="w-24 h-24 bg-gray-400 rounded-xl filter grayscale transition duration-300 ease-in-out transform hover:grayscale-0 hover:scale-105">
+                    <img src="./img/logo_enigma-legacy.png" class="w-24 h-24 bg-gray-400 rounded-xl filter grayscale transition duration-300 ease-in-out transform hover:grayscale-0 hover:scale-105">
+                    <img src="./img/logo_mission.png"class="w-24 h-24 bg-gray-400 rounded-xl filter grayscale transition duration-300 ease-in-out transform hover:grayscale-0 hover:scale-105">
                 </div>
                 
                 <div class="flex flex-wrap justify-center gap-8 max-w-screen-xl mx-auto mt-8" data-aos="fade-left" data-aos-duration="1000">
-                    <img src="./img/logo_Althea.png" class="w-24 h-24 filter grayscale transition duration-300 ease-in-out transform hover:grayscale-0 hover:scale-105">
-                    <img src="./img/logo_tcl.png" class="w-24 h-24 filter grayscale transition duration-300 ease-in-out transform hover:grayscale-0 hover:scale-105">
-                    <img src="./img/logo_VALHALLA.png" class="w-24 h-24 filter grayscale transition duration-300 ease-in-out transform hover:grayscale-0 hover:scale-105 hover:bg-gray-400">
+                    <img src="./img/althea_IA.png" class="w-24 h-24 bg-gray-400 rounded-xl filter grayscale transition duration-300 ease-in-out transform hover:grayscale-0 hover:scale-105 hover:bg-white">
+                    <img src="./img/logo_VALHALLA.png" class="w-24 h-24 bg-gray-400 rounded-xl filter grayscale transition duration-300 ease-in-out transform hover:grayscale-0 hover:scale-105 hover:bg-gray-900">
+                    <img src="./img/TLC_IA.png" class="w-24 h-24 bg-gray-400 rounded-xl filter grayscale transition duration-300 ease-in-out transform hover:grayscale-0 hover:scale-105 hover:bg-black">
                 </div>
             </section>
         </section>
@@ -113,17 +113,20 @@
                         <div class="overflow-hidden w-full rounded-lg">
                             <div class="flex transition-transform duration-500 ease-in-out" id="carousel">
                                 <div class="carousel-item w-full flex-shrink-0 rounded-lg overflow-hidden">
-                                    <img src="img/centrosDeportivos.JPG" class="w-full h-full object-cover" />
+                                    <img src="img/ajusteEnigma.png" class="w-full h-full object-cover" />
                                 </div>
                                 <div class="carousel-item w-full flex-shrink-0 rounded-lg overflow-hidden">
-                                    <img src="img/experienciaInmersiva.JPG" class="w-full h-full object-cover" />
+                                    <img src="img/ajusteElHachazo.png" class="w-full h-full object-cover" />
                                 </div>
                                 <div class="carousel-item w-full flex-shrink-0 rounded-lg overflow-hidden">
-                                    <img src="img/aireLibre.JPG" class="w-full h-full object-cover" />
+                                    <img src="img/ajusteTLC.png" class="w-full h-full object-cover" />
                                 </div>
+                                <!-- Por si se añadiese una cuarta imagen -->
+                                <!--
                                 <div class="carousel-item w-full flex-shrink-0 rounded-lg overflow-hidden">
                                     <img src="img/negocio.JPG" class="w-full h-full object-cover" />
-                                </div>
+                                </div> 
+                                -->
                             </div>
                         </div>
                     </div>
@@ -136,7 +139,10 @@
                         <div id="dot-0" class="w-4 h-4 rounded-full bg-gray-600 opacity-50 cursor-pointer hover:opacity-100 transition" onclick="goToSlide(0)"></div>
                         <div id="dot-1" class="w-4 h-4 rounded-full bg-gray-600 opacity-50 cursor-pointer hover:opacity-100 transition" onclick="goToSlide(1)"></div>
                         <div id="dot-2" class="w-4 h-4 rounded-full bg-gray-600 opacity-50 cursor-pointer hover:opacity-100 transition" onclick="goToSlide(2)"></div>
+                        <!-- Por si se añadiese una cuarta imagen -->
+                        <!--
                         <div id="dot-3" class="w-4 h-4 rounded-full bg-gray-600 opacity-50 cursor-pointer hover:opacity-100 transition" onclick="goToSlide(3)"></div>
+                        -->
                     </div>
 
                     <button class="z-50 bg-gray-600 bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-75 transition mx-8" onclick="nextSlide()">❯</button>
