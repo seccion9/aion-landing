@@ -97,7 +97,7 @@ section {
     transition: all var(--transition-default);
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
+    justify-content: center;
 }
 
 .card.activa {
