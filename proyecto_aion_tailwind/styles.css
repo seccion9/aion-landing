@@ -277,3 +277,9 @@ section.dudas-section {
         transition: max-height 0.5s ease-in, opacity 0.3s ease-in;
     }
 }
+
+@media (max-width: 640px) {
+    .plus-symbol {
+        right: 5rem !important; /* Ajusta el valor para dejar el "+" pegado a la imagen */
+    }
+}
