@@ -9,6 +9,9 @@ const precio2Mensual = document.getElementById('precio2Mensual');
 const precio2Anual = document.getElementById('precio2Anual');
 const tipoPlan2 = document.getElementById('tipoPlan2');
 
+const labelMensual = document.getElementById('labelMensual');
+const labelAnual = document.getElementById('labelAnual');
+
 // Función para activar una animación más suave
 function realizarFlip(tarjeta) {
     tarjeta.classList.add('rotate-y-180', 'transition-transform', 'duration-700', 'ease-in-out');
@@ -16,6 +19,21 @@ function realizarFlip(tarjeta) {
     setTimeout(() => {
         tarjeta.classList.remove('rotate-y-180');
     }, 700);
+}
+
+// Función para actualizar los bordes
+function actualizarBordes() {
+    if (togglePrecio.checked) {
+        labelMensual.classList.remove('border-orange-500');
+        labelMensual.classList.add('border-transparent');  // Elimina el borde naranja de "Mensual"
+        labelAnual.classList.remove('border-transparent');
+        labelAnual.classList.add('border-orange-500');  // Agrega el borde naranja a "Anual"
+    } else {
+        labelAnual.classList.remove('border-orange-500');
+        labelAnual.classList.add('border-transparent');  // Elimina el borde naranja de "Anual"
+        labelMensual.classList.remove('border-transparent');
+        labelMensual.classList.add('border-orange-500');  // Agrega el borde naranja a "Mensual"
+    }
 }
 
 // Evento al cambiar el toggle
@@ -57,6 +75,14 @@ togglePrecio.addEventListener('change', () => {
         });
 
     }, 300); // Pequeña espera antes de mostrar el nuevo precio y texto de ahorro
+
+    actualizarBordes(); // Llamar a la función de actualización de bordes
 });
+
+// Inicialización al cargar la página
+actualizarBordes();
+
+
+
 
 

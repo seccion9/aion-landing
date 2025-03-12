@@ -184,7 +184,7 @@ section {
 }
 
 section.dudas-section {
-    min-height: calc(275px + 225px);
+    min-height: calc(275px + 125px);
     display: flex;
     flex-direction: column;
 }
@@ -275,5 +275,11 @@ section.dudas-section {
         max-height: 1000px;
         opacity: 1;
         transition: max-height 0.5s ease-in, opacity 0.3s ease-in;
+    }
+}
+
+@media (max-width: 640px) {
+    .plus-symbol {
+        right: 5rem !important; /* Ajusta el valor para dejar el "+" pegado a la imagen */
     }
 }
