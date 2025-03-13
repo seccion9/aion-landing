@@ -1,135 +1,285 @@
 /* ===== Estilos generales ===== */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ===== Variables globales ===== */
+:root {
+    --color-primary: #ff8000;
+    --color-primary-hover: #e67300;
+    --shadow-default: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-large: 0px 20px 60px rgba(0, 0, 0, 0.5);
+    --transition-default: 0.3s ease;
+    --header-height: 60px;
+}
+
+/* ===== Reset y estilos base ===== */
 body {
-    overflow-x: hidden; /* Evita el desplazamiento horizontal */
-    margin: 0; /* Elimina los márgenes predeterminados */
+    overflow-x: hidden;
+    margin: 0;
 }
 
 img {
-    max-width: 100%; /* Asegura que las imágenes no excedan su contenedor */
-    height: auto; /* Mantiene la proporción original */
-    object-fit: contain; /* Ajusta la imagen dentro de su contenedor sin recortarla */
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
 }
 
+/* ===== Layout ===== */
 main {
-    margin-top: 110px; /* Espaciado superior para separar el contenido del encabezado */
-    margin-bottom: 40px; /* Espaciado inferior */
+    margin-top: 110px;
+    margin-bottom: 40px;
 }
 
 section {
-    scroll-margin-top: 60px; /* Ajusta la posición de la sección al hacer scroll */
+    scroll-margin-top: var(--header-height);
 }
 
 .container {
-    padding-left: 0; /* Elimina el padding izquierdo */
-    padding-right: 0; /* Elimina el padding derecho */
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.sections {
+    display: flex;
+    gap: 1rem;
+    height: 100%;
 }
 
 .section-padding {
-    padding-left: 15px; /* Espaciado interno a la izquierda */
-    padding-right: 15px; /* Espaciado interno a la derecha */
+    padding: 0 15px;
+}
+
+/* ===== Componentes ===== */
+.custom-shadow {
+    box-shadow: var(--shadow-large);
+}
+
+.pagina-con-margen {
+    margin-top: var(--header-height);
+    margin-bottom: 0;
+}
+
+/* ===== Navegación ===== */
+@media (max-width: 1023px) {
+    #nav-list {
+        position: absolute;
+        top: var(--header-height);
+        right: 10px;
+        background-color: white;
+        flex-direction: column;
+        gap: 12px;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: var(--shadow-default);
+        z-index: 50;
+    }
+
+    #nav-list li a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.5rem 1rem;
+    }
+}
+
+/* ===== Tarjetas y Selección ===== */
+.selected {
+    border: 2px solid var(--color-primary);
+    border-radius: 8px;
+    position: relative;
+    z-index: 10;
+}
+
+.card {
+    --card-height: 80px;
+    height: var(--card-height);
+    transition: all var(--transition-default);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card.activa {
+    height: auto;
+    border-color: var(--color-primary);
+    background-color: #fff;
+}
+
+.card.selected {
+    border-color: #ff8000;
+}
+
+/* ===== Mensajes y Animaciones ===== */
+.mensaje {
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    margin-top: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    border-left: 5px solid #ff8000;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333;
+    transition: height 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.6s ease-in-out,
+                margin-top 0.6s ease-in-out,
+                padding 0.6s ease-in-out;
+}
+
+.mensaje:not(.hidden) {
+    height: auto;
+    opacity: 1;
+    margin-top: 0.5rem;
+}
+
+.mensaje.hidden {
+    height: 0;
+    opacity: 0;
+    margin-top: 0;
+    padding: 0;
+}
+
+.duda.activa .mensaje {
+    height: auto;
+    opacity: 1;
+    margin-top: 0.5rem;
+    padding: 10px;
+}
+
+.flecha1, .flecha2 {
+    transition: transform var(--transition-default);
+}
+
+.selected .flecha1 {
+    transform: rotate(90deg);
+}
+
+.selected .flecha2 {
+    transform: rotate(-90deg);
+}
+
+/* ===== Texto y Contenido ===== */
+#texto-seleccionado {
+    min-height: 300px;
+    flex-grow: 1;
+    transition: transform 0.8s ease, opacity 0.8s ease;
+    transform: translateX(100%);
+}
+
+#texto-seleccionado.translate-x-0 {
+    transform: translateX(0);
+}
+
+/* ===== Grid y Layout ===== */
+.grid {
+    align-items: stretch !important;
+}
+
+.dudas-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+section.dudas-section {
+    min-height: calc(275px + 125px);
+    display: flex;
+    flex-direction: column;
 }
 
 /* ===== Estilos para los planes ===== */
 .tipoPlan {
-    min-height: 1.5rem; /* Altura mínima */
-    display: flex; /* Usa flexbox para centrar el contenido */
-    align-items: center; /* Alinea verticalmente */
-    justify-content: center; /* Alinea horizontalmente */
+    min-height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .tipoPlan span {
-    visibility: hidden; /* Oculta el texto por defecto */
+    visibility: hidden;
 }
 
 .tipoPlan .visible {
-    visibility: visible; /* Hace visible el texto cuando tiene la clase 'visible' */
+    visibility: visible;
 }
 
-/* ===== Sombra personalizada ===== */
-.custom-shadow {
-    box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.5); /* Aplica una sombra oscura */
-}
-
-/* ===== Ajuste de márgenes en la página ===== */
-.pagina-con-margen {
-    margin-top: 60px; /* Espaciado superior */
-    margin-bottom: 0; /* Sin margen inferior */
-}
-
-/* ===== Menú de navegación responsivo ===== */
-@media (max-width: 1023px) {
-    #nav-list {
-        position: absolute; /* Posiciona el menú de forma flotante */
-        top: 60px; /* Se coloca debajo de la barra de navegación */
-        right: 10px; /* Lo alinea a la derecha */
-        background-color: white; /* Fondo blanco */
-        flex-direction: column; /* Acomoda los elementos en columna */
-        gap: 12px; /* Espaciado entre elementos */
-        padding: 20px; /* Espaciado interno */
-        border-radius: 8px; /* Bordes redondeados */
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-        z-index: 50; /* Asegura que esté sobre otros elementos */
-    }
-
-    #nav-list li a {
-        display: flex; /* Usa flexbox para centrar */
-        align-items: center; /* Alinea verticalmente */
-        justify-content: center; /* Alinea horizontalmente */
-        padding: 0.5rem 1rem; /* Espaciado interno */
-    }
-}
-
-/* ===== Estilos para selección de elementos ===== */
-.selected {
-    border: 2px solid orange; /* Borde naranja al seleccionar */
-    border-radius: 8px; /* Bordes redondeados */
-    position: relative;
-    z-index: 10; /* Asegura que esté sobre otros elementos */
-}
-
-.card.selected {
-    border-color: #ff8000; /* Color del borde de las tarjetas seleccionadas */
-}
-
-/* Flechas animadas al seleccionar */
-.selected .flecha1 {
-    transform: rotate(90deg); /* Gira la flecha hacia la derecha */
-    transition: transform 0.3s ease; /* Suaviza la animación */
-}
-
-.selected .flecha2 {
-    transform: rotate(-90deg); /* Gira la flecha hacia la izquierda */
-    transition: transform 0.3s ease; /* Suaviza la animación */
-}
-
-/* ===== Ajuste del texto seleccionado ===== */
-#texto-seleccionado {
-    height: auto; /* Altura ajustable según el contenido */
-    min-height: 94%; /* Mínimo 94% de la altura disponible */
-}
-
-/* ===== Tarjetas ===== */
-#tarjetas {
-    display: flex;
-    flex-direction: column; /* Apila las tarjetas verticalmente */
+/* ===== Imagen y texto en móvil ===== */
+#texto-movil {
+    transition: opacity 0.3s ease;
 }
 
 #tarjetas::after {
     content: "";
     display: block;
     height: 0;
-    visibility: hidden; /* Elemento invisible para ajustes de flexbox */
+    visibility: hidden;
 }
 
-/* ===== Animaciones de mensajes ===== */
-.message-appear {
-    opacity: 0; /* Invisible por defecto */
-    transform: translateY(-30px); /* Desplazado hacia arriba */
-    transition: opacity 0.6s ease, transform 0.6s ease; /* Animación suave */
+/* ===== Dudas y preguntas ===== */
+.duda {
+    cursor: pointer;
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    margin: 10px 0;
+    border-radius: 8px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    transition: all 0.3s ease;
 }
 
-.message-visible {
-    opacity: 1; /* Aparece con opacidad total */
-    transform: translateY(0); /* Se posiciona en su lugar */
-    transition: opacity 0.6s ease, transform 0.6s ease; /* Animación suave */
+.duda:hover {
+    background-color: #f4f4f4;
+}
+
+.duda.activa {
+    background-color: #fff6e5;
+    border-color: #ff8000;
+}
+
+.mensaje-duda p {
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .duda {
+        align-items: flex-start;
+    }
+    
+    .flecha1 {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 640px) {
+    :root {
+        --header-height: 50px;
+    }
+
+    .card {
+        --card-height: 60px;
+    }
+
+    /* Animación suave para las tarjetas en móvil */
+    [id^="texto-movil-"] {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+        opacity: 0;
+    }
+
+    [id^="texto-movil-"].block {
+        max-height: 1000px;
+        opacity: 1;
+        transition: max-height 0.5s ease-in, opacity 0.3s ease-in;
+    }
+}
+
+@media (max-width: 640px) {
+    .plus-symbol {
+        right: 5rem !important; /* Ajusta el valor para dejar el "+" pegado a la imagen */
+    }
 }

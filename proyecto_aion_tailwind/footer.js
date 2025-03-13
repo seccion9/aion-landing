@@ -38,30 +38,34 @@ function crearFooter() {
                 </div>
 
                 <!-- Botones -->
-                <div class="flex flex-col md:flex-row md:space-x-4 w-full md:w-auto px-8 items-center">
-                    <a href="invertir.html" id="inversiones" class="btn bg-[#ff8000] border-0 text-white hover:bg-orange-700 px-7 py-4 text-center rounded-md shadow-lg">
-                    INVERTIR
+                <div class="flex flex-row gap-4 w-full max-w-md px-8">
+                    <a href="invertir.html" id="inversiones" class="btn flex-1 bg-[#ff8000] border-0 text-white hover:bg-orange-700 py-4 text-center rounded-md shadow-lg transition-colors duration-500 ease-in-out">
+                        INVERTIR
                     </a>
-                    <a href="formulario.html" id="contacto" class="btn bg-transparent border-2 border-[#ff8000] text-[#ff8000] hover:bg-[#ff8000] hover:text-white px-5 py-4 text-center mt-2 md:mt-0 rounded-md shadow">
-                    CONTACTO
+
+                    <a href="formulario.html" id="contacto" class="btn flex-1 bg-transparent border-2 border-[#ff8000] text-[#ff8000] hover:bg-[#ff8000] hover:text-white py-4 text-center rounded-md shadow transition-colors duration-500 ease-in-out">
+                        CONTACTO
                     </a>
                 </div>
             </div>
         </div>
 
-        
-
         <!-- Sección de politicas -->
         <div class="bg-[#ff8000] text-black text-sm py-3 px-6">
-            <div class="max-w-screen-xl mx-auto flex flex-col md:flex-row justify-between items-center px-8 text-center">
-                <p class="text-sm md:text-left">&copy; 2025 - Todos los derechos reservados</p>
-                <div class="flex flex-wrap justify-center md:justify-end space-x-3 text-sm mt-2 md:mt-0">
+            <div class="max-w-screen-xl mx-auto flex flex-col-reverse md:flex-row justify-between items-center px-8 text-center md:text-left gap-4">
+
+                <!-- Frase de derechos -->
+                <p class="text-sm">&copy; 2025 - Todos los derechos reservados</p>
+
+                <!-- Links de politicas -->
+                <div class="flex flex-col md:flex-row justify-center md:justify-end items-center gap-1 md:gap-3 text-sm">
                     <a href="avisosLegales.html" class="hover:text-primary">Avisos Legales</a>
-                    <span>-</span>
+                    <!-- Guiones solo visibles en pantallas medianas y grandes -->
+                    <span class="hidden md:inline">-</span>
                     <a href="terminosCondiciones.html" class="hover:text-primary">Términos y Condiciones</a>
-                    <span>-</span>
+                    <span class="hidden md:inline">-</span>
                     <a href="politicaPrivacidad.html" class="hover:text-primary">Política de Privacidad</a>
-                    <span>-</span>
+                    <span class="hidden md:inline">-</span>
                     <a href="politicaCookies.html" class="hover:text-primary">Política de Cookies</a>
                 </div>
             </div>
