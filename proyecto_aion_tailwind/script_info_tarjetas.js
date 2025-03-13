@@ -30,11 +30,11 @@ function ajustarAlturaTarjetas(){
 
         tarjetas.forEach(tarjeta => {
             tarjeta.style.height = `${alturaDeseada}px`;
-            tarjeta.style.overflow = 'auto';
+            tarjeta.style.overflow = 'hidden';
         });
     } else {
         tarjetas.forEach(tarjeta => {
-            tarjeta.style.height = 'auto';
+            tarjeta.style.height = 'hidden';
         });
     }
 }
