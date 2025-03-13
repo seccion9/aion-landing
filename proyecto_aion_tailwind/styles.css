@@ -222,7 +222,7 @@ section.dudas-section {
     cursor: pointer;
     padding: 10px 20px;
     border: 1px solid #ccc;
-    margin: 10px 0;
+    margin: 5px 40px; /* Reduce el margen horizontal */
     border-radius: 8px;
     background-color: #fff;
     display: flex;
@@ -240,15 +240,19 @@ section.dudas-section {
     border-color: #ff8000;
 }
 
-.mensaje-duda p {
-    margin: 0;
+.mensaje {
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: height 0.6s ease-out, opacity 0.6s ease-out;  /* Se ha aumentado el tiempo de transición */
 }
 
+/* Para móvil */
 @media (max-width: 768px) {
     .duda {
         align-items: flex-start;
     }
-    
+
     .flecha1 {
         margin-top: 10px;
     }
@@ -262,21 +266,10 @@ section.dudas-section {
     .card {
         --card-height: 60px;
     }
-
-    /* Animación suave para las tarjetas en móvil */
-    [id^="texto-movil-"] {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease-out;
-        opacity: 0;
-    }
-
-    [id^="texto-movil-"].block {
-        max-height: 1000px;
-        opacity: 1;
-        transition: max-height 0.5s ease-in, opacity 0.3s ease-in;
-    }
 }
+
+
+
 
 @media (max-width: 640px) {
     .plus-symbol {
