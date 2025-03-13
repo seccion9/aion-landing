@@ -81,8 +81,3 @@ togglePrecio.addEventListener('change', () => {
 
 // Inicialización al cargar la página
 actualizarBordes();
-
-
-
-
-
