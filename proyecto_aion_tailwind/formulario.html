@@ -128,10 +128,52 @@
 
                 </div>
 
-                <!-- Contenedor de las tarjetas con más espacio entre ellas -->
-                <div class="dudas-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-1 sm:gap-1">
+                <div class="dudas-container flex justify-center items-start gap-4 flex-wrap">
+                    <!-- Tarjeta 1 -->
+                    <div class="nueva-card bg-white p-4 shadow-md rounded-lg cursor-pointer custom-width" onclick="toggleCard(this)">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-lg font-bold">¿Cómo puedo contratar los servicios de AION?</h3>
+                            <img src="img/flechaNaranja2.png" class="nueva-flecha w-6 sm:w-5 h-6 sm:h-5 transition-transform duration-300" alt="flecha">
+                        </div>
+                        <div class="nueva-content text-gray-700">
+                            <div class="nueva-texto">
+                                <p>En <strong style='color: #ff8000;'>AION</strong> puede contratar nuestros servicios yendo al apartado de 'Precios' y seleccionando el que más se adapte a sus necesidades, también podrá ponerse en contacto con nosotros rellenando el formulario de 'Contacto'.</p>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Tarjeta 2 -->
+                    <div class="nueva-card bg-white p-4 shadow-md rounded-lg cursor-pointer custom-width" onclick="toggleCard(this)">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-lg font-bold">¿Qué tipo de tarifas podras contratar con AION?</h3>
+                            <img src="img/flechaNaranja2.png" class="nueva-flecha w-6 sm:w-5 h-6 sm:h-5 transition-transform duration-300" alt="flecha">
+                        </div>
+                        <div class="nueva-content text-gray-700">
+                            <div class="nueva-texto">
+                                <p>En el apartado de 'Precios' encontrará toda la información que necesita, ofrecemos tarifas de 'Plan Básico' y 'Plan Completo' en sus respectivas modalidades mensuales o anuales.</p>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Tarjeta 3 -->
+                    <div class="nueva-card bg-white p-4 shadow-md rounded-lg cursor-pointer custom-width" onclick="toggleCard(this)">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-lg font-bold">¿Contamos con promociones y descuentos?</h3>
+                            <img src="img/flechaNaranja2.png" class="nueva-flecha w-6 sm:w-5 h-6 sm:h-5 transition-transform duration-300" alt="flecha">
+                        </div>
+                        <div class="nueva-content text-gray-700">
+                            <div class="nueva-texto">
+                                <p>Sí, nuestra política de descuentos es muy amplia ya que podrá encontrar ofertas especiales a lo largo del año.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
+                <!-- <div class="dudas-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-1 sm:gap-1">
 
-                    <!-- Primera tarjeta -->
+                    
                     <div class="card bg-[#f7f7f7] shadow-md p-3 sm:p-2 cursor-pointer transition duration-300 duda flex flex-col items-center border-2 border-transparent max-w-sm"
                         id="duda1">
                         <div class="flex items-center justify-between w-full">
@@ -145,7 +187,7 @@
                         </div>
                     </div>
 
-                    <!-- Segunda tarjeta -->
+                    
                     <div class="card bg-[#f7f7f7] shadow-md p-3 sm:p-2 cursor-pointer transition duration-300 duda flex flex-col items-center border-2 border-transparent max-w-sm"
                         id="duda2">
                         <div class="flex items-center justify-between w-full">
@@ -158,7 +200,7 @@
                         </div>
                     </div>
 
-                    <!-- Tercera tarjeta -->
+                    
                     <div class="card bg-[#f7f7f7] shadow-md p-3 sm:p-2 cursor-pointer transition duration-300 duda flex flex-col items-center border-2 border-transparent max-w-sm"
                         id="duda3">
                         <div class="flex items-center justify-between w-full">
@@ -170,7 +212,7 @@
                             class="mensaje mt-2 text-center text-lg md:text-base sm:text-sm text-gray-700 font-medium hidden">
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </section>
 

@@ -152,23 +152,54 @@ section {
     padding: 0;
 }
 
-.duda.activa .mensaje {
-    height: auto;
-    opacity: 1;
-    margin-top: 0.5rem;
-    padding: 10px;
+.dudas-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+    gap: 15px; /* Espaciado entre tarjetas */
+    justify-content: center;
 }
 
-.flecha1, .flecha2 {
-    transition: transform var(--transition-default);
+.nueva-card {
+    width: 400px; /* Ajustamos el ancho */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribuye el contenido */
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: white;
+    overflow: hidden;
+    transition: border-color 1s ease, background-color 1s ease;
+    margin-top: 20px;
 }
 
-.selected .flecha1 {
+.nueva-card.selected {
+    border: 2px solid #ff8000; /* Borde naranja */
+    background-color: #ffefd7; /* Fondo naranja claro */
+}
+
+.nueva-content {
+    height: 0;
+    overflow: hidden;
+    transition: height 1s ease-in-out; /* Animación de apertura y cierre más suave */
+}
+
+.nueva-flecha {
+    transition: transform 0.3s ease-in-out;
+}
+
+.nueva-card.selected .nueva-content {
+    background-color: white;
+    height: auto; /* Esto asegura que se ajuste al contenido */
+}
+
+.nueva-card.selected .nueva-flecha {
     transform: rotate(90deg);
 }
 
-.selected .flecha2 {
-    transform: rotate(-90deg);
+.nueva-texto {
+    padding: 10px; /* Agregamos padding aquí para separar el texto de los bordes */
+    margin: 10px 0; /* Puedes agregar márgenes si lo deseas */
 }
 
 /* ===== Texto y Contenido ===== */
@@ -211,17 +242,6 @@ section {
     height: 100%;
     overflow: hidden;
     border-radius: 8px;
-}
-
-/* ===== Grid y Layout ===== */
-.grid {
-    align-items: stretch !important;
-}
-
-.dudas-grid {
-    display: grid;
-    gap: 1.5rem;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
 section.dudas-section {
@@ -282,11 +302,12 @@ section.dudas-section {
 }
 
 .mensaje {
-    height: 0;
+    display: none;
     overflow: hidden;
+    height: 0;
     opacity: 0;
-    transition: height 0.6s ease-out, opacity 0.6s ease-out;  /* Se ha aumentado el tiempo de transición */
 }
+
 
 /* Para móvil */
 @media (max-width: 768px) {
