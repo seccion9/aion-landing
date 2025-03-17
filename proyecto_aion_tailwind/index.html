@@ -134,7 +134,7 @@
 
                 <!-- botones carrusel -->
                 <div class="absolute bottom-4 left-0 right-0 flex justify-center items-center px-6">
-                    <button class="z-50 bg-gray-600 bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-75 transition mx-8" onclick="prevSlide()">❮</button>
+                    <button class="z-30 bg-gray-600 bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-75 transition mx-8" onclick="prevSlide()">❮</button>
 
                     <div class="flex justify-center gap-8 mx-2">
                         <div id="dot-0" class="w-4 h-4 rounded-full bg-gray-600 opacity-50 cursor-pointer hover:opacity-100 transition" onclick="goToSlide(0)"></div>
@@ -146,7 +146,7 @@
                         -->
                     </div>
 
-                    <button class="z-50 bg-gray-600 bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-75 transition mx-8" onclick="nextSlide()">❯</button>
+                    <button class="z-30 bg-gray-600 bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-75 transition mx-8" onclick="nextSlide()">❯</button>
                 </div>
             </div>
             </div>
@@ -199,8 +199,7 @@
                     <div class="relative w-full h-auto overflow-hidden rounded-lg">
                         <img alt="Imagen descriptiva" id="imagen-texto" class="w-full h-auto object-cover mx-auto">
                     </div>
-                </div>
-                
+                </div>              
             </div>
         </section>
 
@@ -218,50 +217,54 @@
                 <div class="tarjeta relative group flex flex-col items-center justify-between w-full sm:w-64 md:w-64 lg:w-72 h-auto overflow-hidden" data-aos="fade-right" data-aos-duration="1000">
                     <div class="w-full h-40 cursor-pointer overflow-hidden relative" onclick="openModal('img/reservasAION.png')">
                         <img src="img/newCalendario.png" class="w-full h-full object-contain object-center rounded-lg transition-transform duration-300 ease-in-out group-hover:scale-105">
-                        <div class="absolute bottom-0 right-6 text-white text-4xl font-bold bg-[#FF9844] w-10 h-10 flex items-center justify-center rounded-full opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity pb-1">+</div>          
+                        <div class="absolute bottom-[-8px] right-16 sm:right-6 w-10 h-10 flex items-center justify-center rounded-full opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity">
+                            <img src="img/plus.svg" alt="Icono más" class="w-8 h-8">
+                        </div>                                                    
                     </div>
                     <div class="p-4 text-center flex-grow flex flex-col justify-start h-auto w-full"> 
                         <h3 class="text-xl text-black font-bold">Calendario de reservas</h3>
                         <p class="text-gray-600 mt-2 text-base w-full sm:w-10/12 mx-auto">Por supuesto que un sistema de reservas no puede funcionar sin un calendario. Y aunque vamos mucho más allá, la base es un sistema cómodo y personalizable para la empresa, donde podrán gestionar todas sus salas desde un único lugar y ofrecer de forma conjunta al usuario para que todas ellas puedan ser reservadas.</p>
                     </div>
                 </div>
-
                 <!-- Tarjeta 2 -->
                 <div class="tarjeta relative group flex flex-col items-center justify-between w-full sm:w-64 md:w-64 lg:w-72 h-auto overflow-hidden" data-aos="fade-right" data-aos-duration="1000">
                     <div class="w-full h-40 cursor-pointer overflow-hidden relative" onclick="openModal('img/cuponesAION.png')">
                         <img src="img/newCupon.png" class="w-full h-full object-contain object-center rounded-lg transition-transform duration-300 ease-in-out group-hover:scale-105">
-                        <div class="absolute bottom-0 right-4 text-white text-4xl font-bold bg-[#FF9844] w-10 h-10 flex items-center justify-center rounded-full opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity pb-1">+</div> 
+                        <div class="absolute bottom-[-8px] right-16 sm:right-6 w-10 h-10 flex items-center justify-center rounded-full opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity">
+                            <img src="img/plus.svg" alt="Icono más" class="w-8 h-8">
+                        </div>                          
                     </div>
                     <div class="p-4 text-center flex-grow flex flex-col justify-start h-auto w-full"> 
                         <h3 class="text-xl text-black font-bold">Descuentos / Bonos / Cupones</h3>
                         <p class="text-gray-600 mt-2 text-base w-full sm:w-10/12 mx-auto">Ofrecemos un sistema muy potente para que puedas realizar promociones de salas concretas en los días/horas que tu quieras. Utilizar tus descuentos y bonos de forma automática y desatendida a través de la web.</p>
                     </div>
                 </div>
-
                 <!-- Tarjeta 3 -->
                 <div class="tarjeta relative group flex flex-col items-center justify-between w-full sm:w-64 md:w-64 lg:w-72 h-auto overflow-hidden" data-aos="fade-left" data-aos-duration="1000">
                     <div class="w-full h-40 cursor-pointer overflow-hidden relative" onclick="openModal('img/facturacionAION.png')">
                         <img src="img/newCalidad.png" class="w-full h-full object-contain object-center rounded-lg transition-transform duration-300 ease-in-out group-hover:scale-105">
-                        <div class="absolute bottom-0 right-6 text-white text-4xl font-bold bg-[#FF9844] w-10 h-10 flex items-center justify-center rounded-full opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity pb-1">+</div>
+                        <div class="absolute bottom-[-8px] right-16 sm:right-6 w-10 h-10 flex items-center justify-center rounded-full opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity">
+                            <img src="img/plus.svg" alt="Icono más" class="w-8 h-8">
+                        </div>                                           
                     </div>
                     <div class="p-4 text-center flex-grow flex flex-col justify-start h-auto w-full"> 
                         <h3 class="text-xl text-black font-bold">Garantía de funcionamiento</h3>
                         <p class="text-gray-600 mt-2 text-base w-full sm:w-10/12 mx-auto">Aion es una herramienta que lleva desarrollándose mucho tiempo, ¡ya vamos por la versión 7! Actualmente está funcionando en múltiples empresas con distintas temáticas, cuenta con un desarrollo y perfeccionamiento constante.</p>
                     </div>
                 </div>
-
                 <!-- Tarjeta 4 -->
                 <div class="tarjeta relative group flex flex-col items-center justify-between w-full sm:w-64 md:w-64 lg:w-72 h-auto overflow-hidden" data-aos="fade-left" data-aos-duration="1000">
                     <div class="w-full h-40 cursor-pointer overflow-hidden relative" onclick="openModal('img/correosAION.png')">
                         <img src="img/newCorreo.png" class="w-full h-full object-contain object-center rounded-lg transition-transform duration-300 ease-in-out group-hover:scale-105">
-                        <div class="absolute bottom-0 right-6 text-white text-4xl font-bold bg-[#FF9844] w-10 h-10 flex items-center justify-center rounded-full opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity pb-1">+</div> 
+                        <div class="absolute bottom-[-8px] right-16 sm:right-6 w-10 h-10 flex items-center justify-center rounded-full opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity">
+                            <img src="img/plus.svg" alt="Icono más" class="w-8 h-8">
+                        </div>                                              
                     </div>
                     <div class="p-4 text-center flex-grow flex flex-col justify-start h-auto w-full"> 
                         <h3 class="text-xl text-black font-bold">Envío de fotos automático / Gestión envío de correos</h3>
                         <p class="text-gray-600 mt-2 text-base w-full sm:w-10/12 mx-auto">En la empresa, cuanto más se pueda automatizar, mejor. Nosotros proporcionamos una herramienta que te va a ahorrar muchísimo tiempo en gestiones sin perder un ápice de personalización para tus clientes.</p>
                     </div>
                 </div>
-
             </section>
         </section>
 

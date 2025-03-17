@@ -40,17 +40,14 @@ function ajustarAlturaTarjetas(){
 }
 
 window.onload = function () {
-    if (window.innerWidth > 640) { // Solo preselecciona la tarjeta en escritorio
+    const textoSeleccionado = document.getElementById('texto-seleccionado');
+    if (window.innerWidth > 640) {
         mostrarTexto(0);
     } else {
-        // En móviles no preseleccionar ninguna tarjeta
         document.querySelectorAll('.section-container').forEach(el => {
             el.classList.remove('active-card', 'ring-4', 'ring-orange-500');
         });
-
-        // Asegurarse de que el área de texto no esté visible en móvil
-        const textoSeleccionado = document.getElementById('texto-seleccionado');
-        textoSeleccionado.classList.add('hidden');
+        textoSeleccionado.style.display = 'none'; 
     }
     ajustarAlturaTarjetas();
 };
@@ -94,13 +91,17 @@ function mostrarTexto(index) {
         document.querySelectorAll('.section-container').forEach((el, idx) => {
             if (idx === index) {
                 el.classList.add('active-card', 'ring-4', 'ring-orange-500');
+                // Asegurarse de que la tarjeta no se quede con altura fija
+                el.style.height = 'auto'; // Restaurar la altura cuando se abre
             } else {
                 el.classList.remove('active-card', 'ring-4', 'ring-orange-500');
+                // Resetear la altura de otras tarjetas
+                el.style.height = 'auto';
             }
         });
 
         // Mostrar el contenido de la tarjeta seleccionada
-        textoMovil.innerHTML = `
+        textoMovil.innerHTML = ` 
             <div class="bg-white rounded-lg shadow-lg p-4 mt-2">
                 <h3 class="text-xl font-semibold text-gray-600">${data[index].titulo}</h3>
                 <p class="text-base mt-2">${data[index].descripcion}</p>
@@ -139,3 +140,4 @@ function mostrarTexto(index) {
 
     ajustarAlturaTarjetas();
 }
+
