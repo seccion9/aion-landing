@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Contacto</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="output.css">
+
+        
+        <!-- INSTALACION DE AOS (ANIMACIONES AL HACER SCROLL)-->
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    
+        <!-- INSTALACION DE SweetAlert2 (ANIMACIONES de alerta)-->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+        <!--FAVICON-->
+        <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+        <link rel="manifest" href="favicon/manifest.json">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+            
+        
+
+</head>
+<body class="min-h-screen flex flex-col">
+    <!-- Nav mediante .js -->
+    <div id="nav-container"></div>
+
+    <main class="pagina-con-margen flex-grow pt-20 py-16 bg-neutral-100">
+        <div class="container w-full max-w-screen-xl mx-auto flex flex-col lg:flex-row items-center gap-10 px-8">
+    
+            <div class="lg:w-1/2 text-center lg:text-left">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">
+                    <span class="text-[#ff8000]">AION</span>
+                </h2>
+                <p class="text-xl font-bold text-gray-600 mb-4">Únete al futuro de la gestión de reservas</p>
+                <p class="text-gray-700 mb-4">
+                    Si estás interesado en ser parte de un proyecto innovador y con alto potencial de crecimiento, este es el lugar perfecto para comenzar.
+                    Completa el formulario y nos pondremos en contacto contigo para explorar juntos las posibilidades.
+                </p>
+                <p class="text-gray-700 mb-6">
+                    Queremos conocerte y entender cómo podemos crear una colaboración que se adapta a tus expectativas y objetivos.
+                    Nuestro equipo está preparado para resolver tus dudas y acompañarte en cada paso del proceso.
+                </p>
+            </div>
+    
+            <!-- Sección de Formulario -->
+            <div class="w-full max-w-xl mx-auto pt-6 pb-12 px-6 bg-gray-900 shadow-lg rounded-lg">
+                <h2 class="text-2xl font-bold text-white text-center mb-4 mt-0">Formulario de Inversión</h2>
+                <form id="formInvertir" class="w-full space-y-4">
+                    
+                    <label class="block text-white font-medium">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Nombre Completo*" required 
+                        class="input input-bordered bg-white w-full h-9 border-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
+                    
+                    <label class="block text-white font-medium">Teléfono</label>
+                    <input type="tel" id="tel" name="tel" placeholder="Teléfono*" required 
+                        class="input input-bordered bg-white w-full h-9 border-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
+                    
+                    <label class="block text-white font-medium">Correo</label>
+                    <input type="email" id="email" name="email" placeholder="Correo*" required 
+                        class="input input-bordered bg-white w-full h-9 border-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
+                    
+                    <div class="flex items-start space-x-2">
+                        <input type="checkbox" id="terms" required 
+                            class="checkbox border-gray-400 bg-white checked:bg-white checked:text-black checked:border-gray-400">
+                        <label for="terms" class="text-white text-sm leading-tight">
+                            Acepto los 
+                            <a href="terminosCondiciones.html" class="text-blue-500 hover:underline font-medium">términos y condiciones</a>, la 
+                            <a href="politicaPrivacidad.html" class="text-blue-500 hover:underline font-medium">política de privacidad</a> y consiento el tratamiento de mis datos personales con el fin de ser contactado en relación con mi consulta.
+                        </label>
+                    </div>
+    
+                    <div class="flex justify-center">
+                        <button type="submit" class="btn w-full sm:w-3/4 mt-4 text-xl bg-[#ff8000] border-[#ff8000] text-white hover:bg-orange-700 h-10 transition-colors duration-300 ease-in-out">
+                            Enviar
+                        </button>                        
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    
+
+    <footer class="w-full">        
+        <div id="footer-container"></div>
+    </footer>
+
+        <!-- INSTALACION DE AOS (ANIMACIONES AL HACER SCROLL)-->
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+        <!-- inicializa AOS-->
+        <script>
+            AOS.init();
+        </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!-- Librería SweetAlert2 -->
+    <script src="script_invertir.js"></script>
+    <script src="mensajeDuda.js"></script>
+    <script src="nav.js"></script>
+    <script src="menu_hamburguesa.js"></script>
+    <script src="footer.js"></script>
+</body>
+</html>
