@@ -47,9 +47,11 @@
         <section id="main">
             <section class="bg-neutral-100 relative flex items-center justify-center px-0 py-0 h-screen">
                 <!-- Contenedor de la imagen -->
-                <div class="relative w-full h-full">
-                    <img src="img/inicio.jpg" alt="Gestiona tus reservas" class="w-full h-full object-cover">
+                <div class="relative w-full h-full overflow-hidden">
+                    <!-- Imagen con posición absoluta y movida hacia arriba -->
+                    <img src="img/inicio.jpg" alt="Gestiona tus reservas" class="w-full h-auto object-cover absolute top-[-120px] left-0">
                     
+                    <!-- Gradiente, ahora alineado correctamente con la imagen -->
                     <div class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-white/100 to-transparent"></div>
                     
                     <!-- Contenedor de texto con ancho máximo -->
@@ -78,7 +80,7 @@
                 </div>
             </section>
         </section>
-        
+      
         <!-- Sección logos de empresas -->
         <section class="logos-empresas py-8 bg-white" id="carrusel">
             <div class="texto-logos text-center bg-gradient-to-t mb-4">
@@ -130,23 +132,22 @@
                         </div>
                     </div>
 
-                <!-- botones carrusel -->
-                <div class="absolute bottom-4 left-0 right-0 flex justify-center items-center px-6">
-                    <button class="z-50 bg-gray-600 bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-75 transition mx-8" onclick="prevSlide()">❮</button>
+                    <!-- botones carrusel -->
+                    <div class="absolute bottom-4 left-0 right-0 flex justify-center items-center px-6">
+                        <!-- Botón de la izquierda -->
+                        <button class="carousel-button bg-gray-400 text-white p-3 rounded-full cursor-pointer mx-8 transition-all duration-300" onclick="prevSlide()">❮</button>
 
-                    <div class="flex justify-center gap-8 mx-2">
-                        <div id="dot-0" class="w-4 h-4 rounded-full bg-gray-600 opacity-50 cursor-pointer hover:opacity-100 transition" onclick="goToSlide(0)"></div>
-                        <div id="dot-1" class="w-4 h-4 rounded-full bg-gray-600 opacity-50 cursor-pointer hover:opacity-100 transition" onclick="goToSlide(1)"></div>
-                        <div id="dot-2" class="w-4 h-4 rounded-full bg-gray-600 opacity-50 cursor-pointer hover:opacity-100 transition" onclick="goToSlide(2)"></div>
-                        <!-- Por si se añadiese una cuarta imagen -->
-                        <!--
-                        <div id="dot-3" class="w-4 h-4 rounded-full bg-gray-600 opacity-50 cursor-pointer hover:opacity-100 transition" onclick="goToSlide(3)"></div>
-                        -->
+                        <!-- Puntos de navegación -->
+                        <div class="flex justify-center gap-8 mx-2">
+                            <div id="dot-0" class="carousel-dot w-4 h-4 rounded-full bg-gray-600 opacity-50 cursor-pointer transition-all duration-300" onclick="goToSlide(0)"></div>
+                            <div id="dot-1" class="carousel-dot w-4 h-4 rounded-full bg-gray-600 opacity-50 cursor-pointer transition-all duration-300" onclick="goToSlide(1)"></div>
+                            <div id="dot-2" class="carousel-dot w-4 h-4 rounded-full bg-gray-600 opacity-50 cursor-pointer transition-all duration-300" onclick="goToSlide(2)"></div>
+                        </div>
+
+                        <!-- Botón de la derecha -->
+                        <button class="carousel-button bg-gray-400 text-white p-3 rounded-full cursor-pointer mx-8 transition-all duration-300" onclick="nextSlide()">❯</button>
                     </div>
-
-                    <button class="z-50 bg-gray-600 bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-75 transition mx-8" onclick="nextSlide()">❯</button>
                 </div>
-            </div>
             </div>
         </section>
         
@@ -159,43 +160,44 @@
                 <!-- Contenedor de las tarjetas de la izquierda -->
                 <div class="flex flex-col gap-6 w-full sm:w-[45%] px-6 justify-between" id="tarjetas">
                     <!-- Tarjeta 1 -->
-                    <div class="section-container group bg-white rounded-lg shadow-lg transition-transform transform hover:scale-105 w-full cursor-pointer flex items-center justify-between min-h-[120px] p-4" data-aos="fade-up" onclick="mostrarTexto(0)">
+                    <div class="section-container group bg-white rounded-lg shadow-lg transition-all duration-300 w-full cursor-pointer flex items-center justify-between min-h-[120px] p-4" data-aos="fade-up" onclick="mostrarTexto(0)">
                         <i class="fas fa-mobile-alt text-4xl text-gray-800 px-4"></i>
-                        <h3 class="text-lg font-semibold ml-4">Diseño adaptable a móviles y tabletas</h3>
+                        <h3 class="text-lg font-semibold ml-4 text-gray-400">Diseño adaptable a móviles y tabletas</h3>
                         <i class="fas fa-arrow-right text-2xl text-gray-800 ml-auto"></i>
                     </div>
                     <div id="texto-movil-0" class="hidden sm:hidden"></div>
                     <!-- Tarjeta 2 -->
-                    <div class="section-container group bg-white rounded-lg shadow-lg transition-transform transform hover:scale-105 w-full cursor-pointer flex items-center justify-between min-h-[120px] p-4" data-aos="fade-up" onclick="mostrarTexto(1)">
+                    <div class="section-container group bg-white rounded-lg shadow-lg transition-all duration-300 w-full cursor-pointer flex items-center justify-between min-h-[120px] p-4" data-aos="fade-up" onclick="mostrarTexto(1)">
                         <i class="fas fa-cogs text-4xl text-gray-800 px-4"></i>
-                        <h3 class="text-lg font-semibold ml-4">Personalizable y de fácil integración</h3>
+                        <h3 class="text-lg font-semibold ml-4 text-gray-400">Personalizable y de fácil integración</h3>
                         <i class="fas fa-arrow-right text-2xl text-gray-800 ml-auto"></i>
                     </div>
                     <div id="texto-movil-1" class="hidden sm:hidden"></div>
                     <!-- Tarjeta 3 -->
-                    <div class="section-container group bg-white rounded-lg shadow-lg transition-transform transform hover:scale-105 w-full cursor-pointer flex items-center justify-between min-h-[120px] p-4" data-aos="fade-up" onclick="mostrarTexto(2)">
+                    <div class="section-container group bg-white rounded-lg shadow-lg transition-all duration-300 cursor-pointer flex items-center justify-between min-h-[120px] p-4" data-aos="fade-up" onclick="mostrarTexto(2)">
                         <i class="fas fa-headset text-4xl text-gray-800 px-4"></i>
-                        <h3 class="text-lg font-semibold ml-4">Soporte técnico personal</h3>
+                        <h3 class="text-lg font-semibold ml-4 text-gray-400">Soporte técnico personal</h3>
                         <i class="fas fa-arrow-right text-2xl text-gray-800 ml-auto"></i>
                     </div>
                     <div id="texto-movil-2" class="hidden sm:hidden"></div>
                     <!-- Tarjeta 4 -->
-                    <div class="section-container group bg-white rounded-lg shadow-lg transition-transform transform hover:scale-105 w-full cursor-pointer flex items-center justify-between min-h-[120px] p-4" data-aos="fade-up" onclick="mostrarTexto(3)">
+                    <div class="section-container group bg-white rounded-lg shadow-lg transition-all duration-300 w-full cursor-pointer flex items-center justify-between min-h-[120px] p-4" data-aos="fade-up" onclick="mostrarTexto(3)">
                         <i class="fas fa-desktop text-4xl text-gray-800 px-4"></i>
-                        <h3 class="text-lg font-semibold ml-4">Interfaz empresarial sencilla</h3>
+                        <h3 class="text-lg font-semibold ml-4 text-gray-400">Interfaz empresarial sencilla</h3>
                         <i class="fas fa-arrow-right text-2xl text-gray-800 ml-auto"></i>
                     </div>
                     <div id="texto-movil-3" class="hidden sm:hidden"></div>
                 </div>
 
                 <!-- Contenedor donde se mostrará el contenido en escritorio -->
-                <div class="w-1/2 bg-white rounded-lg shadow-lg opacity-0 transform translate-x-full transition-all duration-700 ease-in-out hidden sm:block right-card flex-col justify-center p-4 max-h-screen overflow-hidden" id="texto-seleccionado">
+                <div class="w-1/2 bg-white rounded-lg shadow-lg opacity-0 translate-x-16 transition-all duration-700 ease-in-out hidden sm:flex right-card flex-col justify-center p-4 max-h-screen overflow-hidden" id="texto-seleccionado">
+
                     <h3 class="text-2xl font-semibold text-gray-600" id="titulo-texto"></h3>
-                    <p id="descripcion-texto" class="text-base mt-4"></p>
+                    <p id="descripcion-texto" class="text-base mt-4 text-gray-400"></p>
                 
                     <!-- Contenedor para la imagen ajustada -->
                     <div class="relative w-full h-auto overflow-hidden rounded-lg">
-                        <img alt="Imagen descriptiva" id="imagen-texto" class="w-full h-auto object-cover mx-auto">
+                        <img alt="Imagen descriptiva" id="imagen-texto" class="w-full h-auto mx-auto imagen-text">
                     </div>
                 </div>
                 
@@ -216,7 +218,9 @@
                 <div class="tarjeta relative group flex flex-col items-center justify-between w-full sm:w-64 md:w-64 lg:w-72 h-auto overflow-hidden" data-aos="fade-right" data-aos-duration="1000">
                     <div class="w-full h-40 cursor-pointer overflow-hidden relative" onclick="openModal('img/reservasAION.png')">
                         <img src="img/newCalendario.png" class="w-full h-full object-contain object-center rounded-lg transition-transform duration-300 ease-in-out group-hover:scale-105">
-                        <div class="absolute bottom-0 right-6 text-white text-4xl font-bold bg-[#FF9844] w-10 h-10 flex items-center justify-center rounded-full opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity pb-1">+</div>          
+                        <div class="absolute bottom-[-8px] right-16 sm:right-6 w-10 h-10 flex items-center justify-center rounded-full opacity-0 md:opacity-0 group-hover:opacity-100 transition-opacity">
+                            <img src="img/plus.svg" alt="Icono más" class="w-8 h-8">
+                        </div>         
                     </div>
                     <div class="p-4 text-center flex-grow flex flex-col justify-start h-auto w-full"> 
                         <h3 class="text-xl text-black font-bold">Calendario de reservas</h3>
@@ -228,7 +232,9 @@
                 <div class="tarjeta relative group flex flex-col items-center justify-between w-full sm:w-64 md:w-64 lg:w-72 h-auto overflow-hidden" data-aos="fade-right" data-aos-duration="1000">
                     <div class="w-full h-40 cursor-pointer overflow-hidden relative" onclick="openModal('img/cuponesAION.png')">
                         <img src="img/newCupon.png" class="w-full h-full object-contain object-center rounded-lg transition-transform duration-300 ease-in-out group-hover:scale-105">
-                        <div class="absolute bottom-0 right-4 text-white text-4xl font-bold bg-[#FF9844] w-10 h-10 flex items-center justify-center rounded-full opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity pb-1">+</div> 
+                        <div class="absolute bottom-[-8px] right-16 sm:right-6 w-10 h-10 flex items-center justify-center rounded-full opacity-0 md:opacity-0 group-hover:opacity-100 transition-opacity">
+                            <img src="img/plus.svg" alt="Icono más" class="w-8 h-8">
+                        </div> 
                     </div>
                     <div class="p-4 text-center flex-grow flex flex-col justify-start h-auto w-full"> 
                         <h3 class="text-xl text-black font-bold">Descuentos / Bonos / Cupones</h3>
@@ -240,7 +246,9 @@
                 <div class="tarjeta relative group flex flex-col items-center justify-between w-full sm:w-64 md:w-64 lg:w-72 h-auto overflow-hidden" data-aos="fade-left" data-aos-duration="1000">
                     <div class="w-full h-40 cursor-pointer overflow-hidden relative" onclick="openModal('img/facturacionAION.png')">
                         <img src="img/newCalidad.png" class="w-full h-full object-contain object-center rounded-lg transition-transform duration-300 ease-in-out group-hover:scale-105">
-                        <div class="absolute bottom-0 right-6 text-white text-4xl font-bold bg-[#FF9844] w-10 h-10 flex items-center justify-center rounded-full opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity pb-1">+</div>
+                        <div class="absolute bottom-[-8px] right-16 sm:right-6 w-10 h-10 flex items-center justify-center rounded-full opacity-0 md:opacity-0 group-hover:opacity-100 transition-opacity">
+                            <img src="img/plus.svg" alt="Icono más" class="w-8 h-8">
+                        </div>
                     </div>
                     <div class="p-4 text-center flex-grow flex flex-col justify-start h-auto w-full"> 
                         <h3 class="text-xl text-black font-bold">Garantía de funcionamiento</h3>
@@ -252,24 +260,25 @@
                 <div class="tarjeta relative group flex flex-col items-center justify-between w-full sm:w-64 md:w-64 lg:w-72 h-auto overflow-hidden" data-aos="fade-left" data-aos-duration="1000">
                     <div class="w-full h-40 cursor-pointer overflow-hidden relative" onclick="openModal('img/correosAION.png')">
                         <img src="img/newCorreo.png" class="w-full h-full object-contain object-center rounded-lg transition-transform duration-300 ease-in-out group-hover:scale-105">
-                        <div class="absolute bottom-0 right-6 text-white text-4xl font-bold bg-[#FF9844] w-10 h-10 flex items-center justify-center rounded-full opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity pb-1">+</div> 
+                        <div class="absolute bottom-[-8px] right-16 sm:right-6 w-10 h-10 flex items-center justify-center rounded-full opacity-0 md:opacity-0 group-hover:opacity-100 transition-opacity">
+                            <img src="img/plus.svg" alt="Icono más" class="w-8 h-8">
+                        </div> 
                     </div>
                     <div class="p-4 text-center flex-grow flex flex-col justify-start h-auto w-full"> 
                         <h3 class="text-xl text-black font-bold">Envío de fotos automático / Gestión envío de correos</h3>
                         <p class="text-gray-600 mt-2 text-base w-full sm:w-10/12 mx-auto">En la empresa, cuanto más se pueda automatizar, mejor. Nosotros proporcionamos una herramienta que te va a ahorrar muchísimo tiempo en gestiones sin perder un ápice de personalización para tus clientes.</p>
                     </div>
                 </div>
-
             </section>
         </section>
 
-        <!-- Modal -->
-        <div id="imageModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 invisible opacity-0 transition-opacity duration-300 z-50" onclick="closeModal()">
-            <div id="modalContent" class="bg-white p-8 rounded-lg shadow-lg max-w-4xl relative transform scale-95 transition-transform duration-300" onclick="event.stopPropagation()">
-                <button class="absolute top-1 right-1 md:top-2 md:right-2 text-black text-4xl hover:text-gray-600 transition-colors" onclick="closeModal()">&times;</button>
-                <img id="modalImage" src="" class="w-full h-auto rounded-lg">
+            <!-- Modal -->
+            <div id="imageModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 invisible opacity-0 transition-opacity duration-300 z-50" onclick="closeModal()">
+                <div id="modalContent" class="bg-white p-8 rounded-lg shadow-lg max-w-4xl relative transform scale-95 transition-transform duration-300" onclick="event.stopPropagation()">
+                    <button class="absolute top-1 right-1 md:top-2 md:right-2 text-black text-4xl hover:text-gray-600 transition-colors" onclick="closeModal()">&times;</button>
+                    <img id="modalImage" src="" class="w-full h-auto rounded-lg">
+                </div>
             </div>
-        </div>
 
         <!-- Seccion Precios -->
         <section class="contenedor text-center py-8 bg-white pb-16" id="precios">
