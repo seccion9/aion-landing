@@ -1,6 +1,6 @@
 function loadNav() {
     const navHTML = `
-    <header class="bg-gray-200 fixed top-0 left-0 w-full h-16 z-10 shadow-md">
+    <header class="bg-gray-200 fixed top-0 left-0 w-full h-16 z-50 shadow-md">
         <div class="max-w-screen-xl mx-auto flex items-center h-full px-4 justify-between">
             <nav class="container mx-auto flex justify-between items-center p-4 relative">
 

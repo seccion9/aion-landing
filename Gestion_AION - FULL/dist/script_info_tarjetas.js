@@ -55,7 +55,6 @@ window.onload = function () {
     ajustarAlturaTarjetas();
 };
 
-
 window.onresize = function () {
     ajustarAlturaTarjetas();
 };
@@ -139,3 +138,4 @@ function mostrarTexto(index) {
 
     ajustarAlturaTarjetas();
 }
+

@@ -25,18 +25,6 @@ img {
     object-fit: contain;
 }
 
-/* ===== Layout ===== */
-header {
-    height: 64px; /* o la altura que tenga tu header */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: white;
-    z-index: 50;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
 main {
     margin-top: 110px;
     margin-bottom: 40px;
@@ -62,9 +50,9 @@ section {
 }
 
 /* ===== Componentes ===== */
-.custom-shadow {
+/* .custom-shadow {
     box-shadow: var(--shadow-large);
-}
+} */
 
 .pagina-con-margen {
     margin-top: var(--header-height);
@@ -82,7 +70,7 @@ section {
         gap: 12px;
         padding: 20px;
         border-radius: 8px;
-        box-shadow: var(--shadow-default);
+        /* box-shadow: var(--shadow-default); */
         z-index: -40;
     }
 
@@ -111,10 +99,9 @@ section {
     justify-content: center;
 }
 
-.card.activa {
-    height: auto;
-    border-color: var(--color-primary);
-    background-color: #fff;
+.active-card {
+    border: 2px solid #ff8000 !important;
+    border-radius: 8px;
 }
 
 .card.selected {
@@ -218,21 +205,20 @@ section {
 }
 
 /* Ajuste de la imagen para ocupar siempre la altura máxima */
-#imagen-texto {
+.imagen-text {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     object-position: center;
     border-radius: 8px;
-    margin-top: 16px;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     z-index: 1;
-    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 25px);
-    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 25px);
+    /* mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 25px);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 25px); */
 }
 
 /* Asegúrate de que el contenedor de la imagen tenga el comportamiento adecuado */
@@ -330,11 +316,48 @@ section.dudas-section {
     }
 }
 
-
-
-
 @media (max-width: 640px) {
     .plus-symbol {
         right: 5rem !important; /* Ajusta el valor para dejar el "+" pegado a la imagen */
     }
+}
+
+/* Hover para los botones del carrusel */
+.carousel-button:hover {
+    background-color: #6b7280; 
+}
+
+.carousel-dot:hover {
+    background-color: #6b7280; 
+    opacity: 1;
+}
+
+.optimizar-negocio .tarjeta {
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+}
+
+.optimizar-negocio .tarjeta img {
+    height: 100%; /* Asegura que la imagen ocupe toda la altura del contenedor */
+    width: 100%;  /* Asegura que la imagen ocupe todo el ancho del contenedor */
+    object-fit: contain; /* Ajusta la imagen para cubrir todo el espacio disponible sin deformarse */
+    object-position: center; /* Centra la imagen */
+    border-radius: 8px;
+    position: relative; /* Asegura que la imagen esté bien posicionada dentro de su contenedor */
+    z-index: 2;
+}
+
+.optimizar-negocio .tarjeta .absolute {
+    opacity: 0; /* Inicialmente invisible */
+    transition: opacity 0.3s ease-in-out; /* Transición suave */
+    z-index: 2; /* Asegura que esté por encima de la imagen */
+}
+
+.optimizar-negocio .tarjeta:hover .absolute {
+    opacity: 1; /* Aparece al hacer hover */
+}
+
+.optimizar-negocio .tarjeta .absolute img {
+    width: 32px; /* Ajusta el tamaño del icono */
+    height: 32px; /* Ajusta el tamaño del icono */
 }

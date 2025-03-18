@@ -1,4 +1,12 @@
 module.exports = {
-    //...
-    plugins: [require("daisyui")],
-  }
+  content: [
+    './dist/**/*.html',
+    './dist/**/*.js',
+  ],
+  theme: {
+    extend: {}, 
+  },
+  plugins: [
+    require("daisyui"), 
+  ],
+}
