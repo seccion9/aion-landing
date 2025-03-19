@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuario</title>
+    <link rel="stylesheet" href="../../../styles.css">
+    <!-- INSTALACION DE TAILWIND v4.0 y DAISYUI v5.0 -->
+    <link rel="stylesheet" href="../../../output.css">
+     
+    
+    <!-- INSTALACION DE AOS (ANIMACIONES AL HACER SCROLL)-->
+    <link rel="stylesheet" href="../../../aos.css" />
+
+    <!-- INSTALACION DE SweetAlert2 (ANIMACIONES de alerta)-->
+    <link rel="stylesheet" href="../../../sweetalert2.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!--FAVICON-->
+    <link rel="apple-touch-icon" sizes="57x57" href="../../../favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../../../favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../../../favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../../../favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../../../favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../../../favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../../../favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../../../favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../../favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="../../../favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../../../favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../../favicon/favicon-16x16.png">
+    <link rel="manifest" href="../../../favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="../../../favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+</head>
+<body>
+
+    <!-- Nav mediante .js -->
+    <div id="nav-container"></div>
+
+
+
+<!-- Formulario de Login -->
+<div class="flex justify-center items-center min-h-screen bg-gray-100">
+    <form id="loginForm" class="bg-white p-8 rounded-lg shadow-lg space-y-6 w-80">
+        <h2 class="text-2xl font-semibold text-center text-gray-700">Iniciar Sesión</h2>
+        
+        <div class="space-y-2">
+            <label for="user" class="block text-sm font-medium text-gray-700">Usuario</label>
+            <input type="text" id="user" name="user" placeholder="Usuario" required class="input input-bordered w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+        
+        <div class="space-y-2">
+            <label for="password" class="block text-sm font-medium text-gray-700">Contraseña</label>
+            <input type="password" id="password" name="password" placeholder="Contraseña" required class="input input-bordered w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+
+        <div class="flex justify-center">
+            <button type="submit" class="btn btn-primary w-full bg-blue-600 text-white p-3 rounded-md hover:bg-blue-700">Entrar</button>
+        </div>
+    </form>
+
+    <!-- Resultado -->
+    <div id="resultado" class="mt-4 text-center text-red-500"></div>
+</div>
+
+
+
+
+
+    <footer class="w-full">        
+        <div id="footer-container"></div>
+    </footer>
+
+
+    <script src="../../../nav.js"></script>
+    <script src="../../../menu_hamburguesa.js"></script>
+    <script src="../../../footer.js"></script>
+
+</body>
+</html>
