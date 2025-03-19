@@ -59,23 +59,21 @@ function loadNav() {
 
 
 function cambiarLogoPorSesion() {
-    // Aquí deberías comprobar si el usuario está autenticado
-    // Para el ejemplo, vamos a asumir que usamos una variable 'isLoggedIn' para ello
-    const isLoggedIn = localStorage.getItem("isLoggedIn") === "true"; // O cualquier otra verificación que uses
+    // Comprobar si el usuario está autenticado
+    // Para el ejemplo variable 'isLoggedIn' pero hay que cambiar por status de cookie de sesion
+    const isLoggedIn = localStorage.getItem("isLoggedIn") === "true"; 
 
     const logginUser = document.getElementById('logginUser');
     const logUser = document.getElementById('logUser');
 
-    // Cambiar el logo dependiendo del estado de sesión
     if (isLoggedIn) {
-        logUser.src = 'img/logout.svg'; // Logo para usuarios autenticados
+        logUser.src = 'img/logout.svg'; 
     } else {
-        logUser.src = 'img/person.svg'; // Logo para visitantes no autenticados
+        logUser.src = 'img/person.svg'; 
     }
 }
 
-// Llamar la función al cargar el DOM
 document.addEventListener("DOMContentLoaded", function() {
-    loadNav();           // Llamamos a loadNav para generar el HTML
-    cambiarLogoPorSesion(); // Luego llamamos a cambiarLogoPorSesion para actualizar el logo
+    loadNav();           
+    cambiarLogoPorSesion(); 
 });

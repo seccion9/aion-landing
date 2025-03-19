@@ -1,17 +1,14 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const logUser = document.getElementById('logUser'); // Imagen en la que se hace clic
-    const body = document.body; // Para añadir el modal al body
+    const logUser = document.getElementById('logUser'); 
+    const body = document.body; 
 
-    // Crear el modal de inicio de sesión
     const loginModal = document.createElement('div');
     loginModal.id = 'login-modal';
     loginModal.classList.add('fixed', 'inset-0', 'bg-gray-800', 'bg-opacity-50', 'hidden', 'flex', 'justify-center', 'items-center', 'z-50');
 
-    // Crear el contenido del modal
     const modalContent = document.createElement('div');
     modalContent.classList.add('bg-white', 'p-8', 'rounded-lg', 'w-96');
 
-    // Crear el formulario de inicio de sesión
     const form = document.createElement('form');
     form.id = 'login-form';
 
@@ -47,37 +44,93 @@ document.addEventListener("DOMContentLoaded", function() {
     closeButton.classList.add('absolute', 'top-2', 'right-2', 'text-lg');
     closeButton.textContent = 'X';
 
-    // Agregar los elementos al formulario
+    const registerLink = document.createElement('a');
+    registerLink.href = '#';
+    registerLink.id = 'register-link';
+    registerLink.classList.add('text-blue-500', 'mt-2', 'block', 'text-center');
+    registerLink.textContent = '¿No tienes una cuenta? Regístrate';
+
     form.appendChild(usernameLabel);
     form.appendChild(usernameInput);
     form.appendChild(passwordLabel);
     form.appendChild(passwordInput);
+    form.appendChild(registerLink);  
     form.appendChild(submitButton);
 
-    // Agregar los elementos al contenido del modal
     modalContent.appendChild(closeButton);
     modalContent.appendChild(form);
 
-    // Agregar el contenido al modal
     loginModal.appendChild(modalContent);
 
-    // Agregar el modal al body
     body.appendChild(loginModal);
 
-    // Mostrar el modal cuando se hace clic en el logo
     logUser.addEventListener('click', function() {
         loginModal.classList.remove('hidden');
     });
 
-    // Cerrar el modal cuando se hace clic en el botón de cerrar
     closeButton.addEventListener('click', function() {
         loginModal.classList.add('hidden');
     });
 
-    // Cerrar el modal si se hace clic fuera del modal
     document.addEventListener('click', function(event) {
         if (!modalContent.contains(event.target) && !logUser.contains(event.target)) {
             loginModal.classList.add('hidden');
         }
     });
+
+    function switchToRegister() {
+        registerLink.textContent = '¿Ya tienes cuenta? Inicia sesión';
+
+        usernameLabel.textContent = 'Correo electrónico';
+        passwordLabel.textContent = 'Contraseña';
+
+        submitButton.textContent = 'Registrarse';
+
+        submitButton.removeEventListener('click', handleLoginSubmit);
+        submitButton.addEventListener('click', handleRegisterSubmit);
+
+        registerLink.removeEventListener('click', handleRegisterLinkClick);
+        registerLink.addEventListener('click', handleLoginLinkClick);
+    }
+
+    function switchToLogin() {
+        registerLink.textContent = '¿No tienes una cuenta? Regístrate';
+
+        usernameLabel.textContent = 'Usuario';
+        passwordLabel.textContent = 'Contraseña';
+
+        submitButton.textContent = 'Entrar';
+
+        submitButton.removeEventListener('click', handleRegisterSubmit);
+        submitButton.addEventListener('click', handleLoginSubmit);
+
+        registerLink.removeEventListener('click', handleLoginLinkClick);
+        registerLink.addEventListener('click', handleRegisterLinkClick);
+    }
+
+    function handleLoginSubmit(event) {
+        event.preventDefault();
+        // Aquí iría la lógica para iniciar sesión
+        console.log('Iniciar sesión...');
+    }
+
+    function handleRegisterSubmit(event) {
+        event.preventDefault();
+        // Aquí iría la lógica para registrarse
+        console.log('Registrarse...');
+    }
+
+    function handleLoginLinkClick(event) {
+        event.preventDefault();
+        switchToLogin();
+    }
+
+    function handleRegisterLinkClick(event) {
+        event.preventDefault();
+        switchToRegister();
+    }
+
+    registerLink.addEventListener('click', handleRegisterLinkClick);
+
 });
+
