@@ -198,13 +198,13 @@ section {
 }
 
 .nueva-texto {
-    padding: 10px; /* Agregamos padding aquí para separar el texto de los bordes */
-    margin: 10px 0; /* Puedes agregar márgenes si lo deseas */
+    padding: 10px; 
+    margin: 10px 0; 
 }
 
 /* ===== Texto y Contenido ===== */
 #texto-seleccionado {
-    min-height: 300px; /* Asegura una altura mínima para el contenedor */
+    min-height: 300px; 
     flex-grow: 1;
     transition: transform 0.8s ease, opacity 0.8s ease;
     transform: translateX(100%);
@@ -218,21 +218,20 @@ section {
 }
 
 /* Ajuste de la imagen para ocupar siempre la altura máxima */
-#imagen-texto {
+.imagen-text {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     object-position: center;
     border-radius: 8px;
-    margin-top: 16px;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     z-index: 1;
-    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 25px);
-    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 25px);
+    /* mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 25px);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 25px); */
 }
 
 /* Asegúrate de que el contenedor de la imagen tenga el comportamiento adecuado */
@@ -283,7 +282,7 @@ section.dudas-section {
     cursor: pointer;
     padding: 10px 20px;
     border: 1px solid #ccc;
-    margin: 5px 40px; /* Reduce el margen horizontal */
+    margin: 5px 40px; 
     border-radius: 8px;
     background-color: #fff;
     display: flex;
@@ -329,9 +328,6 @@ section.dudas-section {
         --card-height: 60px;
     }
 }
-
-
-
 
 @media (max-width: 640px) {
     .plus-symbol {

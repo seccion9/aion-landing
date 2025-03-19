@@ -74,9 +74,9 @@ togglePrecio.addEventListener('change', () => {
             elemento.style.opacity = 1;
         });
 
-    }, 300); // Pequeña espera antes de mostrar el nuevo precio y texto de ahorro
+    }, 300); 
 
-    actualizarBordes(); // Llamar a la función de actualización de bordes
+    actualizarBordes(); 
 });
 
 // Inicialización al cargar la página
