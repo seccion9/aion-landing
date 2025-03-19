@@ -1,7 +1,7 @@
 # Proyecto: Migración de CDNs a Archivos Locales
 
 ## 📌 Descripción
-En este proyecto, se han eliminado todos los enlaces a CDNs en línea y se han reemplazado por archivos locales para mejorar el rendimiento y la independencia del proyecto respecto a servidores externos.
+En este proyecto, se han eliminado todos los enlaces a CDNs en línea y se han reemplazado por archivos locales para mejorar el rendimiento y la independencia del proyecto respecto a servidores externos. Esta decisión se tomó debido a que la instalación de Tailwind presentaba problemas de compatibilidad al estar utilizando una versión anterior.
 
 ## 🔧 Cambios realizados
 - Se han eliminado todos los enlaces CDN en línea.
