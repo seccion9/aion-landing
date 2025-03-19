@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     logUser.classList.add('cursor-pointer', 'w-8', 'h-8');
     const body = document.body;
 
+    // Crear el modal de inicio de sesión
     const loginModal = document.createElement('div');
     loginModal.id = 'login-modal';
     loginModal.classList.add(
@@ -11,11 +12,14 @@ document.addEventListener("DOMContentLoaded", function () {
         'transition-opacity', 'duration-500', 'opacity-0', 'pointer-events-none', 'hidden'
     );
 
+    // Crear el contenido del modal
     const modalContent = document.createElement('div');
     modalContent.classList.add(
         'bg-white', 'p-8', 'rounded-lg', 'w-96', 'relative',
     );
 
+    // Crear el formulario de inicio de sesión
+    // ATENCION las clases llevan tailwind
     const form = document.createElement('form');
     form.id = 'login-form';
 
@@ -65,6 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
     );
     closeButton.textContent = 'x';
 
+    // Crear el texto de enlace para cambiar a registro
     const registerLink = document.createElement('a');
     registerLink.href = '#';
     registerLink.id = 'register-link';
@@ -74,6 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
     );
     registerLink.textContent = '¿No tienes una cuenta? Regístrate';
 
+    // Agregar los elementos al formulario
     form.appendChild(usernameLabel);
     form.appendChild(usernameInput);
     form.appendChild(passwordLabel);
@@ -81,11 +87,14 @@ document.addEventListener("DOMContentLoaded", function () {
     form.appendChild(registerLink);
     form.appendChild(submitButton);
 
+    // Agregar los elementos al contenido del modal
     modalContent.appendChild(closeButton);
     modalContent.appendChild(form);
 
+    // Agregar el contenido al modal
     loginModal.appendChild(modalContent);
 
+    // Agregar el modal al body
     body.appendChild(loginModal);
 
     logUser.addEventListener('click', function () {
@@ -111,7 +120,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 500);
     });
 
-    document.addEventListener('click', function (event) {
+    // Cerrar el modal si se hace clic fuera del modal
+    document.addEventListener('click', function(event) {
         if (!modalContent.contains(event.target) && !logUser.contains(event.target)) {
             loginModal.classList.remove('opacity-100');
             loginModal.classList.add('opacity-0');
@@ -149,6 +159,7 @@ document.addEventListener("DOMContentLoaded", function () {
         registerLink.addEventListener('click', handleLoginLinkClick);
     }
 
+    // Función para volver al inicio de sesión
     function switchToLogin() {
         animateContentChange();
         registerLink.textContent = '¿No tienes una cuenta? Regístrate';
@@ -161,21 +172,25 @@ document.addEventListener("DOMContentLoaded", function () {
         registerLink.addEventListener('click', handleRegisterLinkClick);
     }
 
+    // Función que maneja el inicio de sesión
     function handleLoginSubmit(event) {
         event.preventDefault();
         console.log('Iniciar sesión...');
     }
 
+    // Función que maneja el registro
     function handleRegisterSubmit(event) {
         event.preventDefault();
         console.log('Registrarse...');
     }
 
+    // Función que cambia al formulario de inicio de sesión
     function handleLoginLinkClick(event) {
         event.preventDefault();
         switchToLogin();
     }
 
+    // Función que cambia al formulario de registro
     function handleRegisterLinkClick(event) {
         event.preventDefault();
         
@@ -188,6 +203,7 @@ document.addEventListener("DOMContentLoaded", function () {
         switchToRegister();
     }
 
+    // Evento de clic en el enlace para cambiar a registro
     registerLink.addEventListener('click', handleRegisterLinkClick);
 
     submitButton.addEventListener('click', function (event) {
