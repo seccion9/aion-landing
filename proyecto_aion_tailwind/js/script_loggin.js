@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const logUser = document.getElementById('logUser');
-    logUser.classList.add('cursor-pointer', 'w-8', 'h-8');
+    logUser.classList.add('cursor-pointer');
     const body = document.body;
 
     // Crear el modal de inicio de sesión
