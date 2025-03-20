@@ -150,42 +150,55 @@
         
         <!-- Sección funcionalidades -->
         <section class="extra-info bg-neutral-50 py-8 flex flex-col items-center" id="funcionalidades">
-            <h2 class="main-title text-center text-orange-500 text-4xl font-bold mb-12 w-full sm:text-3xl sm:mb-8">¿Estás listo para dar el salto al siguiente nivel?</h2>
-
+            <h2 class="main-title text-center text-orange-500 text-4xl font-bold mb-12 w-full sm:text-3xl sm:mb-8">
+                ¿Estás listo para dar el salto al siguiente nivel?
+            </h2>
+        
             <!-- Contenedor de las tarjetas -->    
             <div class="sections flex flex-col sm:flex-row w-full max-w-screen-xl mx-auto relative gap-6 sm:gap-0 px-4 pr-8 items-stretch">
                 <!-- Contenedor de las tarjetas de la izquierda -->
                 <div class="flex flex-col gap-6 w-full sm:w-[45%] px-6 justify-between" id="tarjetas">
                     <!-- Tarjeta 1 -->
-                    <div class="section-container group bg-white rounded-lg shadow-lg transition-transform transform hover:scale-105 w-full cursor-pointer flex items-center justify-between min-h-[120px] p-4" data-aos="fade-up" onclick="mostrarTexto(0)">
-                        <i class="fas fa-mobile-alt text-4xl text-gray-800 px-4"></i>
-                        <h3 class="text-lg font-semibold ml-4">Diseño adaptable a móviles y tabletas</h3>
-                        <i class="fas fa-arrow-right text-2xl text-gray-800 ml-auto"></i>
+                    <div class="section-container group bg-white rounded-lg shadow-lg transition-transform transform hover:scale-105 w-full cursor-pointer flex items-center p-4 min-h-[120px]" data-aos="fade-up" onclick="mostrarTexto(0)">
+                        <div class="flex items-center">
+                            <img src="img/portatil-movil.svg" class="w-16 sm:w-14 h-16 sm:h-14">
+                            <h3 class="text-lg font-semibold ml-6">Diseño adaptable a móviles y tabletas</h3>
+                        </div>
+                        <img src="img/flechaNaranja2.png" class="nueva-flecha w-8 sm:w-7 h-8 sm:h-7 ml-auto" alt="flecha">
                     </div>
                     <div id="texto-movil-0" class="hidden sm:hidden"></div>
+        
                     <!-- Tarjeta 2 -->
-                    <div class="section-container group bg-white rounded-lg shadow-lg transition-transform transform hover:scale-105 w-full cursor-pointer flex items-center justify-between min-h-[120px] p-4" data-aos="fade-up" onclick="mostrarTexto(1)">
-                        <i class="fas fa-cogs text-4xl text-gray-800 px-4"></i>
-                        <h3 class="text-lg font-semibold ml-4">Personalizable y de fácil integración</h3>
-                        <i class="fas fa-arrow-right text-2xl text-gray-800 ml-auto"></i>
+                    <div class="section-container group bg-white rounded-lg shadow-lg transition-transform transform hover:scale-105 w-full cursor-pointer flex items-center p-4 min-h-[120px]" data-aos="fade-up" onclick="mostrarTexto(1)">
+                        <div class="flex items-center">
+                            <img src="img/personalizar.svg" class="w-16 sm:w-14 h-16 sm:h-14">
+                            <h3 class="text-lg font-semibold ml-6">Personalizable y de fácil integración</h3>
+                        </div>
+                        <img src="img/flechaNaranja2.png" class="nueva-flecha w-8 sm:w-7 h-8 sm:h-7 ml-auto" alt="flecha">
                     </div>
                     <div id="texto-movil-1" class="hidden sm:hidden"></div>
+        
                     <!-- Tarjeta 3 -->
-                    <div class="section-container group bg-white rounded-lg shadow-lg transition-transform transform hover:scale-105 w-full cursor-pointer flex items-center justify-between min-h-[120px] p-4" data-aos="fade-up" onclick="mostrarTexto(2)">
-                        <i class="fas fa-headset text-4xl text-gray-800 px-4"></i>
-                        <h3 class="text-lg font-semibold ml-4">Soporte técnico personal</h3>
-                        <i class="fas fa-arrow-right text-2xl text-gray-800 ml-auto"></i>
+                    <div class="section-container group bg-white rounded-lg shadow-lg transition-transform transform hover:scale-105 w-full cursor-pointer flex items-center p-4 min-h-[120px]" data-aos="fade-up" onclick="mostrarTexto(2)">
+                        <div class="flex items-center">
+                            <img src="img/servicio-al-cliente.svg" class="w-16 sm:w-14 h-16 sm:h-14">
+                            <h3 class="text-lg font-semibold ml-6">Soporte técnico personal</h3>
+                        </div>
+                        <img src="img/flechaNaranja2.png" class="nueva-flecha w-8 sm:w-7 h-8 sm:h-7 ml-auto" alt="flecha">
                     </div>
                     <div id="texto-movil-2" class="hidden sm:hidden"></div>
+        
                     <!-- Tarjeta 4 -->
-                    <div class="section-container group bg-white rounded-lg shadow-lg transition-transform transform hover:scale-105 w-full cursor-pointer flex items-center justify-between min-h-[120px] p-4" data-aos="fade-up" onclick="mostrarTexto(3)">
-                        <i class="fas fa-desktop text-4xl text-gray-800 px-4"></i>
-                        <h3 class="text-lg font-semibold ml-4">Interfaz empresarial sencilla</h3>
-                        <i class="fas fa-arrow-right text-2xl text-gray-800 ml-auto"></i>
+                    <div class="section-container group bg-white rounded-lg shadow-lg transition-transform transform hover:scale-105 w-full cursor-pointer flex items-center p-4 min-h-[120px]" data-aos="fade-up" onclick="mostrarTexto(3)">
+                        <div class="flex items-center">
+                            <img src="img/interfaz-sencilla.svg" class="w-16 sm:w-14 h-16 sm:h-14">
+                            <h3 class="text-lg font-semibold ml-6">Interfaz empresarial sencilla</h3>
+                        </div>
+                        <img src="img/flechaNaranja2.png" class="nueva-flecha w-8 sm:w-7 h-8 sm:h-7 ml-auto" alt="flecha">
                     </div>
                     <div id="texto-movil-3" class="hidden sm:hidden"></div>
                 </div>
-
+        
                 <!-- Contenedor donde se mostrará el contenido en escritorio -->
                 <div class="w-1/2 bg-white rounded-lg shadow-lg opacity-0 transform translate-x-full transition-all duration-700 ease-in-out hidden sm:block right-card flex-col justify-center p-4 max-h-screen overflow-hidden" id="texto-seleccionado">
                     <h3 class="text-2xl font-semibold text-gray-600" id="titulo-texto"></h3>
@@ -198,6 +211,7 @@
                 </div>              
             </div>
         </section>
+        
 
         <!-- Sección herramientas -->
         <section class="optimizar-negocio text-center py-8 bg-neutral-100">
