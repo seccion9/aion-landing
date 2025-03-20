@@ -8,6 +8,7 @@ En este proyecto, se han eliminado todos los enlaces a CDNs en línea y se han r
 - Se ha descargado cada recurso externo y guardado en archivos locales.
 - Se han creado archivos separados para cada recurso según su tipo (CSS o JS).
 - Se han enlazado correctamente en el proyecto los archivos descargados.
+- Se han eliminado todos los CDNs de todas las páginas y migrado a archivos locales.
 
 ## 📂 Archivos migrados
 A continuación, se detallan los archivos que han sido descargados y almacenados localmente:
@@ -21,6 +22,7 @@ A continuación, se detallan los archivos que han sido descargados y almacenados
 ### 📜 Archivos JavaScript
 - `aos.js`
 - `sweetalert2-11.js`
+- `tailwindcss.js` (migrado desde el CDN de Tailwind)
 
 ## 🚀 Implementación
 Para asegurarte de que los archivos locales están funcionando correctamente:
