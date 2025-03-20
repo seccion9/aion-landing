@@ -172,11 +172,42 @@ document.addEventListener("DOMContentLoaded", function () {
         registerLink.addEventListener('click', handleRegisterLinkClick);
     }
 
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+        console.log('DOM cargado');
     // Función que maneja el inicio de sesión
-    function handleLoginSubmit(event) {
-        event.preventDefault();
+    form.addEventListener('submit', function handleLoginSubmit(event) {
+        event.preventDefault(); // Evita que el formulario se envíe de la manera tradicional
         console.log('Iniciar sesión...');
-    }
+        
+        const usuario = document.getElementById('username').value;
+        const contrasena = document.getElementById('password').value;
+        
+            // Enviar los datos al servidor usando fetch
+        fetch('login.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: `usuario=${encodeURIComponent(usuario)}&contrasena=${encodeURIComponent(contrasena)}`
+        })
+        .then(response => response.json())  // Esperar la respuesta en formato JSON
+        .then(data => {
+            if (data.success) {
+                // Si la validación es exitosa, redirigir o mostrar mensaje
+                alert('Inicio de sesión exitoso');
+                // Redirigir a página 
+                window.location.href = 'perfilUsuario.html'; 
+            } else {
+                alert('Usuario o contraseña incorrectos');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    });
+})
 
     // Función que maneja el registro
     function handleRegisterSubmit(event) {
@@ -216,4 +247,3 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 300);  // Aseguramos que la animación dure más tiempo
     });
 });
-
