@@ -329,9 +329,6 @@ section.dudas-section {
     }
 }
 
-
-
-
 @media (max-width: 640px) {
     .plus-symbol {
         right: 5rem !important; /* Ajusta el valor para dejar el "+" pegado a la imagen */

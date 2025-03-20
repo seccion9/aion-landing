@@ -63,7 +63,8 @@ function mostrarTexto(index) {
     const descripcionTexto = document.getElementById('descripcion-texto');
     const imagenTexto = document.getElementById('imagen-texto');
     const textoMovil = document.getElementById(`texto-movil-${index}`);
-    const isMobile = window.innerWidth <= 640;
+    const flecha = document.querySelectorAll('.nueva-flecha');
+    const isMobile = window.innerWidth <= 640; // Detectar si es móvil
 
     if (isMobile) {
         // Si la tarjeta ya está abierta, la cerramos
@@ -73,6 +74,7 @@ function mostrarTexto(index) {
                 textoMovil.classList.add('hidden');
             }, 300);
             document.querySelector(`.section-container:nth-child(${index + 1})`).classList.remove('active-card', 'ring-4', 'ring-orange-500');
+            flecha.forEach(f => f.style.transform = 'rotate(0deg)'); // Resetear rotación
             return;
         }
 
@@ -91,10 +93,12 @@ function mostrarTexto(index) {
         document.querySelectorAll('.section-container').forEach((el, idx) => {
             if (idx === index) {
                 el.classList.add('active-card', 'ring-4', 'ring-orange-500');
+                el.querySelector('.nueva-flecha').style.transform = 'rotate(90deg)'; // Gira la flecha
                 // Asegurarse de que la tarjeta no se quede con altura fija
                 el.style.height = 'auto'; // Restaurar la altura cuando se abre
             } else {
                 el.classList.remove('active-card', 'ring-4', 'ring-orange-500');
+                el.querySelector('.nueva-flecha').style.transform = 'rotate(0deg)'; // Resetear la rotación de la flecha
                 // Resetear la altura de otras tarjetas
                 el.style.height = 'auto';
             }
@@ -140,4 +144,6 @@ function mostrarTexto(index) {
 
     ajustarAlturaTarjetas();
 }
+
+
 
