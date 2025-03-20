@@ -47,9 +47,9 @@ function loadNav() {
                 </li>
             </ul>
             </nav> 
-            <div id="logginUser" class="ml-auto">
-                    <img id="logUser" src="" alt="Logo" class="w-12 h-12">
-                </div>
+            <div id="logginUser" class="ml-auto pr-2">
+                <img id="logUser" src="" alt="Logo" class="w-12 h-12">
+            </div>
         </div>
     </header>
     `;
