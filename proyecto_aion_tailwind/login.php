@@ -3,50 +3,47 @@
 require_once 'config.php';
 require_once 'conexion.php';
 
+header('Content-Type: application/json'); // Forzar salida JSON
 
-// Obtener los datos del formulario enviados por fetch
-$usuario = isset($_POST['usuario']) ? $_POST['usuario'] : ''; // Aseguramos que el campo no esté vacío
-$contrasena = isset($_POST['contrasena']) ? $_POST['contrasena'] : ''; // Aseguramos que el campo no esté vacío
+$usuario = isset($_POST['usuario']) ? $_POST['usuario'] : '';
+$contrasena = isset($_POST['contrasena']) ? $_POST['contrasena'] : '';
 
+// Verifica que ambos campos no estén vacíos antes de validar el usuario
+if (empty($usuario) || empty($contrasena)) {
+    echo json_encode(['success' => false, 'error' => 'Debe completar ambos campos']);
+    exit();
+}
+
+// LLAMAR a la función validarUsuario
+validarUsuario($usuario, $contrasena);
 
 function validarUsuario($usuario, $contrasena) {
     $conexion = obtenerConexion();
 
-    if ($conexion === null) {
-        return false;
+    if (!$conexion) {
+        echo json_encode(['success' => false, 'error' => 'Error de conexión']);
+        exit();
     }
 
-    // Encriptar la contraseña con MD5
     $contrasenaMD5 = md5($contrasena);
 
-    // Consulta SQL para verificar si el usuario existe con la contraseña en MD5
     $query = "SELECT * FROM aion_users WHERE user = :usuario AND password = :contrasena";
-
-    
     $stmt = $conexion->prepare($query);
-
     $stmt->bindParam(':usuario', $usuario);
     $stmt->bindParam(':contrasena', $contrasenaMD5);
 
-    $stmt->execute();
-    
+    if (!$stmt->execute()) {
+        echo json_encode(['success' => false, 'error' => 'Error en la consulta']);
+        exit();
+    }
 
     if ($stmt->rowCount() > 0) {
         session_start();
         $_SESSION['usuario'] = $usuario;
-        return true; 
+        echo json_encode(['success' => true]);
     } else {
-        return false; 
+        echo json_encode(['success' => false, 'error' => 'Usuario o contraseña incorrectos']);
     }
+
+    exit(); // IMPORTANTE: Detiene el script para evitar contenido adicional
 }
-
-if (validarUsuario($usuario, $contrasena)) {
-    echo json_encode(['success' => true]);
-} else {
-    echo json_encode(['success' => false]);
-}
-
-$stmt->close();
-$link->close();
-
-?>

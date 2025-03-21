@@ -1,0 +1,339 @@
+/* ===== Estilos generales ===== */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ===== Variables globales ===== */
+:root {
+    --color-primary: #ff8000;
+    --color-primary-hover: #e67300;
+    --shadow-default: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-large: 0px 20px 60px rgba(0, 0, 0, 0.5);
+    --transition-default: 0.3s ease;
+    --header-height: 60px;
+}
+
+/* ===== Reset y estilos base ===== */
+body {
+    overflow-x: hidden;
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* ===== Layout ===== */
+header {
+    height: 64px; /* o la altura que tenga tu header */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    z-index: 50;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+main {
+    margin-top: 110px;
+    margin-bottom: 40px;
+}
+
+section {
+    scroll-margin-top: var(--header-height);
+}
+
+.container {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.sections {
+    display: flex;
+    gap: 1rem;
+    height: 100%;
+}
+
+.section-padding {
+    padding: 0 15px;
+}
+
+/* ===== Componentes ===== */
+.custom-shadow {
+    box-shadow: var(--shadow-large);
+}
+
+.pagina-con-margen {
+    margin-top: var(--header-height);
+    margin-bottom: 0;
+}
+
+/* ===== Navegación ===== */
+@media (max-width: 1023px) {
+    #nav-list {
+        position: absolute;
+        top: 97%;
+        right: 10px;
+        background-color: white;
+        flex-direction: column;
+        gap: 12px;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: var(--shadow-default);
+        z-index: -40;
+    }
+
+    #nav-list li a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.5rem 1rem;
+    }
+}
+
+/* ===== Tarjetas y Selección ===== */
+.selected {
+    border: 2px solid var(--color-primary);
+    border-radius: 8px;
+    position: relative;
+    z-index: 10;
+}
+
+.card {
+    --card-height: 80px;
+    height: var(--card-height);
+    transition: all var(--transition-default);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card.activa {
+    height: auto;
+    border-color: var(--color-primary);
+    background-color: #fff;
+}
+
+.card.selected {
+    border-color: #ff8000;
+}
+
+/* ===== Mensajes y Animaciones ===== */
+.mensaje {
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    margin-top: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    border-left: 5px solid #ff8000;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333;
+    transition: height 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.6s ease-in-out,
+                margin-top 0.6s ease-in-out,
+                padding 0.6s ease-in-out;
+}
+
+.mensaje:not(.hidden) {
+    height: auto;
+    opacity: 1;
+    margin-top: 0.5rem;
+}
+
+.mensaje.hidden {
+    height: 0;
+    opacity: 0;
+    margin-top: 0;
+    padding: 0;
+}
+
+.dudas-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+    gap: 15px; /* Espaciado entre tarjetas */
+    justify-content: center;
+}
+
+.nueva-card {
+    width: 400px; /* Ajustamos el ancho */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribuye el contenido */
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: white;
+    overflow: hidden;
+    transition: border-color 1s ease, background-color 1s ease;
+    margin-top: 20px;
+}
+
+.nueva-card.selected {
+    border: 2px solid #ff8000; /* Borde naranja */
+    background-color: #ffefd7; /* Fondo naranja claro */
+}
+
+.nueva-content {
+    height: 0;
+    overflow: hidden;
+    transition: height 1s ease-in-out; /* Animación de apertura y cierre más suave */
+}
+
+.nueva-flecha {
+    transition: transform 0.3s ease-in-out;
+}
+
+.nueva-card.selected .nueva-content {
+    background-color: white;
+    height: auto; /* Esto asegura que se ajuste al contenido */
+}
+
+.nueva-card.selected .nueva-flecha {
+    transform: rotate(90deg);
+}
+
+.nueva-texto {
+    padding: 10px; /* Agregamos padding aquí para separar el texto de los bordes */
+    margin: 10px 0; /* Puedes agregar márgenes si lo deseas */
+}
+
+/* ===== Texto y Contenido ===== */
+#texto-seleccionado {
+    min-height: 300px; /* Asegura una altura mínima para el contenedor */
+    flex-grow: 1;
+    transition: transform 0.8s ease, opacity 0.8s ease;
+    transform: translateX(100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#texto-seleccionado.translate-x-0 {
+    transform: translateX(0);
+}
+
+/* Ajuste de la imagen para ocupar siempre la altura máxima */
+.imagen-text {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 8px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    /* mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 25px);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 25px); */
+}
+
+/* Asegúrate de que el contenedor de la imagen tenga el comportamiento adecuado */
+#texto-seleccionado .relative {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+section.dudas-section {
+    min-height: calc(275px + 125px);
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== Estilos para los planes ===== */
+.tipoPlan {
+    min-height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tipoPlan span {
+    visibility: hidden;
+}
+
+.tipoPlan .visible {
+    visibility: visible;
+}
+
+/* ===== Imagen y texto en móvil ===== */
+#texto-movil {
+    transition: opacity 0.3s ease;
+}
+
+#tarjetas::after {
+    content: "";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+/* ===== Dudas y preguntas ===== */
+.duda {
+    cursor: pointer;
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    margin: 5px 40px; /* Reduce el margen horizontal */
+    border-radius: 8px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    transition: all 0.3s ease;
+}
+
+.duda:hover {
+    background-color: #f4f4f4;
+}
+
+.duda.activa {
+    background-color: #fff6e5;
+    border-color: #ff8000;
+}
+
+.mensaje {
+    display: none;
+    overflow: hidden;
+    height: 0;
+    opacity: 0;
+}
+
+
+/* Para móvil */
+@media (max-width: 768px) {
+    .duda {
+        align-items: flex-start;
+    }
+
+    .flecha1 {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 640px) {
+    :root {
+        --header-height: 50px;
+    }
+
+    .card {
+        --card-height: 60px;
+    }
+}
+
+
+
+
+@media (max-width: 640px) {
+    .plus-symbol {
+        right: 5rem !important; /* Ajusta el valor para dejar el "+" pegado a la imagen */
+    }
+}
