@@ -1,4 +1,23 @@
 document.addEventListener("DOMContentLoaded", function () {
+    // Primero verificar sesión
+    document.getElementById("logUser").addEventListener("click", verificarSesion);
+});
+
+function verificarSesion() {
+    fetch('verificar_sesion.php')
+    .then(response => response.json())
+    .then(data => {
+        if (data.authenticated) {
+            window.location.href = "perfilUsuario.html";
+        } else {
+            inicializarModal();
+        }
+    })
+    .catch(error => console.error('Error:', error));
+}
+
+function inicializarModal() {
+    // Código para mostrar el modal de inicio de sesión
     const logUser = document.getElementById('logUser');
     const body = document.body;
 
@@ -19,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const form = document.createElement('form');
     form.id = 'login-form';
 
+    // Configuración de elementos del formulario
     const usernameLabel = document.createElement('label');
     usernameLabel.setAttribute('for', 'username');
     usernameLabel.classList.add('block', 'mb-1', 'text-gray-800');
@@ -63,8 +83,9 @@ document.addEventListener("DOMContentLoaded", function () {
         'absolute', 'top-2', 'right-4', 'text-2xl', 'cursor-pointer',
         'text-gray-500', 'hover:text-orange-500', 'transition-colors'
     );
-    closeButton.textContent = 'x';
+    closeButton.textContent = '×';
 
+    // Ensamblar componentes
     form.appendChild(usernameLabel);
     form.appendChild(usernameInput);
     form.appendChild(passwordLabel);
@@ -76,6 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
     loginModal.appendChild(modalContent);
     body.appendChild(loginModal);
 
+    // Event Listeners
     logUser.addEventListener('click', function () {
         loginModal.classList.remove('hidden');
         setTimeout(() => {
@@ -93,8 +115,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 500);
     });
 
-   
-
     form.addEventListener('submit', function (event) {
         event.preventDefault();
         
@@ -108,10 +128,10 @@ document.addEventListener("DOMContentLoaded", function () {
             },
             body: `usuario=${encodeURIComponent(usuario)}&contrasena=${encodeURIComponent(contrasena)}`
         })
-        .then(response => response.text())  // <-- Recibe la respuesta como texto primero
+        .then(response => response.text())
         .then(text => {
-            console.log("Respuesta del servidor:", text);  // Muestra el texto en la consola
-            return text ? JSON.parse(text) : {}; // Si la respuesta está vacía, devuelve un objeto vacío
+            console.log("Respuesta del servidor:", text);
+            return text ? JSON.parse(text) : {};
         })
         .then(data => {
             if (data.success) {
@@ -142,7 +162,5 @@ document.addEventListener("DOMContentLoaded", function () {
                 confirmButtonColor: '#ff8000'
             });
         });
-    })    
-
-
-   });
+    });
+}

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -34,7 +35,18 @@
         <meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
             
-        
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                fetch('verificar_sesion.php')
+                    .then(response => response.json())
+                    .then(data => {
+                        if (!data.authenticated) {
+                            window.location.href = "index.html"; // Redirige si no está autenticado
+                        }
+                    })
+                    .catch(error => console.error('Error:', error));
+            });
+            </script>
 
 </head>
 <body class="min-h-screen flex flex-col bg-gray-100">
@@ -66,7 +78,7 @@
                     </button>
                 </div>
                 <div class="flex justify-center mt-8">
-                    <button class="btn w-full sm:w-3/4 text-xl bg-red-500 border-red-500 text-white hover:bg-red-700 h-10 transition-colors duration-300 ease-in-out" id="logout-btn">
+                    <button id="logout-btn" class="btn w-full sm:w-3/4 text-xl bg-red-500 border-red-500 text-white hover:bg-red-700 h-10 transition-colors duration-300 ease-in-out" id="logout-btn">
                         Cerrar sesión
                     </button>
                 </div>
@@ -95,5 +107,22 @@
     <script src="nav.js"></script>
     <script src="menu_hamburguesa.js"></script>
     <script src="footer.js"></script>
+    <script>
+    document.getElementById("logout-btn").addEventListener("click", function () {
+        Swal.fire({
+            title: "¿Seguro que quieres cerrar sesión?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonText: "Sí, salir",
+            cancelButtonText: "Cancelar"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch("logout.php", { method: "GET" })
+                    .then(() => window.location.href = "index.html"); 
+            }
+        });
+    });
+    </script>
+
 </body>
 </html>

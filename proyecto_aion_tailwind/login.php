@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once 'config.php';
 require_once 'conexion.php';
 
@@ -14,7 +14,6 @@ if (empty($usuario) || empty($contrasena)) {
     exit();
 }
 
-// LLAMAR a la función validarUsuario
 validarUsuario($usuario, $contrasena);
 
 function validarUsuario($usuario, $contrasena) {
@@ -27,23 +26,43 @@ function validarUsuario($usuario, $contrasena) {
 
     $contrasenaMD5 = md5($contrasena);
 
-    $query = "SELECT * FROM aion_users WHERE user = :usuario AND password = :contrasena";
+    // 1. PRIMERA CONSULTA: Validar usuario
+    $query = "SELECT id, user FROM aion_users WHERE user = :usuario AND password = :contrasena";
     $stmt = $conexion->prepare($query);
     $stmt->bindParam(':usuario', $usuario);
     $stmt->bindParam(':contrasena', $contrasenaMD5);
-
-    if (!$stmt->execute()) {
-        echo json_encode(['success' => false, 'error' => 'Error en la consulta']);
-        exit();
-    }
+    $stmt->execute(); // 🔹 Ahora ejecutamos la consulta
 
     if ($stmt->rowCount() > 0) {
-        session_start();
-        $_SESSION['usuario'] = $usuario;
-        echo json_encode(['success' => true]);
+        $usuarioData = $stmt->fetch(PDO::FETCH_ASSOC);
+        $usuario_id = $usuarioData['id'];
+
+        // 2. SEGUNDA CONSULTA: Obtener datos adicionales (user y email)
+        $query = "SELECT user, email FROM aion_users WHERE id = :id";
+        $stmt = $conexion->prepare($query);
+        $stmt->bindParam(':id', $usuario_id, PDO::PARAM_INT);
+        $stmt->execute(); // 🔹 Ejecutamos la consulta nuevamente
+        $usuarioInfo = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($usuarioInfo) {
+            // Guardar datos en la sesión
+            $_SESSION['usuario_id'] = $usuario_id;
+            $_SESSION['user'] = $usuarioInfo['user'];
+            $_SESSION['email'] = $usuarioInfo['email'];
+
+            echo json_encode([
+                'success' => true,
+                'user' => $_SESSION['user'],
+                'email' => $_SESSION['email']
+            ]);
+        } else {
+            echo json_encode(['success' => false, 'error' => 'No se pudieron recuperar los datos del usuario']);
+        }
     } else {
         echo json_encode(['success' => false, 'error' => 'Usuario o contraseña incorrectos']);
     }
 
     exit(); // IMPORTANTE: Detiene el script para evitar contenido adicional
 }
+?>
+

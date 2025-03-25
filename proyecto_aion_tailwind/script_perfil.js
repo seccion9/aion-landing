@@ -1,28 +1,52 @@
-// Espera a que se cargue el DOM antes de ejecutar el script
 document.addEventListener("DOMContentLoaded", function() {
 
-    // Elementos del DOM
+    // Verifica que los elementos existen antes de asignar eventos
     const editProfileBtn = document.getElementById("edit-profile-btn");
     const changePasswordBtn = document.getElementById("change-password-btn");
     const updateNotificationsBtn = document.getElementById("update-notifications-btn");
     const logoutBtn = document.getElementById("logout-btn");
 
-    // Manejo de eventos
-    editProfileBtn.addEventListener("click", function() {
-        editProfile();
-    });
+    if (editProfileBtn) {
+        editProfileBtn.addEventListener("click", editProfile);
+    }
 
-    changePasswordBtn.addEventListener("click", function() {
-        changePassword();
-    });
+    if (changePasswordBtn) {
+        changePasswordBtn.addEventListener("click", changePassword);
+    }
 
-    updateNotificationsBtn.addEventListener("click", function() {
-        updateNotifications();
-    });
+    if (updateNotificationsBtn) {
+        updateNotificationsBtn.addEventListener("click", updateNotifications);
+    }
 
-    logoutBtn.addEventListener("click", function() {
-        logout();
-    });
+    if (logoutBtn) {
+        logoutBtn.addEventListener("click", logout);
+    }
+    setTimeout(cargarDatosUsuario, 2000); // Espera 2 segundos antes de llamar la función
+
+    // Función para obtener los datos del usuario
+    function cargarDatosUsuario() {
+        fetch("datosUsuario.php")
+            .then(response => response.json())
+            .then(data => {
+                console.log("Datos recibidos:", data); // Verifica en la consola
+                if (data.success) {
+                    const userName = document.getElementById("user-name");
+                    const profileName = document.getElementById("profile-name");
+                    const profileEmail = document.getElementById("profile-email");
+// Asegúrate de que los elementos estén disponibles
+console.log(userName, profileName, profileEmail); 
+                    if (userName) userName.textContent = data.user;
+                    if (profileName) profileName.textContent = data.user;
+                    if (profileEmail) profileEmail.textContent = data.email;
+                } else {
+                    console.error("Error al obtener los datos del usuario:", data.error);
+                }
+            })
+            .catch(error => console.error("Error en la petición:", error));
+    }
+
+    // Cargar datos del usuario al cargar la página
+    cargarDatosUsuario();
 
     // Función para editar el perfil
     function editProfile() {
@@ -35,23 +59,15 @@ document.addEventListener("DOMContentLoaded", function() {
         const newPhone = prompt("Edita tu teléfono:", profilePhone);
 
         if (newName && newEmail && newPhone) {
-            // Realizar la petición para actualizar el perfil
             fetch("updateProfile.php", {
                 method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    name: newName,
-                    email: newEmail,
-                    phone: newPhone
-                })
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ name: newName, email: newEmail, phone: newPhone })
             })
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
                     alert("Perfil actualizado exitosamente.");
-                    // Actualizar la interfaz con los nuevos datos
                     document.getElementById("profile-name").textContent = newName;
                     document.getElementById("profile-email").textContent = newEmail;
                     document.getElementById("profile-phone").textContent = newPhone;
@@ -69,21 +85,15 @@ document.addEventListener("DOMContentLoaded", function() {
         const confirmPassword = document.getElementById("confirm-password").value;
 
         if (newPassword === confirmPassword) {
-            // Realizar la petición para cambiar la contraseña
             fetch("changePassword.php", {
                 method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    password: newPassword
-                })
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ password: newPassword })
             })
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
                     alert("Contraseña cambiada exitosamente.");
-                    // Limpiar los campos del formulario
                     document.getElementById("new-password").value = "";
                     document.getElementById("confirm-password").value = "";
                 } else {
@@ -96,21 +106,15 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    // Función para actualizar las preferencias de notificación
+    // Función para actualizar notificaciones
     function updateNotifications() {
         const emailNotifications = document.getElementById("email-notifications").checked;
         const smsNotifications = document.getElementById("sms-notifications").checked;
 
-        // Realizar la petición para actualizar las preferencias
         fetch("updateNotifications.php", {
             method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                emailNotifications: emailNotifications,
-                smsNotifications: smsNotifications
-            })
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ emailNotifications, smsNotifications })
         })
         .then(response => response.json())
         .then(data => {
@@ -125,14 +129,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Función para cerrar sesión
     function logout() {
-        // Realizar la petición para cerrar sesión
-        fetch("logout.php", {
-            method: "POST"
-        })
+        fetch("logout.php", { method: "POST" })
         .then(response => response.json())
         .then(data => {
             if (data.success) {
-                // Redirigir al usuario a la página de login
                 window.location.href = "login.html";
             } else {
                 alert("Error al cerrar sesión.");
