@@ -1,6 +1,24 @@
 document.addEventListener("DOMContentLoaded", function () {
+    // Primero verificar sesión
+    document.getElementById("logUser").addEventListener("click", verificarSesion);
+});
+
+function verificarSesion() {
+    fetch('../PHP/verificar_sesion.php')
+    .then(response => response.json())
+    .then(data => {
+        if (data.authenticated) {
+            window.location.href = "perfilUsuario.html";
+        } else {
+            inicializarModal();
+        }
+    })
+    .catch(error => console.error('Error:', error));
+}
+
+function inicializarModal() {
+    // Código para mostrar el modal de inicio de sesión
     const logUser = document.getElementById('logUser');
-    logUser.classList.add('cursor-pointer');
     const body = document.body;
 
     // Crear el modal de inicio de sesión
@@ -12,17 +30,15 @@ document.addEventListener("DOMContentLoaded", function () {
         'transition-opacity', 'duration-500', 'opacity-0', 'pointer-events-none', 'hidden'
     );
 
-    // Crear el contenido del modal
     const modalContent = document.createElement('div');
     modalContent.classList.add(
-        'bg-white', 'p-8', 'rounded-lg', 'w-96', 'relative',
+        'bg-white', 'p-8', 'rounded-lg', 'w-96', 'relative'
     );
 
-    // Crear el formulario de inicio de sesión
-    // ATENCION las clases llevan tailwind
     const form = document.createElement('form');
     form.id = 'login-form';
 
+    // Configuración de elementos del formulario
     const usernameLabel = document.createElement('label');
     usernameLabel.setAttribute('for', 'username');
     usernameLabel.classList.add('block', 'mb-1', 'text-gray-800');
@@ -67,43 +83,22 @@ document.addEventListener("DOMContentLoaded", function () {
         'absolute', 'top-2', 'right-4', 'text-2xl', 'cursor-pointer',
         'text-gray-500', 'hover:text-orange-500', 'transition-colors'
     );
-    closeButton.textContent = 'x';
+    closeButton.textContent = '×';
 
-    // Crear el texto de enlace para cambiar a registro
-    const registerLink = document.createElement('a');
-    registerLink.href = '#';
-    registerLink.id = 'register-link';
-    registerLink.classList.add(
-        'text-blue-500', 'mt-2', 'block', 'text-center', 'pb-2',
-        'hover:text-blue-800', 'transition-colors'
-    );
-    registerLink.textContent = '¿No tienes una cuenta? Regístrate';
-
-    // Agregar los elementos al formulario
+    // Ensamblar componentes
     form.appendChild(usernameLabel);
     form.appendChild(usernameInput);
     form.appendChild(passwordLabel);
     form.appendChild(passwordInput);
-    form.appendChild(registerLink);
     form.appendChild(submitButton);
 
-    // Agregar los elementos al contenido del modal
     modalContent.appendChild(closeButton);
     modalContent.appendChild(form);
-
-    // Agregar el contenido al modal
     loginModal.appendChild(modalContent);
-
-    // Agregar el modal al body
     body.appendChild(loginModal);
 
+    // Event Listeners
     logUser.addEventListener('click', function () {
-        // Aplicar animación de escala al icono del usuario
-        logUser.classList.add('scale-90', 'transition-transform', 'duration-300');
-        setTimeout(() => {
-            logUser.classList.remove('scale-90');
-        }, 300);
-
         loginModal.classList.remove('hidden');
         setTimeout(() => {
             loginModal.classList.remove('opacity-0', 'pointer-events-none');
@@ -120,100 +115,52 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 500);
     });
 
-    // Cerrar el modal si se hace clic fuera del modal
-    document.addEventListener('click', function(event) {
-        if (!modalContent.contains(event.target) && !logUser.contains(event.target)) {
-            loginModal.classList.remove('opacity-100');
-            loginModal.classList.add('opacity-0');
-            
-            setTimeout(() => {
-                loginModal.classList.add('hidden', 'pointer-events-none');
-            }, 500);
-        }
-    });
-
-    // Animación para el cambio de contenido
-    function animateContentChange() {
-        usernameLabel.classList.add('transition-all', 'duration-300', 'transform', 'scale-95');
-        passwordLabel.classList.add('transition-all', 'duration-300', 'transform', 'scale-95');
-        submitButton.classList.add('transition-all', 'duration-300', 'transform', 'scale-95');
-        registerLink.classList.add('transition-all', 'duration-300', 'transform', 'scale-95');
-
-        setTimeout(() => {
-            usernameLabel.classList.remove('scale-95');
-            passwordLabel.classList.remove('scale-95');
-            submitButton.classList.remove('scale-95');
-            registerLink.classList.remove('scale-95');
-        }, 300);
-    }
-
-    function switchToRegister() {
-        animateContentChange();
-        registerLink.textContent = '¿Ya tienes cuenta? Inicia sesión';
-        usernameLabel.textContent = 'Correo electrónico';
-        passwordLabel.textContent = 'Contraseña';
-        submitButton.textContent = 'Registrarse';
-        submitButton.removeEventListener('click', handleLoginSubmit);
-        submitButton.addEventListener('click', handleRegisterSubmit);
-        registerLink.removeEventListener('click', handleRegisterLinkClick);
-        registerLink.addEventListener('click', handleLoginLinkClick);
-    }
-
-    // Función para volver al inicio de sesión
-    function switchToLogin() {
-        animateContentChange();
-        registerLink.textContent = '¿No tienes una cuenta? Regístrate';
-        usernameLabel.textContent = 'Usuario';
-        passwordLabel.textContent = 'Contraseña';
-        submitButton.textContent = 'Entrar';
-        submitButton.removeEventListener('click', handleRegisterSubmit);
-        submitButton.addEventListener('click', handleLoginSubmit);
-        registerLink.removeEventListener('click', handleLoginLinkClick);
-        registerLink.addEventListener('click', handleRegisterLinkClick);
-    }
-
-    // Función que maneja el inicio de sesión
-    function handleLoginSubmit(event) {
-        event.preventDefault();
-        console.log('Iniciar sesión...');
-    }
-
-    // Función que maneja el registro
-    function handleRegisterSubmit(event) {
-        event.preventDefault();
-        console.log('Registrarse...');
-    }
-
-    // Función que cambia al formulario de inicio de sesión
-    function handleLoginLinkClick(event) {
-        event.preventDefault();
-        switchToLogin();
-    }
-
-    // Función que cambia al formulario de registro
-    function handleRegisterLinkClick(event) {
+    form.addEventListener('submit', function (event) {
         event.preventDefault();
         
-        // Animación al hacer click en el link de registro
-        registerLink.classList.add('scale-90', 'transition-transform', 'duration-300');
-        setTimeout(() => {
-            registerLink.classList.remove('scale-90');
-        }, 100);
-
-        switchToRegister();
-    }
-
-    // Evento de clic en el enlace para cambiar a registro
-    registerLink.addEventListener('click', handleRegisterLinkClick);
-
-    submitButton.addEventListener('click', function (event) {
-        event.preventDefault();
-        
-        // Aplicar una animación de escala más suave y duradera al presionar el botón
-        submitButton.classList.add('scale-90', 'transition-transform', 'duration-300');
-        setTimeout(() => {
-            submitButton.classList.remove('scale-90');
-        }, 300);  // Aseguramos que la animación dure más tiempo
+        const usuario = usernameInput.value;
+        const contrasena = passwordInput.value;
+    
+        fetch('../PHP/login.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: `usuario=${encodeURIComponent(usuario)}&contrasena=${encodeURIComponent(contrasena)}`
+        })
+        .then(response => response.text())
+        .then(text => {
+            console.log("Respuesta del servidor:", text);
+            return text ? JSON.parse(text) : {};
+        })
+        .then(data => {
+            if (data.success) {
+                Swal.fire({
+                    title: '¡Inicio de sesión exitoso!',
+                    text: 'Serás redirigido en breve.',
+                    icon: 'success',
+                    timer: 2000,
+                    showConfirmButton: false
+                }).then(() => {
+                    window.location.href = 'perfilUsuario.html';
+                });
+            } else {
+                Swal.fire({
+                    title: 'Error',
+                    text: data.error || 'Usuario o contraseña incorrectos',
+                    icon: 'error',
+                    confirmButtonColor: '#ff8000'
+                });
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            Swal.fire({
+                title: 'Error',
+                text: 'Ocurrió un problema con la conexión.',
+                icon: 'error',
+                confirmButtonColor: '#ff8000'
+            });
+        });
     });
-});
-
+}

@@ -4,7 +4,7 @@ document.getElementById("formContacto").addEventListener("submit", function (eve
     let formData = new FormData(this);
   
     // Enviar datos a PHP con Fetch API
-    fetch("enviar.php", {
+    fetch("../PHP/enviar.php", {
         method: "POST",
         body: formData
     })
