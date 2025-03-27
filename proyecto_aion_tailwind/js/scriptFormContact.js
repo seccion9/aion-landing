@@ -4,7 +4,7 @@ document.getElementById("formContacto").addEventListener("submit", function (eve
     let formData = new FormData(this);
   
     // Enviar datos a PHP con Fetch API
-    fetch("../PHP/enviar.php", {
+    fetch("/rediseño/proyecto_aion_tailwind/PHP/enviar.php", {
         method: "POST",
         body: formData
     })

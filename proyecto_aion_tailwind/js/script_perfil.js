@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Función para obtener los datos del usuario
     function cargarDatosUsuario() {
-        fetch("PHP/datosUsuario.php")
+        fetch("/rediseño/proyecto_aion_tailwind/PHP/datosUsuario.php")
             .then(response => response.json())
             .then(data => {
                 console.log("Datos recibidos:", data); // Verifica en la consola
@@ -129,11 +129,11 @@ console.log(userName, profileName, profileEmail);
 
     // Función para cerrar sesión
     function logout() {
-        fetch("../PHP/logout.php", { method: "POST" })
+        fetch("/rediseño/proyecto_aion_tailwind/PHP/logout.php", { method: "POST" })
         .then(response => response.json())
         .then(data => {
             if (data.success) {
-                window.location.href = "login.html";
+                window.location.href = "/rediseño/proyecto_aion_tailwind/login.html";
             } else {
                 alert("Error al cerrar sesión.");
             }

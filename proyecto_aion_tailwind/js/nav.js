@@ -59,17 +59,17 @@ function loadNav() {
 
 
 function cambiarLogoPorSesion() {
-    fetch('../PHP/verificar_sesion.php')
+    fetch('/rediseño/proyecto_aion_tailwind/PHP/verificar_sesion.php')
     .then(response => response.json())
     .then(data => {
         const logUser = document.getElementById('logUser'); // Asegúrate de usar el ID correcto para el logo
 
         if (data.authenticated) {
             // Si la sesión está activa (usuario autenticado), cambiar el logo
-            logUser.src = '../img/logout.svg'; // Logo para usuarios autenticados
+            logUser.src = '/rediseño/proyecto_aion_tailwind/img/logout.svg'; // Logo para usuarios autenticados
         } else {
             // Si la sesión no está activa (usuario no autenticado), cambiar el logo
-            logUser.src = '../img/person.svg'; // Logo para visitantes no autenticados
+            logUser.src = '/rediseño/proyecto_aion_tailwind/img/person.svg'; // Logo para visitantes no autenticados
         }
     })
     .catch(error => console.error('Error:', error)); // Manejar errores

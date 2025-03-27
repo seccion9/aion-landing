@@ -4,11 +4,11 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function verificarSesion() {
-    fetch('../PHP/verificar_sesion.php')
+    fetch('/rediseño/proyecto_aion_tailwind/PHP/verificar_sesion.php')
     .then(response => response.json())
     .then(data => {
         if (data.authenticated) {
-            window.location.href = "perfilUsuario.html";
+            window.location.href = "/rediseño/proyecto_aion_tailwind/perfilUsuario.html";
         } else {
             inicializarModal();
         }
@@ -121,7 +121,7 @@ function inicializarModal() {
         const usuario = usernameInput.value;
         const contrasena = passwordInput.value;
     
-        fetch('../PHP/login.php', {
+        fetch('/rediseño/proyecto_aion_tailwind/PHP/login.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
@@ -142,7 +142,7 @@ function inicializarModal() {
                     timer: 2000,
                     showConfirmButton: false
                 }).then(() => {
-                    window.location.href = 'perfilUsuario.html';
+                    window.location.href = '/rediseño/proyecto_aion_tailwind/perfilUsuario.html';
                 });
             } else {
                 Swal.fire({

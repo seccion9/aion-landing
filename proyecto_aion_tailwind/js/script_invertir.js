@@ -14,7 +14,7 @@ document.getElementById("formInvertir").addEventListener("submit", function (eve
 
   let formData = new FormData(this);
 
-  fetch("PHP/enviar_invertir.php", {
+  fetch("/rediseño/proyecto_aion_tailwind/PHP/enviar_invertir.php", {
       method: "POST",
       body: formData
   })

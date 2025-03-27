@@ -31,7 +31,7 @@ function validarUsuario($usuario, $contrasena) {
     $stmt = $conexion->prepare($query);
     $stmt->bindParam(':usuario', $usuario);
     $stmt->bindParam(':contrasena', $contrasenaMD5);
-    $stmt->execute(); // 🔹 Ahora ejecutamos la consulta
+    $stmt->execute(); //  Ahora ejecutamos la consulta
 
     if ($stmt->rowCount() > 0) {
         $usuarioData = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -41,7 +41,7 @@ function validarUsuario($usuario, $contrasena) {
         $query = "SELECT user, email FROM aion_users WHERE id = :id";
         $stmt = $conexion->prepare($query);
         $stmt->bindParam(':id', $usuario_id, PDO::PARAM_INT);
-        $stmt->execute(); // 🔹 Ejecutamos la consulta nuevamente
+        $stmt->execute(); //  Ejecutamos la consulta nuevamente
         $usuarioInfo = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($usuarioInfo) {
